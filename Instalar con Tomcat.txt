@@ -1,0 +1,20 @@
+Descargarse tomcat e instalarlo. 
+Si queremos que nos corra una app la ponemos en el path de tomcat /webapps
+Si queremos que nos corra una app externa lo que hacemos es crear un archivo .xml y ponerlo en la carpteta de tomcat. 
+Ejemplo:
+	
+	I'd like to deploy a web application folder
+
+	C:\app\myapp 
+	to Tomcat6.x instead of having a copy under
+	%TOMCAT_HOME%\webapps
+	
+	You should create a myapp.xml file for this app and place it in 
+	%TOMCAT_HOME%\conf\Catalina\localhost.
+
+	The file looks something like this:
+
+	<Context displayName="myapp" 
+	     docBase="C:/app/myapp"
+	     path="/myapp"
+	     reloadable="true" />
