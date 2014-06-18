@@ -1,0 +1,81 @@
+body {
+	background: #00ccff url("img/fondo.png") no-repeat 30px 50px;
+}
+
+.absoluto_oculto {
+	position: absolute;
+	display: none;
+}
+
+#titulo {
+	width: 530px;
+	top: 100px;
+	left: 190px;
+	font-family: 'Ribeye Marrow', cursive;
+	font-size: 25px;
+}
+
+#kittyTeacher {
+	width: 85px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#huella1 {
+	top: 25px;
+	left: 100px;
+}
+
+#huella2 {
+	top: 125px;
+	left: 25px;
+}
+
+#huella3 {
+	top: 250px;
+	left: 100px;
+}
+#huella4 {
+	top: 350px;
+	left: 25px;
+}
+
+#alumno {
+	position: absolute;
+	top: 420px;
+	left: 120px;
+	font-size: 18px;
+	font-family: 'Bentham', serif;
+}
+
+@font-face {
+	font-family: 'Bentham';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Bentham'), local('Bentham-Regular'), url(fonts/Benthan.woff) format('woff');
+}
+@font-face {
+	font-family: 'Gabriela';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Gabriela'), local('Gabriela-Regular'), url(fonts/Gabriela.woff) format('woff');
+}
+@font-face {
+	font-family: 'Gloria Hallelujah';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Gloria Hallelujah'), local('GloriaHallelujah'), url(fonts/GloriaHallelujah.woff) format('woff');
+}
+@font-face {
+	font-family: 'Henny Penny';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Henny Penny'), local('HennyPenny-Regular'), url(fonts/HennyPenny.woff) format('woff');
+}
+@font-face {
+	font-family: 'Ribeye Marrow';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Ribeye Marrow'), local('RibeyeMarrow-Regular'), url(fonts/RibeyeMarrow.woff) format('woff');
+}

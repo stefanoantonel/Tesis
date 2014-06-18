@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Silabas</title>
+
+
+<script type="application/javascript" src="comun/jquery.js"></script>
+<script type="application/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
+<script type="application/javascript" src="js/adivinaPalabra.js"></script>
+<script type="application/javascript" src="js/codigo.js"></script>
+<link rel="stylesheet" type="text/css" href="css/adivinaPalabra.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- NO SACAR -->
+<script type="text/javascript" src="comun/comun.js"></script>
+<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<!-- FIN DE NO SACAR :P -->
+
+<script type="application/javascript">
+	$(document).ready(function() {
+		ejercicio = function (){
+			readyOk("template","leftbox","rightbox");
+		}
+		
+	});	
+</script>
+</head>
+
+
+<body>
+	<header></header>
+	<article>
+			<div id="leftbox">
+				<span id="template" hidden="hidden"></span>
+			</div>
+			<!-- <button id='start'>Comenzar!</button>  -->
+		<div id="rightbox"></div>
+		
+	</article>
+	<div id="alertOk" class="alert-box success" hidden="True">
+					<span>Felicitaciones </span>
+					</br><img class="imagenSucced" src="images/caraContenta.jpg">
+					</br>Has completado muy bien tu ejercicio
+	</div>
+	<footer></footer>
+</body>
+</html>

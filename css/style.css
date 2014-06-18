@@ -1,0 +1,79 @@
+#leftbox{
+	float:left;
+	width:250px;
+	height:250px;
+	margin:5px;
+	border:3px solid;
+}
+#rightbox{
+	float:left;
+	width:250px;
+	height:250px;
+	margin:5px;
+	border:3px solid;
+}
+
+.btnMemory{
+	float: left;
+	width:80px;
+	height:100px;
+	margin:20px;
+}
+
+.divMemory{
+	position:absolute;
+	margin-top:7%;
+	margin-left:10%;
+	border:solid;
+	min-height:130px;
+	min-width:200px;
+}
+
+
+.imgCenter{
+	width: auto;	
+}
+.imgMemory{
+/*background-image: url("images/imgMemory/11.jpg");*/
+background-size:100% 100%;
+}
+
+
+.alert-box {
+    color:#555;
+    text-align:center;
+    border-radius:10px;
+    /*,Geneva,Arial,sans-serif*/
+    font-family:Optima;
+    font-size:20px;
+    padding:10px 10px 10px 36px;
+    margin:10px;
+}
+
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.error {
+	/* agregar imagen url('images/error.png') no-repeat 10px 50%*/
+    background:#ffecec ;
+    border:1px solid #f5aca6;
+}
+.success {
+    background:#e9ffd9;
+    border:1px solid #a6ca8a;
+}
+.warning {
+    background:#fff8c4 ;
+    border:1px solid #f2c779;
+}
+.notice {
+    background:#e3f7fc ;
+    border:1px solid #8ed9f6;
+}
+
+
+.imagenSucced{
+	max-width:50%; max-height:50%;
+}

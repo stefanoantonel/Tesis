@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Parte del tempale -->
+		<script type="text/javascript" src="comun/jquery.js"></script>
+		<script type="text/javascript" src="comun/comun.js"></script>
+		<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<!-- Fin parte del tempale -->
+	<script type="application/javascript" src="js/codigo.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="application/javascript">
+var img1=null;
+var img2=null;
+var contador=null;
+
+function removeBackground(img){
+	$(".btnMemory").css({backgroundImage:'none'});
+	console.log("img remove:",img);
+}
+
+function functInit(conf,x){
+	console.log("Configuracion:",conf);
+	contador=conf.length/2;
+	desordenado=disorder(conf)
+	fillTemplate2("#contenedor","#template",desordenado)
+	setImage();
+}
+
+function setImage(){
+	$('.imgMemory').click(function(){
+		$(this).css({backgroundImage : 'url(images/imgMemory/' + $(this).attr("id") + '.jpg)'});
+		if(img1==null){
+			img1=$(this).attr("id");
+			console.log("valor:"+$(this));
+			}
+		else{
+			img2=$(this).attr("id");
+			if(areEqual(img1,img2)){
+				alert("Muy bien");
+				$('#'+img1).remove().delay( 800 );
+				$('#'+img2).remove();
+				contador=contador-1;
+				if(contador==0){
+					$("#alertOk").attr("hidden", false);
+				}
+			}
+			else{
+				console.log('img1:',img1)
+				console.log($('#'+img1))
+				window.setTimeout(removeBackground, 1000,img1);
+			}
+			img1=null;
+			img2=null;
+			
+		}
+	});
+}
+
+$(document).ready(function() {
+	
+	
+	ejercicio=function(){
+		var conf;
+		conf=getConfig(1,functInit);	
+	}
+		
+});
+
+
+</script>
+
+
+<title>Memory</title>
+</head>
+<body>
+<header></header>
+		<article>
+		<div id="contenedor" class="divMemory">
+			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button>
+			<div id="alertOk" class="alert-box success" hidden="True">
+					<span>Felicitaciones </span>
+					</br><img class="imagenSucced" src="images/caraContenta.jpg">
+					</br>Has completado muy bien tu ejercicio
+			</div> 
+		</div>
+	</article>
+<footer></footer>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Memory</title>
+
+		<!-- NO SACAR -->
+		<script type="text/javascript" src="comun/jquery.js"></script>
+		<script type="text/javascript" src="comun/comun.js"></script>
+		<link rel="stylesheet" type="text/css" href="comun/comun.css">
+		<!-- FIN DE NO SACAR :P -->
+		
+		<script type="application/javascript" src="js/jquery.js"></script>
+		<script type="application/javascript" src="js/codigo.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+				
+		<style>
+			/* Estilos propios del ejercicio */
+		</style>
+		<script>
+			var img=["11","12","21","22"];
+			var imgDes=disorder(img);
+			var img1=null;
+			var img2=null;
+			
+			function removeBackground(id){
+				$("#"+id).css({backgroundImage:'none'});
+				console.log("func: "+value);
+			}
+
+			ejercicio = function (){
+				var conf;
+				conf=getConfig(1);
+				console.log("Configuracion:",conf);
+				
+				
+				//fillTemplate3("#contenedor","#template",config);
+				fillTemplate2("#contenedor","#template",imgDes)
+				
+				$('.imgMemory').click(function(){
+					$(this).css({backgroundImage : 'url(images/imgMemory/' + $(this).attr("id") + '.jpg)'});
+					if(img1==null){
+						img1=$(this).attr("id");
+						console.log("valor:"+$(this));
+						}
+					else{
+						img2=$(this).attr("id");
+						if(areEqual(img1,img2)){
+							alert("Muy bien");
+							$('#'+img1).remove();
+							$('#'+img2).remove();
+							//$("[value="+img1+"]").remove();
+							//$("[value="+img2+"]").remove();
+						}
+						else{
+							console.log('img1:',img1)
+							console.log($('#'+img1))
+							//setTimeout(function(img1){removeBackground(img1)}, 1000);
+							//elemt=
+							//$('#'+img1).delay(1000).fadeOut();
+							
+							//$("[value="+img1+"]").delay(10000000);
+							//$("[value="+img1+"]").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
+							//$("[value="+img1+"]").delay( 800 ).removeBackground(img1);
+							//$("[value="+img1+"]").delay(1000).css({backgroundImage:'none'});
+						}
+						img1=null;
+						img2=null;
+						}
+				});
+			};
+		</script>
+
+	</head>
+	<body>
+		<header></header>
+		<article>
+			<div id="contenedor" class="divMemory">
+
+			<!-- <div id="template" hidden="hidden" style="background-color: gray; width:110px;height: 110px; "></div> -->
+			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button> 
+		
+		</div>
+
+		</article>
+		<footer></footer>
+	</body>
+</html>
