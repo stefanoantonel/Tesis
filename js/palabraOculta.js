@@ -22,7 +22,8 @@ function functInit1(conf,x){
 	$(leftArray).each(function(index,e){
 		t=$('#'+e);
 		$(t).attr('name',conf[index]);
-		$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+		$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
+		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 	});
 
 }
@@ -31,7 +32,8 @@ function functInit2(conf,x){
 	$(desordenado).each(function(index,e){
     	t=$('#'+rightArray[index]);
 		$(t).attr('name',conf[index]);
-		$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+		$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
 	});
 }
 
