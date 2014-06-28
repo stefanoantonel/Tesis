@@ -1,72 +1,76 @@
-function readyOk(idObj,idBox,idBox2){
+function readyOk(idObj,left,right){
 	//dragAndDrop(idObj,idBox,idBox2);
 	
 	
-	temp1=document.getElementById(idObj);
-	left=document.getElementById(idBox);
-	right=document.getElementById(idBox2);
-	var boxes=[idBox,idBox2];
-	var temp=$(temp1).clone();
-	
-	
-	$('#start').click(function(){	
-		loadTxt(boxes,temp);
-    	//checkCorrect();
-	});
-	
-}
-function readyOk1(idObj,idBox){
-	//dragAndDrop(idObj,idBox,idBox2);
-	
-	
-	target=document.getElementById(idObj);
-	left=document.getElementById(idBox);
-	
-	var boxes=[idBox];
-	var target1=$(target).clone();
-	$(target).draggable();
-	dragAndDrop3(target,boxes);
-	
+	dragAndDrop4(right,idObj);
+	fill(idObj,left,right);
 }
 
-/*
-function drag(text, evento) {
-	evento.dataTransfer.setData('id', text.id);
-}	
-function moveOrigin(elem) {
-    var ele=$(elem).clone();
-    $(ele).removeAttr('onclick');
-	$('#contenedorOriginal').append(ele);
-    $(elem).remove();
-}
-
-function drop(contenedor, evento) {
-	var id = evento.dataTransfer.getData('id');
-	//contenedor.appendChild(document.getElementById(id));
-	var elem=document.getElementById(id);
-	var elem2=$(elem).clone();
-	$(elem2).attr('onclick', 'moveOrigin(this)');
-	$('#contenedorResultado').append(elem2);
-	$(elem).remove();
-    checkCorrect();
-   
-	evento.preventDefault();
-}
-
-function appendOnDrop(contenedor, evento) {
-	var id = evento.dataTransfer.getData('id');
-	//contenedor.appendChild(document.getElementById(id));
-	var elem=document.getElementById(id);
-	var elem2=$(elem).clone();
-	$(elem2).attr('onclick', 'moveOrigin(this)');
-	$('#contenedorResultado').append(elem2);
-	$(elem).remove();
-    checkCorrect();
-   
-	evento.preventDefault();
-}
-*/
 var numParts=0;
+
+function fill(idObj,left,right){
+	conf=getConfig("4-1",functInit1);
+	conf=getConfig("4-2",functInit2);
+}
+
+function functInit1(conf,x){
+	console.log("Configuracion:",conf);
+	
+	fillTemplate4("#contenedor","#template",desordenado)
+	setImage();
+}
+function functInit2(conf,x){
+	console.log("Configuracion:",conf);
+	contador=conf.length/2;
+	desordenado=disorder(conf)
+	fillTemplate4("#contenedor","#template",desordenado)
+	setImage();
+}
+
+
+function fillTemplate4(place,temp, elemets){
+
+    $(elemets).each(function(index,e){
+        t=$(temp).clone();
+        //$(t).attr('id',e);
+        //$(t).prop("hidden",false);
+        //$(t).css('display', 'block');
+        $(t).css('display', 'inline');
+        $(place).append(t);
+       // $(place).append("<br/>");
+        
+    });
+}
+
+function setImage(){
+
+	$(this).css({backgroundImage : 'url(images/imgOculta/' + $(this).attr("id") + '.jpg)'});
+	if(img1==null){
+		img1=$(this).attr("id");
+		console.log("valor:"+$(this));
+		}
+	else{
+		img2=$(this).attr("id");
+		if(areEqual(img1,img2)){
+			alert("Muy bien");
+			$('#'+img1).remove().delay( 800 );
+			$('#'+img2).remove();
+			contador=contador-1;
+			if(contador==0){
+				$("#alertOk").attr("hidden", false);
+			}
+		}
+		else{
+			console.log('img1:',img1)
+			console.log($('#'+img1))
+			window.setTimeout(removeBackground, 1000,img1);
+		}
+		img1=null;
+		img2=null;
+		
+	}
+
+}
 
 function loadTxt(boxes,temp){
 	$.ajax({
@@ -136,11 +140,7 @@ function fillTemplate(boxes,spanTemp, parts){
         //a.push(t);
         
         a.push(t);
-        
-        
-        //dragAndDrop(index,"leftbox","rightbox");
-        
-        
+
     });
     disorderS(a);
     $(fromBox).append(a);
@@ -156,10 +156,5 @@ function isFinished(parts){
 }
 
 function write(tex){
-	
-	//var fs = new ActiveXObject("Scripting.FileSystemObject");
-	//save_content_to_file("Hello", "C:\\test");
-    //var f = File("topics.txt", 8, true);
-    //f.WriteLine("This text will be added to the end of file");
-    //f.Close();
+
 }

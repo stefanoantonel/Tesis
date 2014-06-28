@@ -1,57 +1,10 @@
 function readyOk(idObj,idBox,idBox2){
-	//dragAndDrop(idObj,idBox,idBox2);
-	
-	
 	temp1=document.getElementById(idObj);
-	//left=document.getElementById(idBox);
-	//right=document.getElementById(idBox2);
 	var boxes=[idBox,idBox2];
-	//var temp=$(temp1).clone();
 	var temp=$(temp1);
-	
 	loadTxt(boxes,temp);
-	
-	//$('#start').click(function(){	
-    	//checkCorrect();
-	//});
-}
-/*
-function drag(text, evento) {
-	evento.dataTransfer.setData('id', text.id);
-}	
-function moveOrigin(elem) {
-    var ele=$(elem).clone();
-    $(ele).removeAttr('onclick');
-	$('#contenedorOriginal').append(ele);
-    $(elem).remove();
 }
 
-function drop(contenedor, evento) {
-	var id = evento.dataTransfer.getData('id');
-	//contenedor.appendChild(document.getElementById(id));
-	var elem=document.getElementById(id);
-	var elem2=$(elem).clone();
-	$(elem2).attr('onclick', 'moveOrigin(this)');
-	$('#contenedorResultado').append(elem2);
-	$(elem).remove();
-    checkCorrect();
-   
-	evento.preventDefault();
-}
-
-function appendOnDrop(contenedor, evento) {
-	var id = evento.dataTransfer.getData('id');
-	//contenedor.appendChild(document.getElementById(id));
-	var elem=document.getElementById(id);
-	var elem2=$(elem).clone();
-	$(elem2).attr('onclick', 'moveOrigin(this)');
-	$('#contenedorResultado').append(elem2);
-	$(elem).remove();
-    checkCorrect();
-   
-	evento.preventDefault();
-}
-*/
 var numParts=0;
 
 function loadTxt(boxes,temp){
@@ -68,8 +21,6 @@ function loadTxt(boxes,temp){
         	dragAndDrop(parts,boxes); 
         }
     });
-	
-	
 }
 
 function divide(data){
@@ -80,10 +31,6 @@ function divide(data){
 }
 
 function checkCorrect(container) {
-	//console.log('checkCorr');
-	//console.log(parts);
-	//isFinish=isFinished(parts);
-	
 	if($(container).attr('id')=='rightbox'){
 	
 		parts=$(container).children();
@@ -107,8 +54,6 @@ function checkCorrect(container) {
 	else{
 		$(container).children().removeClass('errorLetra');
 	}
-	
-			
 }
 
 function getTextRand(data){
@@ -150,14 +95,6 @@ function isFinished(parts){
 	
 }
 
-function write(tex){
-	
-	//var fs = new ActiveXObject("Scripting.FileSystemObject");
-	//save_content_to_file("Hello", "C:\\test");
-    //var f = File("topics.txt", 8, true);
-    //f.WriteLine("This text will be added to the end of file");
-    //f.Close();
-}
 function cartelFelicitaciones(){
 	$('article').html('');
 	$('#alertOk').attr('hidden',false);

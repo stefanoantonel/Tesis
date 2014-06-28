@@ -46,13 +46,15 @@ function areEqual(im1,im2){
 	return false;
 }
 function dragAndDrop(idImg,idBoxes) {
+
 	$(idImg).each(function(ind,part){
+	
 		$('#'+ind).draggable();
 		//console.log(idImg);
-		
 	});
 
     $(idBoxes).each(function(ind,box){
+    	
     	$( '#'+box ).droppable({
         	drop: function( event, ui ) {
         		$(ui.draggable).css({top:0,left:0});
@@ -70,22 +72,26 @@ function dragAndDrop(idImg,idBoxes) {
     
 }
 
-function dragAndDrop3(idImg,idBoxes) {
+function dragAndDrop4(idImg,idBoxes) {
+
 	$(idImg).each(function(ind,part){
-		$(this).draggable();
-		
-		
+	
+		$('#'+part).draggable();
+		//console.log(idImg);
 	});
 
     $(idBoxes).each(function(ind,box){
     	
     	$( '#'+box ).droppable({
         	drop: function( event, ui ) {
-        		
         		$(ui.draggable).css({top:0,left:0});
         		$( this )
         			.addClass( "ui-state-highlight" )
-        			.append(ui.draggable)  
+        			.append(ui.draggable);  
+        		//console.log('drop..',ui.draggable);
+        		
+        		
+        		
         	}
         });
     });

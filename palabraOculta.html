@@ -4,40 +4,42 @@
 
 <title>Silabas</title>
 
+<script src="comun/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/palabraOculta.js"></script>
+<script src="js/codigo.js"></script>
+<link rel="stylesheet" href="css/adivinaPalabra.css" />
+<link rel="stylesheet" href="css/style.css" />
+<!-- NO SACAR -->
+<script  src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<!-- FIN DE NO SACAR :P -->
 
-<script type="application/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="application/javascript" src="js/jquery-ui-1.10.4.min.js"></script>
-
-<script type="application/javascript" src="js/palabraOculta.js"></script>
-<script type="application/javascript" src="js/codigo.js"></script>
-<!-- 
-<link rel="stylesheet" type="text/css" href="css/adivinaPalabra.css" />
--->
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<link rel="stylesheet" href="css/bootstrap.min.css"></link>
-
-<script type="application/javascript">
-	
+<script>
 	$(document).ready(function() {
-		
-		//readyOk("template","leftbox","rightbox");
-		//$()
-		readyOk1("target","leftbox");
-		
+
+		ejercicio = function (){
+			
+		}		
+
+		left=['leftbox1','leftbox2'];
+		right=['rightbox1','rightbox2','rightbox3'];
+		target=['target'];
+		readyOk(target,left,right);
 	});
-	
 </script>
 </head>
 <body>
-	<div id="leftbox">
-		
-	</div>
+	<div id="leftbox1"></div>
+	<div id="leftbox2"></div>
 	
 	<div id="target">
 		<img alt="" src="50.png" title="dd">	
 	</div>
 	
-	
+	<div id="rightbox1"></div>
+	<div id="rightbox2"></div>
+	<div id="rightbox3"></div>
 	
 </body>
 </html>
