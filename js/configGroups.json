@@ -1,1 +1,14 @@
-{"act1":[11,12,21,22], "act2":[11,12,21,22], "act4-1":["casa","mano"], "act4-2":["perro","casa-mano","cama"]}
+{
+	"act1":[11,12,21,22], 
+	"act2":[11,12,21,22], 
+	"act4":[
+				{
+					"1":["casa","mano"],
+					"2":["cama","perro","casa-mano"]
+				},
+				{
+					"1":["botella","telefono"],
+					"2":["bote","televisor","bosque"]
+				}
+			]
+}
