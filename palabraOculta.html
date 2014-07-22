@@ -41,9 +41,27 @@
 		width: 100px;
 		height: 100px;
 	}
+	.act{
+		margin-top: 120px;
+		margin-left: 80px;
+	}
+	label{
+		margin-bottom: 20px;
+		display: block;
+		font-size: 40px;
+	}
+	#alertOk{
+		float: left;
+		position: fixed;
+		top: 115px;
+		left: 140px;
+		z-index: 1;
+	}
 </style>
 </head>
-<body>
+<body class='act'>
+	<label>Palabra Oculta</label>
+
 	<img id="leftbox1"></img>
 	<img id="leftbox2"></img>
 	
@@ -53,6 +71,11 @@
 	<img id="rightbox2"></img>
 	<img id="rightbox3"></img>
 	
+	<div id="alertOk" class="alert-box success" hidden="True">
+		<span>Felicitaciones </span>
+		</br><img class="imagenSucced" src="images/caraContenta.jpg">
+		</br>Has completado muy bien tu ejercicio
+	</div>
 </body>
 </html>
 

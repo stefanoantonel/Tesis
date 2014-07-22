@@ -4,7 +4,7 @@ var numParts=0;
 
 function readyOk(idObj,left,right){
 	//dragAndDrop(idObj,idBox,idBox2);
-	
+	console.log('red')
 	leftArray=left;
 	rightArray=right;	
 	dragAndDrop4(right,idObj);
@@ -27,6 +27,7 @@ function dragAndDrop4(idImg,idBoxes) {
         			.addClass( "ui-state-highlight" )
         			.append(ui.draggable);  
         		//console.log('drop..',ui.draggable);
+        		checkReplace($(this),ui.draggable)
         		checkCorrect($( this ).children());
         		
         		
@@ -85,6 +86,15 @@ function functInit2(conf,x){
 function checkCorrect(part) {
 	num=$(part).prop("num");
 	if(num==0){
-		alert('fin');
+		$('#alertOk').attr("hidden",false);
+	}
+}
+
+function checkReplace(box,newDiv){
+
+	if( $(box).has('img') ){
+		prevDiv=$(box).children();
+		$('body').append(prevDiv);
+		$(box).append(newDiv);
 	}
 }
