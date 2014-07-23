@@ -19,6 +19,10 @@ function removeBackground(img){
 	console.log("img remove:",img);
 }
 
+function removeImg(img){
+	$("#"+img).remove();
+}
+
 function functInit(conf,x){
 	console.log("Configuracion:",conf);
 	contador=conf.length/2;
@@ -37,12 +41,11 @@ function setImage(){
 		else{
 			img2=$(this).attr("id");
 			if(areEqual(img1,img2)){
-				alert("Muy bien");
-				$('#'+img1).remove().delay( 800 );
-				$('#'+img2).remove();
+					window.setTimeout(removeImg, 1000,img1);
+					window.setTimeout(removeImg, 1000,img2);
 				contador=contador-1;
 				if(contador==0){
-					$("#alertOk").attr("hidden", false);
+					$("#alertOk").delay( 1100 ).fadeIn( 400 )
 				}
 			}
 			else{
