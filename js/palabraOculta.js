@@ -28,8 +28,8 @@ function dragAndDrop4(idImg,idBoxes) {
         			.append(ui.draggable);  
         		//console.log('drop..',ui.draggable);
         		checkReplace($(this),ui.draggable)
-        		checkCorrect($( this ).children());
-        		
+        		//checkCorrect($( this ).children());
+        		checkCorrect(ui.draggable);
         		
         	}
         });
@@ -87,6 +87,9 @@ function checkCorrect(part) {
 	num=$(part).prop("num");
 	if(num==0){
 		$('#alertOk').attr("hidden",false);
+	}
+	else{
+		$(part).effect('shake');
 	}
 }
 
