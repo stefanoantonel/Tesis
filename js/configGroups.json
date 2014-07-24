@@ -15,5 +15,15 @@
 					"1":["botella","telefono"],
 					"2":["bote","televisor","bosque"]
 				}
+			],
+	"act5":[
+				{
+					"1":["televisor","casa","mano"],
+					"2":["cama","perro","casa-mano"]
+				},
+				{
+					"1":["casa","botella","telefono"],
+					"2":["bote","televisor","bosque"]
+				}
 			]
 }

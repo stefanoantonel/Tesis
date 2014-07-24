@@ -37,7 +37,7 @@ function dragAndDrop(idImg,idBoxes) {
 function dragAndDrop(idImg,idBoxes,functions) {
 
 	//console.log('DragDrop');
-	console.log(idImg);
+	console.log("target:",idBoxes);
 	$(idImg).each(function(ind,part){
 		
 		$(this).draggable({

@@ -1,6 +1,7 @@
 var leftArray=0
 var rightArray=0
 var numParts=0;
+var contOriginal;
 
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
@@ -12,87 +13,36 @@ function readyOk(idObj,left,right){
 	//dragAndDrop(idObj,idBox,idBox2);
 	
 	//fill(idObj,left,right);
-	conf=getConfig("4",randomGroup);
+	conf=getConfig("5",randomGroup);
 	
 }
-
-
-
-/*
-function dragAndDrop4(idImg,idBoxes,functions) {
-	$(idImg).each(function(ind,part){
-	
-		$('#'+part).draggable();
-		//console.log(idImg);
-	});
-
-    $(idBoxes).each(function(ind,box){
-    	
-    	$( '#'+box ).droppable({
-        	drop: function( event, ui ) {
-        		$(ui.draggable).css({top:0,left:0});
-        		$( this )
-        			.addClass( "ui-state-highlight" )
-        			.append(ui.draggable);  
-        		//console.log('drop..',ui.draggable);
-        		//checkCorrect($( this ).children());
-        		
-        		//checkReplace($(this),ui.draggable);
-        		//checkCorrect(ui.draggable);
-
-        		functions(this,ui.draggable);
-        		
-        	}
-        });
-    });
-    
-}
-*/
-
-/*
-function fill(idObj,left,right){
-	conf=getConfig("4",randomGroup);
-	//conf=getConfig2("4","2",functInit2);
-}
-*/
 
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	left=group["1"];
 	right=group["2"];
-	functInit1(left); //paso el array solamente 
-	functInit2(right); //paso el array solamente
+	functInit(left,"left"); //paso el array solamente 
+	functInit(right,"right"); //paso el array solamente
 	contRight=$('#rightContainer').children();
-	idObj=['target'];
+	contLeft=$('#leftContainer').children();
+	idObj=$('#target');
 	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contLeft,idObj,functionsDD);
+	console.log("drag",$( ".img" ));
+	$( ".img" ).on( "dragstart", function( event, ui ) {
+		contOriginal=$(this).parents(".container");
+		console.log("c:",contOriginal);
+	} );
 }
 
-//sin desordenar
-function functInit1(conf,x){
-	
-	
-	$(conf).each(function(index,e){
-		t=$('#leftboxTemp').clone();
-		//t=$('#'+e);
-		$(t).attr('id','left'+index);
-		$(t).attr('name',conf[index]);
-		$(t).removeAttr('hidden');
-		//$(t).attr('num',index);
-		$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
-		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-		$('#leftContainer').append(t);
 
-	});
-
-}
-
-function functInit2(conf,x){
+function functInit(conf,place){
 	//desordenado=disorder(conf)
 	//$(desordenado).each(function(index,e){
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);
-    	t=$('#rightboxTemp').clone();
+    	t=$('#'+place+'boxTemp').clone();
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
 		$(t).attr('name',conf[index]);
@@ -102,7 +52,7 @@ function functInit2(conf,x){
 		imgs.push(t);
 	});
 	disorder(imgs);
-	$("#rightContainer").append(imgs);
+	$("#"+place+"Container").append(imgs);
 	
 }
 
