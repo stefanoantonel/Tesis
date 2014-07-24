@@ -1,6 +1,11 @@
 {
 	"act1":[11,12,21,22], 
-	"act2":[11,12,21,22], 
+	"act2":[
+			"pe lo ta",
+			"ca la ba za",
+			"ca be za",
+			"mer ca do"
+			], 
 	"act4":[
 				{
 					"1":["casa","mano"],

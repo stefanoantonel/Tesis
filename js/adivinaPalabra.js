@@ -1,12 +1,29 @@
+var boxes;
+var temp;
+
 function readyOk(idObj,idBox,idBox2){
 	temp1=document.getElementById(idObj);
-	var boxes=[idBox,idBox2];
-	var temp=$(temp1);
-	loadTxt(boxes,temp);
+	boxes=[idBox,idBox2];
+	temp=$(temp1);
+	//loadTxt(boxes,temp);
+	var conf;
+	conf=getConfig(2,callback);
+}
+
+function callback(data){
+	console.log('callback');
+	console.log(boxes);
+	console.log(temp);
+	var selectedText=getTextRand(data);
+	var parts=divide(selectedText);
+	numParts=$(parts).size();
+
+	fillTemplate(boxes,temp,parts);
+	dragAndDrop(parts,boxes); 
 }
 
 var numParts=0;
-
+/*
 function loadTxt(boxes,temp){
 	$.ajax({
         url : "test.txt",
@@ -22,6 +39,7 @@ function loadTxt(boxes,temp){
         }
     });
 }
+*/
 
 function divide(data){
     //divido en partes segun los espacios
@@ -57,11 +75,13 @@ function checkCorrect(container) {
 }
 
 function getTextRand(data){
-    var lines=data.split(/\r?\n/);
-    var quantLines=$(lines).size();
+	console.log(data);
+    //var lines=data.split(/\r?\n/);
+    //var quantLines=$(lines).size();
+    var quantLines=$(data).size();
     //saco un numero para decirle el indice del la palabra
     var numberRand = Math.floor(Math.random() * quantLines);
-    return lines[numberRand];
+    return data[numberRand];
 }
 
 

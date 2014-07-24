@@ -2,14 +2,14 @@
 <html>
 <head>
 
-<title>Silabas</title>
+<title>Adivina Palabra</title>
 
 
 <script type="application/javascript" src="comun/jquery.js"></script>
 <script type="application/javascript" src="js/jquery-ui.min.js"></script>
 <script type="application/javascript" src="js/adivinaPalabra.js"></script>
 <script type="application/javascript" src="js/codigo.js"></script>
-<link rel="stylesheet" type="text/css" href="css/adivinaPalabra.css" />
+
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <!-- NO SACAR -->
 <script type="text/javascript" src="comun/comun.js"></script>
@@ -32,17 +32,39 @@
 		left: 140px;
 		z-index: 1;
 	}
-</style>>
+	span{
+		color:#FFA500;
+		font-size:40px;
+		float: left;
+		margin-right: 2%;
+		margin-left: 1%;
+		}
+
+	article{
+		margin-left: 9%;
+		margin-top: 15%;
+	}
+	.errorLetra{
+		color: red;
+	}
+	#leftbox{
+		height: 100px;
+	}
+	#rightbox{
+		height: 100px;
+	}
+	
+</style>
 </head>
 
 
 <body>
 	<header></header>
 	<article>
-			<div id="leftbox">
-				<span id="template" hidden="hidden"></span>
-			</div>
-			<!-- <button id='start'>Comenzar!</button>  -->
+		<div id="leftbox">
+			<span id="template" hidden="hidden"></span>
+		</div>
+		<!-- <button id='start'>Comenzar!</button>  -->
 		<div id="rightbox"></div>
 		
 	</article>
