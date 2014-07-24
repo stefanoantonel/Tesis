@@ -90,6 +90,9 @@ function checkCorrect(part) {
 	}
 	else{
 		$(part).effect('shake');
+		//$(part).css('border',3px solid; border-color: red;')
+		//$(part).css('border','3px solid');
+		$(part).css('border-color','red');
 	}
 }
 
@@ -97,7 +100,9 @@ function checkReplace(box,newDiv){
 
 	if( $(box).has('img') ){
 		prevDiv=$(box).children();
+		$(prevDiv).css('border-color','black');
 		$('body').append(prevDiv);
 		$(box).append(newDiv);
+
 	}
 }
