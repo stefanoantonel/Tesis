@@ -15,5 +15,11 @@
 					"1":["botella","telefono"],
 					"2":["bote","televisor","bosque"]
 				}
+			],
+	"act6":[
+				{
+					"1":["pato","gato"],
+					"2":["gato","botella","luna"]
+				}
 			]
 }

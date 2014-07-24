@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Cambiar Palabras</title>
+
+<script src="comun/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/cambiarPalabra.js"></script>
+<script src="js/codigo.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<!-- NO SACAR -->
+<script  src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<!-- FIN DE NO SACAR :P -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		ejercicio = function (){
+			//left=['leftbox1','leftbox2'];
+			//right=['rightbox1','rightbox2','rightbox3'];
+			//right=['1','2','3'];
+			target=['target'];
+			readyOk(target,'leftbox','rightbox');
+		}		
+		
+	});
+</script>
+
+<style >
+	.img{
+		
+   		border:3px solid;
+   		border-color: black;
+		margin-right: 3px;
+		width: 90px;
+		height: 90px;
+		
+		
+	}
+	
+	.img-rigth{
+		float:left;
+		margin:2%;
+	}
+	
+	#target{
+		float:left;
+		border:3px;
+		border-style: dashed;
+   		border-color: black;
+		display: inline-block;
+		border-width: medium;
+		width: 100px;
+		height: 100px;
+		margin:5%;
+	}
+	.act{
+		margin-top: 70px;
+		margin-left: 80px;
+	}
+/* 	label{ */
+/* 		margin-bottom: 20px; */
+/* 		display: block; */
+/* 		font-size: 40px; */
+/* 	} */
+	#alertOk{
+		float: left;
+		position: fixed;
+		top: 115px;
+		left: 140px;
+		z-index: 1;
+	}
+	#leftContainer{
+		max-width: 300px;
+		float:left;
+		margin-top:6%;
+	}
+	#rightContainer{
+		float:left;
+		max-width: 100px;
+		
+	}
+	article{		
+		overflow:auto;
+	}
+	.word{
+		font-size: 50px;
+	}
+
+</style>
+</head>
+<body class='act'>
+	<!-- label>Palabra Oculta</label> -->
+	<header></header>
+	<article>
+		<div id="leftboxTemp" class='word' hidden="hidden"></div>
+		<div id="leftContainer"></div>
+
+		<div id="target"></div>
+		
+		<img id="rightboxTemp" class="img img-rigth" hidden="hidden"></img>
+		<div id="rightContainer"></div>
+
+		
+	</article>
+	<div id="alertOk" class="alert-box success" hidden="True">
+		<span>Felicitaciones </span>
+		</br><img class="imagenSucced" src="images/caraContenta.jpg">
+		</br>Has completado muy bien tu ejercicio
+	</div>
+	<footer></footer>
+</body>
+</html>
+
