@@ -6,12 +6,18 @@ function readyOk(idObj,left,right){
 	//dragAndDrop(idObj,idBox,idBox2);
 	console.log('red')
 	leftArray=left;
-	rightArray=right;	
-	dragAndDrop4(right,idObj);
+	rightArray=right;
+
+	dragAndDrop4(right,idObj,functionsDD);
 	fill(idObj,left,right);
 }
 
-function dragAndDrop4(idImg,idBoxes) {
+function functionsDD(context,currElem){
+	checkReplace(context,currElem);
+	checkCorrect(currElem);
+}
+
+function dragAndDrop4(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
 	
 		$('#'+part).draggable();
@@ -27,9 +33,12 @@ function dragAndDrop4(idImg,idBoxes) {
         			.addClass( "ui-state-highlight" )
         			.append(ui.draggable);  
         		//console.log('drop..',ui.draggable);
-        		checkReplace($(this),ui.draggable)
         		//checkCorrect($( this ).children());
-        		checkCorrect(ui.draggable);
+        		
+        		//checkReplace($(this),ui.draggable);
+        		//checkCorrect(ui.draggable);
+
+        		functions(this,ui.draggable);
         		
         	}
         });

@@ -47,8 +47,9 @@ function dragAndDrop(idImg,idBoxes) {
 
 	$(idImg).each(function(ind,part){
 	
-		$('#'+ind).draggable();
-		//console.log(idImg);
+		$('#'+ind).draggable({
+			revert:true,
+		});
 	});
 
     $(idBoxes).each(function(ind,box){
