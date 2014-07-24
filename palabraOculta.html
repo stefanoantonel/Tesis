@@ -38,9 +38,16 @@
 		width: 90px;
 		height: 90px;
 		
+		
+	}
+	
+	.img{
+		float:left;
+		margin:2%;
 	}
 	
 	#target{
+		float:left;
 		border:3px;
 		border-style: dashed;
    		border-color: black;
@@ -48,16 +55,17 @@
 		border-width: medium;
 		width: 100px;
 		height: 100px;
+		margin:5%;
 	}
 	.act{
-		margin-top: 100px;
+		margin-top: 70px;
 		margin-left: 80px;
 	}
-	label{
-		margin-bottom: 20px;
-		display: block;
-		font-size: 40px;
-	}
+/* 	label{ */
+/* 		margin-bottom: 20px; */
+/* 		display: block; */
+/* 		font-size: 40px; */
+/* 	} */
 	#alertOk{
 		float: left;
 		position: fixed;
@@ -67,30 +75,31 @@
 	}
 	#leftContainer{
 		max-width: 300px;
-
+		float:left;
+		margin-top:6%;
 	}
 	#rightContainer{
-		max-height: 300px;
+		float:left;
+		max-width: 100px;
+		
+	}
+	article{		
+		overflow:auto;
 	}
 
 </style>
 </head>
 <body class='act'>
-	<label>Palabra Oculta</label>
+	<!-- label>Palabra Oculta</label> -->
 
 	<article>
 		<img id="leftboxTemp" hidden="hidden"></img>
-		<div id="leftContainer">
-			
-		</div>
+		<div id="leftContainer"></div>
 
 		<div id="target"></div>
 		
-		
-		<img id="rightboxTemp" hidden="hidden"></img>
-		<div id="rightContainer">
-			
-		</div>
+		<img id="rightboxTemp" class="img" hidden="hidden"></img>
+		<div id="rightContainer"></div>
 
 		
 	</article>
