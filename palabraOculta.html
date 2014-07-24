@@ -24,13 +24,12 @@
 			target=['target'];
 			readyOk(target,'leftbox','rightbox');
 		}		
-		ejercicio();
 		
 	});
 </script>
 
 <style >
-	img{
+	.img{
 		
    		border:3px solid;
    		border-color: black;
@@ -41,7 +40,7 @@
 		
 	}
 	
-	.img{
+	.img-rigth{
 		float:left;
 		margin:2%;
 	}
@@ -91,14 +90,14 @@
 </head>
 <body class='act'>
 	<!-- label>Palabra Oculta</label> -->
-
+	<header></header>
 	<article>
-		<img id="leftboxTemp" hidden="hidden"></img>
+		<img id="leftboxTemp" class="img" hidden="hidden"></img>
 		<div id="leftContainer"></div>
 
 		<div id="target"></div>
 		
-		<img id="rightboxTemp" class="img" hidden="hidden"></img>
+		<img id="rightboxTemp" class="img img-rigth" hidden="hidden"></img>
 		<div id="rightContainer"></div>
 
 		
@@ -108,6 +107,7 @@
 		</br><img class="imagenSucced" src="images/caraContenta.jpg">
 		</br>Has completado muy bien tu ejercicio
 	</div>
+	<footer></footer>
 </body>
 </html>
 
