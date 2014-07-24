@@ -39,15 +39,16 @@ function dragAndDrop(idImg,idBoxes,functions) {
 	//console.log('DragDrop');
 	console.log(idImg);
 	$(idImg).each(function(ind,part){
-		console.log($('#'+ind));
-		$('#'+ind).draggable({
+		
+		$(this).draggable({
 			revert:true,
 		});
 	});
 
     $(idBoxes).each(function(ind,box){
     	
-    	$( '#'+box ).droppable({
+    	//$( '#'+box ).droppable({
+    	$( this ).droppable({
         	drop: function( event, ui ) {
         		$(ui.draggable).css({top:0,left:0});
         		$( this )

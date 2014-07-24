@@ -61,9 +61,9 @@ function randomGroup(conf){
 	left=group["1"];
 	right=group["2"];
 	functInit1(left); //paso el array solamente 
-	functInit2(right); //paso el array solamente
+	functInit2(right); //paso el array solamente para desordenar
 	contRight=$('#rightContainer').children();
-	idObj=['target'];
+	idObj=$('#target');
 	dragAndDrop(contRight,idObj,functionsDD);
 }
 
@@ -72,7 +72,7 @@ function functInit1(conf,x){
 	
 	
 	$(conf).each(function(index,e){
-		t=$('#leftbox').clone();
+		t=$('#leftboxTemp').clone();
 		//t=$('#'+e);
 		$(t).attr('id','left'+index);
 		$(t).attr('name',conf[index]);
@@ -92,7 +92,7 @@ function functInit2(conf,x){
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);
-    	t=$('#rightbox').clone();
+    	t=$('#rightboxTemp').clone();
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
 		$(t).attr('name',conf[index]);
