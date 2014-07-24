@@ -2,13 +2,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <!-- Parte del tempale -->
-		<script type="text/javascript" src="comun/jquery.js"></script>
-		<script type="text/javascript" src="comun/comun.js"></script>
-		<link rel="stylesheet" type="text/css" href="comun/comun.css">
+	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="comun/comun.js"></script>
+	<link rel="stylesheet" type="text/css" href="comun/comun.css">
 <!-- Fin parte del tempale -->
 	<script type="application/javascript" src="js/codigo.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 <script type="application/javascript">
 var img1=null;
 var img2=null;
@@ -23,12 +25,36 @@ function removeImg(img){
 	$("#"+img).remove();
 }
 
+
+function fillTemplate2(place,temp, elemets){
+
+    $(elemets).each(function(index,e){
+        t=$(temp).clone();
+        $(t).attr('id',e);
+        $(t).prop("hidden",false);
+        //$(t).css('display', 'block');
+        $(t).css('display', 'inline');
+        $(place).append(t);
+       // $(place).append("<br/>");
+        
+    });
+}
+
 function functInit(conf,x){
 	console.log("Configuracion:",conf);
 	contador=conf.length/2;
 	desordenado=disorder(conf)
 	fillTemplate2("#contenedor","#template",desordenado)
 	setImage();
+}
+
+function areEqual(im1,im2){
+	console.log("compare: "+im1+" con:"+ im2);
+	if(im1==im2){return false;}
+	x=Math.floor(parseInt(im1)/10);
+	y=Math.floor(parseInt(im2)/10);
+	if(x==y){return true;}
+	return false;
 }
 
 function setImage(){
@@ -78,15 +104,18 @@ $(document).ready(function() {
 </head>
 <body>
 <header></header>
-		<article>
+	<article>
+			
 		<div id="contenedor" class="divMemory">
 			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button>
-			<div id="alertOk" class="alert-box success" hidden="True">
-					<span>Felicitaciones </span>
-					</br><img class="imagenSucced" src="images/caraContenta.jpg">
-					</br>Has completado muy bien tu ejercicio
-			</div> 
+		</div> 	
+		
+		<div id="alertOk" class="alert-box success" hidden="True">
+			<span>Felicitaciones </span>
+			</br><img class="imagenSucced" src="images/caraContenta.jpg">
+			</br>Has completado muy bien tu ejercicio
 		</div>
+		
 	</article>
 <footer></footer>
 </body>

@@ -2,21 +2,23 @@ var leftArray=0
 var rightArray=0
 var numParts=0;
 
-function readyOk(idObj,left,right){
-	//dragAndDrop(idObj,idBox,idBox2);
-	console.log('red')
-	leftArray=left;
-	rightArray=right;
-
-	dragAndDrop4(right,idObj,functionsDD);
-	fill(idObj,left,right);
-}
-
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
-	checkCorrect(currElem);
+	isCorrect=checkCorrect(currElem);
+	if (isCorrect==true){cartelFelicitaciones();}
 }
 
+function readyOk(idObj,left,right){
+	//dragAndDrop(idObj,idBox,idBox2);
+	
+	//fill(idObj,left,right);
+	conf=getConfig("4",randomGroup);
+	
+}
+
+
+
+/*
 function dragAndDrop4(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
 	
@@ -45,11 +47,14 @@ function dragAndDrop4(idImg,idBoxes,functions) {
     });
     
 }
+*/
 
+/*
 function fill(idObj,left,right){
 	conf=getConfig("4",randomGroup);
 	//conf=getConfig2("4","2",functInit2);
 }
+*/
 
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
@@ -57,18 +62,26 @@ function randomGroup(conf){
 	right=group["2"];
 	functInit1(left); //paso el array solamente 
 	functInit2(right); //paso el array solamente
+	contRight=$('#rightContainer').children();
+	idObj=['target'];
+	dragAndDrop(contRight,idObj,functionsDD);
 }
 
 //sin desordenar
 function functInit1(conf,x){
 	
 	
-	$(leftArray).each(function(index,e){
-		t=$('#'+e);
+	$(conf).each(function(index,e){
+		t=$('#leftbox').clone();
+		//t=$('#'+e);
+		$(t).attr('id','left'+index);
 		$(t).attr('name',conf[index]);
+		$(t).removeAttr('hidden');
 		//$(t).attr('num',index);
 		$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+		$('#leftContainer').append(t);
+
 	});
 
 }
@@ -78,7 +91,10 @@ function functInit2(conf,x){
 	//$(desordenado).each(function(index,e){
 	imgs=[];
 	$(conf).each(function(index,e){
-    	t=$('#'+rightArray[index]);
+    	//t=$('#'+rightArray[index]);
+    	t=$('#rightbox').clone();
+		$(t).attr('id',index);
+		$(t).removeAttr('hidden');
 		$(t).attr('name',conf[index]);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
@@ -86,7 +102,7 @@ function functInit2(conf,x){
 		imgs.push(t);
 	});
 	disorder(imgs);
-	$("body").append(imgs);
+	$("#rightContainer").append(imgs);
 	
 }
 
@@ -95,13 +111,14 @@ function functInit2(conf,x){
 function checkCorrect(part) {
 	num=$(part).prop("num");
 	if(num==0){
-		$('#alertOk').attr("hidden",false);
+		return true;
 	}
 	else{
 		$(part).effect('shake');
 		//$(part).css('border',3px solid; border-color: red;')
 		//$(part).css('border','3px solid');
 		$(part).css('border-color','red');
+		return false;
 	}
 }
 
@@ -110,7 +127,7 @@ function checkReplace(box,newDiv){
 	if( $(box).has('img') ){
 		prevDiv=$(box).children();
 		$(prevDiv).css('border-color','black');
-		$('body').append(prevDiv);
+		$('#rightContainer').append(prevDiv);
 		$(box).append(newDiv);
 
 	}

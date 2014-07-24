@@ -8,7 +8,6 @@
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/palabraOculta.js"></script>
 <script src="js/codigo.js"></script>
-<link rel="stylesheet" href="css/adivinaPalabra.css" />
 <link rel="stylesheet" href="css/style.css" />
 <!-- NO SACAR -->
 <script  src="comun/comun.js"></script>
@@ -19,10 +18,11 @@
 	$(document).ready(function() {
 
 		ejercicio = function (){
-			left=['leftbox1','leftbox2'];
-			right=['rightbox1','rightbox2','rightbox3'];
+			//left=['leftbox1','leftbox2'];
+			//right=['rightbox1','rightbox2','rightbox3'];
+			//right=['1','2','3'];
 			target=['target'];
-			readyOk(target,left,right);
+			readyOk(target,'leftbox','rightbox');
 		}		
 		ejercicio();
 		
@@ -65,20 +65,40 @@
 		left: 140px;
 		z-index: 1;
 	}
+	#leftContainer{
+		max-width: 300px;
+
+	}
+	#rightContainer{
+		max-height: 300px;
+	}
+
 </style>
 </head>
 <body class='act'>
 	<label>Palabra Oculta</label>
-
+	<!--
 	<img id="leftbox1"></img>
 	<img id="leftbox2"></img>
-	
+	-->
+	<img id="leftbox" hidden="hidden"></img>
+	<div id="leftContainer">
+		
+	</div>
+
 	<div id="target"></div>
 	
+	<!--
 	<img id="rightbox1"></img>
 	<img id="rightbox2"></img>
 	<img id="rightbox3"></img>
-	
+	-->
+	<img id="rightbox" hidden="hidden"></img>
+	<div id="rightContainer">
+		
+		
+	</div>
+
 	<div id="alertOk" class="alert-box success" hidden="True">
 		<span>Felicitaciones </span>
 		</br><img class="imagenSucced" src="images/caraContenta.jpg">

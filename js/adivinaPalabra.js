@@ -11,15 +11,18 @@ function readyOk(idObj,idBox,idBox2){
 }
 
 function callback(data){
-	console.log('callback');
-	console.log(boxes);
-	console.log(temp);
+	
 	var selectedText=getTextRand(data);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
 
 	fillTemplate(boxes,temp,parts);
-	dragAndDrop(parts,boxes); 
+	dragAndDrop(parts,boxes,functionsDD); 
+}
+
+function functionsDD(context,currElem){
+	isCorrect=checkCorrect(context);
+	if (isCorrect==true){cartelFelicitaciones();}
 }
 
 var numParts=0;
@@ -100,7 +103,7 @@ function fillTemplate(boxes,temp, parts){
         a.push(t);
         //dragAndDrop(index,"leftbox","rightbox");
     });
-    disorderS(a);
+    disorder(a);
     $(fromBox).append(a);
    
 }
