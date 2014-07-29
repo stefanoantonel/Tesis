@@ -1,12 +1,17 @@
+/*
+ * Falta corregir el tema de los contenedores originales
+*/
+
 var leftArray=0
 var rightArray=0
 var numParts=0;
 var contOriginal;
+var contSegundo;
 
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){cartelFelicitaciones();}
+	//if (isCorrect==true){cartelFelicitaciones();}
 }
 
 function readyOk(idObj,left,right){
@@ -30,7 +35,10 @@ function randomGroup(conf){
 	dragAndDrop(contLeft,idObj,functionsDD);
 	console.log("drag",$( ".img" ));
 	$( ".img" ).on( "dragstart", function( event, ui ) {
-		contOriginal=$(this).parents(".container");
+		if(contOriginal==null)
+			contOriginal=$(this).parents(".container");
+		else
+			contSegundo=$(this).parents(".container");
 		console.log("c:",contOriginal);
 	} );
 }
@@ -77,7 +85,9 @@ function checkReplace(box,newDiv){
 	if( $(box).has('img') ){
 		prevDiv=$(box).children();
 		$(prevDiv).css('border-color','black');
-		$('#rightContainer').append(prevDiv);
+		$(contOriginal).append(prevDiv);
+		contOriginal=contSegundo;
+		contSegundo=null;
 		$(box).append(newDiv);
 
 	}
