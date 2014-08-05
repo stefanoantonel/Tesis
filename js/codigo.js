@@ -75,7 +75,8 @@ function getConfig(numAct,callBack){
 
 function cartelFelicitaciones(){
 	$('article').html('');
-	$('#alertOk').attr('hidden',false);
+	$('#alertOk').delay( 300 ).fadeIn( 400 );
+	//$('#alertOk').attr('hidden',false);
 }
 
 
