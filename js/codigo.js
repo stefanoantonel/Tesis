@@ -45,7 +45,7 @@ function dragAndDrop(idImg,idBoxes,functions) {
 	});
 
     $(idBoxes).each(function(ind,box){
-    	
+    	console.log(this);
     	//$( '#'+box ).droppable({
     	$( this ).droppable({
         	drop: function( event, ui ) {
@@ -74,7 +74,7 @@ function getConfig(numAct,callBack){
 }
 
 function cartelFelicitaciones(){
-	$('article').html('');
+	$('article').html('').delay(1000);
 	$('#alertOk').delay( 300 ).fadeIn( 400 );
 	//$('#alertOk').attr('hidden',false);
 }

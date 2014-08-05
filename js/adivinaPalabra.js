@@ -17,7 +17,10 @@ function callback(data){
 	numParts=$(parts).size();
 
 	fillTemplate(boxes,temp,parts);
-	dragAndDrop(parts,boxes,functionsDD); 
+	//parts=$("#leftbox").children();
+	parts=$("#"+boxes[0]).children('span');
+	box=[$("#"+boxes[0]), $("#"+boxes[1])];
+	dragAndDrop(parts,box,functionsDD); 
 }
 
 function functionsDD(context,currElem){
@@ -46,6 +49,7 @@ function loadTxt(boxes,temp){
 
 function divide(data){
     //divido en partes segun los espacios
+
     var parts=data.split(" ");
     numParts=$(parts).size();
     return parts;
@@ -55,7 +59,7 @@ function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
 	
 		parts=$(container).children();
-		console.log(parts);
+		
 		mal=0;
 		for(var i = 0; i < $(parts).size(); i++){ 
 			//console.log('part id',parseInt(parts[i].id),'   i',i);
@@ -78,7 +82,7 @@ function checkCorrect(container) {
 }
 
 function getTextRand(data){
-	console.log(data);
+	
     //var lines=data.split(/\r?\n/);
     //var quantLines=$(lines).size();
     var quantLines=$(data).size();
@@ -109,7 +113,7 @@ function fillTemplate(boxes,temp, parts){
 }
 function isFinished(parts){
 	//console.log('isFinish');
-	console.log('es igual',parts.size()==numParts);
+	//console.log('es igual',parts.size()==numParts);
 	if (parts.size()==numParts){
 		//console.log('true');
 		return true;
