@@ -38,7 +38,7 @@ actividad.init = function() {
 		var txt = actividad.sco.get('cmi.core.student_name');
 		$("#alumno").html("<b>Alumno:</b> " + txt);
 		
-		console.log(actividad.sco.get("cmi.core.lesson_status"));
+		//console.log(actividad.sco.get("cmi.core.lesson_status"));
 	});
 
 	//Comienzo la secuencia animación de inicio

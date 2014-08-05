@@ -46,6 +46,21 @@ function functInit(conf,x){
 	desordenado=disorder(conf)
 	fillTemplate2("#contenedor","#template",desordenado)
 	setImage();
+
+	$("#play").click(function(){
+			
+		$.each($('audio'), function () {
+		   // $(this)[0].pause();
+		   console.log("this:",this);
+		   this.pause();
+		});
+
+		$("#p")[0].play();
+	});
+	$("#pause").click(function(){
+		$("#p")[0].pause();
+	});
+	
 }
 
 function areEqual(im1,im2){
@@ -94,7 +109,9 @@ $(document).ready(function() {
 		var conf;
 		conf=getConfig(1,functInit);	
 	}
-		
+	
+	
+	
 });
 
 
@@ -109,12 +126,14 @@ $(document).ready(function() {
 	<article>	
 		<div id="contenedor" class="divMemory">
 			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button>
+			<button id="play"> PLAY</button>
+			<button id="pause"> PAUSE</button>
 		</div>
 		
-		<audio autoplay="autoplay">
-		   <source src="audio/prueba.mp3" type="audio/mp3" />
+		<audio id="p">
+		   <source src="audio/p2.mp3" type="audio/mp3" />
 		</audio>
-		 	
+		
 	</article>
 		<div id="alertOk" class="alert-box success" hidden="True">
 			<span>Felicitaciones </span>
