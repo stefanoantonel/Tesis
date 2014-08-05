@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Amigo de Quien</title>
+<!-- Parte del tempale -->
+	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="comun/comun.js"></script>
+	<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<!-- Fin parte del tempale -->
+
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/amigoDeQuien.js"></script>
+<script src="js/codigo.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		
+		target=$('#target');
+		readyOk(target,'leftbox','rightbox');
+		/*ejercicio = function (){
+			target=$('#target');
+			readyOk(target,'leftbox','rightbox');
+		}		
+		*/
+	});
+</script>
+
+<style>
+	.img{
+		
+   		border:3px solid;
+   		border-color: black;
+		margin-right: 3px;
+		width: 90px;
+		height: 90px;
+		float:left;
+		margin:2%;
+	}
+	
+	#target{
+		border:3px;
+		border-style: dashed;
+   		border-color: black;
+		display: inline-block;
+		border-width: medium;
+		width: 200px;
+		height: 100px;
+		float:left;
+		margin:5%;
+	}
+	.act{
+		margin-top: 70px;
+		margin-left: 80px;
+	}
+	label{
+		margin-bottom: 20px;
+		display: block;
+		font-size: 40px;
+	}
+	#alertOk{
+		float: left;
+		position: fixed;
+		top: 115px;
+		left: 140px;
+		z-index: 1;
+	}
+	#leftContainer{
+		max-width: 100px;
+		float:left;
+		display: inline-block;
+
+	}
+	#rightContainer{
+		max-width: 100px;
+		float:left;
+	}
+	
+	section{
+		overflow:auto;
+		margin-left:3%;
+	}
+</style>
+</head>
+<body class='act'>
+	<header></header>
+	<section>
+		<div id="leftContainer" class="container"></div>
+		<img id="leftboxTemp" class="img" hidden="hidden"></img>
+		
+		<div id="target"></div>
+		
+		<div id="rightContainer" class="container"></div>
+		<img id="rightboxTemp" class="img" hidden="hidden"></img>
+		
+	</section>
+	<div id="alertOk" class="alert-box success" hidden="True">
+		<span>Felicitaciones </span>
+		</br><img class="imagenSucced" src="images/caraContenta.jpg">
+		</br>Has completado muy bien tu ejercicio
+	</div>
+	<footer></footer>
+</body>
+</html>
+
