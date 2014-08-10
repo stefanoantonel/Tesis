@@ -53,6 +53,7 @@ function fillTemplate2(place,temp, config){
 		for (var i=0; i<2; i++){
 		//$(element).each(function(index,e){
 	        t=$(temp).clone();
+	        $(t).attr('id',x*10+i);
 	        $(t).attr('name',group[i]);
 	        $(t).prop("hidden",false);
 	        $(t).css('display', 'inline');
