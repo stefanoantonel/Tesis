@@ -61,7 +61,10 @@ function disorder(o){ //in: list of numbers out: unorder list
 <<<<<<< HEAD
 */
 
-
+function disorder(o){ //in: list of numbers out: unorder list 
+		for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+		return o;
+	};
 
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
