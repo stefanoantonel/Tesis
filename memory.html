@@ -26,7 +26,7 @@ function removeImg(img){
 }
 
 
-function fillTemplate2(place,temp, elemets){
+/*function fillTemplate2(place,temp, elemets){
 
     $(elemets).each(function(index,e){
         t=$(temp).clone();
@@ -39,7 +39,30 @@ function fillTemplate2(place,temp, elemets){
         
     });
 }
+*/
 
+function fillTemplate2(place,temp, config){
+	var elements = config[0];
+	var allElements = [];
+	for (var x=1; x<3; x++){
+	//$(elements).each(function(ind,element){
+		//console.log("ind: "+ind);
+		//ind=ind+1;
+		//console.log("elementos: "+element[ind]);
+		var group = elements[x];
+		for (var i=0; i<2; i++){
+		//$(element).each(function(index,e){
+	        t=$(temp).clone();
+	        $(t).attr('id',(x*10)+i);
+	        $(t).attr('name',group[i]);
+	        $(t).prop("hidden",false);
+	        $(t).css('display', 'inline');
+	        //$(place).append(t);
+	        allElements.push(t);
+		}
+		$(place).append(allElements);
+	}
+}
 function stopAudio(){
 	$.each($('audio'), function () {
 		this.pause();
@@ -50,18 +73,18 @@ function stopAudio(){
 function functInit(conf,x){
 	console.log("Configuracion:",conf);
 	contador=conf.length/2;
-	desordenado=disorder(conf)
-	fillTemplate2("#contenedor","#template",desordenado)
+	//desordenado=disorder(conf)
+	fillTemplate2("#contenedor","#template",conf)
 	setImage();
 	 
-	$(".btnMemory").click(function(){
+	/* $(".btnMemory").click(function(){
 		stopAudio();	
 		$(this).find("audio")[0].play();
 	});
 	$("#pause").click(function(){
 		stopAudio();
 	});
-	
+	 */
 }
 
 function areEqual(im1,im2){
@@ -75,7 +98,7 @@ function areEqual(im1,im2){
 
 function setImage(){
 	$('.imgMemory').click(function(){
-		$(this).css({backgroundImage : 'url(images/imgMemory/' + $(this).attr("id") + '.jpg)'});
+		$(this).css({backgroundImage : 'url(images/activities/' + $(this).attr("name") + '.jpg)'});
 		if(img1==null){
 			img1=$(this).attr("id");
 			console.log("valor:"+$(this));
@@ -129,13 +152,13 @@ $(document).ready(function() {
 			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button>
 			
 			
-			<button id="play"> PLAY
+			<!-- button id="play"> PLAY
 				<audio id="p" src="audio/p2.mp3" type="audio/mp3"></audio>
 			</button>
 			<button id="play2"> PLAY2
 				<audio id="p2" src="audio/prueba.mp3" type="audio/mp3"></audio>
 			</button>
-			<button id="pause"> PAUSE</button>
+			<button id="pause"> PAUSE</button> -->
 		</div>
 		
 		

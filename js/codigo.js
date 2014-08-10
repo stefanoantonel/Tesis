@@ -116,3 +116,18 @@ function disorderS(o){ //in: list of numbers out: unorder list
 	return ;
 };
 */
+
+
+
+function randomGroup(conf){
+	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	left=group["1"];
+	right=group["2"];
+	functInit1(left); //paso el array solamente 
+	functInit2(right); //paso el array solamente para desordenar
+	contRight=$('#rightContainer').children();
+	idObj=$('#target');
+	dragAndDrop(contRight,idObj,functionsDD);
+}
+
+
