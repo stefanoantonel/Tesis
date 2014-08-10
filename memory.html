@@ -60,6 +60,7 @@ function fillTemplate2(place,temp, config){
 	        //$(place).append(t);
 	        allElements.push(t);
 		}
+		disorder(allElements);
 		$(place).append(allElements);
 	}
 }
@@ -72,7 +73,8 @@ function stopAudio(){
 
 function functInit(conf,x){
 	console.log("Configuracion:",conf);
-	contador=conf.length/2;
+	//Arreglar
+	contador=2;
 	//desordenado=disorder(conf)
 	fillTemplate2("#contenedor","#template",conf)
 	setImage();
@@ -111,6 +113,7 @@ function setImage(){
 				contador=contador-1;
 				if(contador==0){
 					cartelFelicitaciones();
+					console.log("cartel");
 					//$("#alertOk").delay( 1100 ).fadeIn( 400 )
 				}
 			}
@@ -160,11 +163,6 @@ $(document).ready(function() {
 			</button>
 			<button id="pause"> PAUSE</button> -->
 		</div>
-		
-		
-		
-
-		
 	</article>		
 </div>
 <div id="alertOk" class="alert-box success" hidden="True">

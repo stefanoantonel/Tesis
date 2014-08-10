@@ -77,6 +77,7 @@ function cartelFelicitaciones(){
 
 	$('article').delay( 800 ).fadeOut( 0 );
 	$('#alertOk').delay( 800 ).fadeIn( 400 );
+	console.log("entro");
 /*
 	$('article').html('');
 	$('#alertOk').delay( 300 ).fadeIn( 400 );
