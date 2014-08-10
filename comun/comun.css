@@ -1,6 +1,7 @@
 body {
 	background: #00ccff url("img/fondo.png") no-repeat;
 	background-size: 100%;
+	background-position-y: 50px;
 }
 
 .absoluto_oculto {

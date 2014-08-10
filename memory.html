@@ -40,25 +40,26 @@ function fillTemplate2(place,temp, elemets){
     });
 }
 
+function stopAudio(){
+	$.each($('audio'), function () {
+		this.pause();
+		this.currentTime = 0;
+		});
+}
+
 function functInit(conf,x){
 	console.log("Configuracion:",conf);
 	contador=conf.length/2;
 	desordenado=disorder(conf)
 	fillTemplate2("#contenedor","#template",desordenado)
 	setImage();
-
-	$("#play").click(function(){
-			
-		$.each($('audio'), function () {
-		   // $(this)[0].pause();
-		   console.log("this:",this);
-		   this.pause();
-		});
-
-		$("#p")[0].play();
+	 
+	$(".btnMemory").click(function(){
+		stopAudio();	
+		$(this).find("audio")[0].play();
 	});
 	$("#pause").click(function(){
-		$("#p")[0].pause();
+		stopAudio();
 	});
 	
 }
@@ -126,13 +127,20 @@ $(document).ready(function() {
 	<article>	
 		<div id="contenedor" class="divMemory">
 			<button id="template" style="display:none" class="btn primary bg btnMemory imgMemory"></button>
-			<button id="play"> PLAY</button>
+			
+			
+			<button id="play"> PLAY
+				<audio id="p" src="audio/p2.mp3" type="audio/mp3"></audio>
+			</button>
+			<button id="play2"> PLAY2
+				<audio id="p2" src="audio/prueba.mp3" type="audio/mp3"></audio>
+			</button>
 			<button id="pause"> PAUSE</button>
 		</div>
 		
-		<audio id="p">
-		   <source src="audio/p2.mp3" type="audio/mp3" />
-		</audio>
+		
+		
+
 		
 	</article>
 		<div id="alertOk" class="alert-box success" hidden="True">
