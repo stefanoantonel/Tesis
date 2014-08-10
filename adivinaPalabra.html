@@ -19,7 +19,7 @@
 <script type="application/javascript">
 	$(document).ready(function() {
 		ejercicio = function (){
-			readyOk("template","leftbox","rightbox");
+			readyOk("template","leftbox","rightbox","demo");
 		}
 		
 	});	
@@ -53,6 +53,10 @@
 	#rightbox{
 		height: 100px;
 	}
+	.demo{
+		height: 100px;
+		width: 100px;
+	}
 	
 </style>
 </head>
@@ -66,7 +70,7 @@
 		</div>
 		<!-- <button id='start'>Comenzar!</button>  -->
 		<div id="rightbox"></div>
-		
+		<img class="demo" >
 	</article>
 	<div id="alertOk" class="alert-box success" hidden="True">
 					<span>Felicitaciones </span>

@@ -1,11 +1,13 @@
 var boxes;
 var temp;
+var img;
 
-function readyOk(idObj,idBox,idBox2){
+function readyOk(idObj,idBox,idBox2,imgDemo){
 	temp1=document.getElementById(idObj);
 	boxes=[idBox,idBox2];
 	temp=$(temp1);
 	var conf;
+	img=imgDemo;
 	conf=getConfig(2,callback);
 }
 
@@ -15,6 +17,8 @@ function callback(data){
 	numParts=$(parts).size();
 
 	fillTemplate(boxes,temp,parts);
+	imgDemo=$("."+img);
+	fillImg(imgDemo,parts);
 	//parts=$("#leftbox").children();
 	parts=$("#"+boxes[0]).children('span');
 	box=[$("#"+boxes[0]), $("#"+boxes[1])];
@@ -84,4 +88,9 @@ function isFinished(parts){
 		return true;
 	}
 	return false;
+}
+
+function fillImg(elem,parts){
+	word=parts.join("");
+	$(elem).attr('src','images/activities/' + word + '.jpg');
 }
