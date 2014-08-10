@@ -1,70 +1,21 @@
-
-function disorder(o){ //in: list of numbers out: unorder list 
-	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	return o;
-};
-
-
-/* El viejo......antes de pasarle una funcion
-function dragAndDrop(idImg,idBoxes) {
-
-	$(idImg).each(function(ind,part){
-	
-		$('#'+ind).draggable({
-			revert:true,
-		});
-	});
-
-    $(idBoxes).each(function(ind,box){
-    	
-    	$( '#'+box ).droppable({
-        	drop: function( event, ui ) {
-        		$(ui.draggable).css({top:0,left:0});
-        		$( this )
-        			.addClass( "ui-state-highlight" )
-        			.append(ui.draggable);  
-        		//console.log('drop..',ui.draggable);
-        		
-        		//isCorrect=checkCorrect($(this));
-        		//if (isCorrect==true){cartelFelicitaciones();}
-        		
-        	}
-        });
-    });
-    
-}
-*/
 function dragAndDrop(idImg,idBoxes,functions) {
-
-	//console.log('DragDrop');
 	$(idImg).each(function(ind,part){
-		
 		$(this).draggable({
 			revert:true,
 		});
 	});
 
     $(idBoxes).each(function(ind,box){
-    	
-    	//$( '#'+box ).droppable({
     	$( this ).droppable({
         	drop: function( event, ui ) {
         		$(ui.draggable).css({top:0,left:0});
         		$( this )
         			.addClass( "ui-state-highlight" )
         			.append(ui.draggable);  
-        		//console.log('drop..',ui.draggable);
-        		//checkCorrect($( this ).children());
-        		
-        		//checkReplace($(this),ui.draggable);
-        		//checkCorrect(ui.draggable);
-
-        		functions(this,ui.draggable);
-        		
+        		functions(this,ui.draggable); 		
         	}
         });
     });
-    
 }
 
 function getConfig(numAct,callBack){
@@ -72,18 +23,6 @@ function getConfig(numAct,callBack){
 	    	c=result["act"+numAct];
 	    }).done(function (){callBack(c);});
 }
-
-function cartelFelicitaciones(){
-
-	$('article').delay( 800 ).fadeOut( 0 );
-	$('#alertOk').delay( 800 ).fadeIn( 400 );
-	console.log("entro");
-/*
-	$('article').html('');
-	$('#alertOk').delay( 300 ).fadeIn( 400 );
-*/
-}
-
 
 
 /*
@@ -113,9 +52,13 @@ function dropped(e,ui){
 */
 /*
 function disorderS(o){ //in: list of numbers out: unorder list 
+=======
+function disorder(o){ //in: list of numbers out: unorder list 
+>>>>>>> origin/master
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	return ;
+	return o;
 };
+<<<<<<< HEAD
 */
 
 
@@ -131,4 +74,9 @@ function randomGroup(conf){
 	dragAndDrop(contRight,idObj,functionsDD);
 }
 
+
+function cartelFelicitaciones(){
+	$('article').delay( 600 ).fadeOut( 0 );
+	$('#alertOk').delay( 800 ).fadeIn( 400 );
+}
 
