@@ -33,13 +33,29 @@ function randomGroup(conf){
 function changeColor(cont,word,let){
 	//changeColor(contenedor, palabara, letra resaltada)
 	parts=word.split("");
+	elements=[];
 	$(parts).each(function(ind,elem){
-		console.log('p');
-		$(elem).wrap( "<div></div>" );	
+		d=document.createElement('div');
+		$(d).html(elem);
+		a=$(d).addClass('firstWord');
+		elements.push(a);
+
+	});
+	wordToChange=$(elements[let-1]);
+
+	$(wordToChange).css({
+		color:'#f00',
+		fontSize:'70px'
+	});
+	$(wordToChange).click(function(){	
+		$('.firstWord').remove();
+		$('.secondWord').removeAttr('hidden');
+		$('#target').removeAttr('hidden');
+		$('#rightContainer').removeAttr('hidden');
 	});
 	//$(parts[let]).wrap( "<div></div>" );
 	//.css('display','none');
-	$(cont).html(parts);
+	return elements;
 }
 
 //sin desordenar
@@ -55,13 +71,12 @@ function functInit1(conf,x){
 	//$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
 	//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 	//$(t).html(conf[0]);
+	console.log(t);
+	t=changeColor($(t),conf[0],1);
 
-	changeColor($(t),conf[0],0);
 
-	$(t).click(function(){
-		$(this).css('display','none');
-		$(this).next().removeAttr('hidden');
-	});
+
+
 	$('#leftContainer').append(t);
 	//----------------------------------------------------------------------
 
@@ -70,6 +85,7 @@ function functInit1(conf,x){
 	//t=$('#'+e);
 	$(t).attr('id','left1');
 	$(t).attr('name',conf[1]);
+	$(t).addClass('secondWord');
 	//$(t).removeAttr('hidden');
 	//$(t).attr('num',index);
 	//$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');

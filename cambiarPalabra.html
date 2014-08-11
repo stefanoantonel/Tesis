@@ -38,7 +38,7 @@
 		border:3px;
 		border-style: dashed;
    		border-color: black;
-		display: inline-block;
+		/* display: inline-block; */
 		border-width: medium;
 		width: 100px;
 		height: 100px;
@@ -53,13 +53,13 @@
 /* 		display: block; */
 /* 		font-size: 40px; */
 /* 	} */
-	#alertOk{
+	/*#alertOk{
 		float: left;
 		position: fixed;
 		top: 115px;
 		left: 140px;
 		z-index: 1;
-	}
+	}*/
 	#leftContainer{
 		max-width: 300px;
 		float:left;
@@ -75,6 +75,11 @@
 	}
 	.word{
 		font-size: 50px;
+
+	}
+	.firstWord{
+		font-size: 50px;
+		display: inline-block;
 	}
 
 </style>
@@ -86,10 +91,10 @@
 		<div id="leftboxTemp" class='word' hidden="hidden"></div>
 		<div id="leftContainer"></div>
 
-		<div id="target"></div>
+		<div id="target" hidden="hidden"></div>
 		
 		<img id="rightboxTemp" class="img img-rigth" hidden="hidden"></img>
-		<div id="rightContainer"></div>
+		<div id="rightContainer" hidden="hidden"></div>
 
 		
 	</article>
