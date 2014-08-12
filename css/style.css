@@ -41,15 +41,13 @@ background-size:100% 100%;
 
 
 .alert-box {
-    color:#555;
-    text-align:center;
-    border-radius:10px;
+    color: #555;
+    text-align: center;
+    border-radius: 10px;
     /*,Geneva,Arial,sans-serif*/
-    font-family:Optima;
-    font-size:20px;
-    padding:10px 10px 10px 36px;
-    margin:auto;
-    float: left;
+    font-family: Optima;
+    font-size: 20px;
+    padding: 20px;
     overflow: auto;
 	z-index: 1;
 }
@@ -67,8 +65,9 @@ background-size:100% 100%;
 .success {
     background:#e9ffd9;
     border:1px solid #a6ca8a;
-    margin-left: 20%;
-	margin-top: 15%;
+	margin: auto;
+    width: 30%;
+    min-width: 300px;
 }
 .warning {
     background:#fff8c4 ;
