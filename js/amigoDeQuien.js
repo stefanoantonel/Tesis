@@ -44,6 +44,7 @@ function randomGroup(conf){
 }
 
 
+
 function functInit(conf,place){
 	//desordenado=disorder(conf)
 	//$(desordenado).each(function(index,e){
