@@ -32,5 +32,7 @@ function disorder(o){ //in: list of numbers out: unorder list
 function cartelFelicitaciones(){
 	$('article').delay( 600 ).fadeOut( 0 );
 	$('#alertOk').delay( 800 ).fadeIn( 400 );
+	actividad.sco.set("cmi.core.lesson_status","passed");
+	actividad.end();
 }
 
