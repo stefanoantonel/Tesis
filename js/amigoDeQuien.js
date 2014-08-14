@@ -44,6 +44,7 @@ function randomGroup(conf){
 }
 
 
+
 function functInit(conf,place){
 	//desordenado=disorder(conf)
 	//$(desordenado).each(function(index,e){
@@ -56,7 +57,7 @@ function functInit(conf,place){
 		$(t).attr('name',conf[index]);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-		$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
+		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
 		imgs.push(t);
 	});
 	disorder(imgs);
