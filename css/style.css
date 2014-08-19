@@ -68,6 +68,7 @@ background-size:100% 100%;
 	margin: auto;
     width: 30%;
     min-width: 300px;
+    margin-top: 7%;
 }
 .warning {
     background:#fff8c4 ;
@@ -90,4 +91,14 @@ background-size:100% 100%;
 	overflow: auto;
 }
 
+article{
+		margin-left: 9%;
+		margin-top: 15%;
+	}
 
+/* .kitty {
+	background: url('../comun/img/Kitty Teacher.png') no-repeat;
+	background-color: red;
+	width: auto;
+	height: auto;
+} */

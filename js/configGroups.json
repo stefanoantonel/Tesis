@@ -3,13 +3,15 @@
 			"2":["luna","cuna"],
 			"3":["ventana","campana"],
 			"4":["raton","leon"]
-			}], 
+			}],
+	"description-act1":"esta actividad hace ...", 
 	"act2":[
 			"pe lo ta",
 			"ca la ba za",
 			"ca be za",
 			"mer ca do"
-			], 
+			],
+	"description-act2":"esta actividad hace ...", 
 	"act4":[
 				{
 					"1":["casa","mano"],

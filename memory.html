@@ -5,8 +5,13 @@
 
 <!-- Parte del tempale -->
 	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	
+	
 	<script type="text/javascript" src="comun/comun.js"></script>
 	<link rel="stylesheet" type="text/css" href="comun/comun.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <!-- Fin parte del tempale -->
 	<script type="application/javascript" src="js/codigo.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -129,15 +134,29 @@ function setImage(){
 	});
 }
 
-$(document).ready(function() {
+	$(document).ready(function() {
 	
 	
-	ejercicio=function(){
-		var conf;
-		conf=getConfig(1,functInit);	
-	}
-	
-	
+		ejercicio=function(){
+			var conf;
+			conf=getConfig(1,functInit);	
+		}
+		
+		
+		$("#popUpContainer").load("popUp.html");
+		
+		
+		loadDescription(1);
+		
+		/* $("#pruebaPP").click(function(){
+			$.ajax({
+				url:"popUp.html",
+				context:document.body
+			}).done(function(data){
+					$(".container").html(data);
+					console.log("data:"+data);
+				});
+		}); */
 	
 });
 
@@ -163,7 +182,10 @@ $(document).ready(function() {
 			</button>
 			<button id="pause"> PAUSE</button> -->
 		</div>
-	</article>		
+		
+	</article>	
+		
+		
 </div>
 <div id="alertOk" class="alert-box success" hidden="True">
 			<span>Felicitaciones </span>

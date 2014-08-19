@@ -24,6 +24,10 @@ function getConfig(numAct,callBack){
 	    }).done(function (){callBack(c);});
 }
 
+function getDescription(numAct,callBack){
+	
+}
+
 function disorder(o){ //in: list of numbers out: unorder list 
 		for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 		return o;
@@ -36,3 +40,19 @@ function cartelFelicitaciones(){
 	actividad.end();
 }
 
+function loadDescription(numAct){
+	
+	title=$("title").text();
+	$.get("popUp.html",function(result){
+		modal=result;
+    }).done(function(){
+    	$("article").append(modal);
+    	$.getJSON("js/configGroups.json",function(result){
+        	description=result["description-act"+numAct];
+        }).done(function(){
+        	$(".modal-body").html(description);
+        	$(".modal-title").html(title);
+        });
+    });
+
+}
