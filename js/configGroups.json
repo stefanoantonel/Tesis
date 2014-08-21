@@ -11,7 +11,7 @@
 			"ca be za",
 			"mer ca do"
 			],
-	"description-act2":"esta actividad hace ...", 
+	"description-act2":"hace ...", 
 	"act4":[
 				{
 					"1":["casa","mano"],
@@ -22,6 +22,7 @@
 					"2":["bote","televisor","bosque"]
 				}
 			],
+	"description-act4":"La actividad Palabra oculta hace ...",
 	"act5":[
 				{
 					"1":["televisor","casa","mano"],

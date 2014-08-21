@@ -102,5 +102,8 @@ $(document).ready(function() {
 			actividad.init();
 		});
 	});
+	
+	$("#kittyTeacher").click($('#myModal').modal('show'));
+	
 });
 
