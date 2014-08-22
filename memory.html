@@ -7,9 +7,9 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 	<script type="text/javascript" src="comun/comun.js"></script>
-	
-	<link rel="stylesheet" type="text/css" href="comun/comun.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="comun/comun.css">
+	
 <!-- Fin parte del tempale -->
 	 <script type="application/javascript" src="js/codigo.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -21,7 +21,7 @@ var contador=null;
 
 function removeBackground(img){
 	$(".btnMemory").css({backgroundImage:'none'});
-	console.log("img remove:",img);
+	
 }
 
 function removeImg(img){
@@ -49,9 +49,9 @@ function fillTemplate2(place,temp, config){
 	var allElements = [];
 	for (var x=1; x<5; x++){
 	//$(elements).each(function(ind,element){
-		//console.log("ind: "+ind);
+		
 		//ind=ind+1;
-		//console.log("elementos: "+element[ind]);
+		
 		var group = elements[x];
 		for (var i=0; i<2; i++){
 		//$(element).each(function(index,e){
@@ -75,7 +75,7 @@ function stopAudio(){
 }
 
 function functInit(conf,x){
-	console.log("Configuracion:",conf);
+	
 	//Arreglar
 	contador=4;
 	//desordenado=disorder(conf)
@@ -132,30 +132,28 @@ function setImage(){
 	});
 }
 
-	$(document).ready(function() {
+$(document).ready(function() {
+
+
+	ejercicio=function(){
+		var conf;
+		conf=getConfig(1,functInit);
+		
+	}
+	loadDescription(1);
 	
 	
-		ejercicio=function(){
-			var conf;
-			conf=getConfig(1,functInit);	
-		}
-		
-		
-		$("#popUpContainer").load("popUp.html");
-		
-		
-		loadDescription(1);
-		
-		/* $("#pruebaPP").click(function(){
-			$.ajax({
-				url:"popUp.html",
-				context:document.body
-			}).done(function(data){
-					$(".container").html(data);
-					console.log("data:"+data);
-				});
-		}); */
 	
+	/* $("#pruebaPP").click(function(){
+		$.ajax({
+			url:"popUp.html",
+			context:document.body
+		}).done(function(data){
+				$(".container").html(data);
+				console.log("data:"+data);
+			});
+	}); */
+
 });
 
 

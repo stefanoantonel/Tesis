@@ -38,7 +38,6 @@ actividad.init = function() {
 		var txt = actividad.sco.get('cmi.core.student_name');
 		$("#alumno").html("<b>Alumno:</b> " + txt);
 		actividad.sco.set("cmi.core.lesson_status","incomplete");
-		console.log("Activity status: "+actividad.sco.get("cmi.core.lesson_status"));
 	});
 
 	//Comienzo la secuencia animación de inicio
@@ -101,9 +100,6 @@ $(document).ready(function() {
 			// Una vez que termino todo, inicio la actividad
 			actividad.init();
 		});
-	});
-	
-	$("#kittyTeacher").click($('#myModal').modal('show'));
-	
+	});	
 });
 

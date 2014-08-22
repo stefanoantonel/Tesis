@@ -40,16 +40,13 @@ function cartelFelicitaciones(){
 	actividad.end();
 }
 
-function loadDescription(numAct){
-	
+function loadDescription(numAct){	
+	debugger;
 	title=$("title").text();
-
 	//debugger;
 	$.get("popUp.html",function(result){
 		modal=result;
-		
     }).done(function(){
-    	
     	$("article").append(modal);
     	$.getJSON("js/configGroups.json",function(result){
         	description=result["description-act"+numAct];
@@ -58,5 +55,4 @@ function loadDescription(numAct){
         	$(".modal-title").html(title);
         });
     });
-
 }
