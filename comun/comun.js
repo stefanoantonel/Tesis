@@ -101,5 +101,6 @@ $(document).ready(function() {
 			actividad.init();
 		});
 	});	
+	
 });
 

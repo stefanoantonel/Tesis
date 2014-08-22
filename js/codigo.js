@@ -21,7 +21,10 @@ function dragAndDrop(idImg,idBoxes,functions) {
 function getConfig(numAct,callBack){
 	$.getJSON("js/configGroups.json",function(result,callBack){
 	    	c=result["act"+numAct];
-	    }).done(function (){callBack(c);});
+	    }).done(function (){
+	    	callBack(c.act);
+	    	loadDescription(c.description)
+	    });
 }
 
 function getDescription(numAct,callBack){
@@ -40,19 +43,14 @@ function cartelFelicitaciones(){
 	actividad.end();
 }
 
-function loadDescription(numAct){	
-	debugger;
+function loadDescription(descrip){	
 	title=$("title").text();
 	//debugger;
 	$.get("popUp.html",function(result){
 		modal=result;
     }).done(function(){
     	$("article").append(modal);
-    	$.getJSON("js/configGroups.json",function(result){
-        	description=result["description-act"+numAct];
-        }).done(function(){
-        	$(".modal-body").html(description);
-        	$(".modal-title").html(title);
-        });
+		$(".modal-body").html(descrip);
+        $(".modal-title").html(title);
     });
 }

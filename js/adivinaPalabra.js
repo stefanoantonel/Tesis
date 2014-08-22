@@ -9,7 +9,7 @@ function readyOk(idObj,idBox,idBox2,imgDemo){
 	var conf;
 	img=imgDemo;
 	conf=getConfig(2,callback);
-	loadDescription(2);
+	
 }
 
 function callback(data){

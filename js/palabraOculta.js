@@ -9,7 +9,7 @@ function functionsDD(context,currElem){
 }
 
 function readyOk(idObj,left,right){
-	conf=getConfig("4",randomGroup);	
+	conf=getConfig("4",randomGroup);
 }
 
 function randomGroup(conf){
@@ -21,6 +21,7 @@ function randomGroup(conf){
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
 	dragAndDrop(contRight,idObj,functionsDD);
+	//loadDescription(conf.description);
 }
 
 //sin desordenar

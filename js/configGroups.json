@@ -1,29 +1,38 @@
 {
-	"act1":[{"1":["pato","gato"],
-			"2":["luna","cuna"],
-			"3":["ventana","campana"],
-			"4":["raton","leon"]
+	"act1":
+		{"act":
+			[{
+				"1":["pato","gato"],
+				"2":["luna","cuna"],
+				"3":["ventana","campana"],
+				"4":["raton","leon"]
 			}],
-	"description-act1":"esta actividad hace ...", 
-	"act2":[
+		"description": "esta actividad hace ..."
+		},
+	"act2":
+		{"act":[
 			"pe lo ta",
 			"ca la ba za",
 			"ca be za",
 			"mer ca do"
 			],
-	"description-act2":"hace ...", 
-	"act4":[
-				{
-					"1":["casa","mano"],
-					"2":["cama","perro","casa-mano"]
-				},
-				{
-					"1":["botella","telefono"],
-					"2":["bote","televisor","bosque"]
-				}
+		"description":"description-act2 hace ..."
+		},
+	"act4":
+		{"act":[
+			{
+				"1":["casa","mano"],
+				"2":["cama","perro","casa-mano"]
+			},
+			{
+				"1":["botella","telefono"],
+				"2":["bote","televisor","bosque"]
+			}
 			],
-	"description-act4":"La actividad Palabra oculta hace ...",
-	"act5":[
+		"description":"La actividad Palabra oculta hace ..."
+		},
+	"act5":
+		{"act":[
 				{
 					"1":["televisor","casa","mano"],
 					"2":["cama","perro","casa-mano"]
@@ -33,10 +42,15 @@
 					"2":["bote","televisor","bosque"]
 				}
 			],
-	"act6":[
+		"description": "La actividad Palabra oculta hace ..."
+		},
+	"act6":
+		{"act":[
 				{
 					"1":["pato","gato"],
 					"2":["gato","botella","luna"]
 				}
-			]
+			],
+		"description":"La actividad Palabra oculta hace ..."
+		}
 }
