@@ -16,7 +16,7 @@
 			"ca be za",
 			"mer ca do"
 			],
-		"description":"description-act2 hace ..."
+		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ..."
 		},
 	"act4":
 		{"act":[
@@ -29,7 +29,7 @@
 				"2":["bote","televisor","bosque"]
 			}
 			],
-		"description":"La actividad Palabra oculta hace ..."
+		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!"
 		},
 	"act5":
 		{"act":[
@@ -52,6 +52,6 @@
 					"wordToChange":"1"
 				}
 			],
-		"description":"La actividad Palabra oculta hace ..."
+		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!"
 		}
 }

@@ -27,7 +27,6 @@ function callback(data){
 	parts=$("#"+boxes[0]).children('span');
 	box=[$("#"+boxes[0]), $("#"+boxes[1])];
 	dragAndDrop(parts,box,functionsDD); 
-
 }
 
 function functionsDD(context,currElem){
@@ -46,8 +45,9 @@ function divide(data){
 
 function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
+		debugger;
 		parts=$(container).children();
-
+		console.log('check right');
 		wrong=0;
 		for(var i = 0; i < $(parts).size(); i++){ 
 			if (parseInt(parts[i].id) != i){
@@ -57,6 +57,10 @@ function checkCorrect(container) {
 				$(wrongPart).effect('shake');
 
 			}
+			else{//the word is correct
+				wrongPart=$('#'+parts[i].id)
+				$(wrongPart).removeClass('errorLetra');
+			}
 		}
 		if(parts.size()==numParts && wrong==0){ //finalizo y correcto 
 			return true;
@@ -65,7 +69,9 @@ function checkCorrect(container) {
 			return false;
 	}
 	else{
+		console.log('check left');
 		$(container).children().removeClass('errorLetra');
+		checkCorrect($('#rightbox'));
 	}
 }
 
