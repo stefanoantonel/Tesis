@@ -22,7 +22,8 @@ function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	left=group["1"];
 	right=group["2"];
-	functInit1(left); //muestra una palabra y oculta la otra
+	wordToChange=group["wordToChange"];
+	functInit1(left,wordToChange); //muestra una palabra y oculta la otra
 	//hideWords('#leftContainer');
 	functInit2(right);
 	contRight=$('#rightContainer').children();
@@ -52,6 +53,7 @@ function changeColor(cont,word,let){
 		$('.secondWord').removeAttr('hidden');
 		$('#target').removeAttr('hidden');
 		$('#rightContainer').removeAttr('hidden');
+		$('#firstImage').remove();
 	});
 	//$(parts[let]).wrap( "<div></div>" );
 	//.css('display','none');
@@ -59,7 +61,7 @@ function changeColor(cont,word,let){
 }
 
 //sin desordenar
-function functInit1(conf,x){
+function functInit1(conf,wordToChange){
 	
 	//palabra inicial con letra llamativa------------------------
 	t=$('#leftboxTemp').clone();
@@ -71,13 +73,18 @@ function functInit1(conf,x){
 	//$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
 	//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 	//$(t).html(conf[0]);
-	console.log(t);
-	t=changeColor($(t),conf[0],1);
-
-
-
-
+	
+	t=changeColor($(t),conf[0],wordToChange);
 	$('#leftContainer').append(t);
+	//show image
+	t1=$('#rightboxTemp').clone();
+	$(t1).attr('id','firstImage')
+	//$(t1).addClass('firstImage');
+	$(t1).attr('src','images/activities/' + conf[0] + '.jpg');	
+	$(t1).removeAttr('hidden');
+	console.log(t1)
+	$("#leftContainer").append(t1);
+
 	//----------------------------------------------------------------------
 
 	//palabra oculta -----------------------------------------------
@@ -100,6 +107,7 @@ function functInit1(conf,x){
 function functInit2(conf,x){
 	//desordenado=disorder(conf)
 	//$(desordenado).each(function(index,e){
+	//$('.firtsImage').remove();
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);

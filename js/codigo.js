@@ -32,9 +32,9 @@ function getDescription(numAct,callBack){
 }
 
 function disorder(o){ //in: list of numbers out: unorder list 
-		for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-		return o;
-	};
+	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+	return o;
+};
 
 function cartelFelicitaciones(){
 	$('article').delay( 600 ).fadeOut( 0 );

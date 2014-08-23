@@ -48,15 +48,17 @@ function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
 		parts=$(container).children();
 
-		//console.log(parts);
-		mal=0;
+		wrong=0;
 		for(var i = 0; i < $(parts).size(); i++){ 
 			if (parseInt(parts[i].id) != i){
-				$('#'+parts[i].id).addClass('errorLetra');
-				mal=1;
+				wrongPart=$('#'+parts[i].id)
+				$(wrongPart).addClass('errorLetra');
+				wrong=1;
+				$(wrongPart).effect('shake');
+
 			}
 		}
-		if(parts.size()==numParts && mal==0){ //finalizo y correcto 
+		if(parts.size()==numParts && wrong==0){ //finalizo y correcto 
 			return true;
 		}
 		else
@@ -86,7 +88,15 @@ function fillTemplate(boxes,temp, parts){
         $(t).prop("hidden",false);
         a.push(t);
     });
+    //-------------disorder 
+    origin=parts.join('');
     disorder(a);
+    disordered=$(a).text();
+    if(origin==disordered){
+    	disorder(a);
+    }
+    //-------------------end disroder 
+
     $(fromBox).append(a);
 }
 

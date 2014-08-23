@@ -48,7 +48,8 @@
 		{"act":[
 				{
 					"1":["pato","gato"],
-					"2":["gato","botella","luna"]
+					"2":["gato","botella","luna"],
+					"wordToChange":"1"
 				}
 			],
 		"description":"La actividad Palabra oculta hace ..."
