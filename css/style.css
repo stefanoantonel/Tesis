@@ -20,14 +20,14 @@
 	margin:20px;
 }
 
-.divMemory{
-	position:absolute;
-	margin-top:7%;
-	margin-left:10%;
-	margin-right:10%;
+.actContainer{
+	/*margin-top:7%;
+	margin: auto;
 	border:solid;
 	min-height:130px;
 	min-width:200px;
+	max-width: 490px;
+	overflow: auto;*/
 }
 
 
@@ -87,13 +87,16 @@ background-size:100% 100%;
 
 .container-body {
 	margin: auto;
-	display: inline-block;
 	overflow: auto;
 }
 
 article{
-		margin-left: 9%;
-		margin-top: 15%;
+	margin-top:7%;
+	margin: auto;
+	min-height:130px;
+	min-width:200px;
+	max-width: 490px;
+	overflow: auto;
 	}
 
 /* .kitty {
@@ -102,3 +105,8 @@ article{
 	width: auto;
 	height: auto;
 } */
+
+
+body {
+	margin-top: 10%;
+}
