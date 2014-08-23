@@ -34,15 +34,15 @@
 	"act5":
 		{"act":[
 				{
-					"1":["televisor","casa","mano"],
-					"2":["cama","perro","casa-mano"]
+					"1":["leon","pato","tortuga"],
+					"2":["raton","gato","oruga"]
 				},
 				{
 					"1":["casa","botella","telefono"],
 					"2":["bote","televisor","bosque"]
 				}
 			],
-		"description": "La actividad Palabra oculta hace ..."
+		"description": "Encuentra las imagenes que riman y unelos para que sean amigos"
 		},
 	"act6":
 		{"act":[
