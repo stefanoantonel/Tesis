@@ -8,49 +8,81 @@ var numParts=0;
 var contOriginal;
 var contSegundo;
 
-function functionsDD(context,currElem){
-	checkReplace(context,currElem);
-	isCorrect=checkCorrect(currElem);
-	//if (isCorrect==true){cartelFelicitaciones();}
+function moveOrigin(img1,img2){
+	console.log($("#target").find($("#"+img1)));
+	$("#target").find("#"+img2).css('border-color','black');
+	$("#target").find("#"+img1).css('border-color','black');
+	$("#target").find("#"+img1).appendTo($("#leftContainer"));
+	$("#target").find("#"+img2).appendTo($("#rightContainer"));
 }
 
-function readyOk(idObj,left,right){
-	//dragAndDrop(idObj,idBox,idBox2);
+function functionsDD(context,currElem){
+	$( ".img" ).on( "dragstop", function( event, ui ) {
+		if(img1==null){
+			img1=$(this).attr("id");
+			console.log("img1:"+img1);
+			}
+		else{
+			img2=$(this).attr("id");
+			console.log("img2:"+img2);
+			console.log("antes del igual:"+img1+" - "+img2);
+			if(img1==img2){
+				console.log("igual");
+				//window.setTimeout(removeImg, 1000,img1);
+				//window.setTimeout(removeImg, 1000,img2);
+				alert("BIEN");
+				contador=contador-1;
+				if(contador==0){
+					cartelFelicitaciones();
+					console.log("cartel");
+					//$("#alertOk").delay( 1100 ).fadeIn( 400 )
+					}
+			}
+		else{
+			console.log('Mal: img1:'+img1+'img2:'+img2);
+			$("#target").find("#"+img2).css('border-color','red').effect('shake');
+			$("#target").find("#"+img1).css('border-color','red').effect('shake');
+			window.setTimeout(moveOrigin, 2000,img1,img2);
+			
+		}
+		img1=null;
+		img2=null;
 	
-	//fill(idObj,left,right);
-	conf=getConfig("5",randomGroup);
-	
+		}
+//		if(contOriginal==null)
+//			contOriginal=$(this).parents(".container");
+//		else
+//			contSegundo=$(this).parents(".container");
+//		console.log("c:",contOriginal);
+	} );
 }
+
+
+function readyOk(idObj,left,right){
+	conf=getConfig("5",randomGroup);
+}
+
 
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	left=group["1"];
 	right=group["2"];
-	functInit(left,"left"); //paso el array solamente 
-	functInit(right,"right"); //paso el array solamente
+	functInit(left,"left"); //adds elements disorderly   
+	functInit(right,"right"); 
 	contRight=$('#rightContainer').children();
 	contLeft=$('#leftContainer').children();
 	idObj=$('#target');
 	dragAndDrop(contRight,idObj,functionsDD);
 	dragAndDrop(contLeft,idObj,functionsDD);
-	console.log("drag",$( ".img" ));
-	$( ".img" ).on( "dragstart", function( event, ui ) {
-		if(contOriginal==null)
-			contOriginal=$(this).parents(".container");
-		else
-			contSegundo=$(this).parents(".container");
-		console.log("c:",contOriginal);
-	} );
+	//console.log("drag",$( ".img" ));
+	
 }
 
 
 
 function functInit(conf,place){
-	//desordenado=disorder(conf)
-	//$(desordenado).each(function(index,e){
 	imgs=[];
 	$(conf).each(function(index,e){
-    	//t=$('#'+rightArray[index]);
     	t=$('#'+place+'boxTemp').clone();
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
@@ -65,31 +97,3 @@ function functInit(conf,place){
 	
 }
 
-
-
-function checkCorrect(part) {
-	num=$(part).prop("num");
-	if(num==0){
-		return true;
-	}
-	else{
-		$(part).effect('shake');
-		//$(part).css('border',3px solid; border-color: red;')
-		//$(part).css('border','3px solid');
-		$(part).css('border-color','red');
-		return false;
-	}
-}
-
-function checkReplace(box,newDiv){
-
-	if( $(box).has('img') ){
-		prevDiv=$(box).children();
-		$(prevDiv).css('border-color','black');
-		$(contOriginal).append(prevDiv);
-		contOriginal=contSegundo;
-		contSegundo=null;
-		$(box).append(newDiv);
-
-	}
-}

@@ -18,16 +18,10 @@
 <script type="text/javascript">
 function functInit1(conf,x){
 	
-	//palabra inicial con letra llamativa------------------------
 	t=$('#leftboxTemp').clone();
-	//t=$('#'+e);
 	$(t).attr('id','left0');
 	$(t).attr('name',conf[0]);
 	$(t).removeAttr('hidden');
-	//$(t).attr('num',index);
-	//$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
-	//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-	//$(t).html(conf[0]);
 	console.log(t);
 	t=changeColor($(t),conf[0],1);
 
@@ -43,10 +37,6 @@ function functInit1(conf,x){
 	$(t).attr('id','left1');
 	$(t).attr('name',conf[1]);
 	$(t).addClass('secondWord');
-	//$(t).removeAttr('hidden');
-	//$(t).attr('num',index);
-	//$(t).attr('src','images/imgOculta/' + $(t).attr("name") + '.jpg');
-	//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 	$(t).html(conf[1]);
 	$('#leftContainer').append(t);
 	//-------------------------------------------------------
@@ -55,8 +45,6 @@ function functInit1(conf,x){
 }
 
 function functInit2(conf,x){
-	//desordenado=disorder(conf)
-	//$(desordenado).each(function(index,e){
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);
@@ -96,17 +84,14 @@ function changeColor(cont,word,let){
 		$('#target').removeAttr('hidden');
 		$('#rightContainer').removeAttr('hidden');
 	});
-	//$(parts[let]).wrap( "<div></div>" );
-	//.css('display','none');
 	return elements;
 }
 
 	
 	$(document).ready(function() {
-
-		
-		//target=$('#target');
-		//readyOk(target,'leftbox','rightbox');
+		img1=null;
+		img2=null;
+		contador=3;
 		ejercicio = function (){
 			target=$('#target');
 			readyOk(target,'leftbox','rightbox');
@@ -133,7 +118,7 @@ function changeColor(cont,word,let){
    		border-color: black;
 		display: inline-block;
 		border-width: medium;
-		width: 200px;
+		width: 250px;
 		height: 100px;
 		float:left;
 		margin:5%;
@@ -168,6 +153,10 @@ function changeColor(cont,word,let){
 	section{
 		overflow:auto;
 		margin-left:3%;
+	}
+	
+	article {
+	 max-width: 600px;
 	}
 </style>
 </head>
