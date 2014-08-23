@@ -20,7 +20,7 @@ function functionsDD(context,currElem){
 	$( ".img" ).on( "dragstop", function( event, ui ) {
 		if(img1==null){
 			img1=$(this).attr("id");
-			console.log("img1:"+img1);
+			console.log("seteo img1 con:"+img1);
 			}
 		else{
 			img2=$(this).attr("id");
@@ -28,26 +28,20 @@ function functionsDD(context,currElem){
 			console.log("antes del igual:"+img1+" - "+img2);
 			if(img1==img2){
 				console.log("igual");
-				//window.setTimeout(removeImg, 1000,img1);
-				//window.setTimeout(removeImg, 1000,img2);
-				alert("BIEN");
+				$("#target").html("MUY BIEN");
+				window.setTimeout(function(){$("#target").html("");}, 1000);
 				contador=contador-1;
-				if(contador==0){
-					cartelFelicitaciones();
-					console.log("cartel");
-					//$("#alertOk").delay( 1100 ).fadeIn( 400 )
-					}
+				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
-			console.log('Mal: img1:'+img1+'img2:'+img2);
 			$("#target").find("#"+img2).css('border-color','red').effect('shake');
 			$("#target").find("#"+img1).css('border-color','red').effect('shake');
-			window.setTimeout(moveOrigin, 2000,img1,img2);
+			window.setTimeout(moveOrigin, 1000,img1,img2);
 			
 		}
 		img1=null;
 		img2=null;
-	
+		console.log("limpia-----------------------");
 		}
 //		if(contOriginal==null)
 //			contOriginal=$(this).parents(".container");
