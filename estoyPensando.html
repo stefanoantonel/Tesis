@@ -1,21 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 	<title>Estoy Pensando en Algo</title>
-</head>
-<body>
-<article>
-	<div id="word"></div>
+	<!-- Parte del tempale --> 
 
-	<img id="imgTemp" class="images" hidden="hidden" >
-	<div id="imgContainer"></div>
-</article>
-</body>
-<footer>
-	<script type="text/javascript">
-	$(document).ready(function(){
-		
-	});
+	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="js/estoyPensando.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="comun/comun.js"></script>
+	<script type="application/javascript" src="js/codigo.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="comun/comun.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="application/javascript" src="js/jquery-ui.min.js"></script>
+	
+
+	<script type="application/javascript">
+		$(document).ready(function(){
+			ejercicio = function (){
+				word=$('#word');
+				temp=$('#imgTemp');
+				container=$('#imgContainer');
+				readyOk(word,temp,container);
+			};
+		});
 	</script>
-</footer>
+	<style type="text/css">
+	.images{	
+   		border:3px solid;
+   		border-color: black;
+		margin-right: 20px;
+		margin-left: 20px;
+		width: 90px;
+		height: 90px;
+		
+	}
+	.word{
+		color: red;
+		font-size: 100px;
+	}
+	.temp{
+		display: none;
+	}
+	</style>
+
+</head>
+
+<body>
+	<header></header>
+	<article>
+		<div id="word" class="word"></div>
+
+		<img id="imgTemp" class="images temp">
+		<div id="imgContainer"></div>
+	</article>
+	<div id="alertOk" class="alert-box success" hidden="True">
+		<span>Felicitaciones </span>
+		</br><img class="imagenSucced" src="images/caraContenta.jpg">
+		</br>Has completado muy bien tu ejercicio
+	</div>
+	<footer></footer>
+</body>
+
 </html>

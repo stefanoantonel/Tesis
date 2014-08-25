@@ -44,6 +44,7 @@
 			],
 		"description": "Encuentra las imagenes que riman y unelos para que sean amigos"
 		},
+	
 	"act6":
 		{"act":[
 				{
@@ -53,5 +54,14 @@
 				}
 			],
 		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!"
+		},
+	"act8":
+		{"act":[
+				{
+					"1":["p"],
+					"2":["pato","gato","botella"]
+				}
+			],
+		"description":"Seleccione la imagen que empiece con la letra!!!"
 		}
 }
