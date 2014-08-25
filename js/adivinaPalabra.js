@@ -8,15 +8,15 @@ function readyOk(idObj,idBox,idBox2,imgDemo){
 	temp=$(temp1);
 	var conf;
 	img=imgDemo;
-	conf=getConfig(2,callback);
+	conf=getConfig(2,functionInit);
 	
 }
 
-function callback(data){
+function functionInit(data){
 	var selectedText=getTextRand(data);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
-
+	debugger;
 	fillTemplate(boxes,temp,parts);
 
 	//dragAndDrop(parts,boxes,functionsDD); 
@@ -45,7 +45,7 @@ function divide(data){
 
 function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
-		debugger;
+		//debugger;
 		parts=$(container).children();
 		console.log('check right');
 		wrong=0;
