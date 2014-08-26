@@ -47,12 +47,6 @@ function functionsDD(context,currElem){
 		img2=null;
 		console.log("limpia-----------------------");
 		}
-//		if(contOriginal==null)
-//			contOriginal=$(this).parents(".container");
-//		else
-//			contSegundo=$(this).parents(".container");
-//		console.log("c:",contOriginal);
-//	} );
 }
 
 
