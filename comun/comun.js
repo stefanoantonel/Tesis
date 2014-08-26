@@ -38,6 +38,8 @@ actividad.init = function() {
 		var txt = actividad.sco.get('cmi.core.student_name');
 		$("#alumno").html("<b>Alumno:</b> " + txt);
 		actividad.sco.set("cmi.core.lesson_status","incomplete");
+		actividad.sco.set("cmi.core.session_time","00:01:00");
+		ac=actividad.sco.get("cmi.core.total_time");
 	});
 
 	//Comienzo la secuencia animación de inicio
