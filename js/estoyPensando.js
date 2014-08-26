@@ -38,6 +38,7 @@ function fillTemplate(wordSelected,imagesSelected){
 function checkCorrect(elem){
 	id=$(elem).attr('id');
 	if(id=="img0"){
+		$(elem).effect('puff');
 		cartelFelicitaciones();
 	}
 	else{

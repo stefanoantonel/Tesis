@@ -14,7 +14,7 @@ function readyOk(idObj,left,right){
 
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	left=group["1"];
+	left=group["1"]; //no se van a mover
 	right=group["2"];
 	wordToChange=group["wordToChange"];
 	functInitWords(left,wordToChange); //muestra una palabra y oculta la otra
@@ -36,10 +36,7 @@ function changeColor(cont,words,let){
 	});
 	wordToChange=$(elements[let-1]);
 
-	$(wordToChange).css({
-		color:'#f00',
-		fontSize:'70px'
-	});
+	$(wordToChange).addClass('wordSelected');
 	$(wordToChange).click(function(){	
 		$('.firstWord').fadeOut();
 		$('.secondWord').removeAttr('hidden');
@@ -61,15 +58,7 @@ function functInitWords(conf,wordToChange){
 	$(t).removeAttr('hidden');
 	changed=changeColor($(t),conf[0],wordToChange);
 	$('#leftContainer').append(changed);
-	//-------------------------show image
-	t1=$('#rightboxTemp').clone();
-	$(t1).attr('id','firstImage');
-	$(t1).addClass('firstImage')
-	$(t1).attr('src','images/activities/' + conf[0] + '.jpg');	
-	$(t1).removeAttr('hidden');
-	console.log(t1)
-	$("#leftContainer").append(t1);
-
+	
 	//----------------------------------------------------------------------
 	//palabra oculta -----------------------------------------------
 	t=$('#leftboxTemp').clone();
@@ -79,11 +68,13 @@ function functInitWords(conf,wordToChange){
 	$(t).html(conf[1]);
 	$('#leftContainer').append(t);
 	//-------------------------------------------------------
-
-
+	//---------------initial Image
+	firstImg(conf);
 }
 
 function functInitImages(conf,x){
+	
+	//-------------second stage images
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);
@@ -101,7 +92,15 @@ function functInitImages(conf,x){
 	
 }
 
-
+function firstImg(conf){
+	//-------------------------show image
+	t1=$('#rightboxTemp').clone();
+	$(t1).attr('id','firstImage');
+	$(t1).addClass('firstImage')
+	$(t1).attr('src','images/activities/' + conf[0] + '.jpg');	
+	$(t1).removeAttr('hidden');
+	$("#leftContainer").append(t1);
+}
 
 function checkCorrect(part) {
 	num=$(part).prop("num");

@@ -16,7 +16,7 @@ function functionInit(data){
 	var selectedText=getTextRand(data);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
-	debugger;
+
 	fillTemplate(boxes,temp,parts);
 
 	//dragAndDrop(parts,boxes,functionsDD); 
@@ -45,7 +45,7 @@ function divide(data){
 
 function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
-		//debugger;
+		
 		parts=$(container).children();
 		console.log('check right');
 		wrong=0;

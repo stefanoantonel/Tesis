@@ -8,7 +8,8 @@ function removeBackground(img){
 }
 
 function removeImg(img){
-	$("#"+img).remove();
+	//$("#"+img).remove();
+	$("#"+img).addClass('deleted');
 }
 
 
