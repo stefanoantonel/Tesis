@@ -7,7 +7,7 @@
 				"3":["ventana","campana"],
 				"4":["raton","leon"]
 			}],
-		"description": "esta actividad hace ..."
+		"description": "Encuentre las imágenes que riman!"
 		},
 	"act2":
 		{"act":[
@@ -36,13 +36,9 @@
 				{
 					"1":["leon","pato","tortuga"],
 					"2":["raton","gato","oruga"]
-				},
-				{
-					"1":["casa","botella","telefono"],
-					"2":["bote","televisor","bosque"]
 				}
 			],
-		"description": "Encuentra las imagenes que riman y unelos para que sean amigos"
+		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos"
 		},
 	
 	"act6":

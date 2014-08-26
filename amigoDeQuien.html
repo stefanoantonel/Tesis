@@ -29,9 +29,6 @@ function functInit1(conf,x){
 	console.log(t);
 	t=changeColor($(t),conf[0],1);
 
-
-
-
 	$('#leftContainer').append(t);
 	//----------------------------------------------------------------------
 
@@ -136,13 +133,6 @@ function changeColor(cont,word,let){
 		display: block;
 		font-size: 40px;
 	}
-	#alertOk{
-		float: left;
-		position: fixed;
-		top: 115px;
-		left: 140px;
-		z-index: 1;
-	}
 	#leftContainer{
 		max-width: 100px;
 		float:left;
@@ -168,12 +158,12 @@ function changeColor(cont,word,let){
 	<header></header>
 	<article>
 		<div id="leftContainer" class="container"></div>
-		<img id="leftboxTemp" class="img" hidden="hidden"></img>
+		<img column="leftContainer" id="leftboxTemp" class="img" hidden="hidden"></img>
 		
 		<div id="target"></div>
 		
 		<div id="rightContainer" class="container"></div>
-		<img id="rightboxTemp" class="img" hidden="hidden"></img>
+		<img column="rightContainer" id="rightboxTemp" class="img" hidden="hidden"></img>
 		
 	</article>
 	<div id="alertOk" class="alert-box success" hidden="True">

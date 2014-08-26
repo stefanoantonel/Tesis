@@ -8,35 +8,39 @@ var numParts=0;
 var contOriginal;
 var contSegundo;
 
-function moveOrigin(img1,img2){
-	console.log($("#target").find($("#"+img1)));
-	$("#target").find("#"+img2).css('border-color','black');
+function moveOrigin(img1,img2,contOriginal1,contOriginal2){
+	console.log($("#"+contOriginal1));
 	$("#target").find("#"+img1).css('border-color','black');
-	$("#target").find("#"+img1).appendTo($("#leftContainer"));
-	$("#target").find("#"+img2).appendTo($("#rightContainer"));
+	$("#target").find("#"+img2).css('border-color','black');
+	
+	$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
+	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));
 }
 
+
 function functionsDD(context,currElem){
-	$( ".img" ).on( "dragstop", function( event, ui ) {
+	//$( ".img" ).on( "dragstop", function( event, ui ) {
 		if(img1==null){
-			img1=$(this).attr("id");
+			img1=currElem.attr("id");
+			contOriginal1=currElem.attr("column");
 			console.log("seteo img1 con:"+img1);
+			console.log("contenedor 1:"+contOriginal1);
 			}
 		else{
-			img2=$(this).attr("id");
+			img2=currElem.attr("id");
+			contOriginal2=currElem.attr("column");
 			console.log("img2:"+img2);
 			console.log("antes del igual:"+img1+" - "+img2);
 			if(img1==img2){
 				console.log("igual");
-				$("#target").html("MUY BIEN");
-				window.setTimeout(function(){$("#target").html("");}, 1000);
+				window.setTimeout(function(){$("#target").html("");}, 500);
 				contador=contador-1;
 				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
 			$("#target").find("#"+img2).css('border-color','red').effect('shake');
 			$("#target").find("#"+img1).css('border-color','red').effect('shake');
-			window.setTimeout(moveOrigin, 1000,img1,img2);
+			window.setTimeout(moveOrigin, 1000,img1,img2,contOriginal1,contOriginal2);
 			
 		}
 		img1=null;
@@ -48,7 +52,7 @@ function functionsDD(context,currElem){
 //		else
 //			contSegundo=$(this).parents(".container");
 //		console.log("c:",contOriginal);
-	} );
+//	} );
 }
 
 
