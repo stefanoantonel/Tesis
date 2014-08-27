@@ -26,12 +26,25 @@ function functionInit(data){
 	//parts=$("#leftbox").children();
 	parts=$("#"+boxes[0]).children('span');
 	box=[$("#"+boxes[0]), $("#"+boxes[1])];
-	dragAndDrop(parts,box,functionsDD); 
+	dragAndDrop(parts,box,functionsDD);
+	returnPart(parts);
+	
 }
 
 function functionsDD(context,currElem){
 	isCorrect=checkCorrect(context);
 	if (isCorrect==true){cartelFelicitaciones();}
+}
+
+function returnPart(parts){
+
+	$(parts).click(function(){
+		id=$(this).parent('div').attr("id");
+		if (id==boxes[1]){
+			$("#"+boxes[0]).append(this);
+			checkCorrect($("#"+boxes[0]))
+		}
+	});
 }
 
 var numParts=0;
@@ -47,7 +60,7 @@ function checkCorrect(container) {
 	if($(container).attr('id')=='rightbox'){
 		
 		parts=$(container).children();
-		console.log('check right');
+
 		wrong=0;
 		for(var i = 0; i < $(parts).size(); i++){ 
 			if (parseInt(parts[i].id) != i){
@@ -69,7 +82,7 @@ function checkCorrect(container) {
 			return false;
 	}
 	else{
-		console.log('check left');
+		
 		$(container).children().removeClass('errorLetra');
 		checkCorrect($('#rightbox'));
 	}
