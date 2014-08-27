@@ -54,3 +54,7 @@ function loadDescription(descrip){
         $(".modal-title").html(title);
     });
 }
+
+function playAudio(audioName){
+	
+}
