@@ -111,8 +111,9 @@ function fillTemplate(boxes,temp, parts){
         $(t).attr('id',index);
         $(t).html(part);
         $(t).prop("hidden",false);
+        part1=part;
         $(t).mousedown(function(){
-        	try{ playSound(this.part); }
+        	try{ playSound(part1); }
         	catch(e){ console.error('Sonido no encontrado') }
         });
         a.push(t);

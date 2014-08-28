@@ -31,7 +31,10 @@ function changeColor(cont,words,let){
 	$(parts).each(function(ind,elem){
 		d=document.createElement('div');
 		$(d).html(elem);
-		a=$(d).addClass('firstWord');
+		a=$(d).mouseover(function(){
+			playSound(words);
+		});
+		a=$(d).addClass('inline');
 		elements.push(a);
 	});
 	wordToChange=$(elements[let-1]);
@@ -43,6 +46,7 @@ function changeColor(cont,words,let){
 		$('#target').removeAttr('hidden');
 		$('#rightContainer').removeAttr('hidden');
 		$('#firstImage').remove();
+		$('#left1').removeClass('secondWordHidden');
 		try{ playSound($(this).text());	 }
 		catch (error){ console.error('Sound Not found') }
 		
@@ -56,19 +60,29 @@ function functInitWords(conf,wordToChange){
 	//palabra inicial con letra llamativa------------------------
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left0');
-	$(t).attr('name',conf[0]);
+	name=conf[0];
+	$(t).attr('name',name);
 	$(t).addClass('firstWord');
 	$(t).removeAttr('hidden');
-	changed=changeColor($(t),conf[0],wordToChange);
-	$('#leftContainer').append(changed);
-	
+	changed=changeColor($(t),name,wordToChange);
+
+	$(t).html(changed);
+	$('#leftContainer').append(t);
+	//$('#leftContainer').append(changed);
+	t='';
 	//----------------------------------------------------------------------
 	//palabra oculta -----------------------------------------------
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left1');
-	$(t).attr('name',conf[1]);
-	$(t).addClass('secondWord');
-	$(t).html(conf[1]);
+	name=conf[1];
+	$(t).attr('name',name);
+	$(t).removeAttr('hidden');
+	$(t).addClass('secondWordHidden');
+	//$(t).html(conf[1]);
+	changed=changeColor($(t),name,wordToChange);
+	//$('#leftContainer').append(t);
+
+	$(t).html(changed);
 	$('#leftContainer').append(t);
 	//-------------------------------------------------------
 	//---------------initial Image
