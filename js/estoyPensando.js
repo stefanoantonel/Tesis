@@ -18,6 +18,7 @@ function functInit(conf){
 
 function fillTemplate(wordSelected,imagesSelected){	
 	arrayImg=[];
+	word=wordSelected;
 	$(imagesSelected).each(function(index,e){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);
@@ -35,6 +36,10 @@ function fillTemplate(wordSelected,imagesSelected){
 	disorder(arrayImg);
 	$(imgContainer).append(arrayImg);
 	$(wordContainer).text(wordSelected);
+	$(wordContainer).mouseover(function(){
+		try{ playSound(word); }
+        catch(e){ console.error('Sonido no encontrado') }
+	});
 }
 
 function checkCorrect(elem){

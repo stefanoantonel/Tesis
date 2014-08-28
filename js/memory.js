@@ -90,7 +90,7 @@ function setImage(){
 		$(this).css({backgroundImage : 'url(images/activities/' + $(this).attr("name") + '.jpg)'});
 		if(img1==null){
 			img1=$(this).attr("id");
-			console.log("valor:"+$(this));
+			
 			}
 		else{
 			img2=$(this).attr("id");
@@ -100,19 +100,20 @@ function setImage(){
 				contador=contador-1;
 				if(contador==0){
 					cartelFelicitaciones();
-					console.log("cartel");
+			
 					//$("#alertOk").delay( 1100 ).fadeIn( 400 )
 				}
 			}
 			else{
-				console.log('img1:',img1)
-				console.log($('#'+img1))
+			
 				window.setTimeout(removeBackground, 1000,img1);
 			}
 			img1=null;
 			img2=null;
 			
 		}
+		try{ playSound($(this).attr("name")); }
+        catch(e){ console.error('Sonido no encontrado') }
 	});
 }
 
