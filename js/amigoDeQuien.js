@@ -78,10 +78,14 @@ function functInit(conf,place){
     	t=$('#'+place+'boxTemp').clone();
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
-		$(t).attr('name',conf[index]);
+		name=conf[index];
+		$(t).attr('name',name);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
+		$(t).attr('src','images/activities/' + name + '.jpg');
+		$(t).mousedown(function(){
+			playSound(this.name);
+		});	
 		imgs.push(t);
 	});
 	disorder(imgs);
