@@ -29,9 +29,14 @@ function functInit1(conf,x){
 	$(conf).each(function(index,e){
 		t=$('#leftboxTemp').clone();
 		$(t).attr('id','left'+index);
-		$(t).attr('name',conf[index]);
+		name=conf[index];
+		$(t).attr('name',name);
 		$(t).removeAttr('hidden');
-		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
+		$(t).attr('src','images/activities/' + name + '.jpg');
+		$(t).mousedown(function(){
+			try{ playSound(this.name); }
+        	catch(e){ console.error('Sonido no encontrado') }
+		});
 		$('#leftContainer').append(t);
 	});
 }
@@ -42,9 +47,14 @@ function functInit2(conf,x){
     	t=$('#rightboxTemp').clone();
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
-		$(t).attr('name',conf[index]);
+		name=conf[index];
+		$(t).attr('name',name);
 		$(t).prop('num',index);
-		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
+		$(t).attr('src','images/activities/' + name + '.jpg');
+		$(t).mousedown(function(){
+			try{ playSound(this.name); }
+        	catch(e){ console.error('Sonido no encontrado') }
+		});
 		imgs.push(t);
 	});
 	disorder(imgs);

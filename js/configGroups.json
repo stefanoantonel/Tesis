@@ -7,7 +7,8 @@
 				"3":["ventana","campana"],
 				"4":["raton","leon"]
 			}],
-		"description": "Encuentre las imágenes que riman!"
+		"description": "Encuentre las imágenes que riman!",
+		"sounds":["luna","pato","gato","cuna","ventana","campana","raton","leon"]
 		},
 	"act2":
 		{"act":[
@@ -16,7 +17,8 @@
 			"ca be za",
 			"mer ca do"
 			],
-		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ..."
+		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ...",
+		"sounds":["pelota","calabaza","cabeza","mercado"]
 		},
 	"act4":
 		{"act":[
@@ -29,7 +31,8 @@
 				"2":["bote","televisor","bosque"]
 			}
 			],
-		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!"
+		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!",
+		"sounds":["casa","mano","cama","perro","casa-mano","botella","telefono","bote","televisor","bosque"]
 		},
 	"act5":
 		{"act":[
@@ -38,7 +41,8 @@
 					"2":["raton","gato","oruga"]
 				}
 			],
-		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos"
+		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
+		"sounds":["leon","pato","tortuga","raton","gato","oruga"]
 		},
 	
 	"act6":
@@ -49,7 +53,8 @@
 					"wordToChange":"1"
 				}
 			],
-		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!"
+		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!",
+		"sounds":["gato","pato","botella","luna"]
 		},
 	"act8":
 		{"act":[
@@ -58,6 +63,7 @@
 					"2":["pato","gato","botella"]
 				}
 			],
-		"description":"Seleccione la imagen que empiece con la letra!!!"
+		"description":"Seleccione la imagen que empiece con la letra!!!",
+		"sounds":["pato","gato","botella","p"]
 		}
 }

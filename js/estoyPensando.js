@@ -21,11 +21,13 @@ function fillTemplate(wordSelected,imagesSelected){
 	$(imagesSelected).each(function(index,e){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);
-		$(t).attr('name',e);
+		name=e;
+		$(t).attr('name',name);
 		$(t).removeClass('temp');
-		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
-		$(t).click(function(){
-			//audio
+		$(t).attr('src','images/activities/' + name + '.jpg');
+		$(t).mousedown(function(){
+			try{ playSound(this.name); }
+        	catch(e){ console.error('Sonido no encontrado') }
 			checkCorrect(this);
 		});
 		arrayImg.push(t);

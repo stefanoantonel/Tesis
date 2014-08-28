@@ -1,6 +1,8 @@
 var boxes;
 var temp;
 var img;
+var selectedText='';
+var origin='';
 
 function readyOk(idObj,idBox,idBox2,imgDemo){
 	temp1=document.getElementById(idObj);
@@ -13,7 +15,7 @@ function readyOk(idObj,idBox,idBox2,imgDemo){
 }
 
 function functionInit(data){
-	var selectedText=getTextRand(data);
+	selectedText=getTextRand(data);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
 
@@ -33,7 +35,11 @@ function functionInit(data){
 
 function functionsDD(context,currElem){
 	isCorrect=checkCorrect(context);
-	if (isCorrect==true){cartelFelicitaciones();}
+	if (isCorrect==true){
+		playSound(origin);
+		$(document).delay(400);
+		cartelFelicitaciones();
+	}
 }
 
 function returnPart(parts){
@@ -105,6 +111,10 @@ function fillTemplate(boxes,temp, parts){
         $(t).attr('id',index);
         $(t).html(part);
         $(t).prop("hidden",false);
+        $(t).mousedown(function(){
+        	try{ playSound(this.part); }
+        	catch(e){ console.error('Sonido no encontrado') }
+        });
         a.push(t);
     });
     //-------------disorder 

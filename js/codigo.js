@@ -23,12 +23,9 @@ function getConfig(numAct,callBack){
 	    	c=result["act"+numAct];
 	    }).done(function (){
 	    	callBack(c.act);
-	    	loadDescription(c.description)
+	    	loadDescription(c.description);
+	    	loadSounds(c.sounds);
 	    });
-}
-
-function getDescription(numAct,callBack){
-	
 }
 
 function disorder(o){ //in: list of numbers out: unorder list 
@@ -37,7 +34,7 @@ function disorder(o){ //in: list of numbers out: unorder list
 };
 
 function cartelFelicitaciones(){
-	$('article').delay( 600 ).fadeOut( 0 );
+	$('article').delay( 800 ).fadeOut( 0 );
 	$('#alertOk').delay( 800 ).fadeIn( 400 );
 	actividad.sco.set("cmi.core.lesson_status","passed");
 	actividad.end();
@@ -55,6 +52,22 @@ function loadDescription(descrip){
     });
 }
 
-function playAudio(audioName){
-	
+function loadSounds(sounds){
+	$(sounds).each(function(index,value){
+		
+		aud=document.createElement('audio');
+		$(aud).attr('id','sound'+value);
+		$(aud).attr('src','audio/'+value+'.wav');
+		$(aud).attr('type','audio/wav');
+		$(aud).appendTo('body');
+		//<audio id="p" src="audio/p2.mp3" type="audio/mp3"></audio>
+		
+	});
+	//$('#soundcasa')[0].play();	
+	//console.log()$('#soundcasa')[0].play();	
 }
+
+function playSound(soundName){
+	$('#sound'+soundName)[0].play();
+}
+
