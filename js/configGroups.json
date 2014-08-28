@@ -71,5 +71,17 @@
 		"description":"Seleccione la imagen que empiece con la letra!!!",
 		"sounds":["pato","gato","botella","p"],
 		"name":"estoyPensando"
+		},
+	"act10":
+		{"act":[
+				{
+					"word":["ca","sa","do"],
+					"wordToChange":"3",
+					"images":["casa","pato","pelota"]
+				}
+			],
+		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
+		"sounds":["casa","pato","pelota"],
+		"name":"quitandoSilaba"
 		}
 }
