@@ -26,9 +26,11 @@ function fillTemplate(wordSelected,imagesSelected){
 		$(t).attr('name',name);
 		$(t).removeClass('temp');
 		$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mousedown(function(){
+		$(t).mouseover(function(){
 			try{ playSound(this.name); }
         	catch(e){ console.error('Sonido no encontrado') }
+		});
+		$(t).click(function(){
 			checkCorrect(this);
 		});
 		arrayImg.push(t);
