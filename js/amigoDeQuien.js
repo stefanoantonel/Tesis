@@ -9,7 +9,7 @@ var contOriginal;
 var contSegundo;
 
 function moveOrigin(img1,img2,contOriginal1,contOriginal2){
-	console.log($("#"+contOriginal1));
+	
 	$("#target").find("#"+img1).css('border-color','black');
 	$("#target").find("#"+img2).css('border-color','black');
 	
@@ -23,16 +23,14 @@ function functionsDD(context,currElem){
 		if(img1==null){
 			img1=currElem.attr("id");
 			contOriginal1=currElem.attr("column");
-			console.log("seteo img1 con:"+img1);
-			console.log("contenedor 1:"+contOriginal1);
+		
 			}
 		else{
 			img2=currElem.attr("id");
 			contOriginal2=currElem.attr("column");
-			console.log("img2:"+img2);
-			console.log("antes del igual:"+img1+" - "+img2);
+		
 			if(img1==img2){
-				console.log("igual");
+		
 				window.setTimeout(function(){$("#target").html("");}, 500);
 				contador=contador-1;
 				if(contador==0){ cartelFelicitaciones();}
@@ -45,7 +43,7 @@ function functionsDD(context,currElem){
 		}
 		img1=null;
 		img2=null;
-		console.log("limpia-----------------------");
+		
 		}
 }
 
