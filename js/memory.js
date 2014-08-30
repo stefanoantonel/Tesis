@@ -112,8 +112,7 @@ function setImage(){
 			img2=null;
 			
 		}
-		try{ playSound($(this).attr("name")); }
-        catch(e){ console.error('Sonido no encontrado') }
+		playSound($(this).attr("name"));
 	});
 }
 

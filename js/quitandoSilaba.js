@@ -41,8 +41,7 @@ function fillTemplateImages(images){
 		$(t).attr('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mouseover(function(){
-			try{ playSound(this.name); }
-        	catch(e){ console.error('Sonido no encontrado') }
+			playSound($(this).attr('name'));
 		});
 		$(t).removeClass('hidden');
 		imgs.push(t);

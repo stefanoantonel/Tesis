@@ -68,6 +68,8 @@ function loadSounds(sounds){
 }
 
 function playSound(soundName){
-	$('#sound'+soundName)[0].play();
+	try{ $('#sound'+soundName)[0].play(); }
+	catch(e){ console.error('Sonido no encontrado') }
+	
 }
 

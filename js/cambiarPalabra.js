@@ -47,9 +47,7 @@ function changeColor(cont,words,let){
 		$('#rightContainer').removeAttr('hidden');
 		$('#firstImage').remove();
 		$('#left1').removeClass('secondWordHidden');
-		try{ playSound($(this).text());	 }
-		catch (error){ console.error('Sound Not found') }
-		
+		playSound(this.text());
 	});
 	return elements;
 }
@@ -104,8 +102,7 @@ function functInitImages(conf,x){
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
-			try{ playSound(this.name); }
-        	catch(e){ console.error('Sonido no encontrado') }
+			playSound(this.name);
 		});
 		imgs.push(t);
 	});

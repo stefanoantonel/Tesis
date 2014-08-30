@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuenta Palabras</title>
+	<script src="comun/jquery.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/codigo.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css" />
+	<script  src="comun/comun.js"></script>
+	<link rel="stylesheet" href="comun/comun.css">
+	<script src="js/cuentaPalabras.js"></script>
+
+	<style type="text/css">
+
+		.numberTemp{
+			font-size: 40px;
+			margin: 20px;
+			float: left;
+		}
+		.phrase{
+			font-size: 40px;
+		}
+		.wrong{
+			color: red;
+		}
+		div.phrase b{
+			color: darkorange;
+		}
+
+		article img.wrong{
+			border-color: red;
+		}
+		article img {
+			
+		}
+		article img.imgTemp{
+	   		border:3px solid;
+			margin-right: 3px;
+			width: 90px;
+			height: 90px;
+		}	
+		article img.hidden{
+			display: none;
+		}
+
+		.target{
+			
+			border:3px;
+			border-style: dashed;
+	   		
+			/* 
+			display: inline-block; 
+			border-color: black;
+			*/
+			border-width: medium;
+			width: 100px;
+			height: 100px;
+			margin:5%;
+		}
+		
+
+	</style>
+
+	<script type="application/javascript">
+		$(document).ready(function() {
+			ejercicio = function (){
+				target=$('#target');
+				numberTemp=$('#numberTemp');
+				container=$('#numberContainer');
+				completeWord=$('#completeWord');
+				//part=$('#part');
+				readyOk(target,numberTemp,container,completeWord);
+			}		
+			
+		});
+	</script>
+</head>
+<body>
+	<header></header>
+	<article>
+		<div id="text" class='phrase'>
+			Cuantas palabras tiene: <br>
+			<b id="completeWord"></b>
+		</div>
+
+		<div id="target" class="target"></div>
+		
+		<b id="numberTemp" class="hidden numberTemp"></b>
+		<div id="numberContainer"></div>
+
+		
+	</article>
+	<div id="alertOk" class="alert-box success" hidden="True">
+		<span>Felicitaciones </span>
+		</br><img class="imagenSucced" src="images/caraContenta.jpg">
+		</br>Has completado muy bien tu ejercicio
+	</div>
+	<footer></footer>
+</body>
+</html>

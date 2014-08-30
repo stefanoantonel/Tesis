@@ -83,5 +83,20 @@
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
 		"sounds":["casa","pato","pelota"],
 		"name":"quitandoSilaba"
+		},
+	"act12":
+		{"act":[
+				{
+					"sentence":["Mi","perro","tiene","una","casa"],
+					"quantity":["5","4","7"]
+				},
+				{
+					"sentence":["Yo","como","una","torta"],
+					"quantity":["4","3","6"]
+				}
+			],
+		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
+		"sounds":["5","4","7","3","6"],
+		"name":"cuentaPalabras"
 		}
 }

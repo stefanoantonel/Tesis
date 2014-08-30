@@ -34,8 +34,7 @@ function functInit1(conf,x){
 		$(t).removeAttr('hidden');
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
-			try{ playSound(this.name); }
-        	catch(e){ console.error('Sonido no encontrado') }
+			playSound($(this).attr('name'));
 		});
 		$('#leftContainer').append(t);
 	});
@@ -52,8 +51,7 @@ function functInit2(conf,x){
 		$(t).prop('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
-			try{ playSound(this.name); }
-        	catch(e){ console.error('Sonido no encontrado') }
+			playSound(this.name);
 		});
 		imgs.push(t);
 	});

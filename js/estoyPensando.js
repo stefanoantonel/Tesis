@@ -27,8 +27,7 @@ function fillTemplate(wordSelected,imagesSelected){
 		$(t).removeClass('temp');
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mouseover(function(){
-			try{ playSound(this.name); }
-        	catch(e){ console.error('Sonido no encontrado') }
+			playSound(this.name);
 		});
 		$(t).click(function(){
 			checkCorrect(this);
@@ -39,8 +38,7 @@ function fillTemplate(wordSelected,imagesSelected){
 	$(imgContainer).append(arrayImg);
 	$(wordContainer).text(wordSelected);
 	$(wordContainer).mouseover(function(){
-		try{ playSound(word); }
-        catch(e){ console.error('Sonido no encontrado') }
+		playSound(word);
 	});
 }
 
