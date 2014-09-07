@@ -3,9 +3,10 @@
 <head>
 <title>Palabra Oculta</title>
 
+	
 	<script src="comun/jquery.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-			
+	
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/palabraOculta.js"></script>
 	<script src="js/codigo.js"></script>
@@ -16,18 +17,24 @@
 	<link rel="stylesheet" href="comun/comun.css">
 	<!-- FIN DE NO SACAR :P -->
 
+<script></script>
+
 <script type="text/javascript">
 	$(document).ready(function() {
 		ejercicio = function (){
 			target=['target'];
+			
+			
 			readyOk(target,'leftbox','rightbox');
+
 		}		
+
 	});
 </script>
 
 <style >
 	.img{
-		
+		float: left;
    		border:3px solid;
    		border-color: black;
 		margin-right: 3px;
@@ -78,8 +85,8 @@
 	<article>
 		<img id="leftboxTemp" class="img" hidden="hidden"></img>
 		<div id="leftContainer"></div>
-		<div id="target"></div>
-		<img id="rightboxTemp" class="img img-rigth" hidden="hidden"></img>
+		<div id="target" class="droppable ui-widget-header ui-droppable ui-state-highlight"></div>
+		<img id="rightboxTemp" class="img img-rigth draggable ui-widget-content ui-draggable" hidden="hidden"></img>
 		<div id="rightContainer"></div>		
 	</article>
 	<div id="alertOk" class="alert-box success" hidden="True">

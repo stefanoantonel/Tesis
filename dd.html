@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html><head>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>    
+        <script>            
+(function(b){b.support.touch="ontouchend" in document;if(!b.support.touch){return;}var c=b.ui.mouse.prototype,e=c._mouseInit,a;function d(g,h){if(g.originalEvent.touches.length>1){return;}g.preventDefault();var i=g.originalEvent.changedTouches[0],f=document.createEvent("MouseEvents");f.initMouseEvent(h,true,true,window,1,i.screenX,i.screenY,i.clientX,i.clientY,false,false,false,false,0,null);g.target.dispatchEvent(f);}c._touchStart=function(g){var f=this;if(a||!f._mouseCapture(g.originalEvent.changedTouches[0])){return;}a=true;f._touchMoved=false;d(g,"mouseover");d(g,"mousemove");d(g,"mousedown");};c._touchMove=function(f){if(!a){return;}this._touchMoved=true;d(f,"mousemove");};c._touchEnd=function(f){if(!a){return;}d(f,"mouseup");d(f,"mouseout");if(!this._touchMoved){d(f,"click");}a=false;};c._mouseInit=function(){var f=this;f.element.bind("touchstart",b.proxy(f,"_touchStart")).bind("touchmove",b.proxy(f,"_touchMove")).bind("touchend",b.proxy(f,"_touchEnd"));e.call(f);};})(jQuery);            
+        </script>
+        <title></title>
+<style>
+        .draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background-color:#c7c7c7; }
+        .droppable,.droppable2 { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px;background-color:#e7e7e7; }
+        .ui-state-highlight { border: 3px #FF0000 solid; }
+        </style>           
+    </head>
+    <body style="cursor: auto;">
+        
+<div class="demo">
+        
+      <div class="draggable ui-widget-content ui-draggable" style="position: relative;">
+        <p>Drag me to a target</p>
+      </div>
+      <div class="draggable ui-widget-content ui-draggable" style="position: relative; ">
+        <p>Drag me to a target</p>
+      </div>    
+<br><br><br><br><br><br><br><br>
+      <div class="droppable ui-widget-header ui-droppable ui-state-highlight">
+        <p>Dropped!</p>
+      </div>
+<br><br><br><br><br><br><br><br><br><br>
+      <div class="droppable2 ui-widget-header ui-droppable2 ui-droppable">
+        <p>Dropped!</p>
+      </div>
+      </div>
+        
+        
+<script>
+        $(function() {
+          $( ".draggable" ).draggable();
+          $( ".droppable" ).droppable({
+            drop: function( event, ui ) {
+                if ($(this).hasClass("ui-droppable"))
+                {
+                  $( this )
+                    .addClass( "ui-state-highlight" )
+                    .find( "p" )
+                      .html( "Dropped!" );
+                    alert("You've dropped in the right box!!");
+                }
+            }
+          });
+          $( ".droppable2" ).droppable({
+            drop: function( event, ui ) {
+                if ($(this).hasClass("ui-droppable2"))
+                {
+                  $( this )
+                    .find( "p" )
+                      .html( "Dropped!" );
+                    alert("You've dropped in the wrong box!!");
+                }
+            }
+});
+$(".draggable").draggable({
+        revert : function(event, ui) {
+            // $(this).data("ui-draggable")
+            $(this).data("draggable").originalPosition = {
+                top : 0,
+                left : 0
+            };
+            return !event;
+        }
+    });       
+        });
+        </script>           
+        
+    
+</body></html>

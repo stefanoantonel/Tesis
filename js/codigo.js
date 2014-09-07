@@ -4,6 +4,15 @@ function dragAndDrop(idImg,idBoxes,functions) {
 			revert:true,
 		});
 	});
+	// var draggable = document.getElementById('0');
+	// 	draggable.addEventListener('touchmove', function(event) {
+	// 	    var touch = event.targetTouches[0];
+		 
+	// 	    // Place element where the finger is
+	// 	    draggable.style.left = touch.pageX-750 + 'px';
+	// 	    draggable.style.top = touch.pageY-250 + 'px';
+	// 	    event.preventDefault();
+	//   	}, false);
 
     $(idBoxes).each(function(ind,box){
     	$( this ).droppable({
