@@ -66,9 +66,13 @@ actividad.init = function() {
 /**
  *   Para terminar la sección SCORM
  */
-actividad.end = function() {
+actividad.end = function(status) {
+	//ac=actividad.sco.get("cmi.core.total_time");
+	actividad.sco.set("cmi.core.lesson_status",status);
 	var callSucceeded = this.sco.quit();
 };
+
+
 
 /*
 actividad.huellas_aparece = function() {
