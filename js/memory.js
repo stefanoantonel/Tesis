@@ -63,7 +63,7 @@ function functInit(conf,x){
 	//Arreglar
 	contador=4;
 	//desordenado=disorder(conf)
-	fillTemplate2("#contenedor","#template",conf)
+	fillTemplate2("#contenedor","#template",conf);
 	setImage();
 	 
 	/* $(".btnMemory").click(function(){
