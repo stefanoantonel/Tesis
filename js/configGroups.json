@@ -6,7 +6,14 @@
 				"2":["luna","cuna"],
 				"3":["ventana","campana"],
 				"4":["raton","leon"]
-			}],
+			},
+			{
+				"1":["bote","cama"],
+				"2":["cama","cuna"],
+				"3":["cama","campana"],
+				"4":["cama","leon"]
+			}
+			],
 		"description": "Encuentre las imágenes que riman!",
 		"sounds":["luna","pato","gato","cuna","ventana","campana","raton","leon"],
 		"name":"memory"
