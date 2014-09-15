@@ -9,10 +9,10 @@ function dragAndDrop(idImg,idBoxes,functions) {
 	// 	    var touch = event.targetTouches[0];
 		 
 	// 	    // Place element where the finger is
-	// 	    draggable.style.left = touch.pageX-750 + 'px';
+	// 	    draggable.style.left = touch.pageX-750 +t();
+	//   	}, false); 'px';
 	// 	    draggable.style.top = touch.pageY-250 + 'px';
-	// 	    event.preventDefault();
-	//   	}, false);
+	// 	    event.preventDefaul
 
     $(idBoxes).each(function(ind,box){
     	$( this ).droppable({
