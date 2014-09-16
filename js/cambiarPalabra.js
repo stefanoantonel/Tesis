@@ -129,6 +129,7 @@ function checkCorrect(part) {
 	else{
 		$(part).effect('shake');
 		$(part).css('border-color','red');
+		window.setTimeout(moveOrigin, 1000,part,"#rightContainer");
 		return false;
 	}
 }

@@ -2,14 +2,6 @@ var leftArray=0
 var rightArray=0
 var numParts=0;
 
-
-function moveOrigin(target,origin){
-	
-	$(target).css('border-color','black');
-	
-	$(target).appendTo($(origin));
-}
-
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
