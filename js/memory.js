@@ -1,6 +1,9 @@
 var img1=null;
 var img2=null;
 var contador=null;
+var activityNum=0;
+var activityQuantity=0;
+var configuration;
 
 function removeBackground(img){
 	$(".btnMemory").css({backgroundImage:'none'});
@@ -9,27 +12,11 @@ function removeBackground(img){
 
 function removeImg(img){
 	//$("#"+img).remove();
+	console.log("img deleted:",img);
 	$("#"+img).addClass('deleted');
 }
 
-
-/*function fillTemplate2(place,temp, elemets){
-
-    $(elemets).each(function(index,e){
-        t=$(temp).clone();
-        $(t).attr('id',e);
-        $(t).prop("hidden",false);
-        //$(t).css('display', 'block');
-        $(t).css('display', 'inline');
-        $(place).append(t);
-       // $(place).append("<br/>");
-        
-    });
-}
-*/
-
-function fillTemplate2(place,temp, config){
-	var elements = config[0];
+function fillTemplate2(place,temp, elements){
 	var allElements = [];
 	for (var x=1; x<5; x++){
 	//$(elements).each(function(ind,element){
@@ -58,22 +45,20 @@ function stopAudio(){
 		});
 }
 
-function functInit(conf,x){
+function fillPage(elements){
+	fillTemplate2("#contenedor","#template",elements);
+	setImage();
+}
+
+function functInit(config,x){
 	
 	//Arreglar
 	contador=4;
 	//desordenado=disorder(conf)
-	fillTemplate2("#contenedor","#template",conf);
-	setImage();
-	 
-	/* $(".btnMemory").click(function(){
-		stopAudio();	
-		$(this).find("audio")[0].play();
-	});
-	$("#pause").click(function(){
-		stopAudio();
-	});
-	 */
+	configuration = config;
+	activityQuantity = config.length+1;
+	var elements = config[activityNum];
+	fillPage(elements);
 }
 
 function areEqual(im1,im2){
@@ -99,9 +84,13 @@ function setImage(){
 					window.setTimeout(removeImg, 1000,img2);
 				contador=contador-1;
 				if(contador==0){
-					cartelFelicitaciones();
-			
-					//$("#alertOk").delay( 1100 ).fadeIn( 400 )
+					console.log("comprar: aq con an",activityQuantity," - ",activityNum);
+					if(activityQuantity==activityNum)
+						{cartelFelicitaciones();}
+					activityNum+=1;
+					window.setTimeout(function(){$(".deleted").remove();},1000);
+					window.setTimeout(fillPage, 1000,configuration[activityNum]);
+					//fillPage(configuration[activityNum]);
 				}
 			}
 			else{
