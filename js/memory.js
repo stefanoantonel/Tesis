@@ -56,7 +56,7 @@ function functInit(config,x){
 	contador=4;
 	//desordenado=disorder(conf)
 	configuration = config;
-	activityQuantity = config.length+1;
+	activityQuantity = config.length-1;
 	var elements = config[activityNum];
 	fillPage(elements);
 }
@@ -87,6 +87,7 @@ function setImage(){
 					console.log("comprar: aq con an",activityQuantity," - ",activityNum);
 					if(activityQuantity==activityNum)
 						{cartelFelicitaciones();}
+					contador=4;
 					activityNum+=1;
 					window.setTimeout(function(){$(".deleted").remove();},1000);
 					window.setTimeout(fillPage, 1000,configuration[activityNum]);
