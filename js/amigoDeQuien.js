@@ -8,8 +8,8 @@ var numParts=0;
 var contOriginal;
 var contSegundo;
 
-function moveOrigin(img1,img2,contOriginal1,contOriginal2){
-	
+function moveOriginTwice(img1,img2,contOriginal1,contOriginal2){
+	console.log("cont original:"+ contOriginal1);
 	$("#target").find("#"+img1).css('border-color','black');
 	$("#target").find("#"+img2).css('border-color','black');
 	
@@ -38,7 +38,8 @@ function functionsDD(context,currElem){
 		else{
 			$("#target").find("#"+img2).css('border-color','red').effect('shake');
 			$("#target").find("#"+img1).css('border-color','red').effect('shake');
-			window.setTimeout(moveOrigin, 1000,img1,img2,contOriginal1,contOriginal2);
+			console.log("move origin");
+			window.setTimeout(moveOriginTwice, 1000,img1,img2,contOriginal1,contOriginal2);
 			
 		}
 		img1=null;

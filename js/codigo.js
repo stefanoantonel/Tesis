@@ -83,5 +83,6 @@ function playSound(soundName){
 
 function moveOrigin(target,origin){
 	$(target).removeClass('wrong');
+	$(target).addClass('normal');
 	$(target).appendTo(origin);
 }
