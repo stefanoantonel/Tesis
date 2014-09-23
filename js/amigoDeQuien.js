@@ -8,6 +8,7 @@ var numParts=0;
 var contOriginal;
 var contSegundo;
 
+
 function moveOrigin(img1,img2,contOriginal1,contOriginal2){
 	
 	$("#target").find("#"+img1).addClass('normal');
@@ -36,6 +37,7 @@ function functionsDD(context,currElem){
 				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
+
 			$("#target").find("#"+img2).addClass('wrong').effect('shake');
 			$("#target").find("#"+img1).addClass('wrong').effect('shake');
 			window.setTimeout(moveOrigin, 1000,img1,img2,contOriginal1,contOriginal2);

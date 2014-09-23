@@ -70,7 +70,7 @@ function checkCorrect(part) {
 
 		$(part).removeClass('normal');
 		$(part).addClass('wrong');
-
+		console.log($(part));
 		window.setTimeout(moveOrigin, 1000,part,"#rightContainer");
 		return false;
 	}
