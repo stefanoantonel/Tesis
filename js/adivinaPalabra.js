@@ -77,8 +77,8 @@ function checkCorrect(container) {
 
 			}
 			else{//the word is correct
-				wrongPart=$('#'+parts[i].id)
-				$(wrongPart).removeClass('errorLetra');
+				wrongPart=$('#'+parts[i].id);
+				$(wrongPart).removeClass('wrong');
 			}
 		}
 		if(parts.size()==numParts && wrong==0){ //finalizo y correcto 

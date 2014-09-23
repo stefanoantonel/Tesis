@@ -82,8 +82,6 @@ function playSound(soundName){
 }
 
 function moveOrigin(target,origin){
-	
-	$(target).css('border-color','black');
-	
-	$(target).appendTo($(origin));
+	$(target).removeClass('wrong');
+	$(target).appendTo(origin);
 }
