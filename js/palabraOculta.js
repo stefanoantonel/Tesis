@@ -13,6 +13,7 @@ function readyOk(idObj,left,right){
 }
 
 function randomGroup(conf){
+	//getFirstActivity()...
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	left=group["1"];
 	right=group["2"];
@@ -66,7 +67,8 @@ function checkCorrect(part) {
 	}
 	else{
 		$(part).effect('shake');
-		$(part).css('border-color','red');
+		// $(part).css('border-color','red');
+		$(part).addClass('wrongImage');
 		window.setTimeout(moveOrigin, 1000,part,"#rightContainer");
 		return false;
 	}

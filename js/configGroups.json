@@ -21,12 +21,11 @@
 	"act2":
 		{"act":[
 			"pe lo ta",
-			"ca la ba za",
 			"ca be za",
-			"mer ca do"
+			"pa ja ro"
 			],
 		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ...",
-		"sounds":["pelota","calabaza","cabeza","mercado","pe","lo","ta","ca","la","ba","za","be","mer","do"],
+		"sounds":["pelota","pajaro","cabeza","pe","lo","ta","ca","la","ba","za","be","mer","do"],
 		"name":"adivinaPalabra"
 		},
 	"act4":
