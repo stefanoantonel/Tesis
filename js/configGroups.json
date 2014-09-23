@@ -8,11 +8,12 @@
 				"4":["raton","leon"]
 			},
 			{
-				"1":["pato","gato"],
+				"1":["conejo","espejo"],
 				"2":["luna","cuna"],
 				"3":["ventana","campana"],
 				"4":["raton","leon"]
 			}
+			
 			],
 		"description": "Encuentre las imágenes que riman!",
 		"sounds":["luna","pato","gato","cuna","ventana","campana","raton","leon"],

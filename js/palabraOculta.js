@@ -67,8 +67,10 @@ function checkCorrect(part) {
 	}
 	else{
 		$(part).effect('shake');
-		// $(part).css('border-color','red');
-		$(part).addClass('wrongImage');
+
+		$(part).removeClass('normal');
+		$(part).addClass('wrong');
+
 		window.setTimeout(moveOrigin, 1000,part,"#rightContainer");
 		return false;
 	}
@@ -77,7 +79,8 @@ function checkCorrect(part) {
 function checkReplace(box,newDiv){
 	if( $(box).has('img') ){
 		prevDiv=$(box).children();
-		$(prevDiv).css('border-color','black');
+		$(prevDiv).removeClass('wrong');
+		$(prevDiv).addClass('normal');
 		$('#rightContainer').append(prevDiv);
 		$(box).append(newDiv);
 	}

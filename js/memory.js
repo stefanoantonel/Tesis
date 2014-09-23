@@ -50,16 +50,24 @@ function fillPage(elements){
 	setImage();
 }
 
-function functInit(config,x){
-	
-	//Arreglar
+function functInit(configuration,x){
+	//cantidad de img que riman
 	contador=4;
-	//desordenado=disorder(conf)
-	configuration = config;
-	activityQuantity = config.length-1;
-	var elements = config[activityNum];
-	fillPage(elements);
+	fillPage(getFirstActivity(configuration));
 }
+
+function getFirstActivity(configuration) {
+	activityQuantity = configuration.length-1;
+	return elements = configuration[activityNum];
+}
+
+//function getNextActivity() {
+//	if(activityQuantity==activityNum)
+//	{cartelFelicitaciones();}
+//	
+//	activityNum+=1;
+//}
+
 
 function areEqual(im1,im2){
 	console.log("compare: "+im1+" con:"+ im2);
@@ -78,6 +86,12 @@ function setImage(){
 			
 			}
 		else{
+			if(img2!=null)
+				{
+				removeImg(img1);
+				removeImg(img2);
+				return;
+				}
 			img2=$(this).attr("id");
 			if(areEqual(img1,img2)){
 					window.setTimeout(removeImg, 1000,img1);
@@ -107,5 +121,4 @@ function setImage(){
 }
 
 
-	
 

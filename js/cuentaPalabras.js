@@ -65,7 +65,9 @@ function checkCorrect(number) {
 	}
 	else{
 		$(number).effect('shake');
+		$(number).removeClass('normal');
 		$(number).addClass('wrong');
+		window.setTimeout(moveOrigin, 1000,$(number),numberContainer);
 		return false;
 	}
 }

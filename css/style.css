@@ -118,3 +118,13 @@ body {
 	overflow: auto;
 	height: 300px;
 }
+
+.wrong {
+	color: red;
+	border-color: red;
+}
+
+.normal {
+	color: black;
+	border-color: black;
+}
