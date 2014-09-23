@@ -19,11 +19,14 @@
 			margin: 20px;
 			float: left;
 		}
-		.phrase{
-			font-size: 40px;
+		.textSize1 {
+			font-size: 30px;
+		}
+		.textSize2 {
+			font-size: 35px;
 		}
 		
-		div.phrase b{
+		div.phrase .textSize2{
 			color: darkorange;
 		}
 
@@ -55,9 +58,11 @@
 			border-width: medium;
 			width: 100px;
 			height: 100px;
-			margin:5%;
+			margin:5% 30%;
 		}
-		
+		.numberContainer {
+			margin-left: 20%;
+		}
 
 	</style>
 
@@ -79,14 +84,14 @@
 	<header></header>
 	<article>
 		<div id="text" class='phrase'>
-			Cuantas palabras tiene: <br>
-			<b id="completeWord"></b>
+			<b id="textOrigin" class='textSize1'>Cuantas palabras tiene:</b> <br>
+			<b id="completeWord" class='textSize2'></b>
 		</div>
 
 		<div id="target" class="target"></div>
 		
 		<b id="numberTemp" class="hidden numberTemp"></b>
-		<div id="numberContainer"></div>
+		<div id="numberContainer" class='numberContainer'></div>
 
 		
 	</article>

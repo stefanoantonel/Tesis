@@ -63,7 +63,9 @@ function checkCorrect(img) {
 	}
 	else{
 		$(img).effect('shake');
+		$(img).removeClass('normal');
 		$(img).addClass('wrong');
+		window.setTimeout(moveOrigin, 1000,img,imgContainer);
 		return false;
 	}
 }
@@ -71,7 +73,7 @@ function checkCorrect(img) {
 function checkReplace(box,newDiv){
 	if( $(target).has('img') ){
 		prevDiv=$(target).children();
-		$(prevDiv).css('border-color','black');
+		$(prevDiv).addClass('normal');
 		$(imgContainer).append(prevDiv);
 		$(target).append(newDiv);
 

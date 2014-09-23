@@ -10,8 +10,8 @@ var contSegundo;
 
 function moveOrigin(img1,img2,contOriginal1,contOriginal2){
 	
-	$("#target").find("#"+img1).css('border-color','black');
-	$("#target").find("#"+img2).css('border-color','black');
+	$("#target").find("#"+img1).addClass('normal');
+	$("#target").find("#"+img2).addClass('normal');
 	
 	$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
 	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));
@@ -36,8 +36,8 @@ function functionsDD(context,currElem){
 				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
-			$("#target").find("#"+img2).css('border-color','red').effect('shake');
-			$("#target").find("#"+img1).css('border-color','red').effect('shake');
+			$("#target").find("#"+img2).addClass('wrong').effect('shake');
+			$("#target").find("#"+img1).addClass('wrong').effect('shake');
 			window.setTimeout(moveOrigin, 1000,img1,img2,contOriginal1,contOriginal2);
 			
 		}
