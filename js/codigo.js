@@ -48,6 +48,16 @@ function cartelFelicitaciones(){
 	actividad.end("passed");
 }
 
+function congratulations(){
+	$("article").delay( 800 ).hide();
+	$('#alertOk').delay( 800 ).fadeIn( 400 );
+	
+}
+
+function endActivity(){
+	actividad.end("passed");
+}
+
 function loadDescription(descrip){	
 	title=$("title").text();
 	//debugger;

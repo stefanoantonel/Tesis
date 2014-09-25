@@ -20,7 +20,7 @@
 	margin:20px;
 }
 
-.actContainer{
+.actContainer{ 
 	/*margin-top:7%;
 	margin: auto;
 	border:solid;
@@ -50,6 +50,7 @@ background-size:100% 100%;
     padding: 20px;
     overflow: auto;
 	z-index: 1;
+	max-height: 
 }
 
 .alert-box span {

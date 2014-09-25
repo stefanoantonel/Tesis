@@ -8,14 +8,14 @@
 				"4":["raton","leon"]
 			},
 			{
-				"1":["conejo","espejo"],
+				"1":["manzana","rana"],
 				"2":["luna","cuna"],
-				"3":["ventana","campana"],
+				"3":["ojota","pelota"],
 				"4":["raton","leon"]
 			}
 			
 			],
-		"description": "Encuentre las imágenes que riman!",
+		"description": "Encuentre las imagenes que riman!",
 		"sounds":["luna","pato","gato","cuna","ventana","campana","raton","leon"],
 		"name":"memory"
 		},
@@ -47,8 +47,8 @@
 	"act5":
 		{"act":[
 				{
-					"1":["leon","pato","tortuga"],
-					"2":["raton","gato","oruga"]
+					"1":["leon","pato","rana"],
+					"2":["raton","gato","manzana"]
 				}
 			],
 		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",

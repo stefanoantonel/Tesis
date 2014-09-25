@@ -46,19 +46,23 @@ function stopAudio(){
 }
 
 function fillPage(elements){
+	$('#alertOk').delay( 100 ).fadeOut( 400 );
+	$("article").show();
 	fillTemplate2("#contenedor","#template",elements);
 	setImage();
 }
 
-function functInit(configuration,x){
+function functInit(config,x){
 	//cantidad de img que riman
 	contador=4;
-	fillPage(getFirstActivity(configuration));
+	//global
+	configuration=config;
+	fillPage(getFirstActivity(config));
 }
 
-function getFirstActivity(configuration) {
-	activityQuantity = configuration.length-1;
-	return elements = configuration[activityNum];
+function getFirstActivity(config) {
+	activityQuantity = config.length-1;
+	return elements = config[activityNum];
 }
 
 //function getNextActivity() {
@@ -99,12 +103,14 @@ function setImage(){
 				contador=contador-1;
 				if(contador==0){
 					console.log("comprar: aq con an",activityQuantity," - ",activityNum);
+					window.setTimeout(congratulations, 1000);
 					if(activityQuantity==activityNum)
-						{cartelFelicitaciones();}
+						{endActivity();
+						return;}
 					contador=4;
 					activityNum+=1;
 					window.setTimeout(function(){$(".deleted").remove();},1000);
-					window.setTimeout(fillPage, 1000,configuration[activityNum]);
+					window.setTimeout(fillPage, 3000,configuration[activityNum]);
 					//fillPage(configuration[activityNum]);
 				}
 			}
