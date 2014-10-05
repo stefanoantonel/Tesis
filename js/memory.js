@@ -6,9 +6,9 @@ var activityQuantity=0;
 var configuration;
 
 function removeBackground(img){
-	$(".btnMemory").css({backgroundImage:'none'});
-	
-}
+	//$(".btnMemory").css('background', 'transparent');
+	$("#"+img).css('backgroundImage', 'url(images/fondo-estrellas.png)');
+}	
 
 function removeImg(img){
 	//$("#"+img).remove();
@@ -117,6 +117,7 @@ function setImage(){
 			else{
 			
 				window.setTimeout(removeBackground, 1000,img1);
+				window.setTimeout(removeBackground, 1000,img2);
 			}
 			img1=null;
 			img2=null;

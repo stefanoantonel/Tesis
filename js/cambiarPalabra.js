@@ -115,7 +115,7 @@ function firstImg(conf){
 	//-------------------------show image
 	t1=$('#rightboxTemp').clone();
 	$(t1).attr('id','firstImage');
-	$(t1).addClass('firstImage')
+	$(t1).addClass('firstImage');
 	$(t1).attr('src','images/activities/' + conf[0] + '.jpg');	
 	$(t1).removeAttr('hidden');
 	$("#leftContainer").append(t1);

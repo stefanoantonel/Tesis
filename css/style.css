@@ -20,6 +20,11 @@
 	margin:20px;
 }
 
+.star-background {
+	background-image: url("../images/fondo-estrellas.png");
+}
+
+
 .actContainer{ 
 	/*margin-top:7%;
 	margin: auto;
