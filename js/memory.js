@@ -5,6 +5,11 @@ var activityNum=0;
 var activityQuantity=0;
 var configuration;
 
+function translate(target){
+	$("#"+target).addClass("animateUpperCorner");
+}
+
+
 function removeBackground(img){
 	//$(".btnMemory").css('background', 'transparent');
 	$("#"+img).css('backgroundImage', 'url(images/fondo-estrellas.png)');
@@ -13,7 +18,9 @@ function removeBackground(img){
 function removeImg(img){
 	//$("#"+img).remove();
 	console.log("img deleted:",img);
+	translate(img);
 	$("#"+img).addClass('deleted');
+	
 }
 
 function fillTemplate2(place,temp, elements){

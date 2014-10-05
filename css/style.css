@@ -134,3 +134,17 @@ body {
 	color: black;
 	border-color: black;
 }
+
+
+.animateUpperCorner{
+	-webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	
+	-webkit-transform: translate(300px,-100px);
+    -moz-transform: translate(300px,-100px);
+    -o-transform: translate(300px,-100px);
+    -ms-transform: translate(300px,-100px);
+	transform: translate(300px,-100px) rotate(200deg);
+}
