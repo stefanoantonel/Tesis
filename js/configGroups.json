@@ -1,22 +1,7 @@
 {
 	"act1":
-		{"act":
-			[{
-				"1":["pato","gato"],
-				"2":["luna","cuna"],
-				"3":["ventana","campana"],
-				"4":["raton","leon"]
-			},
-			{
-				"1":["manzana","rana"],
-				"2":["luna","cuna"],
-				"3":["ojota","pelota"],
-				"4":["raton","leon"]
-			}
-			
-			],
+		{
 		"description": "Encuentre las imagenes que riman!",
-		"sounds":["luna","pato","gato","cuna","ventana","campana","raton","leon"],
 		"name":"memory"
 		},
 	"act2":
@@ -26,57 +11,47 @@
 			"pa ja ro"
 			],
 		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ...",
-		"sounds":["pelota","pajaro","cabeza","pe","lo","ta","ca","la","ba","za","be","mer","do"],
 		"name":"adivinaPalabra"
 		},
 	"act4":
 		{"act":[
 			{
 				"1":["casa","mano"],
-				"2":["cama","perro","casa-mano"]
+				"2":["cama"]
 			},
 			{
 				"1":["botella","telefono"],
-				"2":["bote","televisor","bosque"]
+				"2":["bote"]
 			}
 			],
 		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!",
-		"sounds":["casa","mano","cama","perro","casa-mano","botella","telefono","bote","televisor","bosque"],
 		"name":"palabraOculta"
 		},
 	"act5":
-		{"act":[
-				{
-					"1":["leon","pato","rana"],
-					"2":["raton","gato","manzana"]
-				}
-			],
-		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
-		"sounds":["leon","pato","tortuga","raton","gato","oruga"],
-		"name":"amigoDeQuien"
+		{
+			"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
+			"name":"amigoDeQuien"
 		},
 	
 	"act6":
 		{"act":[
 				{
 					"1":["pato","gato"],
-					"2":["gato","botella","luna"],
+					"2":["gato"],
 					"wordToChange":"1"
 				}
 			],
 		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!",
-		"sounds":["gato","pato","botella","luna","p"],
 		"name":"cambiarPalabra"
 		},
 	"act8":
 		{"act":[
 				{
 					"1":["p"],
-					"2":["pato","gato","botella"]
+					"2":["pato"]
 				}
 			],
 		"description":"Seleccione la imagen que empiece con la letra!!!",
-		"sounds":["pato","gato","botella","p"],
 		"name":"estoyPensando"
 		},
 	"act10":
@@ -84,26 +59,38 @@
 				{
 					"word":["ca","sa","do"],
 					"wordToChange":"3",
-					"images":["casa","pato","pelota"]
+					"images":["casa"]
 				}
 			],
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
-		"sounds":["casa","pato","pelota"],
 		"name":"quitandoSilaba"
 		},
 	"act12":
 		{"act":[
 				{
 					"sentence":["Mi","perro","tiene","una","casa"],
-					"quantity":["5","4","7"]
+					"quantity":["5"]
 				},
 				{
 					"sentence":["Yo","como","una","torta"],
-					"quantity":["4","3","6"]
+					"quantity":["4"]
 				}
 			],
 		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
-		"sounds":["5","4","7","3","6"],
 		"name":"cuentaPalabras"
+		},
+	"rhymes":{
+		lev_1:{
+			"1":["leon","raton"],
+			"2":["pato","gato"],
+			"3":["rana","manzana"],
+			"4":["raton","leon"]
 		}
+		lev_2:{
+			"1":["pato","gato"],
+			"2":["luna","cuna"],
+			"3":["ventana","campana"],
+			"4":["raton","leon"]
+		}
+	}
 }
