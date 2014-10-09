@@ -15,15 +15,9 @@
 		},
 	"act4":
 		{"act":[
-			{
-				"1":["casa","mano"],
-				"2":["cama"]
-			},
-			{
-				"1":["botella","telefono"],
-				"2":["bote"]
-			}
-			],
+				{"values":[["ca","sa"],["ma","no"]], "target":"1"},
+				{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"}
+				],
 		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!",
 		"name":"palabraOculta"
 		},
@@ -35,62 +29,48 @@
 	
 	"act6":
 		{"act":[
-				{
-					"1":["pato","gato"],
-					"2":["gato"],
-					"wordToChange":"1"
-				}
-			],
+					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"}
+			   ],
 		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!",
 		"name":"cambiarPalabra"
 		},
 	"act8":
 		{"act":[
-				{
-					"1":["p"],
-					"2":["pato"]
-				}
-			],
+					{"values":["p","a","t","o"],"target":"1"}
+				],
 		"description":"Seleccione la imagen que empiece con la letra!!!",
 		"name":"estoyPensando"
 		},
 	"act10":
 		{"act":[
-				{
-					"word":["ca","sa","do"],
-					"wordToChange":"3",
-					"images":["casa"]
-				}
-			],
+					{"values":["ca","sa","do"],"target":"1"}
+		       ],
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
 		"name":"quitandoSilaba"
 		},
 	"act12":
 		{"act":[
-				{
-					"sentence":["Mi","perro","tiene","una","casa"],
-					"quantity":["5"]
-				},
-				{
-					"sentence":["Yo","como","una","torta"],
-					"quantity":["4"]
-				}
+					{"values":["Mi","perro","tiene","una","casa"]},
+					{"values":["Yo","como","una","torta"]}
 			],
 		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
 		"name":"cuentaPalabras"
 		},
 	"rhymes":{
-		lev_1:{
+		"lev_1":{
 			"1":["leon","raton"],
 			"2":["pato","gato"],
 			"3":["rana","manzana"],
 			"4":["raton","leon"]
-		}
-		lev_2:{
+		},
+		"lev_2":{
 			"1":["pato","gato"],
 			"2":["luna","cuna"],
 			"3":["ventana","campana"],
 			"4":["raton","leon"]
 		}
+	},
+	"distractors": {
+		
 	}
 }

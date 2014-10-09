@@ -45,6 +45,32 @@ function fillTemplate2(place,temp, elements){
 		$(place).append(allElements);
 	}
 }
+
+function fillTemplate(place,temp, elements){
+	var allElements = [];
+	for (var x=1; x<5; x++){
+	//$(elements).each(function(ind,element){
+		
+		//ind=ind+1;
+		
+		var group = elements[x];
+		for (var i=0; i<2; i++){
+		//$(element).each(function(index,e){
+	        t=$(temp).clone();
+	        $(t).attr('id',x*10+i);
+	        $(t).attr('name',group[i]);
+	        $(t).prop("hidden",false);
+	        $(t).css('display', 'inline');
+	        //$(place).append(t);
+	        allElements.push(t);
+		}
+		disorder(allElements);
+		$(place).append(allElements);
+	}
+}
+
+
+
 function stopAudio(){
 	$.each($('audio'), function () {
 		this.pause();
@@ -63,8 +89,12 @@ function functInit(config,x){
 	//cantidad de img que riman
 	contador=4;
 	//global
+	config=getConfigByElement("rhymes","lev_1");
+	
 	configuration=config;
-	fillPage(getFirstActivity(config));
+	//fillPage(getFirstActivity(config));
+	
+	fillTemplate("#contenedor","#template",config);
 }
 
 function getFirstActivity(config) {

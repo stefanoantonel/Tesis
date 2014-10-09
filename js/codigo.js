@@ -37,6 +37,19 @@ function getConfig(numAct,callBack){
 	    });
 }
 
+function getConfigByElement(elemnt,level,callBack){
+	$.getJSON("js/configGroups.json",function(result,callBack){
+	    	c=result[element][level];
+	    }).done(function (){
+	    	console.log("rta json:",c);
+	    	callBack(c.act);
+	    	loadDescription(c.description);
+	    	loadSounds(c.sounds);
+	    });
+}
+
+
+
 function disorder(o){ //in: list of numbers out: unorder list 
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	return o;
