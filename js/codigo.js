@@ -37,14 +37,19 @@ function getConfig(numAct,callBack){
 	    });
 }
 
-function getConfigByElement(elemnt,level,callBack){
+function getConfigByElement(element,level,quantity,callBack){
 	$.getJSON("js/configGroups.json",function(result,callBack){
 	    	c=result[element][level];
-	    }).done(function (){
-	    	console.log("rta json:",c);
-	    	callBack(c.act);
-	    	loadDescription(c.description);
-	    	loadSounds(c.sounds);
+	    	result_size=Object.keys(c).length;
+	    	result_random=[];
+	    	for(i=0 ; i<quantity; i++){
+	    		r = Math.floor((Math.random() * result_size) + 1);
+	    		result_random.push(c[r]);
+	    	}
+	    	return result_random;
+	    }).done(function(){
+	    	console.log("result:",result_random);
+	    	callBack(result_random);
 	    });
 }
 
@@ -67,7 +72,7 @@ function congratulations(){
 	
 }
 
-function endActivity(){
+function passed(){
 	actividad.end("passed");
 }
 

@@ -9,14 +9,14 @@ var contOriginal;
 var contSegundo;
 
 
-function moveOrigin(img1,img2,contOriginal1,contOriginal2){
-	
-	$("#target").find("#"+img1).addClass('normal');
-	$("#target").find("#"+img2).addClass('normal');
-	
-	$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
-	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));
-}
+//function moveOrigin(img1,img2,contOriginal1,contOriginal2){
+//	
+//	$("#target").find("#"+img1).addClass('normal');
+//	$("#target").find("#"+img2).addClass('normal');
+//	
+//	$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
+//	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));
+//}
 
 
 function functionsDD(context,currElem){
@@ -37,10 +37,12 @@ function functionsDD(context,currElem){
 				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
-
-			$("#target").find("#"+img2).addClass('wrong').effect('shake');
-			$("#target").find("#"+img1).addClass('wrong').effect('shake');
-			window.setTimeout(moveOrigin, 1000,img1,img2,contOriginal1,contOriginal2);
+			var img_target1=$("#target").find("#"+img1);
+			var img_target2=$("#target").find("#"+img2);
+			img_target1.addClass('wrong').effect('shake');
+			img_target2.addClass('wrong').effect('shake');
+			window.setTimeout(moveOrigin, 1000,img_target1,$("#"+contOriginal1));
+			window.setTimeout(moveOrigin, 1000,img_target2,$("#"+contOriginal2));
 			
 		}
 		img1=null;
@@ -51,7 +53,7 @@ function functionsDD(context,currElem){
 
 
 function readyOk(idObj,left,right){
-	conf=getConfig("5",randomGroup);
+	getConfigByElement("rhymes","lev_2",3,fillTemplate);
 }
 
 
@@ -68,6 +70,22 @@ function randomGroup(conf){
 	dragAndDrop(contLeft,idObj,functionsDD);
 	//console.log("drag",$( ".img" ));
 	
+}
+
+function fillTemplate(conf){
+	var left=[];
+	var right=[];
+	$(conf).each(function(index,element){
+		left.push(element[0]);
+		right.push(element[1]);
+	});
+	functInit(left,"left"); //adds elements disorderly   
+	functInit(right,"right"); 
+	contRight=$('#rightContainer').children();
+	contLeft=$('#leftContainer').children();
+	idObj=$('#target');
+	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contLeft,idObj,functionsDD);
 }
 
 
