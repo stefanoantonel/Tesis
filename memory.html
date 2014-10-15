@@ -17,18 +17,11 @@
 
 $(document).ready(function() {
 	ejercicio=function(){
-		var conf;
-		conf=getConfig(1,functInit);
+		functInit();
+		//var conf;
+		//conf=getConfig(1,functInit);
 	}
-	/* $("#pruebaPP").click(function(){
-		$.ajax({
-			url:"popUp.html",
-			context:document.body
-		}).done(function(data){
-				$(".container").html(data);
-				console.log("data:"+data);
-			});
-	}); */
+
 	$("#memory").click(function(){
 		console.log("hola");
 		window.top.location.href = "memory.html";}); 

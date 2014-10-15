@@ -37,12 +37,23 @@ function getConfig(numAct,callBack){
 	    });
 }
 
+
+function getConfig(numAct){
+	$.getJSON("js/configGroups.json",function(result){
+	    	c=result["act"+numAct];
+	    }).done(function (){
+	    	loadDescription(c.description);
+	    	loadSounds(c.sounds);
+	    });
+}
+
+
 function getConfigByElement(element,level,quantity,callBack){
 	$.getJSON("js/configGroups.json",function(result,callBack){
 	    	c=result[element][level];
 	    	result_size=Object.keys(c).length;
 	    	result_random=[];
-	    	for(i=0 ; i<quantity; i++){
+	    	for(i=0; i<quantity; i++){
 	    		r = Math.floor((Math.random() * result_size) + 1);
 	    		result_random.push(c[r]);
 	    	}

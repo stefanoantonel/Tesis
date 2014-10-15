@@ -24,7 +24,7 @@ function fillTemplate(rhymes){
 	var allElements = [];
 	var place = "#contenedor";
 	var temp = "#template";
-	for (var x=1; x<5; x++){
+	for (var x=0; x<4; x++){
 		var group = rhymes[x];
 		console.log("group:",group);
 		for (var i=0; i<2; i++){
@@ -57,11 +57,16 @@ function stopAudio(){
 //	setImage();
 //}
 
-function functInit(config,x){
+function loadActivity(){
 	contador=4;
 	$('#alertOk').delay( 100 ).fadeOut( 400 );
 	$("article").show();
 	config=getConfigByElement("rhymes","lev_1",4,fillTemplate);
+}
+
+function functInit(){
+	loadActivity();
+	getConfig(1);
 }
 
 //function getFirstActivity(config) {
@@ -99,7 +104,7 @@ function setImage(){
 					window.setTimeout(removeImg, 1000,img2);
 				contador=contador-1;
 				if(contador==0){
-					passed
+					passed();
 					window.setTimeout(congratulations, 1000);
 					window.setTimeout(function(){$(".deleted").remove();},1000);
 					window.setTimeout(functInit, 3000);
