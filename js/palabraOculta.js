@@ -9,15 +9,29 @@ function functionsDD(context,currElem){
 }
 
 function readyOk(idObj,left,right){
-	conf=getConfig("4",randomGroup);
+	 
+	functionInit();
+	// conf=getConfig("4",randomGroup);
+}
+function functionInit() {
+	var images=getConfigByElement("act4","act",1,functionCallback);
+	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
 
-function randomGroup(conf){
-	//getFirstActivity()...
-	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	left=group["1"];
-	right=group["2"];
-	functInit1(left); //paso el array solamente 
+
+function functionCallback(conf){
+	var conf = conf[0];
+	var syllableToSelect = conf["target"] - 1;
+	var values = conf["values"];
+
+	var firstWord = values[0];
+	var secondWord = values[1];
+	var result = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('');
+
+	var wordArrayLeft = [[firstWord],[secondWord]] 
+
+	functLeft(wordArrayLeft,syllableToSelect); //paso el array solamente 
+	
 	functInit2(right); //paso el array solamente para desordenar
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
@@ -26,11 +40,12 @@ function randomGroup(conf){
 }
 
 //sin desordenar
-function functInit1(conf,x){	
-	$(conf).each(function(index,e){
+// function functLeft(wordArray){	
+function functLeft(wordArrayLeft,syllableToSelect) {
+	$(wordArrayLeft).each(function(index,elem){
 		t=$('#leftboxTemp').clone();
 		$(t).attr('id','left'+index);
-		name=conf[index];
+		name = elem.join('');
 		$(t).attr('name',name);
 		$(t).removeAttr('hidden');
 		$(t).attr('src','images/activities/' + name + '.jpg');

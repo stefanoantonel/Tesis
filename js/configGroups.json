@@ -15,9 +15,9 @@
 		},
 	"act4":
 		{"act":[
-				{"values":[["ca","sa"],["ma","no"]], "target":"1"},
-				{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"}
-				],
+			{"values":[["ca","sa"],["ma","no"]], "target":"1"},
+			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"}
+			],
 		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!",
 		"name":"palabraOculta"
 		},
@@ -71,6 +71,7 @@
 		}
 	},
 	"distractors": {
-		
+		"lev_1":[ ["leon"],["raton"], ["pato"] ]
 	}
+	
 }
