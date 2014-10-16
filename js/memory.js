@@ -102,13 +102,13 @@ function setImage(){
 			if(areEqual(img1,img2)){
 					window.setTimeout(removeImg, 1000,img1);
 					window.setTimeout(removeImg, 1000,img2);
-				contador=contador-1;
-				if(contador==0){
-					passed();
-					window.setTimeout(congratulations, 1000);
-					window.setTimeout(function(){$(".deleted").remove();},1000);
-					window.setTimeout(functInit, 3000);
-				}
+					contador=contador-1;
+					if(contador==0){
+						passed();
+						window.setTimeout(congratulations, 1000);
+						window.setTimeout(function(){$(".deleted").remove();},1000);
+						window.setTimeout(functInit, 3000);
+					}
 			}
 			else{
 			

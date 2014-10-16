@@ -1,8 +1,9 @@
 var boxes;
 var temp;
 var img;
-var selectedText='';
-var origin='';
+var selectedText = '';
+var origin = '';
+var counter = 2; 
 
 function readyOk(idObj,idBox,idBox2,imgDemo){
 	temp1=document.getElementById(idObj);
@@ -40,8 +41,8 @@ function functionsDD(context,currElem){
 	isCorrect=checkCorrect(context);
 	if (isCorrect==true){
 		playSound(origin);
-		$(document).delay(400);
-		cartelFelicitaciones();
+		// $(document).delay(400);
+		sessionCounter(counter);
 	}
 }
 
@@ -112,6 +113,7 @@ function fillTemplate(boxes,temp, parts){
     $(parts).each(function(index,part){
         t=$(temp).clone();
         $(t).attr('id',index);
+        $(t).addClass('deleted');
         $(t).html(part);
         $(t).prop("hidden",false);
         part1=part;
