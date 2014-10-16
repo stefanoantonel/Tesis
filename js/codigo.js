@@ -37,6 +37,35 @@ function getConfig(numAct,callBack){
 	    });
 }
 
+
+function getConfig(numAct){
+	$.getJSON("js/configGroups.json",function(result){
+	    	c=result["act"+numAct];
+	    }).done(function (){
+	    	loadDescription(c.description);
+	    	loadSounds(c.sounds);
+	    });
+}
+
+
+function getConfigByElement(element,level,quantity,callBack){
+	$.getJSON("js/configGroups.json",function(result,callBack){
+	    	c=result[element][level];
+	    	result_size=Object.keys(c).length;
+	    	result_random=[];
+	    	for(i=0; i<quantity; i++){
+	    		r = Math.floor((Math.random() * result_size) + 1);
+	    		result_random.push(c[r]);
+	    	}
+	    	return result_random;
+	    }).done(function(){
+	    	console.log("result:",result_random);
+	    	callBack(result_random);
+	    });
+}
+
+
+
 function disorder(o){ //in: list of numbers out: unorder list 
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	return o;
@@ -54,7 +83,7 @@ function congratulations(){
 	
 }
 
-function endActivity(){
+function passed(){
 	actividad.end("passed");
 }
 
