@@ -8,13 +8,16 @@ function readyOk(idObj,idBox,idBox2,imgDemo){
 	temp1=document.getElementById(idObj);
 	boxes=[idBox,idBox2];
 	temp=$(temp1);
-	var conf;
+	//var conf;
 	img=imgDemo;
-	conf=getConfig(2,functionInit);
-	
+	// conf=getConfig(2,functionInit);
+	functionInit();
+}
+function functionInit() {
+	getConfigByElement("act2","act",1,functionCallback);
 }
 
-function functionInit(data){
+function functionCallback(data){
 	selectedText=getTextRand(data);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
@@ -26,7 +29,7 @@ function functionInit(data){
 	imgDemo=$("."+img);
 	fillImg(imgDemo,parts);
 	//parts=$("#leftbox").children();
-	parts=$("#"+boxes[0]).children('span');
+	parts=$("#"+boxes[0]).children('.syllable');
 	box=[$("#"+boxes[0]), $("#"+boxes[1])];
 	dragAndDrop(parts,box,functionsDD);
 	returnPart(parts);

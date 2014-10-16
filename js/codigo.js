@@ -54,7 +54,8 @@ function getConfigByElement(element,level,quantity,callBack){
 	    	result_size=Object.keys(c).length;
 	    	result_random=[];
 	    	for(i=0; i<quantity; i++){
-	    		r = Math.floor((Math.random() * result_size) + 1);
+	    		// r = Math.floor((Math.random() * result_size) + 1);
+	    		r = Math.floor((Math.random() * result_size));
 	    		result_random.push(c[r]);
 	    	}
 	    	return result_random;
@@ -63,7 +64,6 @@ function getConfigByElement(element,level,quantity,callBack){
 	    	callBack(result_random);
 	    });
 }
-
 
 
 function disorder(o){ //in: list of numbers out: unorder list 
