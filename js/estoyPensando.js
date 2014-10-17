@@ -6,19 +6,31 @@ function readyOk(wo,te,cont){
 	wordContainer=wo;
 	imgTemp=te;
 	imgContainer=cont;
-	conf=getConfig(8,functInit);
+	// conf=getConfig(8,functionInit);
+	functionInit();
 }
 
-function functInit(conf){
-	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	wordSelected=group["1"];
-	imagesSelected=group["2"];
+function functionCallback(conf) {
+	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	var conf = conf[0];
+	var targetWord = conf["target"] - 1;
+	var values = conf["values"]
+	wordSelected=values.join('').replace(/,/g, "");;
+	getConfigByElement("distractors","lev_1",2,functRight);
+}
+
+function functRight(conf) {
+	imagesSelected=conf;
 	fillTemplate(wordSelected,imagesSelected);
+}
+function functionInit(){
+	getConfigByElement("act8","act",1,functionCallback);
 }
 
 function fillTemplate(wordSelected,imagesSelected){	
 	arrayImg=[];
 	word=wordSelected;
+	imagesSelected.unshift(wordSelected);
 	$(imagesSelected).each(function(index,e){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);

@@ -18,12 +18,12 @@ function functionInit() {
 
 function functionCallback(conf){
 	var conf = conf[0];
-	var wordToSelect = conf["target"] - 1;
+	var wordToChange = conf["target"] - 1;
 	var values = conf["values"]
 
-	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	left=values[0]; //no se van a mover
-	right=values[1];
+	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	left=values[0].join('').replace(/,/g, ""); //no se van a mover
+	right=values[1].join('').replace(/,/g, "");
 	// wordToChange=group["wordToChange"];
 	functInitWords(left,wordToChange); //muestra una palabra y oculta la otra
 	functInitImages(right);
