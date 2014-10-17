@@ -43,7 +43,7 @@
 		},
 	"act10":
 		{"act":[
-					{"values":["ca","sa","do"],"target":"1"}
+					{"values":["ca","sa","do"],"target":"3"}
 		       ],
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
 		"name":"quitandoSilaba"

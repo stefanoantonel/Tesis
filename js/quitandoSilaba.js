@@ -11,16 +11,40 @@ function readyOk(targ,imgT,cont,complete,p){
 	completeWord=complete;
 	part=p;
 
-	conf=getConfig("10",randomGroup);
+	// conf=getConfig("10",randomGroup);
+	functionInit();
 }
 
-function randomGroup(conf){
-	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	wordSelected=group["word"]; 
-	wordToChange=group["wordToChange"]; //in number
-	images=group["images"];
-	fillTemplateWord(wordSelected,wordToChange);
-	fillTemplateImages(images);
+function functionInit() {
+	getConfigByElement("act10","act",1,functionCallback);
+}
+
+
+function functionCallback(conf){
+	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	var conf = conf[0];
+	var syllableToSelect = conf["target"] - 1;
+	var values = conf["values"];
+	/* 
+	* I have to do this toString() because it is an object and when 
+	* I modify the syllable the value change
+	*/
+	var res = conf["values"].toString();
+	res = res.split(",");
+	res[syllableToSelect] = "";
+	result = res.join('').replace(',','');
+	// wordSelected=group["word"]; 
+	// wordToChange=group["wordToChange"]; //in number
+	// images=group["images"];
+	fillTemplateWord(values,syllableToSelect);
+
+	getConfigByElement("distractors","lev_1",2,functionCallback2);
+	
+}
+
+function functionCallback2(conf) {
+	conf.unshift()
+	fillTemplateImages(conf);
 	images=imgContainer.children();
 	dragAndDrop(images,target,functionsDD);
 }
@@ -34,6 +58,7 @@ function fillTemplateWord(wordComplete,wordToChange){
 
 function fillTemplateImages(images){
 	imgs=[];
+	images.unshift(result);
 	$(images).each(function(index,e){
     	t=$(imgTemp).clone();
 		name=e;

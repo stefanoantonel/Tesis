@@ -16,7 +16,7 @@ function readyOk(idObj,left,right){
 	// conf=getConfig("4",randomGroup);
 }
 function functionInit() {
-	var images=getConfigByElement("act4","act",1,functionCallback);
+	getConfigByElement("act4","act",1,functionCallback);
 	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
 

@@ -2,24 +2,49 @@ var target;
 var numberTemp;
 var numberContainer;
 var completeWord;
+var numberToSelect;
 
 function readyOk(targ,imgT,cont,complete){
 	target=targ;
 	numberTemp=imgT;
 	numberContainer=cont;
 	completeWord=complete;
-	conf=getConfig("12",randomGroup);
+	// conf=getConfig("12",randomGroup);
+	functionInit();
 }
 
-function randomGroup(conf){
-	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	sentenceSelected=group["sentence"]; 
-	numbersSelected=group["quantity"]; //in number
+function functionInit() {
+	getConfigByElement("act12","act",1,functionCallback);
+}
+
+function functionCallback(conf){
+	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	var conf = conf[0];
+	
+	var sentenceSelected = conf["values"];
+	numberToSelect= sentenceSelected.length;
+	
+	// var firstWord = sentenceSelected[0];
+	// var secondWord = values[1];
+
+	// sentenceSelected=group["sentence"]; 
+	// numbersSelected=group["quantity"]; //in number
 	//images=group["images"];
 	fillTemplateWord(sentenceSelected);
-	fillTemplateNumber(numbersSelected);
+
+
+	fillTemplateNumber(getRandomNumber(2));
 	number2=numberContainer.children();
 	dragAndDrop(number2,target,functionsDD);
+	
+}
+
+function getRandomNumber(quantity) {
+	var random = [];
+	for (var i = quantity - 1; i >= 0; i--) {
+		random.push( Math.floor((Math.random()*10)+1) );	
+	};	
+	return random;
 }
 
 function fillTemplateWord(wordComplete){
@@ -29,6 +54,7 @@ function fillTemplateWord(wordComplete){
 
 function fillTemplateNumber(number){
 	numberArray=[];
+	number.unshift(numberToSelect);
 	$(number).each(function(index,e){
     	t=$(numberTemp).clone();
 		name=e;
