@@ -9,14 +9,22 @@ function functionsDD(context,currElem){
 }
 
 function readyOk(idObj,left,right){
-	conf=getConfig("6",randomGroup);
+	functionInit();
 }
 
-function randomGroup(conf){
+function functionInit() {
+	var images=getConfigByElement("act6","act",1,functionCallback);
+}
+
+function functionCallback(conf){
+	var conf = conf[0];
+	var wordToSelect = conf["target"] - 1;
+	var values = conf["values"]
+
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
-	left=group["1"]; //no se van a mover
-	right=group["2"];
-	wordToChange=group["wordToChange"];
+	left=values[0]; //no se van a mover
+	right=values[1];
+	// wordToChange=group["wordToChange"];
 	functInitWords(left,wordToChange); //muestra una palabra y oculta la otra
 	functInitImages(right);
 	contRight=$('#rightContainer').children();
