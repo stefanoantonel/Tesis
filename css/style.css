@@ -149,6 +149,18 @@ body {
 	transform: translate(300px,-100px) rotate(400deg);
 }
 
+.animateToFront{
+	-webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+
+	-ms-transform: scale(3,3); /* IE 9 */
+    -webkit-transform: scale(3,3); /* Chrome, Safari, Opera */
+    transform: scale(3,3);
+}
+
+
 
 /********** TITLE FORMAT **************/
 

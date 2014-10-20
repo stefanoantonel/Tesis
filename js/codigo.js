@@ -140,3 +140,7 @@ function sessionCounter(counter) {
 			functionInit();
 		}
 }
+
+function translate(target){
+	$(target).addClass("animateUpperCorner");
+}

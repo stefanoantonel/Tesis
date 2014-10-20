@@ -5,18 +5,13 @@ var activityNum=0;
 var activityQuantity=0;
 var configuration;
 
-function translate(target){
-	$("#"+target).addClass("animateUpperCorner");
-}
-
-
 function removeBackground(img){
 	$("#"+img).css('backgroundImage', 'url(images/fondo-estrellas.png)');
 }	
 
 function removeImg(img){
 	console.log("img deleted:",img);
-	translate(img);
+	translate("#"+img);
 	$("#"+img).addClass('deleted');
 }
 

@@ -57,18 +57,19 @@
 		"name":"cuentaPalabras"
 		},
 	"rhymes":{
-		"lev_1":{
-			"1":["leon","raton"],
-			"2":["pato","gato"],
-			"3":["rana","manzana"],
-			"2":["luna","cuna"]
-		},
-		"lev_2":{
-			"1":["pato","gato"],
-			"2":["luna","cuna"],
-			"3":["ventana","campana"],
-			"4":["raton","leon"]
-		}
+		"lev_1":[
+			["leon","raton"],
+			["pato","gato"],
+			["rana","manzana"],
+			["luna","cuna"],
+			["castillo","anillo"]
+		],
+		"lev_2":[
+			["pato","gato"],
+			["luna","cuna"],
+			["ventana","campana"],
+			["raton","leon"]
+		]
 	},
 	"distractors": {
 		"lev_1":[ 

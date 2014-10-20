@@ -31,12 +31,14 @@ function functionsDD(context,currElem){
 			contOriginal2=currElem.attr("column");
 		
 			if(img1==img2){
-		
+				imageOk($("#target").find("img"));
+				//imageOk($("#target").find("#"+img2));
 				window.setTimeout(function(){$("#target").html("");}, 500);
 				contador=contador-1;
 				if(contador==0){ cartelFelicitaciones();}
 			}
 		else{
+			console.log("imgs: ",img1,img2);
 			var img_target1=$("#target").find("#"+img1);
 			var img_target2=$("#target").find("#"+img2);
 			img_target1.addClass('wrong').effect('shake');
@@ -51,6 +53,9 @@ function functionsDD(context,currElem){
 		}
 }
 
+function imageOk(target){
+	target.addClass("animateToFront");
+} 
 
 function readyOk(idObj,left,right){
 	getConfigByElement("rhymes","lev_2",3,fillTemplate);
