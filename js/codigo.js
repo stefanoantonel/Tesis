@@ -127,7 +127,7 @@ function sessionCounter(counter) {
 			window.setTimeout(congratulations, 1000);
 			// window.setTimeout(function(){$(".deleted").remove();},1000);
 			// $(document).delay(400);
-			window.setTimeout(functInit, 3000);
+			window.setTimeout(functionInit, 3000);
 		}
 		else {
 			$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
