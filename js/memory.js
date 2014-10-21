@@ -59,7 +59,7 @@ function loadActivity(){
 	config=getConfigByElement("rhymes","lev_1",4,fillTemplate);
 }
 
-function functInit(){
+function functionInit(){
 	loadActivity();
 	getConfig(1);
 }
@@ -102,7 +102,7 @@ function setImage(){
 						passed();
 						window.setTimeout(congratulations, 1000);
 						window.setTimeout(function(){$(".deleted").remove();},1000);
-						window.setTimeout(functInit, 3000);
+						window.setTimeout(functionInit, 3000);
 					}
 			}
 			else{

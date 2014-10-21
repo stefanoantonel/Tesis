@@ -49,19 +49,13 @@ function getConfig(numAct){
 
 
 function getConfigByElement(element,level,quantity,callBack){
-	$.getJSON("js/configGroups.json",function(result,callBack){
-	    	c=result[element][level];
-	    	result_size=Object.keys(c).length;
-	    	result_random=[];
-	    	for(i=0; i<quantity; i++){
-	    		// r = Math.floor((Math.random() * result_size) + 1);
-	    		r = Math.floor((Math.random() * result_size));
-	    		result_random.push(c[r]);
-	    	}
-	    	return result_random;
+	$.getJSON("js/configGroups.json",function(config,callBack){
+	    	element_config = config[element][level];
+	    	result_disorder = disorder(element_config);
+	    	result = result_disorder.slice(0,quantity);
 	    }).done(function(){
-	    	console.log("result:",result_random);
-	    	callBack(result_random);
+	    	console.log("result:",result);
+	    	callBack(result);
 	    });
 }
 

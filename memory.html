@@ -17,14 +17,19 @@
 
 $(document).ready(function() {
 	ejercicio=function(){
-		functInit();
+		functionInit();
 		//var conf;
 		//conf=getConfig(1,functInit);
 	}
 
 	$("#memory").click(function(){
 		console.log("hola");
-		window.top.location.href = "memory.html";}); 
+		window.top.location.href = "memory.html";
+	});
+	$("#next").click(function(){
+		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
+		window.location.href = base_url+"/amigoDeQuien.html";
+	})
 });
 </script>
 
@@ -38,6 +43,7 @@ $(document).ready(function() {
 </head>
 <body>
 <header></header>
+<a id="next">Siguiente</a>
 <div class="container-body">
 	<article class="actContainer">	
 		<div id="contenedor">
