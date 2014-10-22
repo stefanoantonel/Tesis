@@ -101,8 +101,8 @@ function setImage(){
 					if(contador==0){
 						passed();
 						window.setTimeout(congratulations, 1000);
-						window.setTimeout(function(){$(".deleted").remove();},1000);
-						window.setTimeout(functionInit, 3000);
+						window.setTimeout(function(){$(".deleted").remove();},2000);
+						window.setTimeout(functionInit, 4000);
 					}
 			}
 			else{

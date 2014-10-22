@@ -60,7 +60,7 @@ function getConfigByElement(element,level,quantity,callBack){
 }
 
 
-function disorder(o){ //in: list of numbers out: unorder list 
+function disorder(o){ 
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	return o;
 };
