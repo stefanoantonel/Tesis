@@ -6,8 +6,13 @@ var activityQuantity=0;
 var configuration;
 
 function removeBackground(img){
+	$("#"+img).removeClass("rotateToLeft");
 	$("#"+img).css('backgroundImage', 'url(images/fondo-estrellas.png)');
 }	
+
+function changeBackground(target){
+	$(target).css({backgroundImage : 'url(images/activities/' + $(target).attr("name") + '.jpg)'});
+}
 
 function removeImg(img){
 	console.log("img deleted:",img);
@@ -81,7 +86,8 @@ function areEqual(im1,im2){
 
 function setImage(){
 	$('.imgMemory').click(function(){
-		$(this).css({backgroundImage : 'url(images/activities/' + $(this).attr("name") + '.jpg)'});
+		$(this).addClass("rotateToLeft");
+		changeBackground(this);
 		if(img1==null){
 			img1=$(this).attr("id");
 			
@@ -107,12 +113,11 @@ function setImage(){
 			}
 			else{
 			
-				window.setTimeout(removeBackground, 1000,img1);
-				window.setTimeout(removeBackground, 1000,img2);
+				window.setTimeout(removeBackground, 2000,img1);
+				window.setTimeout(removeBackground, 2000,img2);
 			}
 			img1=null;
 			img2=null;
-			
 		}
 		playSound($(this).attr("name"));
 	});

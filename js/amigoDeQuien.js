@@ -54,7 +54,8 @@ function functionsDD(context,currElem){
 }
 
 function imageOk(target){
-	target.addClass("animateToFront");
+	//target.addClass("animateToFront"); //si lo debugueo anda bien
+	$(target[0]).addClass("animateToFront");
 } 
 
 function readyOk(idObj,left,right){

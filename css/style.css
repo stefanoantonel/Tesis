@@ -150,15 +150,28 @@ body {
 }
 
 .animateToFront{
-	-webkit-transition: 1s ease-in-out;
-    -moz-transition: 1s ease-in-out;
-    -o-transition: 1s ease-in-out;
-	transition: 1s ease-in-out;
+	-webkit-transition: 2s ease-in-out;
+    -moz-transition: 2s ease-in-out;
+    -o-transition: 2s ease-in-out;
+	transition: 2s ease-in-out;
 
-	-ms-transform: scale(3,3); /* IE 9 */
-    -webkit-transform: scale(3,3); /* Chrome, Safari, Opera */
-    transform: scale(3,3);
+	-ms-transform: scale(4,4) rotateX(360deg); /* IE 9 */
+    -webkit-transform: scale(4,4) rotateX(360deg); /* Chrome, Safari, Opera */
+    transform: scale(4,4) rotateX(360deg);
 }
+
+.rotateToLeft{
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+
+	-ms-transform: rotateY(180deg); /* IE 9 */
+    -webkit-transform: rotateY(180deg); /* Chrome, Safari, Opera */
+    transform: rotateY(180deg);
+		
+}
+
 
 
 
