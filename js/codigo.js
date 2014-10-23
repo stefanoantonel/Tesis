@@ -150,3 +150,10 @@ function translate(target){
 	$(target).addClass("animateUpperCorner");
 }
 
+
+function removeOneElement(array,element){
+	var index = array.indexOf(element);
+	array.splice(index, 1);
+	return array;
+}
+
