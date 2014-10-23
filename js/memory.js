@@ -16,6 +16,7 @@ function changeBackground(target){
 
 function removeImg(img){
 	console.log("img deleted:",img);
+	$("#"+img).removeClass("rotateToLeft");
 	translate("#"+img);
 	$("#"+img).addClass('deleted');
 }

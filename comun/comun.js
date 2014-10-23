@@ -59,7 +59,6 @@ actividad.init = function() {
 		duration : 1500,
 		queue : false
 	});
-
 	actividad.ej = new ejercicio();
 };
 

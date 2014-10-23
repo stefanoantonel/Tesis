@@ -32,8 +32,7 @@ function functionsDD(context,currElem){
 		
 			if(img1==img2){
 				imageOk($("#target").find("img"));
-				//imageOk($("#target").find("#"+img2));
-				window.setTimeout(function(){$("#target").html("");}, 500);
+				window.setTimeout(function(){$("#target").html("");}, 3000);
 				contador=contador-1;
 				if(contador==0){ cartelFelicitaciones();}
 			}
@@ -54,8 +53,8 @@ function functionsDD(context,currElem){
 }
 
 function imageOk(target){
-	//target.addClass("animateToFront"); //si lo debugueo anda bien
-	$(target[0]).addClass("animateToFront");
+	target.removeClass("ui-draggable-dragging");
+	target.addClass("animateToFront"); 
 } 
 
 function readyOk(idObj,left,right){

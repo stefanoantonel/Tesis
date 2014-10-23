@@ -44,8 +44,19 @@ function getConfig(numAct){
 	    }).done(function (){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
+	    	getStyle();
 	    });
 }
+
+function getStyle(){
+	$.getJSON("js/configGroups.json",function(result){
+	    	c=result["skin"];
+	    }).done(function (){
+	    	skin=disorder(c);
+	    	$('head').append('<link rel="stylesheet" href="css/skin/'+skin[0]+'.css" type="text/css" />');
+	    });
+}
+
 
 
 function getConfigByElement(element,level,quantity,callBack){
@@ -138,3 +149,4 @@ function sessionCounter(counter) {
 function translate(target){
 	$(target).addClass("animateUpperCorner");
 }
+
