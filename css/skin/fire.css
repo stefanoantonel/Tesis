@@ -9,5 +9,11 @@
 }
 
 body {
-	background-image :url('../../images/background/fireBackground.jpg');	
+	background-image :url('../../images/background/fireBackground.jpg');
+	background-size:cover;	
+}
+
+
+.btnMemory {
+	background-image: url("../../images/background/orange.jpg");
 }

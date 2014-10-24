@@ -7,7 +7,7 @@ var configuration;
 
 function removeBackground(img){
 	$("#"+img).removeClass("rotateToLeft");
-	$("#"+img).css('backgroundImage', 'url(images/fondo-estrellas.png)');
+	$("#"+img).css('backgroundImage', 'url("../../images/background/orange.jpg")');
 }	
 
 function changeBackground(target){
