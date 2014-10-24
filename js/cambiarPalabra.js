@@ -25,14 +25,17 @@ function functionCallback(conf){
 	left=values[0].join('').replace(/,/g, ""); //no se van a mover
 	right=values[1].join('').replace(/,/g, "");
 	// wordToChange=group["wordToChange"];
-	functInitWords(left,wordToChange); //muestra una palabra y oculta la otra
+	functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
+
 	functInitImages(right);
+	getConfigByElement("distractors","lev_1",2,functInitImages);
+
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
 	dragAndDrop(contRight,idObj,functionsDD);
 }
 
-function changeColor(cont,words,let){
+function changeColor(cont,words,wordToChange){
 	//changeColor(contenedor, palabara, letra resaltada)
 	parts=words.split("");
 	elements=[];
@@ -45,7 +48,7 @@ function changeColor(cont,words,let){
 		a=$(d).addClass('inline');
 		elements.push(a);
 	});
-	wordToChange=$(elements[let-1]);
+	wordToChange=$(elements[wordToChange]);
 
 	$(wordToChange).addClass('wordSelected');
 	$(wordToChange).click(function(){	
@@ -61,12 +64,13 @@ function changeColor(cont,words,let){
 }
 
 //sin desordenar
-function functInitWords(conf,wordToChange){
+function functInitWords(first,second,wordToChange){
 	
 	//palabra inicial con letra llamativa------------------------
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left0');
-	name=conf[0];
+	//name=conf[0];
+	name=first;
 	$(t).attr('name',name);
 	$(t).addClass('firstWord');
 	$(t).removeAttr('hidden');
@@ -80,7 +84,7 @@ function functInitWords(conf,wordToChange){
 	//palabra oculta -----------------------------------------------
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left1');
-	name=conf[1];
+	name=second;
 	$(t).attr('name',name);
 	$(t).removeAttr('hidden');
 	$(t).addClass('secondWordHidden');
@@ -92,7 +96,7 @@ function functInitWords(conf,wordToChange){
 	$('#leftContainer').append(t);
 	//-------------------------------------------------------
 	//---------------initial Image
-	firstImg(conf);
+	firstImg(left);
 }
 
 function functInitImages(conf,x){
@@ -124,7 +128,7 @@ function firstImg(conf){
 	t1=$('#rightboxTemp').clone();
 	$(t1).attr('id','firstImage');
 	$(t1).addClass('firstImage');
-	$(t1).attr('src','images/activities/' + conf[0] + '.jpg');	
+	$(t1).attr('src','images/activities/' + conf + '.jpg');	
 	$(t1).removeAttr('hidden');
 	$("#leftContainer").append(t1);
 }

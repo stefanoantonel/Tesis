@@ -142,7 +142,11 @@ function sessionCounter(counter) {
 		}
 		else {
 			$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
+			$("article").html("");
+			congratulations();
+			$("article").html("");
 			functionInit();
+
 		}
 }
 
