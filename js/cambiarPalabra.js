@@ -1,9 +1,10 @@
 var leftArray=0
 var rightArray=0
 var numParts=0;
+var secondWord = '';
 
 function functionsDD(context,currElem){
-	checkReplace(context,currElem);
+	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){cartelFelicitaciones();}
 }
@@ -26,13 +27,11 @@ function functionCallback(conf){
 	right=values[1].join('').replace(/,/g, "");
 	// wordToChange=group["wordToChange"];
 	functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
+	secondWord = right;
+	
+	getConfigByElementWithOne("distractors","lev_1",2,functInitImages,right);
 
-	functInitImages(right);
-	getConfigByElement("distractors","lev_1",2,functInitImages);
-
-	contRight=$('#rightContainer').children();
-	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD);
+	
 }
 
 function changeColor(cont,words,wordToChange){
@@ -58,7 +57,8 @@ function changeColor(cont,words,wordToChange){
 		$('#rightContainer').removeAttr('hidden');
 		$('#firstImage').remove();
 		$('#left1').removeClass('secondWordHidden');
-		playSound(this.text());
+		playSound( $(this).html() );
+		// playSound(this.text());
 	});
 	return elements;
 }
@@ -120,7 +120,10 @@ function functInitImages(conf,x){
 	});
 	disorder(imgs);
 	$("#rightContainer").append(imgs);
-	
+
+	contRight=$('#rightContainer').children();
+	idObj=$('#target');
+	dragAndDrop(contRight,idObj,functionsDD);
 }
 
 function firstImg(conf){
@@ -134,11 +137,11 @@ function firstImg(conf){
 }
 
 function checkCorrect(part) {
-	num=$(part).prop("num");
-	if(num==0){
+	var name = $(part).attr("name");
+	if(name.valueOf() == secondWord.valueOf()) {
 		return true;
 	}
-	else{
+	else {
 		$(part).effect('shake');
 		$(part).removeClass('normal');
 		$(part).addClass('wrong');

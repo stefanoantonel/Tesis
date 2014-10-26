@@ -157,7 +157,24 @@ function translate(target){
 
 function removeOneElement(array,element){
 	var index = array.indexOf(element);
-	array.splice(index, 1);
+	if(index != -1) {
+		array.splice(index, 1);	
+	}
 	return array;
 }
 
+function getConfigByElementWithOne(type, level, quantity, callBack, elementExcept){
+	$.getJSON("js/configGroups.json",function(config,callBack){
+	    	element_config = config[type][level];
+	    	element_config = removeOneElement(element_config,elementExcept);
+	    	element_config = disorder(element_config);
+	    	result_disorder = element_config.slice(0,quantity);
+	    	result_disorder.push(elementExcept);
+			result = disorder(result_disorder);
+	    	// result = result_disorder.slice(0,quantity);
+	    	
+	    }).done(function(){
+	    	console.log("result:",result);
+	    	callBack(result);
+	    });
+}
