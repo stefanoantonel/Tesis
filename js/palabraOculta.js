@@ -1,7 +1,7 @@
 var leftArray=0
 var rightArray=0
 var numParts=0;
-var result = '';
+var resultWord = '';
 var counter = 2;
 
 function functionsDD(context,currElem){
@@ -28,13 +28,14 @@ function functionCallback(conf){
 
 	var firstWord = values[0];
 	var secondWord = values[1];
-	result = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('').replace(',','');
+	resultWord = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('').replace(',','');
 
 	var wordArrayLeft = [[firstWord],[secondWord]] 
 
 	functLeft(wordArrayLeft,syllableToSelect); //paso el array solamente 
 
-	getConfigByElement("distractors","lev_1",2,functRight);
+// 	getConfigByElement("distractors","lev_1",2,functRight);
+	getConfigByElementWithOne("distractors","lev_1",2,functRight,resultWord);
 	// functInit2(right); //paso el array solamente para desordenar
 	
 	//loadDescription(conf.description);
@@ -59,7 +60,7 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 }
 
 function functRight(conf){
-	conf.unshift(result);
+// 	conf.unshift(result);
 	imgs=[];
 	$(conf).each(function(index,e){
     	t=$('#rightboxTemp').clone();
@@ -83,8 +84,9 @@ function functRight(conf){
 }
 
 function checkCorrect(part) {
-	num=$(part).prop("num");
-	if(num==0){
+	name = $(part).attr("name");
+	
+	if(name.valueOf() == resultWord.valueOf()){
 		return true;
 	}
 	else{

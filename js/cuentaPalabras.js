@@ -22,7 +22,7 @@ function functionCallback(conf){
 	var conf = conf[0];
 	
 	var sentenceSelected = conf["values"];
-	numberToSelect= sentenceSelected.length;
+	numberToSelect = sentenceSelected.length;
 	
 	// var firstWord = sentenceSelected[0];
 	// var secondWord = values[1];
@@ -32,10 +32,11 @@ function functionCallback(conf){
 	//images=group["images"];
 	fillTemplateWord(sentenceSelected);
 
+	// fillTemplateNumber(getRandomNumber(2));
 
-	fillTemplateNumber(getRandomNumber(2));
-	number2=numberContainer.children();
-	dragAndDrop(number2,target,functionsDD);
+	getConfigByElementWithOne("numbers","lev_1",2,fillTemplateNumber,numberToSelect);
+	
+	
 	
 }
 
@@ -54,7 +55,7 @@ function fillTemplateWord(wordComplete){
 
 function fillTemplateNumber(number){
 	numberArray=[];
-	number.unshift(numberToSelect);
+	//number.unshift(numberToSelect);
 	$(number).each(function(index,e){
     	t=$(numberTemp).clone();
 		name=e;
@@ -70,6 +71,9 @@ function fillTemplateNumber(number){
 	});
 	disorder(numberArray);
 	$(numberContainer).append(numberArray);
+
+	number2=numberContainer.children();
+	dragAndDrop(number2,target,functionsDD);
 }
 
 function functionsDD(context,currElem){
@@ -85,8 +89,8 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(number) {
-	num=$(number).attr("num");
-	if(num==0){
+	num = $(number).html();
+	if(num.valueOf() == numberToSelect.valueOf()){
 		return true;
 	}
 	else{

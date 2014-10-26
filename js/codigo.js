@@ -29,7 +29,7 @@ function dragAndDrop(idImg,idBoxes,functions) {
 
 function getConfig(numAct,callBack){
 	$.getJSON("js/configGroups.json",function(result,callBack){
-	    	c=result["act"+numAct];
+	    	var c=result["act"+numAct];
 	    }).done(function (){
 	    	callBack(c.act);
 	    	loadDescription(c.description);
@@ -40,7 +40,7 @@ function getConfig(numAct,callBack){
 
 function getConfig(numAct){
 	$.getJSON("js/configGroups.json",function(result){
-	    	c=result["act"+numAct];
+	    	var c=result["act"+numAct];
 	    }).done(function (){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
@@ -61,8 +61,8 @@ function getStyle(){
 
 function getConfigByElement(element,level,quantity,callBack){
 	$.getJSON("js/configGroups.json",function(config,callBack){
-	    	element_config = config[element][level];
-	    	result_disorder = disorder(element_config);
+	    	var element_config = config[element][level];
+	    	var result_disorder = disorder(element_config);
 	    	result = result_disorder.slice(0,quantity);
 	    }).done(function(){
 	    	console.log("result:",result);

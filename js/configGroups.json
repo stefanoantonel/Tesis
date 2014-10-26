@@ -49,14 +49,14 @@
 		"name":"quitandoSilaba"
 		},
 	"act12":
-		{"act":[
+		{"act": [
 					{"values":["Mi","perro","tiene","una","casa"]},
 					{"values":["Yo","como","una","torta"]}
 			],
 		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
 		"name":"cuentaPalabras"
 		},
-	"rhymes":{
+	"rhymes": {
 		"lev_1":[
 			["leon","raton"],
 			["pato","gato"],
@@ -71,13 +71,18 @@
 			["raton","leon"]
 		]
 	},
-	"skin":[
+	"skin": [
 		"fire",
 		"farm"
 	],
 	"distractors": {
-		"lev_1":[ 
+		"lev_1": [ 
 				["leon"],["raton"], ["pato"], ["campana"] 
+			]
+	},
+	"numbers": {
+		"lev_1": [ 
+				["5"],["4"], ["7"], ["6"], ["8"], ["11"] 
 			]
 	}
 	
