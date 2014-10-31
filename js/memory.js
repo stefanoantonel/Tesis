@@ -6,8 +6,9 @@ var activityQuantity=0;
 var configuration;
 
 function removeBackground(img){
-	$("#"+img).removeClass("rotateToLeft");
+	
 	$("#"+img).css('backgroundImage', 'url("../../images/background/orange.jpg")');
+	$("#"+img).removeClass("rotateToLeft");
 }	
 
 function changeBackground(target){
@@ -87,8 +88,9 @@ function areEqual(im1,im2){
 
 function setImage(){
 	$('.imgMemory').click(function(){
-		$(this).addClass("rotateToLeft");
+		
 		changeBackground(this);
+		$(this).addClass("rotateToLeft");
 		if(img1==null){
 			img1=$(this).attr("id");
 			

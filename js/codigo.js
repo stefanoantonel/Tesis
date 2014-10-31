@@ -53,6 +53,7 @@ function getStyle(){
 	    	c=result["skin"];
 	    }).done(function (){
 	    	skin=disorder(c);
+	    	console.log("skinks",skin);
 	    	$('head').append('<link rel="stylesheet" href="css/skin/'+skin[0]+'.css" type="text/css" />');
 	    });
 }
@@ -141,10 +142,17 @@ function sessionCounter(counter) {
 			window.setTimeout(functionInit, 3000);
 		}
 		else {
-			$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
-			$("article").html("");
-			congratulations();
-			$("article").html("");
+			window.setTimeout(congratulations, 1000);
+		//window.setTimeout(function(){$(".deleted").remove();},2000);
+		
+		window.setTimeout(functionInit, 4000);
+			
+			
+			
+//			$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
+//			$("article").html("");
+//			congratulations();
+//			$("article").html("");
 			functionInit();
 
 		}
