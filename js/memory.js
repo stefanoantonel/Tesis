@@ -52,13 +52,6 @@ function stopAudio(){
 		});
 }
 
-//function fillPage(elements){
-//	$('#alertOk').delay( 100 ).fadeOut( 400 );
-//	$("article").show();
-//	fillTemplate2("#contenedor","#template",elements);
-//	setImage();
-//}
-
 function loadActivity(){
 	contador=4;
 	$('#alertOk').delay( 100 ).fadeOut( 400 );
@@ -67,14 +60,10 @@ function loadActivity(){
 }
 
 function functionInit(){
+	
 	loadActivity();
 	getConfig(1);
 }
-
-//function getFirstActivity(config) {
-//	activityQuantity = config.length-1;
-//	return elements = config[activityNum];
-//}
 
 
 function areEqual(im1,im2){

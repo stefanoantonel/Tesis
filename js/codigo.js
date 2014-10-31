@@ -34,6 +34,7 @@ function getConfig(numAct,callBack){
 	    	callBack(c.act);
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
+	    	getStyle();
 	    });
 }
 
@@ -68,6 +69,7 @@ function getConfigByElement(element,level,quantity,callBack){
 	    }).done(function(){
 	    	console.log("result:",result);
 	    	callBack(result);
+	    	getStyle();
 	    });
 }
 
@@ -142,19 +144,13 @@ function sessionCounter(counter) {
 			window.setTimeout(functionInit, 3000);
 		}
 		else {
+			window.setTimeout(function(){$("img.deleted").remove();},1000);
 			window.setTimeout(congratulations, 1000);
-		//window.setTimeout(function(){$(".deleted").remove();},2000);
-		
-		window.setTimeout(functionInit, 4000);
-			
-			
-			
-//			$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
-//			$("article").html("");
-//			congratulations();
-//			$("article").html("");
-			functionInit();
-
+			window.setTimeout(function(){
+				$('#alertOk').hide();
+				$("article").show();
+				functionInit();
+				}, 4000);			
 		}
 }
 

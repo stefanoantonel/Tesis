@@ -16,8 +16,7 @@ function readyOk(idObj,left,right){
 	// conf=getConfig("4",randomGroup);
 }
 function functionInit() {
-	$('#alertOk').delay( 100 ).fadeOut( 400 );
-	$("article").show();
+	
 	getConfigByElement("act4","act",1,functionCallback);
 	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
