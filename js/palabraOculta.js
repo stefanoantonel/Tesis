@@ -7,7 +7,7 @@ var counter = 2;
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){sessionCounter(counter)}
+	if (isCorrect==true){sessionCounter()}
 }
 
 function readyOk(idObj,left,right){
@@ -18,6 +18,7 @@ function readyOk(idObj,left,right){
 function functionInit() {
 	
 	getConfigByElement("act4","act",1,functionCallback);
+	getConfig(4);
 	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
 
