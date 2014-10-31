@@ -16,7 +16,8 @@ function functionCallback(conf) {
 	var targetWord = conf["target"] - 1;
 	var values = conf["values"]
 	wordSelected=values.join('').replace(/,/g, "");;
-	getConfigByElement("distractors","lev_1",2,functRight);
+	// getConfigByElement("distractors","lev_1",2,functRight);
+	getConfigByElementWithOne("distractors","lev_1",2,functRight,wordSelected);
 }
 
 function functRight(conf) {
@@ -29,8 +30,8 @@ function functionInit(){
 
 function fillTemplate(wordSelected,imagesSelected){	
 	arrayImg=[];
-	word=wordSelected;
-	imagesSelected.unshift(wordSelected);
+	// word=wordSelected;
+	// imagesSelected.unshift(wordSelected);
 	$(imagesSelected).each(function(index,e){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);

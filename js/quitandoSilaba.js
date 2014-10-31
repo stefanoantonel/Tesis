@@ -32,18 +32,19 @@ function functionCallback(conf){
 	var res = conf["values"].toString();
 	res = res.split(",");
 	res[syllableToSelect] = "";
-	result = res.join('').replace(',','');
+	resultWord = res.join('').replace(',','');
 	// wordSelected=group["word"]; 
 	// wordToChange=group["wordToChange"]; //in number
 	// images=group["images"];
 	fillTemplateWord(values,syllableToSelect);
 
-	getConfigByElement("distractors","lev_1",2,functionCallback2);
+	//getConfigByElement("distractors","lev_1",2,functionCallback2);
+	getConfigByElementWithOne("distractors","lev_1",2,functionCallback2,resultWord);
 	
 }
 
 function functionCallback2(conf) {
-	conf.unshift()
+	//conf.unshift()
 	fillTemplateImages(conf);
 	images=imgContainer.children();
 	dragAndDrop(images,target,functionsDD);
@@ -58,7 +59,7 @@ function fillTemplateWord(wordComplete,wordToChange){
 
 function fillTemplateImages(images){
 	imgs=[];
-	images.unshift(result);
+	// images.unshift(result);
 	$(images).each(function(index,e){
     	t=$(imgTemp).clone();
 		name=e;
@@ -76,14 +77,15 @@ function fillTemplateImages(images){
 }
 
 function functionsDD(context,currElem){
-	checkReplace(context,currElem);
+	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){cartelFelicitaciones();}
 }
 
 function checkCorrect(img) {
-	num=$(img).attr("num");
-	if(num==0){
+	
+	var name = $(img).attr("name");
+	if(name == resultWord){
 		return true;
 	}
 	else{

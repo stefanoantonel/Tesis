@@ -7,7 +7,7 @@ var counter = 2;
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){sessionCounter(counter)}
+	if (isCorrect==true){sessionCounter()}
 }
 
 function readyOk(idObj,left,right){
