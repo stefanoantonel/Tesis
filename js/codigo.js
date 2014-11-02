@@ -34,6 +34,7 @@ function getConfig(numAct,callBack){
 	    	callBack(c.act);
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
+	    	getStyle();
 	    });
 }
 
@@ -53,6 +54,7 @@ function getStyle(){
 	    	c=result["skin"];
 	    }).done(function (){
 	    	skin=disorder(c);
+	    	console.log("skinks",skin);
 	    	$('head').append('<link rel="stylesheet" href="css/skin/'+skin[0]+'.css" type="text/css" />');
 	    });
 }
@@ -67,6 +69,7 @@ function getConfigByElement(element,level,quantity,callBack){
 	    }).done(function(){
 	    	console.log("result:",result);
 	    	callBack(result);
+	    	getStyle();
 	    });
 }
 
@@ -142,14 +145,17 @@ function sessionCounter() {
 			$('#alertOk').delay( 100 ).fadeOut( 400 );
 			$("article").show();
 		}
-		// else {
-		// 	$(".deleted").delay( 200 ).fadeOut( 0 ).remove();
-		// 	$("article").html("");
-		// 	congratulations();
-		// 	$("article").html("");
-		// 	functionInit();
 
-		// }
+		else {
+			window.setTimeout(function(){$("img.deleted").remove();},1000);
+			window.setTimeout(congratulations, 1000);
+			window.setTimeout(function(){
+				$('#alertOk').hide();
+				$("article").show();
+				functionInit();
+				}, 4000);			
+		}
+
 }
 
 function translate(target){

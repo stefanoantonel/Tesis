@@ -6,8 +6,9 @@ var activityQuantity=0;
 var configuration;
 
 function removeBackground(img){
-	$("#"+img).removeClass("rotateToLeft");
+	
 	$("#"+img).css('backgroundImage', 'url("../../images/background/orange.jpg")');
+	$("#"+img).removeClass("rotateToLeft");
 }	
 
 function changeBackground(target){
@@ -51,13 +52,6 @@ function stopAudio(){
 		});
 }
 
-//function fillPage(elements){
-//	$('#alertOk').delay( 100 ).fadeOut( 400 );
-//	$("article").show();
-//	fillTemplate2("#contenedor","#template",elements);
-//	setImage();
-//}
-
 function loadActivity(){
 	contador=4;
 	$('#alertOk').delay( 100 ).fadeOut( 400 );
@@ -66,14 +60,10 @@ function loadActivity(){
 }
 
 function functionInit(){
+	
 	loadActivity();
 	getConfig(1);
 }
-
-//function getFirstActivity(config) {
-//	activityQuantity = config.length-1;
-//	return elements = config[activityNum];
-//}
 
 
 function areEqual(im1,im2){
@@ -87,8 +77,9 @@ function areEqual(im1,im2){
 
 function setImage(){
 	$('.imgMemory').click(function(){
-		$(this).addClass("rotateToLeft");
+		
 		changeBackground(this);
+		$(this).addClass("rotateToLeft");
 		if(img1==null){
 			img1=$(this).attr("id");
 			

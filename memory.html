@@ -16,6 +16,7 @@
 <script type="application/javascript">
 
 $(document).ready(function() {
+	//window.parent.document.getElementById("scorm_navpanel").style.display = 'none';
 	ejercicio=function(){
 		functionInit();
 		//var conf;
@@ -30,7 +31,8 @@ $(document).ready(function() {
 	$("#next").click(function(){
 		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
 		actividad.end("incomplete");
-		window.location.href = base_url+"/amigoDeQuien.html";
+		window.parent.document.getElementById("nav_next-button").click();
+		//window.location.href = base_url+"/amigoDeQuien.html";
 	})
 });
 </script>
