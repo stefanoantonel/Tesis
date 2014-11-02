@@ -29,7 +29,7 @@ function dragAndDrop(idImg,idBoxes,functions) {
 
 function getConfig(numAct,callBack){
 	$.getJSON("js/configGroups.json",function(result,callBack){
-	    	var c=result["act"+numAct];
+	    	c=result["act"+numAct];
 	    }).done(function (){
 	    	callBack(c.act);
 	    	loadDescription(c.description);
@@ -41,7 +41,7 @@ function getConfig(numAct,callBack){
 
 function getConfig(numAct){
 	$.getJSON("js/configGroups.json",function(result){
-	    	var c=result["act"+numAct];
+	    	 c=result["act"+numAct];
 	    }).done(function (){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
@@ -79,17 +79,35 @@ function disorder(o){
 	return o;
 };
 
-function cartelFelicitaciones(){
-	$('article').delay( 800 ).fadeOut( 0 );
-	$('#alertOk').delay( 800 ).fadeIn( 400 );
-	actividad.end("passed");
+function congratulations(){
+	$("article").delay( 400 ).hide();
+	
+	$("body").append('<div id="alertOk" class="alert-box success hidden="true">'
+			+'<span>Felicitaciones </span>'
+			+'</br><img class="imagenSucced" src="images/caraContenta.jpg">'
+			+'</br>Has completado muy bien tu ejercicio'
+		+'</div>');
+	
+	$("#alertOk").delay(1000).fadeIn(500);
 }
 
-function congratulations(){
-	$("article").delay( 800 ).hide();
-	$('#alertOk').delay( 800 ).fadeIn( 400 );
+function passActivity(){
+	$("article").delay( 400 ).hide();
+	
+	$("body").append('<div id="alertOk" class="alert-box success">'
+			+'<span>Pasaste el nivel!</span>'
+			+'<div><a id="next">Siguiente</a></div>'
+		+'</div>');
+	
+	$("#next").click(function(){
+		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
+		actividad.end("incomplete");
+		window.parent.document.getElementById("nav_next-button").click();
+	});
 	
 }
+
+
 
 function passed(){
 	actividad.end("passed");
@@ -138,17 +156,14 @@ function sessionCounter() {
 	counter = counter - 1;
 		if(!counter == 0){
 			passed();
-			window.setTimeout(congratulations, 1000);
 			window.setTimeout(function(){$(".deleted").remove();},1000);
-			$(document).delay(400);
-			window.setTimeout(functionInit, 3000);
-			$('#alertOk').delay( 100 ).fadeOut( 400 );
-			$("article").show();
+			window.setTimeout(passActivity, 1000);
+
 		}
 
 		else {
-			window.setTimeout(function(){$("img.deleted").remove();},1000);
-			window.setTimeout(congratulations, 1000);
+			window.setTimeout(function(){$(".deleted").remove();},1000);
+			window.setTimeout(congratulations, 2000);
 			window.setTimeout(function(){
 				$('#alertOk').hide();
 				$("article").show();

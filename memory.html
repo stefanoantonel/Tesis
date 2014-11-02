@@ -16,24 +16,12 @@
 <script type="application/javascript">
 
 $(document).ready(function() {
+	//PARA MOODLE
 	//window.parent.document.getElementById("scorm_navpanel").style.display = 'none';
 	ejercicio=function(){
 		functionInit();
-		//var conf;
-		//conf=getConfig(1,functInit);
 	}
-	
-	
-	$("#memory").click(function(){
-		console.log("hola");
-		window.top.location.href = "memory.html";
-	});
-	$("#next").click(function(){
-		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
-		actividad.end("incomplete");
-		window.parent.document.getElementById("nav_next-button").click();
-		//window.location.href = base_url+"/amigoDeQuien.html";
-	})
+
 });
 </script>
 
@@ -47,7 +35,7 @@ $(document).ready(function() {
 </head>
 <body>
 <header></header>
-<a id="next">Siguiente</a>
+
 <div class="container-body">
 	<article class="actContainer">	
 		<div id="contenedor">
@@ -57,11 +45,15 @@ $(document).ready(function() {
 		
 		
 </div>
-<div id="alertOk" class="alert-box success" hidden="True">
-	<span>Felicitaciones </span>
+
+
+<div id="endActOk" class="alert-box success" hidden="True">
+	<span>Nivel Completo</span>
 	</br><img class="imagenSucced" src="images/caraContenta.jpg">
 	</br>Has completado muy bien tu ejercicio
 </div>
+
+
 <footer></footer>
 </body>
 </html>

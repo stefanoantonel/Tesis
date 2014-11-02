@@ -1,6 +1,7 @@
 var img1=null;
 var img2=null;
-var contador=null;
+var contador;
+var counter=2;
 var activityNum=0;
 var activityQuantity=0;
 var configuration;
@@ -75,6 +76,28 @@ function areEqual(im1,im2){
 	return false;
 }
 
+
+function checkImg(img1,img2){
+	if(areEqual(img1,img2)){
+		window.setTimeout(removeImg, 1000,img1);
+		window.setTimeout(removeImg, 1000,img2);
+		contador=contador-1;
+		if(contador==0){
+			sessionCounter();
+		/*	passed();
+			window.setTimeout(congratulations, 1000);
+			window.setTimeout(function(){$(".deleted").remove();},2000);
+			window.setTimeout(functionInit, 4000);
+			*/
+		}
+	}
+	else{
+	
+		window.setTimeout(removeBackground, 2000,img1);
+		window.setTimeout(removeBackground, 2000,img2);
+	}
+}
+
 function setImage(){
 	$('.imgMemory').click(function(){
 		
@@ -92,22 +115,7 @@ function setImage(){
 				return;
 				}
 			img2=$(this).attr("id");
-			if(areEqual(img1,img2)){
-					window.setTimeout(removeImg, 1000,img1);
-					window.setTimeout(removeImg, 1000,img2);
-					contador=contador-1;
-					if(contador==0){
-						passed();
-						window.setTimeout(congratulations, 1000);
-						window.setTimeout(function(){$(".deleted").remove();},2000);
-						window.setTimeout(functionInit, 4000);
-					}
-			}
-			else{
-			
-				window.setTimeout(removeBackground, 2000,img1);
-				window.setTimeout(removeBackground, 2000,img2);
-			}
+			checkImg(img1,img2);
 			img1=null;
 			img2=null;
 		}

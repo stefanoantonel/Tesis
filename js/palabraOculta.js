@@ -18,6 +18,7 @@ function readyOk(idObj,left,right){
 function functionInit() {
 	
 	getConfigByElement("act4","act",1,functionCallback);
+	getConfig(4);
 	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
 

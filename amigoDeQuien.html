@@ -94,11 +94,16 @@ function changeColor(cont,word,let){
 		img2=null;
 		contador=3;
 		ejercicio = function (){
-			target=$('#target');
-			readyOk(target,'leftbox','rightbox');
+			functionInit();
 		}		
 		
 	});
+	
+	function functionInit(){
+		target=$('#target');
+		readyOk(target,'leftbox','rightbox');
+	}
+	
 </script>
 
 <style>
@@ -116,10 +121,9 @@ function changeColor(cont,word,let){
 	#target{
 		border:3px;
 		border-style: dashed;
-   		
 		display: inline-block;
 		border-width: medium;
-		width: 250px;
+		width: 270px;
 		height: 100px;
 		float:left;
 		margin:5%;
@@ -168,11 +172,6 @@ function changeColor(cont,word,let){
 		<img column="rightContainer" id="rightboxTemp" class="img" hidden="hidden"></img>
 		
 	</article>
-	<div id="alertOk" class="alert-box success" hidden="True">
-		<span>Felicitaciones </span>
-		</br><img class="imagenSucced" src="images/caraContenta.jpg">
-		</br>Has completado muy bien tu ejercicio
-	</div>
 	<footer></footer>
 </body>
 </html>
