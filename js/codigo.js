@@ -88,7 +88,7 @@ function congratulations(){
 			+'</br>Has completado muy bien tu ejercicio'
 		+'</div>');
 	
-	$("#alertOk").delay(400).fadeIn(1000);
+	$("#alertOk").delay(1000).fadeIn(500);
 }
 
 function passActivity(){
@@ -98,6 +98,13 @@ function passActivity(){
 			+'<span>Pasaste el nivel!</span>'
 			+'<div><a id="next">Siguiente</a></div>'
 		+'</div>');
+	
+	$("#next").click(function(){
+		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
+		actividad.end("incomplete");
+		window.parent.document.getElementById("nav_next-button").click();
+	});
+	
 }
 
 
@@ -153,8 +160,8 @@ function sessionCounter() {
 			window.setTimeout(passActivity, 1000);
 		}
 		else {
-			window.setTimeout(function(){$("img.deleted").remove();},1000);
-			window.setTimeout(congratulations, 1000);
+			window.setTimeout(function(){$(".deleted").remove();},1000);
+			window.setTimeout(congratulations, 2000);
 			window.setTimeout(function(){
 				$('#alertOk').hide();
 				$("article").show();

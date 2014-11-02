@@ -21,17 +21,7 @@ $(document).ready(function() {
 	ejercicio=function(){
 		functionInit();
 	}
-		
-	$("#memory").click(function(){
-		console.log("hola");
-		window.top.location.href = "memory.html";
-	});
-	$("#next").click(function(){
-		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
-		actividad.end("incomplete");
-		window.parent.document.getElementById("nav_next-button").click();
-		//window.location.href = base_url+"/amigoDeQuien.html";
-	})
+
 });
 </script>
 
@@ -62,6 +52,7 @@ $(document).ready(function() {
 	</br><img class="imagenSucced" src="images/caraContenta.jpg">
 	</br>Has completado muy bien tu ejercicio
 </div>
+
 
 <footer></footer>
 </body>

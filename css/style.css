@@ -152,9 +152,9 @@ body {
     -o-transition: 1s ease-in-out;
 	transition: 1s ease-in-out;
 
-	-ms-transform: scale(4,4) rotateX(360deg); /* IE 9 */
-    -webkit-transform: scale(4,4) rotateX(360deg); /* Chrome, Safari, Opera */
-    transform: scale(4,4) rotateX(360deg);
+	-ms-transform: scale(2,2) rotateX(360deg); /* IE 9 */
+    -webkit-transform: scale(2,2) rotateX(360deg); /* Chrome, Safari, Opera */
+    transform: scale(2,2) rotateX(360deg);
 }
 
 .rotateToLeft{
@@ -169,7 +169,16 @@ body {
 		
 }
 
-
+.translateLeft{
+	-webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+	transition: 0.5s ease-in-out;
+	
+	-ms-transform: translate(50px,0px); /* IE 9 */
+   	-webkit-transform: translate(50px,0px); /* Chrome, Safari, Opera */
+    transform: translate(50px,50px);
+}
 
 
 /********** TITLE FORMAT **************/

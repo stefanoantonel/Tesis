@@ -2,11 +2,12 @@
  * Falta corregir el tema de los contenedores originales
 */
 
-var leftArray=0
-var rightArray=0
+var leftArray=0;
+var rightArray=0;
 var numParts=0;
 var contOriginal;
 var contSegundo;
+var counter=2;
 
 
 //function moveOrigin(img1,img2,contOriginal1,contOriginal2){
@@ -27,14 +28,15 @@ function functionsDD(context,currElem){
 		
 			}
 		else{
+			 $("img").css("pointer-events", "none");
 			img2=currElem.attr("id");
 			contOriginal2=currElem.attr("column");
 		
 			if(img1==img2){
 				imageOk($("#target").find("img"));
-				window.setTimeout(function(){$("#target").html("");}, 3000);
+				window.setTimeout(function(){$("#target").html("");}, 1500);
 				contador=contador-1;
-				if(contador==0){ cartelFelicitaciones();}
+				if(contador==0){ sessionCounter();}
 			}
 		else{
 			console.log("imgs: ",img1,img2);
@@ -46,6 +48,7 @@ function functionsDD(context,currElem){
 			window.setTimeout(moveOrigin, 1000,img_target2,$("#"+contOriginal2));
 			
 		}
+		window.setTimeout(function(){$("img").css("pointer-events", "auto");},1500);
 		img1=null;
 		img2=null;
 		
@@ -53,8 +56,9 @@ function functionsDD(context,currElem){
 }
 
 function imageOk(target){
-	target.removeClass("ui-draggable-dragging");
-	target.addClass("animateToFront"); 
+	//target.removeClass("ui-draggable-dragging");
+	//target.removeClass("ui-draggable");
+	window.setTimeout(function(){target.addClass("animateToFront");},500); 
 } 
 
 function readyOk(idObj,left,right){
