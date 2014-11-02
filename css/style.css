@@ -133,6 +133,9 @@ body {
 }
 
 
+/********** ANIMATIONS **************/
+
+
 .animateUpperCorner{
 	-webkit-transition: 1s ease-in-out;
     -moz-transition: 1s ease-in-out;
@@ -157,6 +160,18 @@ body {
     transform: scale(2,2) rotateX(360deg);
 }
 
+.animateToFrontRigth{
+	-webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+
+	-ms-transform: translate(80px,0px) scale(2,2) rotateX(360deg); /* IE 9 */
+    -webkit-transform: translate(80px,0px) scale(2,2) rotateX(360deg); /* Chrome, Safari, Opera */
+    transform: translate(80px,0px) scale(2,2) rotateX(360deg);
+}
+
+
 .rotateToLeft{
 	-webkit-transition: 0.5s ease-in-out;
     -moz-transition: 0.5s ease-in-out;
@@ -177,9 +192,10 @@ body {
 	
 	-ms-transform: translate(50px,0px); /* IE 9 */
    	-webkit-transform: translate(50px,0px); /* Chrome, Safari, Opera */
-    transform: translate(50px,50px);
+    transform: translate(50px,0px);
 }
 
+/********** ANIMATIONS **************/
 
 /********** TITLE FORMAT **************/
 
