@@ -78,7 +78,7 @@
 	],
 	"distractors": {
 		"lev_1": [ 
-				["leon"],["raton"], ["pato"], ["campana"] 
+				"leon","raton", "pato", "campana"
 			]
 	},
 	"numbers": {

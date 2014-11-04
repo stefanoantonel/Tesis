@@ -6,15 +6,16 @@ var secondWord = '';
 function functionsDD(context,currElem){
 	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){cartelFelicitaciones();}
+	if (isCorrect==true) { sessionCounter(); }
 }
 
-function readyOk(idObj,left,right){
-	functionInit();
-}
+// function readyOk(idObj,left,right){
+// 	functionInit();
+// }
 
 function functionInit() {
-	var images=getConfigByElement("act6","act",1,functionCallback);
+	getConfig('6');
+	getConfigByElement("act6","act",1,functionCallback);
 }
 
 function functionCallback(conf){
