@@ -14,10 +14,19 @@
 
 	<style type="text/css">
 
+		.numberContainer{
+			border:solid;
+			margin-left: 10%;
+			float: left;
+			min-height:100px;
+			min-width:100px;
+		}
+		
 		.numberTemp{
 			font-size: 4em;
-			margin-left: 20%;
-			float: left;
+			margin: auto;
+			width: 40%;
+			display:block;
 		}
 		.textSize1 {
 			font-size: 20px;
@@ -68,7 +77,7 @@
 			ejercicio = function (){
 				target=$('#target');
 				numberTemp=$('#numberTemp');
-				container=$('#numberContainer');
+				container=$('#numbersContainer');
 				completeWord=$('#completeWord');
 				//part=$('#part');
 				readyOk(target,numberTemp,container,completeWord);
@@ -87,8 +96,10 @@
 
 		<div id="target" class="target"></div>
 		
-		<b id="numberTemp" class="hidden numberTemp titulo1"></b>
-		<div id="numberContainer" class='numberContainer'></div>
+		<div  class="hidden numberContainer">
+			<b class="numberTemp titulo1"></b>
+		</div>
+		<div id="numbersContainer" class='numbersContainer'></div>
 
 		
 	</article>

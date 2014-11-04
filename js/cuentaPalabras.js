@@ -1,13 +1,13 @@
 var target;
 var numberTemp;
-var numberContainer;
+var numbersContainer;
 var completeWord;
 var numberToSelect;
 
 function readyOk(targ,imgT,cont,complete){
 	target=targ;
 	numberTemp=imgT;
-	numberContainer=cont;
+	numbersContainer=cont;
 	completeWord=complete;
 	// conf=getConfig("12",randomGroup);
 	functionInit();
@@ -57,23 +57,26 @@ function fillTemplateNumber(number){
 	numberArray=[];
 	//number.unshift(numberToSelect);
 	$(number).each(function(index,e){
-    	t=$(numberTemp).clone();
-		name=e;
-		$(t).attr('name',name);
-		$(t).attr('num',index);
+    	t=$(".numberContainer").clone();
+    	name=e;
+    	$(t).attr('name',name);
+		$(t).find(".numberTemp").attr('name',name);
+		$(t).find(".numberTemp").attr('num',index);
 		//$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mouseover(function(){
+		$(t).find(".numberTemp").mouseover(function(){
 			playSound($(this).attr('name'));
 		});
-		$(t).text(name);
+		$(t).find(".numberTemp").text(name);
 		$(t).removeClass('hidden');
 		numberArray.push(t);
 	});
 	disorder(numberArray);
-	$(numberContainer).append(numberArray);
+	$(numbersContainer).append(numberArray);
 
-	number2=numberContainer.children();
-	dragAndDrop(number2,target,functionsDD);
+	//numbersDiv=numbersContainer.children();
+	numbersDiv=$(".numberTemp:not(.hidden)");
+	
+	dragAndDrop(numbersDiv,target,functionsDD);
 }
 
 function functionsDD(context,currElem){
@@ -97,7 +100,7 @@ function checkCorrect(number) {
 		$(number).effect('shake');
 		$(number).removeClass('normal');
 		$(number).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,$(number),numberContainer);
+		window.setTimeout(moveOrigin, 1000,$(number),$(".numberContainer[name='"+$(number).attr("name")+"']"));
 		return false;
 	}
 }
@@ -106,7 +109,7 @@ function checkReplace(box,newDiv){
 	if( $(box).has('b') ){
 		prevDiv=$(box).children();
 		$(prevDiv).removeClass('wrong');
-		$(numberContainer).append(prevDiv);
+		$(numbersContainer).append(prevDiv);
 		$(box).append(newDiv);
 
 	}
