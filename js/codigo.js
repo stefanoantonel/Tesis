@@ -179,7 +179,7 @@ function translate(target){
 
 
 function removeOneElement(array,element){
-	var index = array.indexOf(element);
+	var index = array.indexOf(element.toString());
 	if(index != -1) {
 		array.splice(index, 1);	
 	}

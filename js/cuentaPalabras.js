@@ -15,6 +15,7 @@ function readyOk(targ,imgT,cont,complete){
 
 function functionInit() {
 	getConfigByElement("act12","act",1,functionCallback);
+	getConfig("12");
 }
 
 function functionCallback(conf){
@@ -79,13 +80,14 @@ function fillTemplateNumber(number){
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){
+	if(isCorrect == true){
 		origin=$(currElem).attr('name');
 		playSound(origin);
-		$(document).delay(400);
-		cartelFelicitaciones();
+		/*$(document).delay(400);
+		cartelFelicitaciones();*/
+		sessionCounter();
 	}
-	if (isCorrect==true){cartelFelicitaciones();}
+	
 }
 
 function checkCorrect(number) {
