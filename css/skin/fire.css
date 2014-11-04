@@ -15,5 +15,6 @@ body {
 
 
 .btnMemory {
-	background-image: url("../../images/background/orange.jpg");
+	//background-image: url("../../images/background/orange.jpg");
+	background-color:red;
 }
