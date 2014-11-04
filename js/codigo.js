@@ -1,3 +1,5 @@
+var counter=2;
+
 function dragAndDrop(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
 		$(this).draggable({
@@ -52,7 +54,6 @@ function getConfig(numAct){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
 	    	getStyle();
-	    	counter=3;
 	    	
 	    });
 }

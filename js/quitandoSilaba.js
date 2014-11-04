@@ -79,7 +79,7 @@ function fillTemplateImages(images){
 function functionsDD(context,currElem){
 	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){cartelFelicitaciones();}
+	if (isCorrect==true){sessionCounter();}
 }
 
 function checkCorrect(img) {
