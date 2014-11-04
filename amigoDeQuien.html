@@ -20,73 +20,73 @@
 
 
 <script type="text/javascript">
-function functInit1(conf,x){
+// function functInit1(conf,x){
 	
-	t=$('#leftboxTemp').clone();
-	$(t).attr('id','left0');
-	$(t).attr('name',conf[0]);
-	$(t).removeAttr('hidden');
-	console.log(t);
-	t=changeColor($(t),conf[0],1);
+// 	t=$('#leftboxTemp').clone();
+// 	$(t).attr('id','left0');
+// 	$(t).attr('name',conf[0]);
+// 	$(t).removeAttr('hidden');
+// 	console.log(t);
+// 	t=changeColor($(t),conf[0],1);
 
-	$('#leftContainer').append(t);
-	//----------------------------------------------------------------------
+// 	$('#leftContainer').append(t);
+// 	//----------------------------------------------------------------------
 
-	//palabra oculta -----------------------------------------------
-	t=$('#leftboxTemp').clone();
-	//t=$('#'+e);
-	$(t).attr('id','left1');
-	$(t).attr('name',conf[1]);
-	$(t).addClass('secondWord');
-	$(t).html(conf[1]);
-	$('#leftContainer').append(t);
-	//-------------------------------------------------------
+// 	//palabra oculta -----------------------------------------------
+// 	t=$('#leftboxTemp').clone();
+// 	//t=$('#'+e);
+// 	$(t).attr('id','left1');
+// 	$(t).attr('name',conf[1]);
+// 	$(t).addClass('secondWord');
+// 	$(t).html(conf[1]);
+// 	$('#leftContainer').append(t);
+// 	//-------------------------------------------------------
 
 
-}
+// }
 
-function functInit2(conf,x){
-	imgs=[];
-	$(conf).each(function(index,e){
-    	//t=$('#'+rightArray[index]);
-    	t=$('#rightboxTemp').clone();
-		$(t).attr('id','right'+index);
-		$(t).removeAttr('hidden');
-		$(t).attr('name',conf[index]);
-		$(t).prop('num',index);
-		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
-		imgs.push(t);
-	});
-	disorder(imgs);
-	$("#rightContainer").append(imgs);
+// function functInit2(conf,x){
+// 	imgs=[];
+// 	$(conf).each(function(index,e){
+//     	//t=$('#'+rightArray[index]);
+//     	t=$('#rightboxTemp').clone();
+// 		$(t).attr('id','right'+index);
+// 		$(t).removeAttr('hidden');
+// 		$(t).attr('name',conf[index]);
+// 		$(t).prop('num',index);
+// 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+// 		$(t).attr('src','images/activities/' + $(t).attr("name") + '.jpg');
+// 		imgs.push(t);
+// 	});
+// 	disorder(imgs);
+// 	$("#rightContainer").append(imgs);
 	
-}
-function changeColor(cont,word,let){
-	//changeColor(contenedor, palabara, letra resaltada)
-	parts=word.split("");
-	elements=[];
-	$(parts).each(function(ind,elem){
-		d=document.createElement('div');
-		$(d).html(elem);
-		a=$(d).addClass('firstWord');
-		elements.push(a);
+// }
+// function changeColor(cont,word,let){
+// 	//changeColor(contenedor, palabara, letra resaltada)
+// 	parts=word.split("");
+// 	elements=[];
+// 	$(parts).each(function(ind,elem){
+// 		d=document.createElement('div');
+// 		$(d).html(elem);
+// 		a=$(d).addClass('firstWord');
+// 		elements.push(a);
 
-	});
-	wordToChange=$(elements[let-1]);
+// 	});
+// 	wordToChange=$(elements[let-1]);
 
-	$(wordToChange).css({
-		color:'#f00',
-		fontSize:'70px'
-	});
-	$(wordToChange).click(function(){	
-		$('.firstWord').remove();
-		$('.secondWord').removeAttr('hidden');
-		$('#target').removeAttr('hidden');
-		$('#rightContainer').removeAttr('hidden');
-	});
-	return elements;
-}
+// 	$(wordToChange).css({
+// 		color:'#f00',
+// 		fontSize:'70px'
+// 	});
+// 	$(wordToChange).click(function(){	
+// 		$('.firstWord').remove();
+// 		$('.secondWord').removeAttr('hidden');
+// 		$('#target').removeAttr('hidden');
+// 		$('#rightContainer').removeAttr('hidden');
+// 	});
+// 	return elements;
+// }
 
 	
 	$(document).ready(function() {

@@ -63,6 +63,7 @@ function imageOk(target){
 } 
 
 function readyOk(idObj,left,right){
+	getConfig("5");
 	getConfigByElement("rhymes","lev_2",3,fillTemplate);
 }
 
