@@ -4,21 +4,19 @@ var imgContainer;
 var completeWord;
 var part;
 
-function readyOk(targ,imgT,cont,complete,p){
-	target=targ;
-	imgTemp=imgT;
-	imgContainer=cont;
-	completeWord=complete;
-	part=p;
-
-	// conf=getConfig("10",randomGroup);
-	functionInit();
+function readyOk(){
+	target=$('#target');
+	imgTemp=$('#imgTemp');
+	imgContainer=$('#imgContainer');
+	completeWord=$('#completeWord');
+	part=$('#part');
 }
 
 function functionInit() {
+	getConfig(10);
 	getConfigByElement("act10","act",1,functionCallback);
+	readyOk();
 }
-
 
 function functionCallback(conf){
 	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya

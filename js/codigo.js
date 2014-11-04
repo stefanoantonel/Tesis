@@ -175,10 +175,10 @@ function sessionCounter() {
 				$(".deleted").remove();
 				$("article").remove();
 				
-			}, 10);
+			}, 1000);
 			window.setTimeout(function() {
 				congratulations();
-			}, 100);
+			}, 1000);
 			window.setTimeout(function(){
 				$("body").append(originTemplateHTML);
 				$('#alertOk').hide();
@@ -186,7 +186,7 @@ function sessionCounter() {
 				
 				//$("article").show();
 				functionInit();
-				}, 1000);	
+				}, 2000);	
 
 		}
 
