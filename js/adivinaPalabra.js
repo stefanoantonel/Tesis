@@ -80,7 +80,7 @@ function checkCorrect(container) {
 		for(var i = 0; i < $(parts).size(); i++){ 
 			if (parseInt(parts[i].id) != i){
 				wrongPart=$('#'+parts[i].id)
-				$(wrongPart).addClass('errorLetra');
+				$(wrongPart).addClass('wrong');
 				wrong=1;
 				$(wrongPart).effect('shake');
 
@@ -98,7 +98,7 @@ function checkCorrect(container) {
 	}
 	else{
 		
-		$(container).children().removeClass('errorLetra');
+		$(container).children().removeClass('wrong');
 		checkCorrect($('#rightbox'));
 	}
 }
