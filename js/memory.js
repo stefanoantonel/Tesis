@@ -1,14 +1,14 @@
 var img1=null;
 var img2=null;
 var contador;
-var counter=2;
 var activityNum=0;
 var activityQuantity=0;
 var configuration;
 
 function removeBackground(img){
 	
-	$("#"+img).css('backgroundImage', 'url("../../images/background/orange.jpg")');
+	$("#"+img).css('background-image', 'none');
+	$("#"+img).addClass("btnMemory");
 	$("#"+img).removeClass("rotateToLeft");
 }	
 

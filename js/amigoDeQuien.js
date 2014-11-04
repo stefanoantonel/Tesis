@@ -7,7 +7,6 @@ var rightArray=0;
 var numParts=0;
 var contOriginal;
 var contSegundo;
-var counter=2;
 
 
 //function moveOrigin(img1,img2,contOriginal1,contOriginal2){

@@ -46,6 +46,7 @@ function getConfig(numAct){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
 	    	getStyle();
+	    	counter=3;
 	    });
 }
 
@@ -69,7 +70,7 @@ function getConfigByElement(element,level,quantity,callBack){
 	    }).done(function(){
 	    	console.log("result:",result);
 	    	callBack(result);
-	    	getStyle();
+	    	//getStyle();
 	    });
 }
 
@@ -197,7 +198,7 @@ function getConfigByElementWithOne(type, level, quantity, callBack, elementExcep
 	    	// result = result_disorder.slice(0,quantity);
 	    	
 	    }).done(function(){
-	    	console.log("result:",result);
+	    	//console.log("result:",result);
 	    	callBack(result);
 	    });
 }
