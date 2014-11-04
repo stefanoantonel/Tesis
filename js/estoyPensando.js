@@ -26,6 +26,7 @@ function functRight(conf) {
 }
 function functionInit(){
 	getConfigByElement("act8","act",1,functionCallback);
+	getConfig(8);
 }
 
 function fillTemplate(wordSelected,imagesSelected){	
@@ -59,7 +60,7 @@ function checkCorrect(elem){
 	id=$(elem).attr('id');
 	if(id=="img0"){
 		$(elem).effect('puff');
-		cartelFelicitaciones();
+		sessionCounter();
 	}
 	else{
 		console.log(elem);
