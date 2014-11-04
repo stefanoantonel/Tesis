@@ -4,6 +4,7 @@
 	height:250px;
 	margin:5px;
 	border:3px solid;
+	background-color:#F5D0A9;
 }
 #rightbox{
 	float:left;
@@ -11,6 +12,11 @@
 	height:250px;
 	margin:5px;
 	border:3px solid;
+	background-color:#F5D0A9;
+}
+
+.phrase {
+	background-color:white;
 }
 
 .btnMemory{
@@ -205,6 +211,12 @@ body {
 	left: 190px;
 	font-family: 'Ribeye Marrow', cursive;
 	font-size: 25px;
+}
+
+.congrat_title {
+	color: #FFA500;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 /**********END TITLE FORMAT **************/

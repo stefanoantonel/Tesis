@@ -5,17 +5,22 @@ var selectedText = '';
 var origin = '';
 var counter = 2; 
 
-function readyOk(idObj,idBox,idBox2,imgDemo){
+function readyOk(){
+	idObj="template";
+	idBox="leftbox";
+	idBox2="rightbox";
+	imgDemo="demo";
+	
 	temp1=document.getElementById(idObj);
 	boxes=[idBox,idBox2];
 	temp=$(temp1);
 	//var conf;
 	img=imgDemo;
-	// conf=getConfig(2,functionInit);
-	functionInit();
 }
 function functionInit() {
 	getConfigByElement("act2","act",1,functionCallback);
+	readyOk();
+	getConfig(2);
 }
 
 function functionCallback(data){
