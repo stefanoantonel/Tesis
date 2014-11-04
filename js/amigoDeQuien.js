@@ -9,14 +9,25 @@ var contOriginal;
 var contSegundo;
 
 
-//function moveOrigin(img1,img2,contOriginal1,contOriginal2){
-//	
-//	$("#target").find("#"+img1).addClass('normal');
-//	$("#target").find("#"+img2).addClass('normal');
-//	
-//	$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
-//	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));
-//}
+function functionInit(){
+	contador=3;
+	target=$('#target');
+	readyOk(target,'leftbox','rightbox');
+}
+
+
+function imgWrong(img1,img2,contOriginal1,contOriginal2){
+	
+	/*$("#target").find("#"+img1).removeClass('wrong');
+	$("#target").find("#"+img2).removeClass('wrong');
+	$("#target").find("#"+img1).addClass('normal');
+	$("#target").find("#"+img2).addClass('normal');
+	*/
+	moveOrigin(img1,contOriginal1);
+	moveOrigin(img2,contOriginal2);
+	/*$("#target").find("#"+img1).appendTo($("#"+contOriginal1));
+	$("#target").find("#"+img2).appendTo($("#"+contOriginal2));*/
+}
 
 
 function functionsDD(context,currElem){
@@ -41,10 +52,12 @@ function functionsDD(context,currElem){
 			console.log("imgs: ",img1,img2);
 			var img_target1=$("#target").find("#"+img1);
 			var img_target2=$("#target").find("#"+img2);
+			img_target1.removeClass('normal');
+			img_target2.removeClass('normal');
 			img_target1.addClass('wrong').effect('shake');
 			img_target2.addClass('wrong').effect('shake');
-			window.setTimeout(moveOrigin, 1000,img_target1,$("#"+contOriginal1));
-			window.setTimeout(moveOrigin, 1000,img_target2,$("#"+contOriginal2));
+			window.setTimeout(imgWrong, 1000,img_target1,img_target2,$("#"+contOriginal1),$("#"+contOriginal2));
+			//window.setTimeout(imgWrong, 1000,img_target2,$("#"+contOriginal2));
 			
 		}
 		window.setTimeout(function(){$("img").css("pointer-events", "auto");},1500);
@@ -67,7 +80,7 @@ function readyOk(idObj,left,right){
 	getConfigByElement("rhymes","lev_2",3,fillTemplate);
 }
 
-
+/*
 function randomGroup(conf){
 	group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	left=group["1"];
@@ -82,7 +95,7 @@ function randomGroup(conf){
 	//console.log("drag",$( ".img" ));
 	
 }
-
+*/
 function fillTemplate(conf){
 	var left=[];
 	var right=[];
@@ -90,8 +103,8 @@ function fillTemplate(conf){
 		left.push(element[0]);
 		right.push(element[1]);
 	});
-	functInit(left,"left"); //adds elements disorderly   
-	functInit(right,"right"); 
+	fillElements(left,"left"); //adds elements disorderly   
+	fillElements(right,"right"); 
 	contRight=$('#rightContainer').children();
 	contLeft=$('#leftContainer').children();
 	idObj=$('#target');
@@ -101,7 +114,7 @@ function fillTemplate(conf){
 
 
 
-function functInit(conf,place){
+function fillElements(conf,place){
 	imgs=[];
 	$(conf).each(function(index,e){
     	t=$('#'+place+'boxTemp').clone();
