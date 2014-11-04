@@ -51,7 +51,7 @@ function functionCallback2(conf) {
 function fillTemplateWord(wordComplete,wordToChange){
 	originWord=wordComplete.join('');
 	$(completeWord).text(originWord);
-	partSelected=$(wordComplete)[wordToChange-1];
+	partSelected=$(wordComplete)[wordToChange];
 	$(part).text(partSelected);
 }
 
