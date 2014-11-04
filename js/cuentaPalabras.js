@@ -14,8 +14,9 @@ function readyOk(targ,imgT,cont,complete){
 }
 
 function functionInit() {
-	getConfigByElement("act12","act",1,functionCallback);
 	getConfig("12");
+	getConfigByElement("act12","act",1,functionCallback);
+
 }
 
 function functionCallback(conf){

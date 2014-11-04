@@ -35,11 +35,17 @@ function getConfig(numAct,callBack){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
 	    	getStyle();
+
 	    });
+}
+
+function saveArticle() {
+	originTemplateHTML = $("article");
 }
 
 
 function getConfig(numAct){
+	saveArticle();
 	$.getJSON("js/configGroups.json",function(result){
 	    	 c=result["act"+numAct];
 	    }).done(function (){
@@ -47,6 +53,7 @@ function getConfig(numAct){
 	    	loadSounds(c.sounds);
 	    	getStyle();
 	    	counter=3;
+	    	
 	    });
 }
 
@@ -81,7 +88,7 @@ function disorder(o){
 };
 
 function congratulations(){
-	$("article").delay( 400 ).hide();
+	// $("article").delay( 200 ).hide();
 	
 	$("body").append('<div id="alertOk" class="alert-box success hidden="true">'
 			+'<span>Felicitaciones </span>'
@@ -89,7 +96,7 @@ function congratulations(){
 			+'</br>Has completado muy bien tu ejercicio'
 		+'</div>');
 	
-	$("#alertOk").delay(1000).fadeIn(500);
+	$("#alertOk").delay(100).fadeIn(200);
 }
 
 function passActivity(){
@@ -155,7 +162,7 @@ function moveOrigin(target,origin){
 
 function sessionCounter() {
 	counter = counter - 1;
-		if(!counter == 0){
+		if(counter == 0){
 			passed();
 			window.setTimeout(function(){$(".deleted").remove();},1000);
 			window.setTimeout(passActivity, 1000);
@@ -163,13 +170,23 @@ function sessionCounter() {
 		}
 
 		else {
-			window.setTimeout(function(){$(".deleted").remove();},1000);
-			window.setTimeout(congratulations, 2000);
+			window.setTimeout(function() {
+				$(".deleted").remove();
+				$("article").remove();
+				
+			}, 10);
+			window.setTimeout(function() {
+				congratulations();
+			}, 100);
 			window.setTimeout(function(){
+				$("body").append(originTemplateHTML);
 				$('#alertOk').hide();
-				$("article").show();
+				$('#alertOk').remove();
+				
+				//$("article").show();
 				functionInit();
-				}, 4000);			
+				}, 1000);	
+
 		}
 
 }
