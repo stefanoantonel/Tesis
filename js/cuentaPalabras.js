@@ -4,16 +4,22 @@ var numbersContainer;
 var completeWord;
 var numberToSelect;
 
-function readyOk(targ,imgT,cont,complete){
-	target=targ;
-	numberTemp=imgT;
-	numbersContainer=cont;
-	completeWord=complete;
+function readyOk(){
+	target=$('#target');
+	numberTemp=$('#numberTemp');
+	numbersContainer=$('#numbersContainer');
+	completeWord=$('#completeWord');
+	//part=$('#part');
+	// target=targ;
+	// numberTemp=imgT;
+	// numbersContainer=cont;
+	// completeWord=complete;
 	// conf=getConfig("12",randomGroup);
-	functionInit();
+	//functionInit();
 }
 
 function functionInit() {
+	readyOk();
 	getConfig("12");
 	getConfigByElement("act12","act",1,functionCallback);
 

@@ -40,7 +40,7 @@ function getConfig(numAct,callBack){
 }
 
 function saveArticle() {
-	originTemplateHTML = $("article");
+	originTemplateHTML = $("article").clone();
 }
 
 
