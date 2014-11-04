@@ -2,12 +2,11 @@ var leftArray=0
 var rightArray=0
 var numParts=0;
 var resultWord = '';
-var counter = 2;
 
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true){sessionCounter()}
+	if (isCorrect==true){sessionCounter();}
 }
 
 function readyOk(idObj,left,right){
