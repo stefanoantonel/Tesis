@@ -110,10 +110,25 @@ function passActivity(){
 	
 	$("#next").click(function(){
 		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
-		actividad.end("incomplete");
+		//actividad.end("incomplete");
 		window.parent.document.getElementById("nav_next-button").click();
 	});
 	
+}
+
+
+function setNextAction(){
+	$("#next-activity").click(function(){
+		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
+		window.parent.document.getElementById("nav_next-button").click();
+	});
+}
+
+function setPrevAction(){
+	$("#prev-activity").click(function(){
+		var base_url=document.URL.slice(0, document.URL.lastIndexOf("/"));
+		window.parent.document.getElementById("nav_prev-button").click();
+	});
 }
 
 

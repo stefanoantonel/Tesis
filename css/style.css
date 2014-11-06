@@ -205,14 +205,6 @@ body {
 
 /********** TITLE FORMAT **************/
 
-.titulo_cursive {
-	width: 530px;
-	top: 100px;
-	left: 190px;
-	font-family: 'Ribeye Marrow', cursive;
-	font-size: 25px;
-}
-
 .congrat_title {
 	color: #FFA500;
 	font-weight: bold;
@@ -220,3 +212,22 @@ body {
 }
 
 /**********END TITLE FORMAT **************/
+
+.btnActionAcvitivy {
+	max-width: 100%;
+	max-height: 100%;
+	display: inline;
+}
+
+.btnContainer {
+	height: 60px;
+	position: absolute;
+	top: 5%;
+	right: 5%;
+}
+
+.textBackground {
+	background-color: wheat;
+	border-radius: 20px;
+	padding: 10px;
+}

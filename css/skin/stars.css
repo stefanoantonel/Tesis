@@ -1,0 +1,17 @@
+.principalTitle {
+	width: 530px;
+	top: 100px;
+	left: 190px;
+	font-family: 'Ribeye Marrow', cursive;
+	font-size: 25px;
+}
+
+body {
+	background-image :url('../../images/background/stars.jpg');
+	background-size:cover;	
+}
+
+
+.btnMemory {
+	background-color:#b6fcd5;
+}

@@ -9,10 +9,11 @@
 }
 
 body {
-	background-image :url('../../images/background/pink_owl.png');/*url('../../images/background/flower.gif');*/	
+	background-image :url('../../images/background/toystory.jpg');
+	background-size:cover;	
 }
 
 
 .btnMemory {
-	background-color: #81F781;
+	background-color:#00dd2f;
 }

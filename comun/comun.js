@@ -104,8 +104,12 @@ $(document).ready(function() {
 		$("footer").load("comun/footer.html", function() {
 			// Una vez que termino todo, inicio la actividad
 			actividad.init();
+			setNextAction();
+			setPrevAction();
+			
 		});
 	});	
+	
 	
 });
 

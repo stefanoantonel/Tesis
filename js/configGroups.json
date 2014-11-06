@@ -74,8 +74,11 @@
 	},
 	"skin": [
 		"fire",
-		"farm",
-		"pink_owl"
+		"toystory",
+		"stars",
+		"colorfull",
+		"aquarium",
+		"chrismas"
 	],
 	"distractors": {
 		"lev_1": [ 
