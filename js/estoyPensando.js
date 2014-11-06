@@ -65,14 +65,15 @@ function fillTemplate(wordSelected,imagesSelected){
 }
 
 function checkCorrect(elem){
-	id=$(elem).attr('id');
-	if(id=="img0"){
+	var name = $(elem).attr('name');
+	if(name == wordSelected){
 		$(elem).effect('puff');
 		sessionCounter();
 	}
 	else{
 		console.log(elem);
 		$(elem).effect('shake');
+		
 
 	}
 }
