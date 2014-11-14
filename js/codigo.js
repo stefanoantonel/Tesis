@@ -159,7 +159,7 @@ function loadDescription(descrip){
 function loadSounds(sounds){
 	$(sounds).each(function(index,value){
 		
-		aud=document.createElement('audio');
+		var aud=document.createElement('audio');
 		$(aud).attr('id','sound'+value);
 		$(aud).attr('src','audio/'+value+'.wav');
 		$(aud).attr('type','audio/wav');
@@ -169,6 +169,14 @@ function loadSounds(sounds){
 	});
 	//$('#soundcasa')[0].play();	
 	//console.log()$('#soundcasa')[0].play();	
+}
+
+function loadTutorialVoice() {
+	var aud=document.createElement('audio');
+	$(aud).attr('id','tutorial'+value);
+	$(aud).attr('src','audio/tutorial/'+value+'.wav');
+	$(aud).attr('type','audio/wav');
+	$(aud).appendTo('body');
 }
 
 function playSound(soundName){
