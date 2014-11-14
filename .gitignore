@@ -1,2 +1,4 @@
 *.xsd
+*.c9
+*.settings
 imsmanifest.xml

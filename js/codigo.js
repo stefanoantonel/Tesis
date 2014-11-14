@@ -1,4 +1,4 @@
-var counter=2;
+var counter;
 
 function dragAndDrop(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
@@ -6,15 +6,6 @@ function dragAndDrop(idImg,idBoxes,functions) {
 			revert:true,
 		});
 	});
-	// var draggable = document.getElementById('0');
-	// 	draggable.addEventListener('touchmove', function(event) {
-	// 	    var touch = event.targetTouches[0];
-		 
-	// 	    // Place element where the finger is
-	// 	    draggable.style.left = touch.pageX-750 +t();
-	//   	}, false); 'px';
-	// 	    draggable.style.top = touch.pageY-250 + 'px';
-	// 	    event.preventDefaul
 
     $(idBoxes).each(function(ind,box){
     	$( this ).droppable({
@@ -37,14 +28,9 @@ function getConfig(numAct,callBack){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
 	    	getStyle();
-
+	    	loadCounter(c.repeat);
 	    });
 }
-
-function saveArticle() {
-	originTemplateHTML = $("article").clone();
-}
-
 
 function getConfig(numAct){
 	saveArticle();
@@ -54,21 +40,9 @@ function getConfig(numAct){
 	    	loadDescription(c.description);
 	    	loadSounds(c.sounds);
 	    	getStyle();
-	    	
+	    	loadCounter(c.repeat);
 	    });
 }
-
-function getStyle(){
-	$.getJSON("js/configGroups.json",function(result){
-	    	c=result["skin"];
-	    }).done(function (){
-	    	skin=disorder(c);
-	    	console.log("skinks",skin);
-	    	$('head').append('<link rel="stylesheet" href="css/skin/'+skin[0]+'.css" type="text/css" />');
-	    });
-}
-
-
 
 function getConfigByElement(element,level,quantity,callBack){
 	$.getJSON("js/configGroups.json",function(config,callBack){
@@ -82,6 +56,41 @@ function getConfigByElement(element,level,quantity,callBack){
 	    });
 }
 
+function getConfigByElementWithOne(type, level, quantity, callBack, elementExcept){
+	$.getJSON("js/configGroups.json",function(config,callBack){
+	    	element_config = config[type][level];
+	    	element_config = removeOneElement(element_config,elementExcept);
+	    	element_config = disorder(element_config);
+	    	result_disorder = element_config.slice(0,quantity);
+	    	result_disorder.push(elementExcept);
+			result = disorder(result_disorder);
+	    	// result = result_disorder.slice(0,quantity);
+	    	
+	    }).done(function(){
+	    	//console.log("result:",result);
+	    	callBack(result);
+	    });
+}
+
+function saveArticle() {
+	originTemplateHTML = $("article").clone();
+}
+
+function getStyle(){
+	$.getJSON("js/configGroups.json",function(result){
+	    	c=result["skin"];
+	    }).done(function (){
+	    	skin=disorder(c);
+	    	console.log("skinks",skin);
+	    	$('head').append('<link rel="stylesheet" href="css/skin/'+skin[0]+'.css" type="text/css" />');
+	    });
+}
+
+function loadCounter(count){
+	if(counter == null) {
+		counter = parseInt(count);
+	}
+}
 
 function disorder(o){ 
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
@@ -130,8 +139,6 @@ function setPrevAction(){
 		window.parent.document.getElementById("nav_prev-button").click();
 	});
 }
-
-
 
 function passed(){
 	actividad.end("passed");
@@ -220,18 +227,3 @@ function removeOneElement(array,element){
 	return array;
 }
 
-function getConfigByElementWithOne(type, level, quantity, callBack, elementExcept){
-	$.getJSON("js/configGroups.json",function(config,callBack){
-	    	element_config = config[type][level];
-	    	element_config = removeOneElement(element_config,elementExcept);
-	    	element_config = disorder(element_config);
-	    	result_disorder = element_config.slice(0,quantity);
-	    	result_disorder.push(elementExcept);
-			result = disorder(result_disorder);
-	    	// result = result_disorder.slice(0,quantity);
-	    	
-	    }).done(function(){
-	    	//console.log("result:",result);
-	    	callBack(result);
-	    });
-}

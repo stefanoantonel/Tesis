@@ -3,7 +3,6 @@ var temp;
 var img;
 var selectedText = '';
 var origin = '';
-var counter = 2; 
 
 function readyOk(){
 	idObj="template";

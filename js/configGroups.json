@@ -2,6 +2,7 @@
 	"act1":
 		{
 		"description": "Encuentre las imagenes que riman!",
+		"repeat":"2",
 		"name":"memory"
 		},
 	"act2":
@@ -11,7 +12,8 @@
 			"pa ja ro",
 			"me fui de vacaciones"
 			],
-		"description":"Ordene las silabas para formar la pablara. La imagen es una ayuda! ...",
+		"description":"Ordene las silabas para formar una pablara. La imagen es una ayuda! ...",
+		"repeat":"3",
 		"name":"adivinaPalabra"
 		},
 	"act4":
@@ -19,27 +21,31 @@
 			{"values":[["ca","sa"],["ma","no"]], "target":"1"},
 			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"}
 			],
-		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!!",
+		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!! Por ejemplo: RA-ton, MA-no = RAMA",
+		"repeat":"3",
 		"name":"palabraOculta"
 		},
 	"act5":
 		{
-			"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
-			"name":"amigoDeQuien"
+		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
+		"repeat":"3",
+		"name":"amigoDeQuien"
 		},
 	
 	"act6":
 		{"act":[
 					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"}
 			   ],
-		"description":"Toque la letra coloreada. Luego arrastre la imagen que dice la palabra!!!",
+		"description":"Toque la letra coloreada. Luego arrastre la imagen que comience con esa letra!!!",
+		"repeat":"5",
 		"name":"cambiarPalabra"
 		},
 	"act8":
 		{"act":[
 					{"values":["p","a","t","o"],"target":"1"}
 				],
-		"description":"Seleccione la imagen que empiece con la letra!!!",
+		"description":"Seleccione la imagen que empiece con la letra !!!",
+		"repeat":"5",
 		"name":"estoyPensando"
 		},
 	"act10":
@@ -47,6 +53,7 @@
 					{"values":["ca","sa","do"],"target":"3"}
 		       ],
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
+		"repeat":"3",
 		"name":"quitandoSilaba"
 		},
 	"act12":
@@ -55,6 +62,7 @@
 					{"values":["Yo","como","una","torta"]}
 			],
 		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
+		"repeat":"3",
 		"name":"cuentaPalabras"
 		},
 	"rhymes": {
