@@ -28,7 +28,7 @@
 	"act5":
 		{
 		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
-		"repeat":"3",
+		"repeat":"2",
 		"name":"amigoDeQuien"
 		},
 	

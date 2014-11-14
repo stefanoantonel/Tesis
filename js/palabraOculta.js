@@ -45,9 +45,11 @@ function functionCallback(conf){
 //sin desordenar
 // function functLeft(wordArray){	
 function functLeft(wordArrayLeft,syllableToSelect) {
+	var elementsWithName = [];
 	$(wordArrayLeft).each(function(index,elem){
-		t=$('#leftboxTemp').clone();
+		var t = $('#leftboxTemp').clone();
 		$(t).attr('id','left'+index);
+		var label = putImageName(elem[0],syllableToSelect);
 		name = elem.join('').replace(/,/g, "");
 		$(t).attr('name',name);
 		$(t).addClass("deleted");
@@ -57,7 +59,26 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 			playSound($(this).attr('name'));
 		});
 		$('#leftContainer').append(t);
+		//elementsWithName.push(t);
+		elementsWithName.push(label);
 	});
+	$('#leftContainer').append(elementsWithName);
+}
+
+function putImageName(imageNameParts, syllableToSelect) {
+	var labelContainer = $("#leftLabelContainerTemp").clone();
+	$(labelContainer).attr("id","labelImage");
+	elements=[];
+	$(imageNameParts).each(function(ind,elem){
+		var d=document.createElement('label');
+		$(d).html(elem);
+		var a=$(d).addClass('inline');
+		elements.push(a);
+	});
+	syllableToChange=$(elements[syllableToSelect]);
+	$(syllableToChange).addClass('syllableBig');
+	labelContainer.append(elements);
+	return labelContainer;
 }
 
 function functRight(conf){
