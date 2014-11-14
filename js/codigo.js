@@ -29,6 +29,7 @@ function getConfig(numAct,callBack){
 	    	loadSounds(c.sounds);
 	    	getStyle();
 	    	loadCounter(c.repeat);
+	    	loadTutorialVoice(numAct);
 	    });
 }
 
@@ -41,6 +42,7 @@ function getConfig(numAct){
 	    	loadSounds(c.sounds);
 	    	getStyle();
 	    	loadCounter(c.repeat);
+	    	loadTutorialVoice(numAct);
 	    });
 }
 
@@ -171,12 +173,13 @@ function loadSounds(sounds){
 	//console.log()$('#soundcasa')[0].play();	
 }
 
-function loadTutorialVoice() {
+function loadTutorialVoice(actNum) {
 	var aud=document.createElement('audio');
-	$(aud).attr('id','tutorial'+value);
-	$(aud).attr('src','audio/tutorial/'+value+'.wav');
-	$(aud).attr('type','audio/wav');
+	$(aud).attr('id','tutorial'+actNum);
+	$(aud).attr('src','audio/tutorial/'+actNum+'.mp3');
+	$(aud).attr('type','audio/mp3');
 	$(aud).appendTo('body');
+	window.setTimeout(function() {playTutorial(actNum);}, 1000);
 }
 
 function playSound(soundName){
@@ -185,6 +188,10 @@ function playSound(soundName){
 	
 }
 
+function playTutorial(actNumb) {
+	try{ $('#tutorial'+actNumb)[0].play(); }
+	catch(e){ console.error('Tutorial no encontrado'); }
+}
 function moveOrigin(target,origin){
 	$(target).removeClass('wrong');
 	$(target).addClass('normal');
