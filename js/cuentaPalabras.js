@@ -109,7 +109,7 @@ function checkCorrect(number) {
 		$(number).effect('shake');
 		$(number).removeClass('normal');
 		$(number).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,$(number),$(".numberContainer[name='"+$(number).attr("name")+"']"));
+		window.setTimeout(moveOrigin, 1000,$(number),$(".numberContainer[name='"+$(number).attr("name")+"'] .front"));
 		return false;
 	}
 }
