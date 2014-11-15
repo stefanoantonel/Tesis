@@ -121,6 +121,7 @@ function fillElements(conf,place){
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
 		name=conf[index];
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});

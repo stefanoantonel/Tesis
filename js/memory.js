@@ -33,9 +33,14 @@ function fillTemplate(rhymes){
 		for (var i=0; i<2; i++){
 	        t=$(temp).clone();
 	        $(t).attr('id',x*10+i);
-	        $(t).attr('name',group[i]);
+	        var name = group[i];
+	        $(t).attr('name',name);
+	        addSound(name);
 	        $(t).prop("hidden",false);
 	        $(t).css('display', 'inline');
+	        $(t).mousedown(function(){
+				playSound(this.name);
+			});
 	        allElements.push(t);
 		}
 		disorder(allElements);

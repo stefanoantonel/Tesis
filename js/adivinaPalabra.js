@@ -119,6 +119,7 @@ function fillTemplate(boxes,temp, parts){
         $(t).attr('id',index);
         $(t).addClass('deleted');
         $(t).html(part);
+        addSound(part);
         $(t).prop("hidden",false);
         part1=part;
         $(t).mousedown(function(){

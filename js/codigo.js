@@ -1,4 +1,5 @@
 var counter;
+var soundsArray = [];
 
 function dragAndDrop(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
@@ -26,10 +27,10 @@ function getConfig(numAct,callBack){
 	    }).done(function (){
 	    	callBack(c.act);
 	    	loadDescription(c.description);
-	    	loadSounds(c.sounds);
 	    	getStyle();
-	    	loadCounter(c.repeat);
 	    	loadTutorialVoice(numAct);
+	    	loadCounter(c.repeat);
+	    	loadSounds();
 	    });
 }
 
@@ -39,10 +40,11 @@ function getConfig(numAct){
 	    	 c=result["act"+numAct];
 	    }).done(function (){
 	    	loadDescription(c.description);
-	    	loadSounds(c.sounds);
 	    	getStyle();
-	    	loadCounter(c.repeat);
 	    	loadTutorialVoice(numAct);
+	    	loadCounter(c.repeat);
+	    	loadSounds();
+	    	
 	    });
 }
 
@@ -158,28 +160,32 @@ function loadDescription(descrip){
     });
 }
 
-function loadSounds(sounds){
-	$(sounds).each(function(index,value){
-		
-		var aud=document.createElement('audio');
-		$(aud).attr('id','sound'+value);
-		$(aud).attr('src','audio/'+value+'.wav');
-		$(aud).attr('type','audio/wav');
-		$(aud).appendTo('body');
-		//<audio id="p" src="audio/p2.mp3" type="audio/mp3"></audio>
-		
-	});
-	//$('#soundcasa')[0].play();	
-	//console.log()$('#soundcasa')[0].play();	
+function loadSounds(){
+	setTimeout(function() {
+	/* In order to make an asyncronous task */
+		$(soundsArray).each(function(index,value){
+			var aud=document.createElement('audio');
+			$(aud).attr('id','sound'+value);
+			$(aud).attr('src','audio/'+value+'.mp3');
+			$(aud).attr('type','audio/mp3');
+			$(aud).appendTo('body');
+		});
+	}, 3000);
 }
 
 function loadTutorialVoice(actNum) {
-	var aud=document.createElement('audio');
-	$(aud).attr('id','tutorial'+actNum);
-	$(aud).attr('src','audio/tutorial/'+actNum+'.mp3');
-	$(aud).attr('type','audio/mp3');
-	$(aud).appendTo('body');
-	window.setTimeout(function() {playTutorial(actNum);}, 1000);
+	if(counter == null) {
+		try {
+			var aud=document.createElement('audio');
+			$(aud).attr('id','tutorial'+actNum);
+			$(aud).attr('src','audio/tutorial/'+actNum+'.mp3');
+			$(aud).attr('type','audio/mp3');
+			$(aud).appendTo('body');
+			window.setTimeout(function() {playTutorial(actNum);}, 1000);		
+		}
+		catch(e) {console.error("Tutorial sound not found")}
+	}
+	
 }
 
 function playSound(soundName){
@@ -224,7 +230,6 @@ function sessionCounter() {
 				//$("article").show();
 				functionInit();
 				}, 2000);	
-
 		}
 
 }
@@ -242,3 +247,7 @@ function removeOneElement(array,element){
 	return array;
 }
 
+function addSound(elem) {
+	if(elem.constructor == Array) { soundsArray.push(elem.join("")); }
+	else { soundsArray.push(elem); }
+}

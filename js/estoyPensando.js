@@ -45,6 +45,7 @@ function fillTemplate(wordSelected,imagesSelected){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);
 		name=e;
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).removeClass('temp');
 		$(t).attr('src','images/activities/' + name + '.jpg');

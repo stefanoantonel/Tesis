@@ -50,7 +50,8 @@
 		},
 	"act10":
 		{"act":[
-					{"values":["ca","sa","do"],"target":"3"}
+					{"values":["ca","sa","do"],"target":"3"},
+					{"values":["au","ti","to"],"target":"2"}
 		       ],
 		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
 		"repeat":"3",
@@ -97,7 +98,6 @@
 		"lev_1": [ 
 				"5","4", "7", "6", "8", "11"
 			]
-	},
-	"sounds" : ["anillo","bosque","bote","botella","cabeza","calabaza","cama","campana","casa-mano","casa","castillo","cuna","gato","leon","luna","mano","manzana","mercado","ojota","oruga","pajaro","pato","pelota","perro","rana","raton","telefono","televisor","tortuga","ventana"]
+	}	
 	
 }

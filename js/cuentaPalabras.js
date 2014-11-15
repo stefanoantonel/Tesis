@@ -30,6 +30,7 @@ function functionCallback(conf){
 	var conf = conf[0];
 	
 	var sentenceSelected = conf["values"];
+	addSound(sentenceSelected);
 	numberToSelect = sentenceSelected.length;
 	
 	// var firstWord = sentenceSelected[0];
@@ -59,6 +60,9 @@ function getRandomNumber(quantity) {
 function fillTemplateWord(wordComplete){
 	originWord=wordComplete.join(' ');
 	$(completeWord).text(originWord);
+	$(completeWord).hover(function() {
+		playSound(originWord.replace(/ /g,""));
+	});
 }
 
 function fillTemplateNumber(number){
@@ -67,6 +71,7 @@ function fillTemplateNumber(number){
 	$(number).each(function(index,e){
     	t=$(".numberContainer").clone();
     	name=e;
+    	addSound(name);
     	$(t).attr('name',name);
 		$(t).find(".numberTemp").attr('name',name);
 		$(t).find(".numberTemp").attr('num',index);

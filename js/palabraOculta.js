@@ -51,6 +51,7 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 		$(t).attr('id','left'+index);
 		var label = putImageName(elem[0],syllableToSelect);
 		name = elem.join('').replace(/,/g, "");
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).addClass("deleted");
 		$(t).removeAttr('hidden');
@@ -90,6 +91,7 @@ function functRight(conf){
 		$(t).attr('id',index);
 		$(t).removeAttr('hidden');
 		name=conf[index];
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).addClass("deleted");
 		$(t).prop('num',index);

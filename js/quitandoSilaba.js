@@ -53,6 +53,8 @@ function fillTemplateWord(wordComplete,wordToChange){
 	$(completeWord).text(originWord);
 	partSelected=$(wordComplete)[wordToChange];
 	$(part).text(partSelected);
+	addSound(originWord+partSelected);
+	//$(completeWord).mouseohover(playSound(originWord+partSelected));
 }
 
 function fillTemplateImages(images){
@@ -61,6 +63,7 @@ function fillTemplateImages(images){
 	$(images).each(function(index,e){
     	t=$(imgTemp).clone();
 		name=e;
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).attr('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');

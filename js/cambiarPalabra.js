@@ -72,9 +72,13 @@ function functInitWords(first,second,wordToChange){
 	$(t).attr('id','left0');
 	//name=conf[0];
 	name=first;
+	addSound(name);
 	$(t).attr('name',name);
 	$(t).addClass('firstWord');
 	$(t).removeAttr('hidden');
+	$(t).mousedown(function() {
+		playSound(this.name);
+	});
 	changed=changeColor($(t),name,wordToChange);
 
 	$(t).html(changed);
@@ -86,9 +90,13 @@ function functInitWords(first,second,wordToChange){
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left1');
 	name=second;
+	addSound(name);
 	$(t).attr('name',name);
 	$(t).removeAttr('hidden');
 	$(t).addClass('secondWordHidden');
+	$(t).mousedown(function() {
+		playSound(this.name);
+	});
 	//$(t).html(conf[1]);
 	changed=changeColor($(t),name,wordToChange);
 	//$('#leftContainer').append(t);
@@ -110,6 +118,7 @@ function functInitImages(conf,x){
 		$(t).attr('id','right'+index);
 		$(t).removeAttr('hidden');
 		name=conf[index];
+		addSound(name);
 		$(t).attr('name',name);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
