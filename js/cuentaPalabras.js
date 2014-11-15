@@ -22,7 +22,7 @@ function functionInit() {
 	readyOk();
 	getConfig("12");
 	getConfigByElement("act12","act",1,functionCallback);
-
+	window.setTimeout(function(){$(".cube").addClass("girar");},100);
 }
 
 function functionCallback(conf){
@@ -80,11 +80,11 @@ function fillTemplateNumber(number){
 	});
 	disorder(numberArray);
 	$(numbersContainer).append(numberArray);
-
 	//numbersDiv=numbersContainer.children();
 	numbersDiv=$(".numberTemp:not(.hidden)");
 	
 	dragAndDrop(numbersDiv,target,functionsDD);
+	
 }
 
 function functionsDD(context,currElem){
@@ -97,7 +97,7 @@ function functionsDD(context,currElem){
 		cartelFelicitaciones();*/
 		sessionCounter();
 	}
-	
+	$(".cube").addClass("girar");
 }
 
 function checkCorrect(number) {
