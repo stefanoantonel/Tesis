@@ -22,7 +22,7 @@ function functionInit() {
 	readyOk();
 	getConfig("12");
 	getConfigByElement("act12","act",1,functionCallback);
-	window.setTimeout(function(){$(".cube").addClass("girar");},100);
+	window.setTimeout(function(){$(".cube").addClass("girar");},200);
 }
 
 function functionCallback(conf){

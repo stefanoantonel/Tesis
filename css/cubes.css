@@ -24,7 +24,7 @@
 .cube .back   { transform: rotateX( 180deg ) translateZ( 50px ); background-color: #F7BE81;}
 .cube .right  { transform: rotateY(  90deg ) translateZ( 50px ); background-color: #F5DA81;}
 .cube .left   { transform: rotateY( -90deg ) translateZ( 50px ); background-color: #F78181;}
-.cube .top    { transform: rotateX(  90deg ) translateZ( 50px ); background-color: #F5DA81;}
+.cube .top    { transform: rotateX(  90deg ) translateZ( 50px ); background-color: #CEE3F6;}
 .cube .bottom { transform: rotateX( -90deg ) translateZ( 50px ); background-color: #F7BE81;}
 
 .cube { transition: transform 1s; }
@@ -38,3 +38,8 @@
 
 .cube.girar   { transform: translateZ( -100px ) rotateX( -370deg ) rotateY( -5deg );}
 .cube.giraRigth   { transform: translateX( -300px ) rotateY(-360deg ); }
+
+.cube:hover {
+	opacity: 0.8;
+	transform:rotateX(20deg );
+}
