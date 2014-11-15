@@ -67,6 +67,7 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 
 function putImageName(imageNameParts, syllableToSelect) {
 	var labelContainer = $("#leftLabelContainerTemp").clone();
+	$(labelContainer).removeClass("hidden");
 	$(labelContainer).attr("id","labelImage");
 	elements=[];
 	$(imageNameParts).each(function(ind,elem){

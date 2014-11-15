@@ -19,25 +19,6 @@
 	background-color:white;
 }
 
-.btnMemory{
-	float: left;
-	width:80px;
-	height:100px;
-	margin:20px;
-}
-
-
-
-.actContainer{ 
-	/*margin-top:7%;
-	margin: auto;
-	border:solid;
-	min-height:130px;
-	min-width:200px;
-	max-width: 490px;
-	overflow: auto;*/
-}
-
 
 .imgCenter{
 	width: auto;	
@@ -104,8 +85,8 @@ article{
 	margin: auto;
 	min-height:130px;
 	min-width:200px;
-	max-width: 490px;
-	/*overflow: auto;*/
+	/*max-width: 490px;
+	overflow: auto;*/
 	}
 
 /* .kitty {
@@ -241,3 +222,35 @@ body {
 	box-shadow: 0 3px 25px #000;
 	background-color: #F5ECCE; 
 } 
+
+
+.btnMemory{
+	float: left;
+	margin: 20px;
+}
+
+@media screen and (max-width: 850px) {
+    .btnImg {
+		width:80px;
+		height:100px;
+	}
+	
+	.actContainer { 
+		width:490px;
+	}
+	
+}
+
+@media screen and (min-width: 850px) {
+    .btnImg {
+		width:100px;
+		height:120px;
+	}
+	
+	.actContainer { 
+		width:600px;
+	}
+	
+}
+
+

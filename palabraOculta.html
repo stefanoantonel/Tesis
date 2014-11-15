@@ -48,6 +48,10 @@
 		margin:2%;
 	}
 	
+	article {
+	 		max-width: 490px;
+	}
+	
 	#target{
 		float:left;
 		border:3px;
@@ -79,11 +83,15 @@
 	}
 	.syllableBig{
 		color: #f00;
-		font-size: 50px;
+		font-size: 40px;
 	}
 	.labelInline {
 		display: inline;
 		font-size: 20px;
+	}
+	.wordsImages {
+		width: 230px;
+		float: left;
 	}
 
 </style>
@@ -93,9 +101,11 @@
 	<header></header>
 	<article>
 		<img id="leftboxTemp" class="img" hidden="hidden">
-		<div id="leftContainer"></div>
-		<div id="leftLabelContainerTemp" class="labelInline"></div>
-		<div id="target" class="droppable ui-widget-header ui-droppable ui-state-highlight"></div>
+		<div class="wordsImages">
+			<div id="leftContainer"></div>
+			<div id="leftLabelContainerTemp" class="hidden textBackground labelInline"></div>
+		</div>
+		<div id="target" class="textBackground droppable ui-widget-header ui-droppable ui-state-highlight"></div>
 		<img id="rightboxTemp" class="img img-rigth draggable ui-widget-content ui-draggable" hidden="hidden">
 		<div id="rightContainer"></div>		
 	</article>

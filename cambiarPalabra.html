@@ -25,8 +25,6 @@
 		
    		border:3px solid;
 		margin-right: 3px;
-		width: 90px;
-		height: 90px;
 	}
 	
 	.img-rigth{
@@ -41,23 +39,15 @@
    		border-color: black;
 		/* display: inline-block; */
 		border-width: medium;
-		width: 100px;
-		height: 100px;
+		width: 110px;
+		height: 140px;
 		margin:5%;
 	}
-
-/* 	label{ */
-/* 		margin-bottom: 20px; */
-/* 		display: block; */
-/* 		font-size: 40px; */
-/* 	} */
-	/*#alertOk{
-		float: left;
-		position: fixed;
-		top: 115px;
-		left: 140px;
-		z-index: 1;
-	}*/
+	
+	article {
+	 	max-width: 490px;
+	}
+	
 	#leftContainer{
 		max-width: 300px;
 		float:left;
@@ -92,12 +82,12 @@
 	<!-- label>Palabra Oculta</label> -->
 	<header></header>
 	<article>
-		<div id="leftboxTemp" class='word' hidden="hidden"></div>
+		<div id="leftboxTemp" class='word textBackground' hidden="hidden"></div>
 		<div id="leftContainer"></div>
 
-		<div id="target" hidden="hidden"></div>
+		<div id="target" class="textBackground" hidden="hidden"></div>
 		
-		<img id="rightboxTemp" class="img img-rigth normal" hidden="hidden"></img>
+		<img id="rightboxTemp" class="img img-rigth normal btnImg" hidden="hidden"></img>
 		<div id="rightContainer" hidden="hidden"></div>
 
 		
