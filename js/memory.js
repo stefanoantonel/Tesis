@@ -93,8 +93,8 @@ function checkImg(img1,img2){
 	}
 	else{
 	
-		window.setTimeout(removeBackground, 2000,img1);
-		window.setTimeout(removeBackground, 2000,img2);
+		window.setTimeout(removeBackground, 1500,img1);
+		window.setTimeout(removeBackground, 1500,img2);
 	}
 }
 

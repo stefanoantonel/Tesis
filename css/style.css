@@ -118,6 +118,7 @@ article{
 
 body {
 	margin-top: 10%;
+	background-repeat: no-repeat;
 }
 
 .iframeMenu {
@@ -226,8 +227,17 @@ body {
 	right: 5%;
 }
 
+.btnActionAcvitivy:hover {
+	opacity: 0.7;
+}
+
 .textBackground {
-	background-color: wheat;
+	background-color: #F3E2A9;
 	border-radius: 20px;
 	padding: 10px;
 }
+
+.textBackground:hover{ 
+	box-shadow: 0 3px 25px #000;
+	background-color: #F5ECCE; 
+} 
