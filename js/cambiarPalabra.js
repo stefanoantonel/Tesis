@@ -75,6 +75,7 @@ function functInitWords(first,second,wordToChange){
 	addSound(name);
 	$(t).attr('name',name);
 	$(t).addClass('firstWord');
+	$(t).addClass('textBackground');
 	$(t).removeAttr('hidden');
 	$(t).mousedown(function() {
 		playSound(this.name);
@@ -94,6 +95,7 @@ function functInitWords(first,second,wordToChange){
 	$(t).attr('name',name);
 	$(t).removeAttr('hidden');
 	$(t).addClass('secondWordHidden');
+	$(t).addClass('textBackground');
 	$(t).mousedown(function() {
 		playSound(this.name);
 	});

@@ -20,19 +20,16 @@
 	<script type="application/javascript">
 		$(document).ready(function(){
 			ejercicio = function (){
-				
-				// readyOk(word,temp,container);
 				functionInit();
 			};
 		});
 	</script>
 
 	<style type="text/css">
-	.images{	
+	.images {	
    		border:3px solid;
    		border-color: black;
-		margin-right: 5%;
-		margin-left: 10%;
+		margin-right: 10%;
 		width: 90px;
 		height: 90px;
 		float: left;
@@ -40,13 +37,18 @@
 	/*.ui-effects-wrapper {
         display:inline;
     }*/
-	.word{
+	.word {
 		color: red;
 		font-size: 100px;
 		margin-left: 35%;
+		display: inline;
 	}
-	.temp{
+	.temp {
 		display: none;
+	}
+	.imgContainerClass {
+		margin-left: 20%;
+
 	}
 	</style>
 
@@ -55,10 +57,10 @@
 <body>
 	<header></header>
 	<article>
-		<div id="word" class="word"></div>
+		<div id="word" class="word textBackground "></div>
 
 		<img id="imgTemp" class="images temp">
-		<div id="imgContainer"></div>
+		<div id="imgContainer" class="imgContainerClass"></div>
 	</article>
 	<footer></footer>
 </body>

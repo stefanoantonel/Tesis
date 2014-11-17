@@ -63,6 +63,7 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 		//elementsWithName.push(t);
 		elementsWithName.push(label);
 	});
+	$('#leftContainer').append("<br>");
 	$('#leftContainer').append(elementsWithName);
 }
 

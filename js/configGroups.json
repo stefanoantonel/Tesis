@@ -42,7 +42,11 @@
 		},
 	"act8":
 		{"act":[
-					{"values":["p","a","t","o"],"target":"1"}
+					{"values":["p","a","t","o"],"target":"1"},
+					{"values":["g","a","t","o"],"target":"1"},
+					{"values":["p","e","r","r","o"],"target":"1"},
+					{"values":["c","a","s","a"],"target":"1"},
+					{"values":["c","a","m","a"],"target":"1"}
 				],
 		"description":"Seleccione la imagen que empiece con la letra !!!",
 		"repeat":"5",

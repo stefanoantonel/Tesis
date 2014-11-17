@@ -65,13 +65,14 @@ function fillTemplate(wordSelected,imagesSelected){
 	});
 }
 
-function checkCorrect(elem){
+function checkCorrect(elem) {
 	var name = $(elem).attr('name');
-	if(name == wordSelected){
-		$(elem).effect('puff');
-		sessionCounter();
+	if(name == wordSelected) {
+		$(elem).addClass("animateToFront");
+		setTimeout(function() {sessionCounter();}, 1000);
+		
 	}
-	else{
+	else {
 		console.log(elem);
 		$(elem).effect('shake');
 		
