@@ -20,7 +20,6 @@ function functionInit() {
 }
 
 function functionCallback(conf){
-	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
 	var firstWord = conf["values"][0];
@@ -30,15 +29,9 @@ function functionCallback(conf){
 	* I modify the syllable the value change
 	*/
 	syllableResult = firstWord[syllableToSelect];
-	
 	resultFirstWord = firstWord.join('').replace(',','');
 	resultsecondWord = secondWord.join('').replace(',','');
-	// wordSelected=group["word"]; 
-	// wordToChange=group["wordToChange"]; //in number
-	// images=group["images"];
 	fillTemplateWord(resultFirstWord,resultsecondWord);
-
-	//getConfigByElement("distractors","lev_1",2,functionCallback2);
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
 }
@@ -51,12 +44,8 @@ function functionCallback2(conf) {
 }
 
 function fillTemplateWord(firstPart,secondPart){
-	// originWord=wordComplete.join('');
 	$(completeWord1).text(firstPart);
-	//partSelected=$(wordComplete)[wordToChange];
 	$(completeWord2).text(secondPart);
-	//addSound(originWord+partSelected);
-	//$(completeWord).mouseohover(playSound(originWord+partSelected));
 }
 
 function fillTemplateImages(syllables){
@@ -86,7 +75,6 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(syllable) {
-	
 	var name = $(syllable).attr("name");
 	if(name == syllableResult){
 		return true;
@@ -97,15 +85,5 @@ function checkCorrect(syllable) {
 		$(syllable).addClass('wrong');
 		window.setTimeout(moveOrigin, 1000,syllable,syllableContainer);
 		return false;
-	}
-}
-
-function checkReplace(box,newDiv){
-	if( $(target).has('img') ){
-		prevDiv=$(target).children();
-		$(prevDiv).addClass('normal');
-		$(imgContainer).append(prevDiv);
-		$(target).append(newDiv);
-
 	}
 }
