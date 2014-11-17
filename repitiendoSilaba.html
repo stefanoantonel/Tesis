@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Quitar Silaba</title>
+	<title>Repitiendo Silaba</title>
 	<script src="comun/jquery.js"></script>
 	<script src="js/jquery-ui.min.js"></script>
 	<script src="js/codigo.js"></script>
@@ -11,11 +11,12 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<script  src="comun/comun.js"></script>
 	<link rel="stylesheet" href="comun/comun.css">
-	<script src="js/quitandoSilaba.js"></script>
+	<script src="js/repitiendoSilaba.js"></script>
 
 	<style type="text/css">
-		.phrase{
-			font-size: 40px;
+		.syllable {
+			font-size: 30px;
+			margin-left: 5%;
 		}
 
 		div.phrase b{
@@ -27,7 +28,7 @@
 		}
 		
 		article img {
-			margin-left: 6%;
+			
 		}
 		article img.imgTemp{
 	   		border:3px solid;
@@ -52,9 +53,9 @@
 			width: 120px;
 			height: 110px;
 			margin:5%;
-			margin-left: 30%;
 		}
 		
+
 	</style>
 
 	<script type="application/javascript">
@@ -70,13 +71,13 @@
 	<header></header>
 	<article>
 		<div id="text" class='phrase textBackground'>
-			Si a <b id="completeWord"></b> le quitamos la <b id="part"></b>, nos queda ...
+			Que silaba se repite entre <b id="completeWord1"></b> y <b id="completeWord2"></b>?
 		</div>
 
 		<div id="target" class="target textBackground"></div>
 		
-		<img id="imgTemp" class="hidden imgTemp normal"></img>
-		<div id="imgContainer"></div>
+		<label id="syllableTemp" class="hidden normal syllable textBackground"></label>
+		<div id="syllableContainer"></div>
 
 		
 	</article>

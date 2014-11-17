@@ -37,7 +37,7 @@ function functionCallback(conf){
 	fillTemplateWord(values,syllableToSelect);
 
 	//getConfigByElement("distractors","lev_1",2,functionCallback2);
-	getConfigByElementWithOne("distractors","lev_1",2,functionCallback2,resultWord);
+	getConfigByElementWithOne("distractors","words",2,functionCallback2,resultWord);
 	
 }
 

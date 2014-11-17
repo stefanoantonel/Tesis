@@ -30,7 +30,7 @@ function functionCallback(conf){
 	functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
 	secondWord = right;
 	
-	getConfigByElementWithOne("distractors","lev_1",2,functInitImages,right);
+	getConfigByElementWithOne("distractors","words",2,functInitImages,right);
 
 	
 }

@@ -36,7 +36,7 @@ function functionCallback(conf){
 	functLeft(wordArrayLeft,syllableToSelect); //paso el array solamente 
 
 // 	getConfigByElement("distractors","lev_1",2,functRight);
-	getConfigByElementWithOne("distractors","lev_1",2,functRight,resultWord);
+	getConfigByElementWithOne("distractors","words",2,functRight,resultWord);
 	// functInit2(right); //paso el array solamente para desordenar
 	
 	//loadDescription(conf.description);

@@ -71,6 +71,14 @@
 		"repeat":"3",
 		"name":"cuentaPalabras"
 		},
+	"act14":
+		{"act": [
+					{"values":[["pa","va"],["za","pa","to"]],"target":"1"}
+			],
+		"description":"Seleccione la sílaba que se repite entre las dos palabras!!!",
+		"repeat":"3",
+		"name":"repitiendoPalabras"
+		},
 	"rhymes": {
 		"lev_1":[
 			["leon","raton"],
@@ -95,14 +103,14 @@
 		"chrismas"
 	],
 	"distractors": {
-		"lev_1": [ 
-				"leon","raton", "pato", "campana"
-			]
-	},
-	"numbers": {
-		"lev_1": [ 
-				"5","4", "7", "6", "8", "11"
-			]
-	}	
-	
+		"words": [ 
+			"leon","raton", "pato", "campana"
+		],
+		"numbers": [ 
+			"5","4", "7", "6", "8", "11"
+		],
+		"syllables": [
+			"pe","go","ma","ri","ca"
+		]
+	}
 }

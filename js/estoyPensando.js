@@ -29,7 +29,7 @@ function functionCallback(conf) {
 	var letter = wordSelected.split('')[0];
 	letter = letter.toUpperCase();
 	$(wordContainer).text(letter);
-	getConfigByElementWithOne("distractors","lev_1",2,functRight,wordSelected);
+	getConfigByElementWithOne("distractors","words",2,functRight,wordSelected);
 }
 
 function functRight(conf) {

@@ -43,7 +43,7 @@ function functionCallback(conf){
 
 	// fillTemplateNumber(getRandomNumber(2));
 
-	getConfigByElementWithOne("numbers","lev_1",2,fillTemplateNumber,numberToSelect);
+	getConfigByElementWithOne("distractors","numbers",2,fillTemplateNumber,numberToSelect);
 	
 	
 	
