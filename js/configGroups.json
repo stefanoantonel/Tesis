@@ -34,7 +34,8 @@
 	
 	"act6":
 		{"act":[
-					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"}
+					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"},
+					{"values":[["b","o","t","a"],["g","o","t","a"]], "target":"1"}
 			   ],
 		"description":"Toque la letra coloreada. Luego arrastre la imagen que comience con esa letra!!!",
 		"repeat":"5",
