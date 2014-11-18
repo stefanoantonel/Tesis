@@ -9,8 +9,7 @@
 		{"act":[
 			"pe lo ta",
 			"ca be za",
-			"pa ja ro",
-			"me fui de vacaciones"
+			"pa ja ro"
 			],
 		"description":"Ordene las silabas para formar una pablara. La imagen es una ayuda! ...",
 		"repeat":"3",
@@ -78,6 +77,14 @@
 		"description":"Seleccione la sílaba que se repite entre las dos palabras!!!",
 		"repeat":"3",
 		"name":"repitiendoPalabras"
+		},
+	"act16":
+		{"act": [
+					{"values":["pa","ja","ro"],"target":"2"}
+			],
+		"description":"Seleccione la sílaba que falta para formar la pablara!!!",
+		"repeat":"3",
+		"name":"silabaOculta"
 		},
 	"rhymes": {
 		"lev_1":[
