@@ -9,7 +9,10 @@
 		{"act":[
 			"pe lo ta",
 			"ca be za",
-			"pa ja ro"
+			"pa ja ro",
+			"bo te lla",
+			"te le fo no",
+			"ven ta na"
 			],
 		"description":"Ordene las silabas para formar una pablara. La imagen es una ayuda! ...",
 		"repeat":"3",
@@ -18,7 +21,8 @@
 	"act4":
 		{"act":[
 			{"values":[["ca","sa"],["ma","no"]], "target":"1"},
-			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"}
+			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"},
+			{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"}
 			],
 		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!! Por ejemplo: RA-ton, MA-no = RAMA",
 		"repeat":"3",
@@ -64,7 +68,10 @@
 	"act12":
 		{"act": [
 					{"values":["Mi","perro","tiene","una","casa"]},
-					{"values":["Yo","como","una","torta"]}
+					{"values":["Yo","como","una","torta"]},
+					{"values":["Yo","tengo","un","gato"]},
+					{"values":["Me","voy","al","parque"]},
+					{"values":["Yo","quiero","jugar"]}
 			],
 		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
 		"repeat":"3",
@@ -72,7 +79,9 @@
 		},
 	"act14":
 		{"act": [
-					{"values":[["pa","va"],["za","pa","to"]],"target":"1"}
+					{"values":[["pa","va"],["za","pa","to"]],"target":"1"},
+					{"values":[["ca","sa"],["ca","ma"]],"target":"1"},
+					{"values":[["pa","to"],["ga","to"]],"target":"2"}
 			],
 		"description":"Seleccione la sílaba que se repite entre las dos palabras!!!",
 		"repeat":"3",
@@ -80,7 +89,8 @@
 		},
 	"act16":
 		{"act": [
-					{"values":["pa","ja","ro"],"target":"2"}
+					{"values":["pa","ja","ro"],"target":"2"},
+					{"values":["tor","tu","ga"],"target":"2"}
 			],
 		"description":"Seleccione la sílaba que falta para formar la pablara!!!",
 		"repeat":"3",
@@ -111,13 +121,13 @@
 	],
 	"distractors": {
 		"words": [ 
-			"leon","raton", "pato", "campana"
+			"leon","raton", "pato", "campana","banana","manzana","agua"
 		],
 		"numbers": [ 
-			"5","4", "7", "6", "8", "11"
+			"5","4", "7", "6", "8", "11","3"
 		],
 		"syllables": [
-			"pe","go","ma","ri","ca"
+			"pe","go","ma","ri","ca","lo","ta"
 		]
 	}
 }
