@@ -62,7 +62,7 @@ function loadActivity(){
 	contador=4;
 	$('#alertOk').delay( 100 ).fadeOut( 400 );
 	$("article").show();
-	config=getConfigByElement("rhymes","lev_1",4,fillTemplate);
+	config=getRhymes("rhymes","lev_1",4,fillTemplate);
 }
 
 function functionInit(){

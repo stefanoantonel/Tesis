@@ -60,6 +60,22 @@ function getConfigByElement(element,level,quantity,callBack){
 	    });
 }
 
+function getRhymes(element,level,quantity,callBack){
+	$.getJSON("js/configGroups.json",function(config,callBack){
+	    	var element_config = config[element][level];
+	    	var result_disorder = disorder(element_config);
+	    	result = result_disorder.slice(0,quantity);
+	    	$(result).each(function(ind,value){
+	    		val=disorder(value);
+	    		result[ind]=val.slice(0,2);
+	    	});
+	    }).done(function(){
+	    	console.log("result:",result);
+	    	callBack(result);
+	    });
+}
+
+
 function getConfigByElementWithOne(type, level, quantity, callBack, elementExcept){
 	$.getJSON("js/configGroups.json",function(config,callBack){
 	    	element_config = config[type][level];
