@@ -99,15 +99,16 @@
 	"rhymes": {
 		"lev_1":[
 			["leon","raton"],
-			["pato","gato"],
+			["pato","gato","plato","silbato","zapato"],
 			["rana","manzana","lana","arana"],
 			["luna","cuna"],
 			["castillo","anillo"],
 			["gallina","bailarina"],
 			["ventana","campana"],
 			["sombrilla","silla"],
-			["pelota","ojota"],
-			["toro","loro"]
+			["pelota","ojota","bota"],
+			["toro","loro"],
+			["casa","taza"]
 		],
 		"lev_2":[
 			
