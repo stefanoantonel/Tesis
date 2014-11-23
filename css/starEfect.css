@@ -23,6 +23,7 @@ label {
     position: absolute;
     top: 0;
     left: 0;
+    transition: transform 1s;
 }
 
 /*label:nth-child(2) {*/
@@ -32,6 +33,10 @@ label {
   -moz-animation:    rotation1 3s;
   -webkit-animation: rotation1 3s;
   background-color: #F5A9F2;
+}
+
+.partialRot:nth-child(2){
+	 transform: rotate(60deg);
 }
 
 .rot:nth-child(3) {
@@ -46,6 +51,10 @@ label {
   background-color: #F3E2A9;
 }
 
+.partialRot:nth-child(3){
+	 transform: rotate(40deg);
+}
+
 .rot:nth-child(4){
   animation:         rotation3 3s;  
   -o-animation:      rotation3 3s;
@@ -57,6 +66,11 @@ label {
 	-moz-animation-delay:    0.4s;
   -webkit-animation-delay: 0.4s;
   background-color: #F2F5A9;
+}
+
+.partialRot:nth-child(4){
+	 
+	 transform: rotate(20deg);
 }
 
 /* first rotation */

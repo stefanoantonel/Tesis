@@ -72,10 +72,31 @@ function fillTemplateImages(syllables){
 			playSound($(this).attr('name'));
 		});
 		$(t).removeClass('hidden');
+		$(t).hover(function(){
+					var labels = $(this).find("label");
+					$(labels).addClass("partialRot");
+					},
+				function(){
+						var labels = $(this).find("label");
+						$(labels).removeClass("partialRot");
+		});//,removeRotEfect($(t)));
+		//$(".syllable").mouseout(removeRotEfect($(t)));
 		syllablesArray.push(t);
 	});
 	disorder(syllablesArray);
 	$(syllableContainer).append(syllablesArray);
+}
+
+function setRotEfect(syllableCont){
+	var labels = syllableCont.find("label");
+	$(labels).addClass("partialRot");
+	console.log("over");
+}
+
+function removeRotEfect(syllableCont){
+	var labels = syllableCont.find("label");
+	$(labels).removeClass("partialRot");
+	console.log("out");
 }
 
 function functionsDD(context,currElem){
