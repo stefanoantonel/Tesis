@@ -17,7 +17,13 @@ function functionInit() {
 	getConfig(10);
 	getConfigByElement("act14","act",1,functionCallback);
 	readyOk();
+	rotateEfect();
 }
+
+function rotateEfect(){
+	var labels = syllableTemp.find("label");
+	$(labels).addClass("rot");
+} 
 
 function functionCallback(conf){
 	var conf = conf[0];
@@ -51,14 +57,18 @@ function fillTemplateWord(firstPart,secondPart){
 function fillTemplateImages(syllables){
 	var syllablesArray=[];
 	// images.unshift(result);
+	
 	$(syllables).each(function(index,e){
     	t=$(syllableTemp).clone();
+    	var content= $(t).find("label").last();
 		name=e;
 		addSound(name);
-		$(t).attr('name',name);
-		$(t).attr('num',index);
-		$(t).html(name);
-		$(t).mouseover(function(){
+		content.attr('name',name);
+		content.attr('num',index);
+		//$(t).html(name);
+		/*Change to make effect*/
+		content.html(name);
+		content.mouseover(function(){
 			playSound($(this).attr('name'));
 		});
 		$(t).removeClass('hidden');
@@ -75,15 +85,19 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(syllable) {
-	var name = $(syllable).attr("name");
+	var name = $(syllable).find("label").last().attr("name");
 	if(name == syllableResult){
 		return true;
 	}
 	else{
+		$(syllable).find("label").removeClass('rot');
 		$(syllable).effect('shake');
 		$(syllable).removeClass('normal');
 		$(syllable).addClass('wrong');
 		window.setTimeout(moveOrigin, 1000,syllable,syllableContainer);
+		window.setTimeout(function(){
+			$(syllable).find("label").addClass('rot');
+		}, 1000);
 		return false;
 	}
 }
