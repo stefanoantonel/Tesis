@@ -41,7 +41,7 @@ function functionCallback(conf){
 function functionCallback2(conf) {
 	//conf.unshift()
 	fillTemplateSyllable(conf);
-	images=syllableContainer.children();
+	images=syllableContainer.children().find("label");
 	dragAndDrop(images,target,functionsDD);
 }
 
@@ -59,7 +59,7 @@ function fillTemplateSyllable(syllables){
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).attr('num',index);
-		$(t).html(name);
+		$(t).html("<label>"+name+"</label>");
 		$(t).mouseover(function(){
 			playSound($(this).attr('name'));
 		});
@@ -74,23 +74,23 @@ function functionsDD(context,currElem){
 	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){
-		window.setTimeout(function() {	sessionCounter(); },3000);
+		window.setTimeout(function() {	sessionCounter(); },1500);
 	}
 }
 
 function checkCorrect(syllable) {
-	var name = $(syllable).attr("name");
+	var name = $(syllable).html();
 	if(name == syllableResult){
-		$(syllable).removeClass("sphere");
-		$(syllable).addClass("backgroundText");
-		window.setTimeout(function(){$(syllable).addClass("animateToFront");},1000);
+		//$(syllable).removeClass("sphere");
+		//$(syllable).addClass("backgroundText");
+		window.setTimeout(function(){$(syllable).addClass("animateToFront");},500);
 		return true;
 	}
 	else{
 		$(syllable).effect('shake');
 		$(syllable).removeClass('normal');
 		$(syllable).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,syllable,syllableContainer);
+		window.setTimeout(moveOrigin, 1000,syllable,$(".sphere[name='"+$(syllable).html()+"']"));
 		return false;
 	}
 }

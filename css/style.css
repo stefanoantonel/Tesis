@@ -191,32 +191,43 @@ body {
 	  -webkit-animation: bounce 1s;
 }
 
+.sphere:hover {
+	-webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+
+	-ms-transform: scale(1.2,1.2); /* IE 9 */
+    -webkit-transform: scale(1.2,1.2); /* Chrome, Safari, Opera */
+    transform: scale(1.2,1.2);
+		
+}
 
 @-webkit-keyframes bounce {
-	0%,30%  { transform:translate(0px,-40px); }
+	0%  { transform:translate(0px,-40px); }
 	40%  { transform:translate(0px,30px); }
-	50%     { transform:translate(0px,-30px); }
+	60%     { transform:translate(0px,-30px); }
 	90%      { transform:translate(0px,10px); }
 	100%      { transform:translate(0px,-10px); }
 }
 @-moz-keyframes bounce {
-	0%,30%  { transform:translate(0px,-40px); }
+	0%  { transform:translate(0px,-40px); }
 	40%  { transform:translate(0px,30px); }
-	50%     { transform:translate(0px,-30px); }
+	60%     { transform:translate(0px,-30px); }
 	90%      { transform:translate(0px,10px); }
 	100%      { transform:translate(0px,-10px); }
 }
 @-o-keyframes bounce {
-	0%,30%  { transform:translate(0px,-40px); }
+	0%  { transform:translate(0px,-40px); }
 	40%  { transform:translate(0px,30px); }
-	50%     { transform:translate(0px,-30px); }
+	60%     { transform:translate(0px,-30px); }
 	90%      { transform:translate(0px,10px); }
 	100%      { transform:translate(0px,-10px); }
 }
 @keyframes bounce {
-	0%,30%  { transform:translate(0px,-40px); }
+	0%  { transform:translate(0px,-40px); }
 	40%  { transform:translate(0px,30px); }
-	50%     { transform:translate(0px,-30px); }
+	60%     { transform:translate(0px,-30px); }
 	90%      { transform:translate(0px,10px); }
 	100%      { transform:translate(0px,-10px); }
 }
