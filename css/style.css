@@ -184,6 +184,77 @@ body {
     transform: translate(50px,0px);
 }
 
+.bounceAnimate {
+	 animation:         bounce 1s;  
+	  -o-animation:      bounce 1s;
+	  -moz-animation:    bounce 1s;
+	  -webkit-animation: bounce 1s;
+}
+
+
+@-webkit-keyframes bounce {
+	0%,30%  { transform:translate(0px,-40px); }
+	40%  { transform:translate(0px,30px); }
+	50%     { transform:translate(0px,-30px); }
+	90%      { transform:translate(0px,10px); }
+	100%      { transform:translate(0px,-10px); }
+}
+@-moz-keyframes bounce {
+	0%,30%  { transform:translate(0px,-40px); }
+	40%  { transform:translate(0px,30px); }
+	50%     { transform:translate(0px,-30px); }
+	90%      { transform:translate(0px,10px); }
+	100%      { transform:translate(0px,-10px); }
+}
+@-o-keyframes bounce {
+	0%,30%  { transform:translate(0px,-40px); }
+	40%  { transform:translate(0px,30px); }
+	50%     { transform:translate(0px,-30px); }
+	90%      { transform:translate(0px,10px); }
+	100%      { transform:translate(0px,-10px); }
+}
+@keyframes bounce {
+	0%,30%  { transform:translate(0px,-40px); }
+	40%  { transform:translate(0px,30px); }
+	50%     { transform:translate(0px,-30px); }
+	90%      { transform:translate(0px,10px); }
+	100%      { transform:translate(0px,-10px); }
+}
+
+
+/* @keyframes bounce {
+	
+		from     { transform:translate(20px,0px); }
+		  30%,60%  { transform:translate(20px,0px); }
+		  80%      { transform:translate(20px,0px); }
+	
+	0%{
+		-ms-transform:  translate(20px,0px)//, translate(-20px,0px); IE 9
+	   	-webkit-transform: translate(20px,0px), translate(-20px,0px); Chrome, Safari, Opera
+	    transform: translate(0px,40px);
+	}
+	
+	50%{
+		-ms-transform:  translate(20px,0px)//, translate(-20px,0px); IE 9
+	   	-webkit-transform: translate(20px,0px), translate(-20px,0px); Chrome, Safari, Opera
+	    transform: translate(30px,0px);
+	}
+	
+	70%{
+		-ms-transform:  translate(20px,0px)//, translate(-20px,0px); IE 9
+	   	-webkit-transform: translate(20px,0px), translate(-20px,0px); Chrome, Safari, Opera
+	    transform: translate(0px,30px);
+	}
+	
+	100%{
+		-ms-transform:  translate(20px,0px)//, translate(-20px,0px); IE 9
+	   	-webkit-transform: translate(20px,0px), translate(-20px,0px); Chrome, Safari, Opera
+	    transform: translate(10px,0px);
+	}
+	
+}
+ */
+
 /********** ANIMATIONS **************/
 
 /********** TITLE FORMAT **************/
@@ -229,6 +300,14 @@ body {
 	float: left;
 	margin: 20px;
 }
+
+.sphere {
+	padding-top:3%;
+	border-radius: 50%;
+	box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+	background-color: #A9E2F3;
+}
+
 
 @media screen and (max-width: 850px) {
     .btnImg {

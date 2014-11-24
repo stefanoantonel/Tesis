@@ -16,6 +16,7 @@ function functionInit() {
 	getConfig(10);
 	getConfigByElement("act16","act",1,functionCallback);
 	readyOk();
+	window.setTimeout(function() {	ballBounce(); },300);
 }
 
 function functionCallback(conf){
@@ -80,6 +81,8 @@ function functionsDD(context,currElem){
 function checkCorrect(syllable) {
 	var name = $(syllable).attr("name");
 	if(name == syllableResult){
+		$(syllable).removeClass("sphere");
+		$(syllable).addClass("backgroundText");
 		window.setTimeout(function(){$(syllable).addClass("animateToFront");},1000);
 		return true;
 	}
@@ -90,4 +93,9 @@ function checkCorrect(syllable) {
 		window.setTimeout(moveOrigin, 1000,syllable,syllableContainer);
 		return false;
 	}
+}
+
+function ballBounce(){
+	//$($(syllableContainer).find(".syllable")).addClass("bounceAnimate");
+	$(syllableContainer).addClass("bounceAnimate");
 }
