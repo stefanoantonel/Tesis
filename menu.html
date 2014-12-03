@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<!-- Parte del tempale --> 
+	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script src="js/memory.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- Fin parte del tempale -->
+	 <script type="application/javascript" src="js/codigo.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+<style>
+.btn_link {
+	-moz-box-shadow:inset 0px 1px 0px 0px #c0f6fa;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #c0f6fa;
+	box-shadow:inset 0px 1px 0px 0px #c0f6fa;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #78aaff), color-stop(1, #8ee6f2) );
+	background:-moz-linear-gradient( center top, #78aaff 5%, #8ee6f2 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#78aaff', endColorstr='#8ee6f2');
+	background-color:#78aaff;
+	-webkit-border-top-left-radius:20px;
+	-moz-border-radius-topleft:20px;
+	border-top-left-radius:20px;
+	-webkit-border-top-right-radius:20px;
+	-moz-border-radius-topright:20px;
+	border-top-right-radius:20px;
+	-webkit-border-bottom-right-radius:20px;
+	-moz-border-radius-bottomright:20px;
+	border-bottom-right-radius:20px;
+	-webkit-border-bottom-left-radius:20px;
+	-moz-border-radius-bottomleft:20px;
+	border-bottom-left-radius:20px;
+	text-indent:0px;
+	border:1px solid #a8d1db;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Verdana;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	height:32px;
+	line-height:32px;
+	width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #5480cc;
+}
+.btn_link:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8ee6f2), color-stop(1, #78aaff) );
+	background:-moz-linear-gradient( center top, #8ee6f2 5%, #78aaff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ee6f2', endColorstr='#78aaff');
+	background-color:#8ee6f2;
+}.btn_link:active {
+	position:relative;
+	top:1px;
+}
+</style>
+ 
+<script type="application/javascript">
+
+$(document).ready(function() {
+	ejercicio=function(){
+		var conf;
+		conf=getConfig(1,functInit);
+	}
+	$(".btn_link").click(function(){
+		window.top.location.href = $(this).attr("id")+".html";
+	}); 
+});
+</script>
+</head>
+<body>
+<button class="btn_link" id="memory">Memory</button>
+</br>
+<button class="btn_link" id="adivinaPalabra">Adivina Palabra</button>
+</br>
+<button class="btn_link" id="palabraOculta">Palabra Oculta</button>
+</br>
+<button class="btn_link" id="estoyPensando">Pensando en Algo</button>
+</br>
+<button class="btn_link" id="cambiarPalabra">Cambiar Palabra</button>
+</br>
+<button class="btn_link" id="amigoDeQuien">Amigo de Quien</button>
+</br>
+<button class="btn_link" id="cuentaPalabra">Cuenta Palabras</button>
+</br>
+<button class="btn_link" id="quitandoSilaba">Quitar Silabas</button>
+</br>
+<button class="btn_link" id="silabaOculta">Silaba Oculta</button>
+</br>
+<button class="btn_link" id="repitiendoSilaba">Silaba Repetidas</button>
+</body>
+</html>
