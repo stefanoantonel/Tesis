@@ -124,7 +124,7 @@
 	],
 	"distractors": {
 		"words": [ 
-			"leon","raton", "pato", "campana","banana","manzana","agua"
+			"leon","raton", "pato", "campana","manzana"
 		],
 		"numbers": [ 
 			"5","4", "7", "6", "8", "11","3"

@@ -106,9 +106,8 @@ body {
 .iframeMenu {
 	position: absolute;
 	top: 100px;
-	margin-left: 60px;
-	overflow: auto;
-	height: 300px;
+	right: 10px;
+	min-height: 500px;
 }
 
 .wrong {
