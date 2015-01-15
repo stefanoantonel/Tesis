@@ -40,6 +40,12 @@ actividad.init = function() {
 		actividad.sco.set("cmi.core.lesson_status","incomplete");
 		actividad.sco.set("cmi.core.session_time","00:01:00");
 		ac=actividad.sco.get("cmi.core.total_time");
+		
+		//punctuation
+		actividad.sco.set("cmi.core.score.min", 0);
+		actividad.sco.set("cmi.core.score.max", 100);
+		actividad.sco.set("cmi.core.score.raw", 100);
+		
 	});
 
 	//Comienzo la secuencia animación de inicio
@@ -65,9 +71,9 @@ actividad.init = function() {
 /**
  *   Para terminar la sección SCORM
  */
-actividad.end = function(status) {
-	//ac=actividad.sco.get("cmi.core.total_time");
+actividad.end = function(status,score) {
 	actividad.sco.set("cmi.core.lesson_status",status);
+	actividad.sco.set("cmi.core.score.raw",score);
 	var callSucceeded = this.sco.quit();
 };
 

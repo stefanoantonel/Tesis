@@ -1,5 +1,7 @@
 var counter;
 var soundsArray = [];
+var score=100;
+
 
 function dragAndDrop(idImg,idBoxes,functions) {
 	$(idImg).each(function(ind,part){
@@ -161,7 +163,7 @@ function setPrevAction(){
 }
 
 function passed(){
-	actividad.end("passed");
+	actividad.end("passed",score);
 }
 
 function loadDescription(descrip){	
@@ -218,6 +220,7 @@ function moveOrigin(target,origin){
 	$(target).removeClass('wrong');
 	$(target).addClass('normal');
 	$(target).appendTo(origin);
+	changeScore(-10);
 }
 
 function sessionCounter() {
@@ -266,4 +269,8 @@ function removeOneElement(array,element){
 function addSound(elem) {
 	if(elem.constructor == Array) { soundsArray.push(elem.join("")); }
 	else { soundsArray.push(elem); }
+}
+
+function changeScore(value){
+	score = score + value;
 }
