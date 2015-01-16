@@ -75,6 +75,7 @@ function checkCorrect(elem) {
 	else {
 		console.log(elem);
 		$(elem).effect('shake');
+		changeScore(-10);
 		
 
 	}

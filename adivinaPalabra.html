@@ -20,38 +20,49 @@
 <!-- FIN DE NO SACAR :P -->
 
 <script type="application/javascript">
+	
+	
 	$(document).ready(function() {
 		ejercicio = function (){
 			functionInit();
 		}
 	});	
+
+
 </script>
 <style type="text/css">
-	/* #alertOk{
+/* #alertOk{
 		float: left;
 		position: fixed;
 		top: 115px;
 		left: 140px;
 		z-index: 1;
 	} */
-	span{
-		color:#FFA500;
-		font-size:40px;
-		float: left;
-		margin-right: 2%;
-		margin-left: 1%;
-		}
-	#rightbox{
-		border-style: dashed;
-	}
-	.demo{
-		height: 100px;
-		width: 100px;
-	}
-	
-	article {
-	 		max-width: 490px;
-		}
+.syllable {
+	color: #FFA500;
+	font-size: 40px;
+	float: left;
+	margin-right: 2%;
+	margin-left: 1%;
+	border-bottom-color: brown;
+	border-top-color: brown;
+	border-style: double;
+	border-radius: 30px;
+	padding: 2%;
+}
+
+#rightbox {
+	border-style: dashed;
+}
+
+.demo {
+	height: 100px;
+	width: 100px;
+}
+
+article {
+	max-width: 490px;
+}
 </style>
 </head>
 
@@ -60,11 +71,11 @@
 	<header></header>
 	<article>
 		<div id="leftbox">
-			<span id="template" hidden="hidden" class="syllable"></span>
+			<div id="template" hidden="hidden" class="syllable"></div>
 		</div>
 		<!-- <button id='start'>Comenzar!</button>  -->
 		<div id="rightbox"></div>
-		<img class="demo" >
+		<img class="demo">
 	</article>
 	<footer></footer>
 </body>

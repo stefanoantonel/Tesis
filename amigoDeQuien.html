@@ -4,11 +4,11 @@
 
 <title>Amigo de Quien</title>
 <!-- Parte del tempale -->
-	<script type="text/javascript" src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="comun/comun.js"></script>
-	<link rel="stylesheet" type="text/css" href="comun/comun.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="text/javascript" src="comun/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="comun/comun.js"></script>
+<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 <!-- Fin parte del tempale -->
 
@@ -20,88 +20,90 @@
 
 
 <script type="text/javascript">
-	
 	$(document).ready(function() {
-		img1=null;
-		img2=null;
-		
-		ejercicio = function (){
+		img1 = null;
+		img2 = null;
+
+		ejercicio = function() {
 			functionInit();
-		}		
-		
+		}
+
 	});
-	
-	
 </script>
 
 <style>
-	.img{
-		
-   		border:3px solid;
-   		
-		margin-right: 3px;
-		/*width: 90px;
+.img {
+	border: 3px solid;
+	margin-right: 3px;
+	/*width: 90px;
 		height: 90px;*/
-		float:left;
-		margin:2%;
-		width: 100px;
-		height: 100px;
-	}
-	
-	#target{
-		border:3px;
-		border-style: dashed;
-		display: inline-block;
-		border-width: medium;
-		width: 230px;
-		height: 120px;
-		float:left;
-		margin:5%;
-		border-color: orange;
-	}
-	.act{
-		margin-top: 70px;
-		margin-left: 80px;
-	}
-	label{
-		margin-bottom: 20px;
-		display: block;
-		font-size: 40px;
-	}
-	#leftContainer{
-		max-width: 120px;
-		min-width: 100px;
-		min-height: 200px;
-		float:left;
-		display: inline-block;
+	float: left;
+	margin: 2%;
+	width: 100px;
+	height: 100px;
+}
 
-	}
-	#rightContainer{
-		max-width: 100px;
-		float:left;
-	}
-	
-	section{
-		overflow:auto;
-		margin-left:3%;
-	}
-	
-	article {
-	 max-width: 600px;
-	}
+#target {
+	border: 3px;
+	border-style: dashed;
+	display: inline-block;
+	border-width: medium;
+	width: 230px;
+	height: 120px;
+	float: left;
+	margin: 5%;
+	border-color: orange;
+}
+
+.act {
+	margin-top: 70px;
+	margin-left: 80px;
+}
+
+label {
+	margin-bottom: 20px;
+	display: block;
+	font-size: 40px;
+}
+
+#leftContainer {
+	z-index: 1;
+	max-width: 120px;
+	min-width: 100px;
+	min-height: 200px;
+	float: left;
+	display: inline-block;
+}
+
+#rightContainer {
+	z-index: 1;
+	max-width: 100px;
+	float: left;
+}
+
+section {
+	overflow: auto;
+	margin-left: 3%;
+}
+
+article {
+	max-width: 600px;
+}
 </style>
 </head>
 <body>
 	<header></header>
 	<article>
 		<div id="leftContainer" class="container"></div>
-		<img column="leftContainer" id="leftboxTemp" class="img" hidden="hidden"></img>
-		
+		<img column="leftContainer" id="leftboxTemp" class="img"
+			hidden="hidden"></img>
+
 		<div id="target"></div>
-		
+
 		<div id="rightContainer" class="container"></div>
-		<img column="rightContainer" id="rightboxTemp" class="img" hidden="hidden"></img>
-		
+		<img column="rightContainer" id="rightboxTemp" class="img"
+			hidden="hidden"></img>
+
 	</article>
 	<footer></footer>
 </body>
