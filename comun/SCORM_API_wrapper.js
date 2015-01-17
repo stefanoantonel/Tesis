@@ -363,8 +363,10 @@ pipwerks.SCORM.connection.terminate = function(){
 				if(completionStatus !== "completed" && completionStatus !== "passed"){
 			
 					switch(scorm.version){
-						case "1.2" : success = scorm.set("cmi.core.exit", "suspend"); break;
-						case "2004": success = scorm.set("cmi.exit", "suspend"); break;
+//						case "1.2" : success = scorm.set("cmi.core.exit", "suspend"); break;
+//						case "2004": success = scorm.set("cmi.exit", "suspend"); break;
+						case "1.2" : success = scorm.set("cmi.core.exit", ""); break;
+						case "2004": success = scorm.set("cmi.exit", ""); break;
 					}
 					
 				} else {

@@ -9,13 +9,6 @@ function readyOk(){
 	numberTemp=$('#numberTemp');
 	numbersContainer=$('#numbersContainer');
 	completeWord=$('#completeWord');
-	//part=$('#part');
-	// target=targ;
-	// numberTemp=imgT;
-	// numbersContainer=cont;
-	// completeWord=complete;
-	// conf=getConfig("12",randomGroup);
-	//functionInit();
 }
 
 function functionInit() {

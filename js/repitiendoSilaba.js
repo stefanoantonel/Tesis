@@ -6,7 +6,7 @@ var part;
 
 function readyOk(){
 	target=$('#target');
-	syllableTemp=$('#syllableTemp');
+	syllableTemp=$('#syllableBlock');
 	completeWord1 = $('#completeWord1');
 	completeWord2 = $('#completeWord2');
 	syllableContainer=$('#syllableContainer');
@@ -45,7 +45,7 @@ function functionCallback(conf){
 function functionCallback2(conf) {
 	//conf.unshift()
 	fillTemplateImages(conf);
-	images=syllableContainer.children();
+	images=syllableContainer.children().find("div#syllableTemp");
 	dragAndDrop(images,target,functionsDD);
 }
 
@@ -60,9 +60,10 @@ function fillTemplateImages(syllables){
 	
 	$(syllables).each(function(index,e){
     	t=$(syllableTemp).clone();
-    	var content= $(t).find("label").last();
+    	var content= $(t).find("#syllableTemp");
 		name=e;
 		addSound(name);
+		t.attr('name',name);
 		content.attr('name',name);
 		content.attr('num',index);
 		//$(t).html(name);
@@ -79,8 +80,7 @@ function fillTemplateImages(syllables){
 				function(){
 						var labels = $(this).find("label");
 						$(labels).removeClass("partialRot");
-		});//,removeRotEfect($(t)));
-		//$(".syllable").mouseout(removeRotEfect($(t)));
+		});
 		syllablesArray.push(t);
 	});
 	disorder(syllablesArray);
@@ -106,7 +106,7 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(syllable) {
-	var name = $(syllable).find("label").last().attr("name");
+	var name = syllable.attr("name");
 	if(name == syllableResult){
 		return true;
 	}
@@ -115,7 +115,7 @@ function checkCorrect(syllable) {
 		$(syllable).effect('shake');
 		$(syllable).removeClass('normal');
 		$(syllable).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,syllable,syllableContainer);
+		window.setTimeout(moveOrigin, 1000,syllable,$("#syllableBlock[name='"+$(syllable).attr("name")+"']"));
 		window.setTimeout(function(){
 			$(syllable).find("label").addClass('rot');
 		}, 1000);
