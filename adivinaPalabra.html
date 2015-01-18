@@ -31,13 +31,6 @@
 
 </script>
 <style type="text/css">
-/* #alertOk{
-		float: left;
-		position: fixed;
-		top: 115px;
-		left: 140px;
-		z-index: 1;
-	} */
 .syllable {
 	color: #FFA500;
 	font-size: 40px;
@@ -51,7 +44,22 @@
 	padding: 2%;
 }
 
+
+#leftbox {
+	float: left;
+	min-width: 300px;
+	min-height: 80px;
+	margin: 5px;
+	border: 3px solid;
+	
+}
+
 #rightbox {
+	float: left;
+	min-width: 300px;
+	min-height: 80px;
+	margin: 5px;
+	border: 3px solid;
 	border-style: dashed;
 }
 
@@ -70,11 +78,11 @@ article {
 <body>
 	<header></header>
 	<article>
-		<div id="leftbox">
-			<div id="template" hidden="hidden" class="syllable"></div>
+		<div id="leftbox" class="box">
+			<div id="template"  hidden="hidden" class="syllable"></div>
 		</div>
 		<!-- <button id='start'>Comenzar!</button>  -->
-		<div id="rightbox"></div>
+		<div id="rightbox" class="box"></div>
 		<img class="demo">
 	</article>
 	<footer></footer>

@@ -12,6 +12,7 @@ function functionsDD(context,currElem){
 function readyOk(idObj,left,right){
 	 
 	functionInit();
+	
 	// conf=getConfig("4",randomGroup);
 }
 function functionInit() {
