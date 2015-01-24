@@ -1,0 +1,15 @@
+.principalTitle {
+	color: #fff; 
+	font-family: freight-sans-pro, sans-serif;
+	font-weight: 900; 
+	text-shadow: 2px 2px #58B548;
+}
+
+body {
+	background-image :url('../../images/background/mosaic.jpg');
+}
+
+
+.btnMemory {
+	background-color:#00dd2f;
+}

@@ -91,7 +91,8 @@ article {
 } */
 body {
 	margin-top: 10%;
-	background-repeat: no-repeat;
+/* 	background-repeat: no-repeat; */
+	 min-width:600px; 
 }
 
 .iframeMenu {
@@ -557,6 +558,7 @@ px
 .btnMemory {
 	float: left;
 	margin: 20px;
+	box-shadow: 2px 2px 5px #999;
 }
 
 .sphere {

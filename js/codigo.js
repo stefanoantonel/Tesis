@@ -134,15 +134,6 @@ function congratulations() {
 	window.setTimeout(function() {
 		explote();
 	}, 500);
-	
-	
-	
-	// $("body").append('<div id="alertOk" class="alert-box success
-	// hidden="true">'
-	// +'<span>Felicitaciones </span>'
-	// +'</br><img class="imagenSucced" src="images/caraContenta.jpg">'
-	// +'</br>Has completado muy bien tu ejercicio'
-	// +'</div>');
 
 	explosion();
 	

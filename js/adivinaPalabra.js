@@ -82,6 +82,7 @@ function checkCorrect(container) {
 				$(wrongPart).addClass('wrong');
 				wrong=1;
 				$(wrongPart).effect('shake');
+				//moveOrigin(wrongPart, $("#"+idBox));
 
 			}
 			else{//the word is correct

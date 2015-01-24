@@ -74,6 +74,7 @@ actividad.init = function() {
 actividad.end = function(status,score) {
 	actividad.sco.set("cmi.core.lesson_status",status);
 	actividad.sco.set("cmi.core.score.raw",score);
+	actividad.sco.connection.terminate();
 	var callSucceeded = this.sco.quit();
 };
 
