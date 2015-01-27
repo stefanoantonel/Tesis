@@ -7,8 +7,6 @@ function readyOk(){
 	wordContainer=$('#word');
 	imgTemp=$('#imgTemp');
 	imgContainer=$('#imgContainer');
-	// conf=getConfig(8,functionInit);
-	// functionInit();
 }
 
 function functionInit(){
@@ -20,16 +18,14 @@ function functionInit(){
 
 
 function functionCallback(conf) {
-	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	var conf = conf[0];
 	var targetWord = conf["target"] - 1;
 	var values = conf["values"]
 	wordSelected=values.join('').replace(/,/g, "");;
-	// getConfigByElement("distractors","lev_1",2,functRight);
 	var letter = wordSelected.split('')[0];
 	letter = letter.toUpperCase();
 	$(wordContainer).text(letter);
-	getConfigByElementWithOne("distractors","words",2,functRight,wordSelected);
+	getConfigByElementWithOne("distractors","words",2,functRight,wordSelected,wordSelected.slice(0,1));
 }
 
 function functRight(conf) {
@@ -39,8 +35,6 @@ function functRight(conf) {
 
 function fillTemplate(wordSelected,imagesSelected){	
 	arrayImg=[];
-	// word=wordSelected;
-	// imagesSelected.unshift(wordSelected);
 	$(imagesSelected).each(function(index,e){
 		t=$(imgTemp).clone();
 		$(t).attr('id','img'+index);
@@ -59,7 +53,6 @@ function fillTemplate(wordSelected,imagesSelected){
 	});
 	disorder(arrayImg);
 	$(imgContainer).append(arrayImg);
-	//$(wordContainer).text(wordSelected);
 	$(wordContainer).mouseover(function(){
 		playSound(word);
 	});
