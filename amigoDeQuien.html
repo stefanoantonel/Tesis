@@ -32,15 +32,8 @@
 </script>
 
 <style>
-.img {
-	border: 3px solid;
-	margin-right: 3px;
-	/*width: 90px;
-		height: 90px;*/
-	float: left;
-	margin: 2%;
-	width: 100px;
-	height: 100px;
+.btn {
+	margin-bottom: 10px;
 }
 
 #target {
@@ -93,16 +86,16 @@ article {
 </head>
 <body>
 	<header></header>
-	<article>
+	<article class="container-body">
 		<div id="leftContainer" ></div>
-		<img column="leftContainer" id="leftboxTemp" class="img"
-			hidden="hidden"></img>
+		<button column="leftContainer" id="leftboxTemp" class="hidden btn btnImg imgMemory"
+			hidden="hidden"></button>
 
 		<div id="target"></div>
 
 		<div id="rightContainer"></div>
-		<img column="rightContainer" id="rightboxTemp" class="img"
-			hidden="hidden"></img>
+		<button column="rightContainer" id="rightboxTemp" class="hidden btn btnImg imgMemory"
+			></button>
 
 	</article>
 	<footer></footer>

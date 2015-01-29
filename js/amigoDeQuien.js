@@ -26,12 +26,12 @@ function functionsDD(context, currElem) {
 		contOriginal1 = currElem.attr("column");
 
 	} else {
-		$("img").css("pointer-events", "none");
+		$(".btnImg").css("pointer-events", "none");
 		img2 = currElem.attr("id");
 		contOriginal2 = currElem.attr("column");
 
 		if (img1 == img2) {
-			imageOk($("#target").find("img"));
+			imageOk($("#target").find(".btnImg"));
 			window.setTimeout(function() {
 				$("#target").html("");
 			}, 1500);
@@ -54,7 +54,7 @@ function functionsDD(context, currElem) {
 
 		}
 		window.setTimeout(function() {
-			$("img").css("pointer-events", "auto");
+			$(".btnImg").css("pointer-events", "auto");
 		}, 1500);
 		img1 = null;
 		img2 = null;
@@ -110,14 +110,14 @@ function fillElements(conf, place) {
 	$(conf).each(function(index, e) {
 		t = $('#' + place + 'boxTemp').clone();
 		$(t).attr('id', index);
-		$(t).removeAttr('hidden');
+		$(t).removeClass('hidden');
 		name = conf[index];
 		addSound(name);
 		$(t).attr('name', name);
 		$(t).prop('num', index);
 		// $(t).css({backgroundImage : 'url(images/imgOculta/' +
 		// $(t).attr("name") + '.jpg)'});
-		$(t).attr('src', 'images/activities/' + name + '.jpg');
+		$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});
 		$(t).mousedown(function() {
 			playSound(this.name);
 		});

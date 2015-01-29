@@ -1,13 +1,13 @@
 {
 	"act1":
 		{
-		"description": "Encuentre las imagenes que riman!",
+		"description": "ENCUENTRA LAS IMAGENES QUE RIMAN",
 		"repeat":"2",
 		"name":"memory"
 		},
 	"act2":
 		{"act":[
-			"pe lo ta",
+			"PE LO TA",
 			"ca be za",
 			"pa ja ro",
 			"bo te lla",
@@ -115,7 +115,12 @@
 		]
 	},
 	"skin": [
-		
+		"fire",
+		"hands",
+		"sea",
+		"flower",
+		"mosaic",
+		"bubble",
 		"water"
 	],
 	"distractors": {
