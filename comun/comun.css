@@ -11,45 +11,23 @@
 
 
 #titulo {
-	top: 100px;
-	left: 190px;
 	font-size: 3em;
+	display: inline-block;
+	float: left;
+	min-width: 200 px;
+	margin-left: 5%;
 }
-
-
 
 
 #kittyTeacher {
-	width: 105px;
-	position: absolute;
-	top: 0px;
-	left: 0px;
-}
-
-#huella1 {
-	top: 25px;
-	left: 100px;
-}
-
-#huella2 {
-	top: 125px;
-	left: 25px;
-}
-
-#huella3 {
-	top: 250px;
-	left: 100px;
-}
-#huella4 {
-	top: 350px;
-	left: 25px;
+	display: inline-block;
+	float: left;
 }
 
 #alumno {
 	position: absolute;
 	margin-bottom: 3%;
 	left: 120px;
-	font-size: 18px;
 	font-family: 'Bentham', serif;
 }
 

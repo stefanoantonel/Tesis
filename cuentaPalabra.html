@@ -1,84 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CUENTA LAS PALABRAS</title>
-	<script src="comun/jquery.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/codigo.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/cubes.css" />
-	<script  src="comun/comun.js"></script>
-	<link rel="stylesheet" href="comun/comun.css">
-	<script src="js/cuentaPalabras.js"></script>
+<title>CUENTA LAS PALABRAS</title>
+<script src="comun/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/codigo.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/cubes.css" />
+<script src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<script src="js/cuentaPalabras.js"></script>
 
-	<style type="text/css">
-
-		.numberContainer{
-			/*border:solid;
+<style type="text/css">
+.numberContainer {
+	/*border:solid;
 			margin-left: 10%;
 			float: left;
 			min-height:100px;
 			min-width:100px;
 			background-color:#F5D0A9;*/
-			float: left;
-		}
-		
-		.numberTemp{
-			font-size: 4em;
-			margin: auto;
-			width: 40%;
-			display:block;
-		}
-		.textSize1 {
-			font-size: 20px;
-		}
-		.textSize2 {
-			font-size: 35px;
-		}
-		
-		div.phrase .textSize2{
-			color: darkorange;
-		}
+	float: left;
+}
 
-		article img.wrong{
-			border-color: red;
-		}
-		article img {
-			
-		}
-		article img.imgTemp{
-	   		border:3px solid;
-			margin-right: 3px;
-			width: 90px;
-			height: 90px;
-		}	
-		article img.hidden{
-			display: none;
-		}
+.numberTemp {
+	font-size: 4em;
+	margin: auto;
+	width: 40%;
+	display: block;
+}
 
-		.target{
-			
-			border:3px;
-			border-style: dashed;
-	   		
-			/* 
+.textSize1 {
+	font-size: 20px;
+}
+
+.textSize2 {
+	font-size: 35px;
+}
+
+div.phrase .textSize2 {
+	color: darkorange;
+}
+
+article img.wrong {
+	border-color: red;
+}
+
+article img {
+	
+}
+
+article img.imgTemp {
+	border: 3px solid;
+	margin-right: 3px;
+	width: 90px;
+	height: 90px;
+}
+
+article img.hidden {
+	display: none;
+}
+
+.target {
+	border: 3px;
+	border-style: dashed;
+	/* 
 			display: inline-block; 
 			border-color: black;
 			*/
-			border-width: medium;
-			width: 100px;
-			height: 100px;
-			margin: 5% 35%;
-		}
-		article {
-	 		max-width: 490px;
-		}
-	</style>
+	border-width: medium;
+	width: 100px;
+	height: 100px;
+	margin: 5% 35%;
+}
 
-	<script type="application/javascript">
+article {
+	max-width: 490px;
+}
+</style>
+
+<script type="application/javascript">
+	
 		$(document).ready(function() {
 			ejercicio = function (){
 				// target=$('#target');
@@ -91,38 +95,37 @@
 			}		
 			
 		});
-	</script>
+	
+</script>
 </head>
 <body>
 	<header></header>
-	<article class="container-body">
-		<div id="text" class='phrase textBackground'>
-			<b id="textOrigin" class='textSize1'>Cuantas palabras tiene:</b> <br>
-			<b id="completeWord" class='textSize2'></b>
-		</div>
+	<div id="activity-container">
+		<article class="container-body">
+			<div id="text" class='phrase textBackground'>
+				<b id="textOrigin" class='textSize1'>Cuantas palabras tiene:</b> <br>
+				<b id="completeWord" class='textSize2'></b>
+			</div>
 
-		<div id="target" class="target textBackground"></div>
-		<!--
-		<div  class="hidden numberContainer">
-			<b class="numberTemp titulo1"></b>
-		</div>
-		-->
-		 <div id="numbersContainer" class='numbersContainer'></div>
-		 
-		
-		<section  class="hidden cubeContainer numberContainer">
-		  <div class="cube">
-		    <figure class="front"><div class="numberTemp"></div></figure>
-		    <figure class="back"></figure>
-		    <figure class="right"></figure>
-		    <figure class="left"></figure>
-		    <figure class="top"></figure>
-		    <figure class="bottom"></figure>
-		  </div>
-		</section>
-		
-	</article>
-	
+			<div id="target" class="target textBackground"></div>
+			<div id="numbersContainer" class='numbersContainer'></div>
+
+
+			<section class="hidden cubeContainer numberContainer">
+				<div class="cube">
+					<figure class="front">
+						<div class="numberTemp"></div>
+					</figure>
+					<figure class="back"></figure>
+					<figure class="right"></figure>
+					<figure class="left"></figure>
+					<figure class="top"></figure>
+					<figure class="bottom"></figure>
+				</div>
+			</section>
+
+		</article>
+	</div>
 	<footer></footer>
 </body>
 </html>

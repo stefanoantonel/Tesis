@@ -81,23 +81,28 @@ section {
 
 article {
 	max-width: 600px;
+	margin-bottom: 1%;
 }
 </style>
 </head>
 <body>
 	<header></header>
-	<article class="container-body">
-		<div id="leftContainer" ></div>
-		<button column="leftContainer" id="leftboxTemp" class="hidden btn btnImg imgMemory"
-			hidden="hidden"></button>
+	<div id="body">
+		<div id="activity-container">
+			<article class="container-body">
+				<div id="leftContainer"></div>
+				<button column="leftContainer" id="leftboxTemp"
+					class="hidden btn btnImg imgMemory" hidden="hidden"></button>
 
-		<div id="target"></div>
+				<div id="target"></div>
 
-		<div id="rightContainer"></div>
-		<button column="rightContainer" id="rightboxTemp" class="hidden btn btnImg imgMemory"
-			></button>
+				<div id="rightContainer"></div>
+				<button column="rightContainer" id="rightboxTemp"
+					class="hidden btn btnImg imgMemory"></button>
 
-	</article>
+			</article>
+		</div>
+	</div>
 	<footer></footer>
 </body>
 </html>

@@ -14,90 +14,91 @@
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/style.css" />
 <!-- NO SACAR -->
-<script  src="comun/comun.js"></script>
+<script src="comun/comun.js"></script>
 <link rel="stylesheet" href="comun/comun.css">
 <!-- FIN DE NO SACAR :P -->
 
 
 
-<style >
-	.img{
-		
-   		border:3px solid;
-		margin-right: 3px;
-		width: 100px;
-		height: 100px;
-	}
-	
-	.img-rigth{
-		float:left;
-		margin: 10%;
-	}
-	
-	#target{
-		float:left;
-		border:3px;
-		border-style: dashed;
-   		border-color: black;
-		/* display: inline-block; */
-		border-width: medium;
-		width: 130px;
-		height: 130px;
-		margin:5%;
+<style>
+.img {
+	border: 3px solid;
+	margin-right: 3px;
+	width: 100px;
+	height: 100px;
+}
 
+.img-rigth {
+	float: left;
+	margin: 10%;
+}
 
-	}
-	
-	article {
-	 	max-width: 490px;
-	}
-	
-	#leftContainer{
-		max-width: 300px;
-		float:left;
-		margin-top:6%;
-	}
-	#rightContainer{
-		float:left;
-		max-width: 100px;
-		
-	}
-	.word{
-		font-size: 50px;
-		
+#target {
+	float: left;
+	border: 3px;
+	border-style: dashed;
+	border-color: black;
+	/* display: inline-block; */
+	border-width: medium;
+	width: 130px;
+	height: 130px;
+	margin: 5%;
+}
 
-	}
-	div.inline{
-		
-		display: inline-block;
-	}
-	.firstWordHidden{
-		display: none;
-	}
-	.wordSelected{
-		color: #f00;
-		font-size: 90px;
-	}
-	.secondWordHidden{
-		display: none;
-	}
+article {
+	max-width: 490px;
+}
+
+#leftContainer {
+	max-width: 300px;
+	float: left;
+	margin-top: 6%;
+}
+
+#rightContainer {
+	float: left;
+	max-width: 100px;
+}
+
+.word {
+	font-size: 50px;
+}
+
+div.inline {
+	display: inline-block;
+}
+
+.firstWordHidden {
+	display: none;
+}
+
+.wordSelected {
+	color: #f00;
+	font-size: 90px;
+}
+
+.secondWordHidden {
+	display: none;
+}
 </style>
 </head>
 <body>
 	<!-- label>Palabra Oculta</label> -->
 	<header></header>
-	<article>
-		<div id="leftboxTemp" class='word' hidden="hidden"></div>
-		<div id="leftContainer"></div>
+	<div id="activity-container">
+		<article>
+			<div id="leftboxTemp" class='word' hidden="hidden"></div>
+			<div id="leftContainer"></div>
 
-		<div id="target" class="textBackground" hidden="hidden"></div>
-		
-		<img id="rightboxTemp" class="img img-rigth normal btnImg" hidden="hidden"></img>
-		<div id="rightContainer" hidden="hidden"></div>
+			<div id="target" class="textBackground" hidden="hidden"></div>
 
-		
-	</article>
+			<img id="rightboxTemp" class="img img-rigth normal btnImg"
+				hidden="hidden"></img>
+			<div id="rightContainer" hidden="hidden"></div>
 
+
+		</article>
+	</div>
 	<footer></footer>
 </body>
 </html>
@@ -105,11 +106,11 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		ejercicio = function (){
+		ejercicio = function() {
 			// target=['target'];
 			// readyOk(target,'leftboxTemp','rightContainer');
 			functionInit();
-		}		
-		
+		}
+
 	});
 </script>

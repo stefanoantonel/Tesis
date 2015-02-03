@@ -3,114 +3,120 @@
 <head>
 <title>PALABRA OCULTA</title>
 
-	
-	<script src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	
-	<script src="js/jquery-ui.min.js"></script>
-	<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
-	<script src="js/codigo.js"></script>
-	<script src="js/palabraOculta.js"></script>
-	
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- NO SACAR -->
-	<script  src="comun/comun.js"></script>
-	<link rel="stylesheet" href="comun/comun.css">
-	<!-- FIN DE NO SACAR :P -->
+
+<script src="comun/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<script src="js/jquery-ui.min.js"></script>
+<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+<script src="js/codigo.js"></script>
+<script src="js/palabraOculta.js"></script>
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- NO SACAR -->
+<script src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<!-- FIN DE NO SACAR :P -->
 
 <script></script>
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		ejercicio = function (){
-			target=['target'];
-			
-			
-			readyOk(target,'leftbox','rightbox');
-			
-		}		
-		
+		ejercicio = function() {
+			target = [ 'target' ];
+
+			readyOk(target, 'leftbox', 'rightbox');
+
+		}
 
 	});
 </script>
 
-<style >
-	.img{
-		float: left;
-   		border:3px solid;
-		margin-right: 3px;
-		width: 90px;
-		height: 90px;
-	}
-	
-	.img-rigth{
-		float:left;
-		margin:2%;
-	}
-	
-	article {
-	 		max-width: 490px;
-	}
-	
-	#target{
-		float:left;
-		border:3px;
-		border-style: dashed;
-   		border-color: black;
-		display: inline-block;
-		border-width: medium;
-		width: 110px;
-		height: 110px;
-		margin:5%;
-	}
+<style>
+.img {
+	float: left;
+	border: 3px solid;
+	margin-right: 3px;
+	width: 90px;
+	height: 90px;
+}
+
+.img-rigth {
+	float: left;
+	margin: 2%;
+}
+
+article {
+	max-width: 490px;
+}
+
+#target {
+	float: left;
+	border: 3px;
+	border-style: dashed;
+	border-color: black;
+	display: inline-block;
+	border-width: medium;
+	width: 110px;
+	height: 110px;
+	margin: 5%;
+}
 /* 	label{ */
 /* 		margin-bottom: 20px; */
 /* 		display: block; */
 /* 		font-size: 40px; */
 /* 	} */
-	#leftContainer{
-		max-width: 300px;
-		float:left;
-		margin-top:6%;
-	}
-	#rightContainer{
-		float:left;
-		max-width: 100px;
-		
-	}
-	.wrongImage {
-		border-color: red;
-	}
-	.syllableBig{
-		color: #f00;
-		font-size: 40px;
-	}
-	.labelInline {
-		display: inline;
-		font-size: 20px;
-	}
-	.wordsImages {
-		width: 230px;
-		float: left;
-	}
+#leftContainer {
+	max-width: 300px;
+	float: left;
+	margin-top: 6%;
+}
 
+#rightContainer {
+	float: left;
+	max-width: 100px;
+}
+
+.wrongImage {
+	border-color: red;
+}
+
+.syllableBig {
+	color: #f00;
+	font-size: 40px;
+}
+
+.labelInline {
+	display: inline;
+	font-size: 20px;
+}
+
+.wordsImages {
+	width: 230px;
+	float: left;
+}
 </style>
 </head>
 <body>
 	<!-- label>Palabra Oculta</label> -->
 	<header></header>
-	<article>
-		<img id="leftboxTemp" class="img" hidden="hidden">
-		<div class="wordsImages">
-			<div id="leftContainer"></div>
-			<div id="leftLabelContainerTemp" class="hidden textBackground labelInline"></div>
-		</div>
-		<div id="target" class="textBackground droppable ui-widget-header ui-droppable ui-state-highlight"></div>
-		<img id="rightboxTemp" class="img img-rigth draggable ui-widget-content ui-draggable" hidden="hidden">
-		<div id="rightContainer"></div>		
-	</article>
-	
+	<div id="activity-container">
+		<article>
+			<img id="leftboxTemp" class="img" hidden="hidden">
+			<div class="wordsImages">
+				<div id="leftContainer"></div>
+				<div id="leftLabelContainerTemp"
+					class="hidden textBackground labelInline"></div>
+			</div>
+			<div id="target"
+				class="textBackground droppable ui-widget-header ui-droppable ui-state-highlight"></div>
+			<img id="rightboxTemp"
+				class="img img-rigth draggable ui-widget-content ui-draggable"
+				hidden="hidden">
+			<div id="rightContainer"></div>
+		</article>
+	</div>
 	<footer></footer>
 </body>
 </html>

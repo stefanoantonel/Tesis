@@ -1,3 +1,16 @@
+header {
+	height: 20%;
+	position: absolute;
+	width: 100%;
+	top: 10px;
+	min-width: 700px;
+}
+
+footer {
+	bottom: 10%;
+	left: 10%;
+}
+
 .box {
 	background-color: #F5D0A9;
 	border-radius: 10%;
@@ -69,31 +82,22 @@ img {
 	max-height: 50%;
 }
 
-.container-body {
-	margin: auto;
+.container-body,article {
 	overflow: auto;
 }
 
 article {
-	margin-top: 7%;
 	margin: auto;
+	margin-top: 10%;
 	min-height: 130px;
 	min-width: 200px;
 	overflow: auto;
 	margin-bottom: 5%;
-
 }
 
-/* .kitty {
-	background: url('../comun/img/Kitty Teacher.png') no-repeat;
-	background-color: red;
-	width: auto;
-	height: auto;
-} */
 body {
-	margin-top: 10%;
-/* 	background-repeat: no-repeat; */
-	 min-width:600px; 
+	min-width: 600px;
+	overflow: hidden;
 }
 
 .iframeMenu {
@@ -198,7 +202,15 @@ body {
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -208,6 +220,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 60%
@@ -215,7 +231,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -225,6 +249,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 90%
@@ -232,7 +260,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -242,6 +278,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 100%
@@ -249,7 +289,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -257,6 +305,10 @@ px
 ,
 -10
 px
+
+
+
+
 
 
 );
@@ -272,7 +324,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -282,6 +342,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 60%
@@ -289,7 +353,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -299,6 +371,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 90%
@@ -306,7 +382,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -316,6 +400,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 100%
@@ -323,7 +411,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -331,6 +427,10 @@ px
 ,
 -10
 px
+
+
+
+
 
 
 );
@@ -346,7 +446,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -356,6 +464,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 60%
@@ -363,7 +475,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -373,6 +493,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 90%
@@ -380,7 +504,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -390,6 +522,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 100%
@@ -397,7 +533,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -405,6 +549,10 @@ px
 ,
 -10
 px
+
+
+
+
 
 
 );
@@ -420,7 +568,15 @@ keyframes bounce { 0% {
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -430,6 +586,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 60%
@@ -437,7 +597,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -447,6 +615,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 90%
@@ -454,7 +626,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -464,6 +644,10 @@ px
 px
 
 
+
+
+
+
 );
 }
 100%
@@ -471,7 +655,15 @@ px
 transform
 
 
+
+
+
+
 :translate
+
+
+
+
 
 
 (0
@@ -479,6 +671,10 @@ px
 ,
 -10
 px
+
+
+
+
 
 
 );
@@ -536,9 +732,8 @@ px
 
 .btnContainer {
 	height: 60px;
-	position: absolute;
-	top: 5%;
-	right: 5%;
+	float: right;
+	margin-right: 5%;
 }
 
 .btnActionAcvitivy:hover {
@@ -577,9 +772,17 @@ px
 	.actContainer {
 		width: 490px;
 	}
-	
 	#titulo {
 		font-size: 3em;
+	}
+	article {
+		margin-top: 15%;
+	}
+	#kittyTeacher {
+		width: 105px;
+	}
+	#alumno {
+		font-size: 1.5em;
 	}
 }
 
@@ -598,7 +801,7 @@ px
 		width: 150px;
 	}
 	#alumno {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 }
 
@@ -650,3 +853,7 @@ px
 }
 
 /*************************Congratulations END************************************/
+
+article, #activity-container {
+	overflow:hidden;
+}

@@ -2,71 +2,75 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>ESTOY PENSANDO EN ALGO</title>
-	<!-- Parte del tempale --> 
+<title>ESTOY PENSANDO EN ALGO</title>
+<!-- Parte del tempale -->
 
-	<script type="text/javascript" src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/estoyPensando.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="comun/comun.js"></script>
-	<script type="application/javascript" src="js/codigo.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="comun/comun.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<script type="application/javascript" src="js/jquery-ui.min.js"></script>
-	<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+<script type="text/javascript" src="comun/jquery.js"></script>
+<script type="text/javascript" src="js/estoyPensando.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="comun/comun.js"></script>
+<script type="application/javascript" src="js/codigo.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="application/javascript" src="js/jquery-ui.min.js"></script>
+<!-- // <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+
+
+<script type="application/javascript">
 	
-
-	<script type="application/javascript">
 		$(document).ready(function(){
 			ejercicio = function (){
 				functionInit();
 			};
 		});
-	</script>
+	
+</script>
 
-	<style type="text/css">
-	
-	#titulo{
-		font-size: 3em;
-	}
-	
-	.images {	
-   		border:3px solid;
-   		border-color: black;
-		margin-right: 10%;
-		width: 90px;
-		height: 90px;
-		float: left;
-	}
-	/*.ui-effects-wrapper {
+<style type="text/css">
+#titulo {
+	font-size: 3em;
+}
+
+.images {
+	border: 3px solid;
+	border-color: black;
+	margin-right: 10%;
+	width: 90px;
+	height: 90px;
+	float: left;
+}
+/*.ui-effects-wrapper {
         display:inline;
     }*/
-	.word {
-		color: red;
-		font-size: 100px;
-		margin-left: 35%;
-		display: inline;
-	}
-	.temp {
-		display: none;
-	}
-	.imgContainerClass {
-		margin-left: 20%;
+.word {
+	color: red;
+	font-size: 100px;
+	margin-left: 35%;
+	display: inline;
+}
 
-	}
-	</style>
+.temp {
+	display: none;
+}
+
+.imgContainerClass {
+	margin-left: 20%;
+}
+</style>
 
 </head>
 
 <body>
 	<header></header>
-	<article>
-		<div id="word" class="word textBackground "></div>
+	<div id="activity-container">
+		<article>
+			<div id="word" class="word textBackground "></div>
 
-		<img id="imgTemp" class="images temp">
-		<div id="imgContainer" class="imgContainerClass"></div>
-	</article>
+			<img id="imgTemp" class="images temp">
+			<div id="imgContainer" class="imgContainerClass"></div>
+		</article>
+	</div>
 	<footer></footer>
 </body>
 

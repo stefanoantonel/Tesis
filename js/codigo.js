@@ -139,10 +139,10 @@ function disorder(o) {
 
 function congratulations() {
 
-	$("body").append(
-			"<div id=\"alertOk\" class=\"clipped-box\">"
+	$("#activity-container").append(
+			"<article id=\"alertOk\" class=\"clipped-box\">"
 					+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
-					+ "</div>" + "</div>");
+					+ "</div>" + "</article>");
 
 	window.setTimeout(function() {
 		explote();
@@ -156,7 +156,7 @@ function congratulations() {
 function passActivity() {
 	$("article").delay(400).hide();
 
-	$("body").append(
+	$("#activity-container").append(
 			'<div id="alertOk" class="alert-box success">'
 					+ '<span>Pasaste el nivel!</span>'
 					+ '<div><a id="next">Siguiente</a></div>' + '</div>');
@@ -274,7 +274,7 @@ function sessionCounter() {
 			congratulations();
 		}, 1000);
 		window.setTimeout(function() {
-			$("body").append(originTemplateHTML);
+			$("#activity-container").append(originTemplateHTML);
 			$('#alertOk').remove();
 			functionInit();
 		}, 3000);
@@ -531,7 +531,7 @@ function stopExplosion() {
 
 	// Start Again
 	$('#alertOk').remove();
-	$("body").append(originTemplateHTML);
+	$("#activity-container").append(originTemplateHTML);
 	functionInit();
 }
 

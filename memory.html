@@ -2,18 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- Parte del tempale --> 
-	<script type="text/javascript" src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="comun/comun.js"></script>
-	<script src="js/memory.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<!-- Parte del tempale -->
+<script type="text/javascript" src="comun/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="comun/comun.js"></script>
+<script src="js/memory.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="comun/comun.css">
 <!-- Fin parte del tempale -->
-	 <script type="application/javascript" src="js/codigo.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
- 
+<script type="application/javascript" src="js/codigo.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 <script type="application/javascript">
+	
 
 $(document).ready(function() {
 	//PARA MOODLE
@@ -23,37 +24,31 @@ $(document).ready(function() {
 	}
 
 });
+
 </script>
 
 <style type="text/css">
-	.deleted{
-		visibility: hidden;
-	}
+.deleted {
+	visibility: hidden;
+}
 </style>
 
 <title>MEMORY</title>
 </head>
 <body>
-<header></header>
+	<header></header>
 
-<div class="container-body">
-	<article class="actContainer">	
-		<div id="contenedor">
-			<button id="template" style="display:none" class="btn primary bg btnMemory btnImg imgMemory"></button>
-		</div>		
-	</article>	
-		
-		
-</div>
+	<div class="container-body">
+		<div id="activity-container">
+			<article class="actContainer">
+				<div id="contenedor">
+					<button id="template" style="display: none"
+						class="btn primary bg btnMemory btnImg imgMemory"></button>
+				</div>
+			</article>
+		</div>
 
-
-<div id="endActOk" class="alert-box success" hidden="True">
-	<span>Nivel Completo</span>
-	</br><img class="imagenSucced" src="images/caraContenta.jpg">
-	</br>Has completado muy bien tu ejercicio
-</div>
-
-
-<footer></footer>
+	</div>
+	<footer></footer>
 </body>
 </html>

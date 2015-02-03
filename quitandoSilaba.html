@@ -1,86 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>QUITAR SILABA</title>
-	<script src="comun/jquery.js"></script>
-	<script src="js/jquery-ui.min.js"></script>
-	<script src="js/codigo.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- <script src="js/jquery.ui.touch-punch.min.js"></script> -->
-	<link rel="stylesheet" href="css/style.css" />
-	<script  src="comun/comun.js"></script>
-	<link rel="stylesheet" href="comun/comun.css">
-	<script src="js/quitandoSilaba.js"></script>
+<title>QUITAR SILABA</title>
+<script src="comun/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/codigo.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<!-- <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+<link rel="stylesheet" href="css/style.css" />
+<script src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<script src="js/quitandoSilaba.js"></script>
 
-	<style type="text/css">
-		.phrase{
-			font-size: 40px;
-		}
+<style type="text/css">
+.phrase {
+	font-size: 40px;
+}
 
-		div.phrase b{
-			color: red;
-		}
-		
-		article {
-	 		max-width: 490px;
-		}
-		
-		article img {
-			margin-left: 6%;
-		}
-		article img.imgTemp{
-	   		border:3px solid;
-			margin-right: 3px;
-			width: 90px;
-			height: 90px;
-		}	
-		article img.hidden{
-			display: none;
-		}
+div.phrase b {
+	color: red;
+}
 
-		.target{
-			
-			border:3px;
-			border-style: dashed;
-	   		
-			/* 
+article {
+	max-width: 490px;
+}
+
+article img {
+	margin-left: 6%;
+}
+
+article img.imgTemp {
+	border: 3px solid;
+	margin-right: 3px;
+	width: 90px;
+	height: 90px;
+}
+
+article img.hidden {
+	display: none;
+}
+
+.target {
+	border: 3px;
+	border-style: dashed;
+	/* 
 			display: inline-block; 
 			border-color: black;
 			*/
-			border-width: medium;
-			width: 120px;
-			height: 110px;
-			margin:5%;
-			margin-left: 30%;
-		}
-		
-	</style>
+	border-width: medium;
+	width: 120px;
+	height: 110px;
+	margin: 5%;
+	margin-left: 30%;
+}
+</style>
 
-	<script type="application/javascript">
+<script type="application/javascript">
+	
 		$(document).ready(function() {
 			ejercicio = function (){
 				functionInit();
 			}		
 			
 		});
-	</script>
+	
+</script>
 </head>
 <body>
 	<header></header>
-	<article>
-		<div id="text" class='phrase textBackground'>
-			Si a <b id="completeWord"></b> le quitamos la <b id="part"></b>, nos queda ...
-		</div>
+	<div id="activity-container">
+		<article>
+			<div id="text" class='phrase textBackground'>
+				Si a <b id="completeWord"></b> le quitamos la <b id="part"></b>, nos
+				queda ...
+			</div>
 
-		<div id="target" class="target textBackground"></div>
-		
-		<img id="imgTemp" class="hidden imgTemp normal"></img>
-		<div id="imgContainer"></div>
+			<div id="target" class="target textBackground"></div>
 
-		
-	</article>
-	
+			<img id="imgTemp" class="hidden imgTemp normal"></img>
+			<div id="imgContainer"></div>
+
+
+		</article>
+	</div>
 	<footer></footer>
 </body>
 </html>
