@@ -63,8 +63,6 @@ function functionsDD(context, currElem) {
 }
 
 function imageOk(target) {
-	// target.removeClass("ui-draggable-dragging");
-	// target.removeClass("ui-draggable");
 	window.setTimeout(function() {
 		$(target[0]).addClass("animateToFront");
 	}, 500);

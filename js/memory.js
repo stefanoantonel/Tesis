@@ -89,11 +89,6 @@ function checkImg(img1,img2){
 		contador=contador-1;
 		if(contador==0){
 			sessionCounter();
-		/*	passed();
-			window.setTimeout(congratulations, 1000);
-			window.setTimeout(function(){$(".deleted").remove();},2000);
-			window.setTimeout(functionInit, 4000);
-			*/
 		}
 	}
 	else{
@@ -105,9 +100,8 @@ function checkImg(img1,img2){
 
 function setImage(){
 	$('.imgMemory').click(function(){
-		
-		changeBackground(this);
 		$(this).addClass("rotateToLeft");
+		changeBackground(this);
 		if(img1==null){
 			img1=$(this).attr("id");
 			

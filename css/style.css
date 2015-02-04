@@ -114,15 +114,15 @@ body {
 
 /********** ANIMATIONS **************/
 .animateUpperCorner {
-	-webkit-transition: 1s ease-in-out;
-	-moz-transition: 1s ease-in-out;
-	-o-transition: 1s ease-in-out;
-	transition: 1s ease-in-out;
-	-webkit-transform: translate(300px, -100px);
-	-moz-transform: translate(300px, -100px);
-	-o-transform: translate(300px, -100px);
-	-ms-transform: translate(300px, -100px);
-	transform: translate(300px, -100px) rotate(400deg);
+	-webkit-transition: 0.8s ease-in-out;
+	-moz-transition: 0.8s ease-in-out;
+	-o-transition: 0.8s ease-in-out;
+	transition: 0.8s ease-in-out;
+	-webkit-transform: translate(300px, -100px) rotateY(360deg);
+	-moz-transform: translate(300px, -100px) rotateY(360deg);
+	-o-transform: translate(300px, -100px) rotateY(360deg);
+	-ms-transform: translate(300px, -100px) rotateY(360deg);
+	transform: translate(300px, -100px) rotateY(360deg); 
 }
 
 .animateToFront {
@@ -131,10 +131,10 @@ body {
 	-moz-transition: 1s ease-in-out;
 	-o-transition: 1s ease-in-out;
 	transition: 1s ease-in-out;
-	-ms-transform: scale(2, 2) rotateX(360deg); /* IE 9 */
-	-webkit-transform: scale(2, 2) rotateX(360deg);
+	-ms-transform: translate(0,-80px) scale(2, 2) rotateX(360deg); /* IE 9 */
+	-webkit-transform:translate(0,-80px) scale(2, 2) rotateX(360deg);
 	/* Chrome, Safari, Opera */
-	transform: scale(2, 2) rotateX(360deg);
+	transform:translate(0,-80px) scale(2, 2) rotateX(360deg);
 }
 
 .animateToFrontRigth {
