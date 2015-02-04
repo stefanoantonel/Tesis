@@ -140,7 +140,7 @@ function disorder(o) {
 function congratulations() {
 
 	$("#activity-container").append(
-			"<article id=\"alertOk\" class=\"clipped-box\">"
+			"<article id=\"congratulations\" class=\"clipped-box congratulations\">"
 					+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
 					+ "</div>" + "</article>");
 
@@ -274,8 +274,9 @@ function sessionCounter() {
 			congratulations();
 		}, 1000);
 		window.setTimeout(function() {
+			$("#activity-container").removeClass("congratulations");
 			$("#activity-container").append(originTemplateHTML);
-			$('#alertOk').remove();
+			$('#congratulations').remove();
 			functionInit();
 		}, 3000);
 	}

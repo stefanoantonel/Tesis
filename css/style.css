@@ -82,22 +82,17 @@ img {
 	max-height: 50%;
 }
 
-.container-body,article {
-	overflow: auto;
-}
-
 article {
 	margin: auto;
 	margin-top: 10%;
 	min-height: 130px;
 	min-width: 200px;
 	overflow: auto;
-	margin-bottom: 5%;
+	margin-bottom: 2%;
 }
 
 body {
 	min-width: 600px;
-	overflow: hidden;
 }
 
 .iframeMenu {
@@ -176,10 +171,10 @@ body {
 }
 
 .bounceAnimate {
-	animation: bounce 1s;
-	-o-animation: bounce 1s;
-	-moz-animation: bounce 1s;
-	-webkit-animation: bounce 1s;
+	animation: bounce 0.7s;
+	-o-animation: bounce 0.7s;
+	-moz-animation: bounce 0.7s;
+	-webkit-animation: bounce 0.7s;
 }
 
 .sphere:hover {
@@ -192,493 +187,117 @@ body {
 	transform: scale(1.2, 1.2);
 }
 
-@
--webkit-keyframes bounce { 0% {
-	transform: translate(0px, -40px);
+@-webkit-keyframes bounce { 
+	0% {
+		transform: translate(0px, -60px);
+	}
+	
+	20% {
+		transform: translate(0px, 0px);
+	}
+	
+	40%{
+		transform:translate(0px,-45px);
+	}
+	60%{
+		transform:translate(0px,0px);
+	}
+	80%
+	{
+		transform:translate(0px,-30px);
+	}
+	90%
+	{
+		transform:translate(0px, 0px);
+	}
+	100%
+	{
+		transform:translate(0px, -10px);
+	}
 }
-
-40%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-30
-px
-
-
-
-
-
-
-);
+@-moz-keyframes bounce { 
+	0% {
+		transform: translate(0px, -60px);
+	}
+	
+	20% {
+		transform: translate(0px, 0px);
+	}
+	
+	40%{
+		transform:translate(0px,-45px);
+	}
+	60%{
+		transform:translate(0px,0px);
+	}
+	80%
+	{
+		transform:translate(0px,-30px);
+	}
+	90%
+	{
+		transform:translate(0px, 0px);
+	}
+	100%
+	{
+		transform:translate(0px, -10px);
+	}
 }
-60%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--30
-px
-
-
-
-
-
-
-);
+@-o-keyframes bounce { 
+	0% {
+		transform: translate(0px, -60px);
+	}
+	
+	20% {
+		transform: translate(0px, 0px);
+	}
+	
+	40%{
+		transform:translate(0px,-45px);
+	}
+	60%{
+		transform:translate(0px,0px);
+	}
+	80%
+	{
+		transform:translate(0px,-30px);
+	}
+	90%
+	{
+		transform:translate(0px, 0px);
+	}
+	100%
+	{
+		transform:translate(0px, -10px);
+	}
 }
-90%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-10
-px
-
-
-
-
-
-
-);
-}
-100%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--10
-px
-
-
-
-
-
-
-);
-}
-}
-@
--moz-keyframes bounce { 0% {
-	transform: translate(0px, -40px);
-}
-
-40%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-30
-px
-
-
-
-
-
-
-);
-}
-60%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--30
-px
-
-
-
-
-
-
-);
-}
-90%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-10
-px
-
-
-
-
-
-
-);
-}
-100%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--10
-px
-
-
-
-
-
-
-);
-}
-}
-@
--o-keyframes bounce { 0% {
-	transform: translate(0px, -40px);
-}
-
-40%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-30
-px
-
-
-
-
-
-
-);
-}
-60%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--30
-px
-
-
-
-
-
-
-);
-}
-90%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-10
-px
-
-
-
-
-
-
-);
-}
-100%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--10
-px
-
-
-
-
-
-
-);
-}
-}
-@
-keyframes bounce { 0% {
-	transform: translate(0px, -40px);
-}
-
-40%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-30
-px
-
-
-
-
-
-
-);
-}
-60%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--30
-px
-
-
-
-
-
-
-);
-}
-90%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
-10
-px
-
-
-
-
-
-
-);
-}
-100%
-{
-transform
-
-
-
-
-
-
-:translate
-
-
-
-
-
-
-(0
-px
-,
--10
-px
-
-
-
-
-
-
-);
-}
+@keyframes bounce { 
+	0% {
+		transform: translate(0px, -60px);
+	}
+	
+	20% {
+		transform: translate(0px, 0px);
+	}
+	
+	40%{
+		transform:translate(0px,-45px);
+	}
+	60%{
+		transform:translate(0px,0px);
+	}
+	80%
+	{
+		transform:translate(0px,-30px);
+	}
+	90%
+	{
+		transform:translate(0px, 0px);
+	}
+	100%
+	{
+		transform:translate(0px, -10px);
+	}
 }
 
 /* @keyframes bounce {
@@ -855,5 +474,12 @@ px
 /*************************Congratulations END************************************/
 
 article, #activity-container {
-	overflow:hidden;
+
+	overflow: hidden;
+}
+
+.congratulations {
+	padding: 5%;
+	height: 400px;
+	width: 500px;
 }

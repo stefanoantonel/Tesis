@@ -2,7 +2,7 @@
 	color: #fff; 
 	font-family: freight-sans-pro, sans-serif;
 	font-weight: 900; 
-	text-shadow: 2px 2px #58B548;
+	text-shadow: 3px 3px #FE2EC8;
 }
 
 body {
@@ -12,4 +12,8 @@ body {
 
 .btnMemory {
 	background-color:#00dd2f;
+}
+
+.sphere {
+	background-color: #ACFA58;
 }
