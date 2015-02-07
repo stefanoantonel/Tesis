@@ -41,8 +41,8 @@
 	border-style: dashed;
 	display: inline-block;
 	border-width: medium;
-	width: 230px;
-	height: 120px;
+	width: 250px;
+	height: 150px;
 	float: left;
 	margin: 5%;
 	border-color: orange;
@@ -83,6 +83,12 @@ article {
 	max-width: 600px;
 	margin-bottom: 1%;
 }
+
+.imgButton{
+	background-size: 100% 100%;
+	width: 100px;
+	height: 120px;
+}
 </style>
 </head>
 <body>
@@ -92,13 +98,13 @@ article {
 			<article class="container-body">
 				<div id="leftContainer"></div>
 				<button column="leftContainer" id="leftboxTemp"
-					class="hidden btn btnImg imgMemory" hidden="hidden"></button>
+					class="hidden btn imgButton normal" hidden="hidden"></button>
 
 				<div id="target"></div>
 
 				<div id="rightContainer"></div>
 				<button column="rightContainer" id="rightboxTemp"
-					class="hidden btn btnImg imgMemory"></button>
+					class="hidden btn imgButton normal"></button>
 
 			</article>
 		</div>

@@ -26,18 +26,18 @@ function functionsDD(context, currElem) {
 		contOriginal1 = currElem.attr("column");
 
 	} else {
-		$(".btnImg").css("pointer-events", "none");
+		$(".imgButton").css("pointer-events", "none");
 		img2 = currElem.attr("id");
 		contOriginal2 = currElem.attr("column");
 
 		if (img1 == img2) {
-			imageOk($("#target").find(".btnImg"));
+			imageOk($("#target").find(".imgButton"));
 			window.setTimeout(function() {
 				$("#target").html("");
 			}, 1500);
 			contador = contador - 1;
 			if (contador == 0) {
-				window.setTimeout(sessionCounter(), 1000);
+				window.setTimeout(sessionCounter(), 1500);
 			}
 		} else {
 			console.log("imgs: ", img1, img2);
@@ -45,16 +45,14 @@ function functionsDD(context, currElem) {
 			var img_target2 = $("#target").find("#" + img2);
 			img_target1.removeClass('normal');
 			img_target2.removeClass('normal');
-			img_target1.addClass('wrong').effect('shake');
-			img_target2.addClass('wrong').effect('shake');
+			img_target1.addClass('wrong');
+			img_target2.addClass('wrong');
 			window.setTimeout(imgWrong, 1000, img_target1, img_target2, $("#"
 					+ contOriginal1), $("#" + contOriginal2));
-			// window.setTimeout(imgWrong,
-			// 1000,img_target2,$("#"+contOriginal2));
 
 		}
 		window.setTimeout(function() {
-			$(".btnImg").css("pointer-events", "auto");
+			$(".imgButton").css("pointer-events", "auto");
 		}, 1500);
 		img1 = null;
 		img2 = null;
@@ -64,7 +62,7 @@ function functionsDD(context, currElem) {
 
 function imageOk(target) {
 	window.setTimeout(function() {
-		$(target[0]).addClass("animateToFront");
+		$(target[0]).addClass("animateToFrontSmaller");
 	}, 500);
 	window.setTimeout(function() {
 		$(target[1]).addClass("animateToFrontRigth");
@@ -77,16 +75,6 @@ function readyOk(idObj, left, right) {
 	getRhymes("rhymes", "lev_1", 3, fillTemplate);
 }
 
-/*
- * function randomGroup(conf){ group=disorder(conf)[0];//elijo el primero porque
- * estan todos desordenados ya left=group["1"]; right=group["2"];
- * functInit(left,"left"); //adds elements disorderly functInit(right,"right");
- * contRight=$('#rightContainer').children();
- * contLeft=$('#leftContainer').children(); idObj=$('#target');
- * dragAndDrop(contRight,idObj,functionsDD);
- * dragAndDrop(contLeft,idObj,functionsDD); //console.log("drag",$( ".img" ));
- *  }
- */
 function fillTemplate(conf) {
 	var left = [];
 	var right = [];
@@ -98,9 +86,12 @@ function fillTemplate(conf) {
 	fillElements(right, "right");
 	contRight = $('#rightContainer').children();
 	contLeft = $('#leftContainer').children();
-	idObj = $('#target');
-	dragAndDrop(contRight, idObj, functionsDD);
-	dragAndDrop(contLeft, idObj, functionsDD);
+	target = $('#target');
+	$( "button" ).draggable({
+        cancel: false
+    });
+	dragAndDrop(contRight, target, functionsDD);
+	dragAndDrop(contLeft, target, functionsDD);
 }
 
 function fillElements(conf, place) {
