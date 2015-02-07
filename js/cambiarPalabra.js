@@ -21,9 +21,9 @@ function functionInit() {
 function functionCallback(conf){
 	var conf = conf[0];
 	var wordToChange = conf["target"] - 1;
-	var values = conf["values"]
+	var values = conf["values"];
 
-	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
+	// Choose firstone, they are disordered.
 	left=values[0].join('').replace(/,/g, ""); //no se van a mover
 	right=values[1].join('').replace(/,/g, "");
 	// wordToChange=group["wordToChange"];
@@ -36,11 +36,11 @@ function functionCallback(conf){
 }
 
 function changeColor(cont,words,wordToChange){
-	//changeColor(contenedor, palabara, letra resaltada)
 	parts=words.split("");
 	elements=[];
 	$(parts).each(function(ind,elem){
 		d=document.createElement('div');
+		elem = elem.toUpperCase();
 		$(d).html(elem);
 		a=$(d).mouseover(function(){
 			playSound(words);
@@ -70,7 +70,6 @@ function functInitWords(first,second,wordToChange){
 	//palabra inicial con letra llamativa------------------------
 	t=$('#leftboxTemp').clone();
 	$(t).attr('id','left0');
-	//name=conf[0];
 	name=first;
 	addSound(name);
 	$(t).attr('name',name);
@@ -84,7 +83,6 @@ function functInitWords(first,second,wordToChange){
 
 	$(t).html(changed);
 	$('#leftContainer').append(t);
-	//$('#leftContainer').append(changed);
 	t='';
 	//----------------------------------------------------------------------
 	//palabra oculta -----------------------------------------------
@@ -99,9 +97,7 @@ function functInitWords(first,second,wordToChange){
 	$(t).mousedown(function() {
 		playSound(this.name);
 	});
-	//$(t).html(conf[1]);
 	changed=changeColor($(t),name,wordToChange);
-	//$('#leftContainer').append(t);
 
 	$(t).html(changed);
 	$('#leftContainer').append(t);

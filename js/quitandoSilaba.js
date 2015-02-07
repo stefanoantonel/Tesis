@@ -31,18 +31,12 @@ function functionCallback(conf){
 	res = res.split(",");
 	res[syllableToSelect] = "";
 	resultWord = res.join('').replace(',','');
-	// wordSelected=group["word"]; 
-	// wordToChange=group["wordToChange"]; //in number
-	// images=group["images"];
 	fillTemplateWord(values,syllableToSelect);
-
-	//getConfigByElement("distractors","lev_1",2,functionCallback2);
 	getConfigByElementWithOne("distractors","words",2,functionCallback2,resultWord);
 	
 }
 
 function functionCallback2(conf) {
-	//conf.unshift()
 	fillTemplateImages(conf);
 	images=imgContainer.children();
 	dragAndDrop(images,target,functionsDD);
@@ -50,11 +44,14 @@ function functionCallback2(conf) {
 
 function fillTemplateWord(wordComplete,wordToChange){
 	originWord=wordComplete.join('');
+	originWord = originWord.toUpperCase();
 	$(completeWord).text(originWord);
+	$(completeWord).attr("name",originWord);
 	partSelected=$(wordComplete)[wordToChange];
+	partSelected = partSelected.toUpperCase();
 	$(part).text(partSelected);
+	$(part).attr("name",partSelected);
 	addSound(originWord+partSelected);
-	//$(completeWord).mouseohover(playSound(originWord+partSelected));
 }
 
 function fillTemplateImages(images){

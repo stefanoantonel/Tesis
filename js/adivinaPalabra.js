@@ -119,6 +119,7 @@ function fillTemplate(boxes,temp, parts){
         t=$(temp).clone();
         $(t).attr('id',index);
         $(t).addClass('deleted');
+        part = part.toUpperCase();
         $(t).html(part);
         addSound(part);
         $(t).prop("hidden",false);

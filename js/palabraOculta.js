@@ -12,14 +12,11 @@ function functionsDD(context,currElem){
 function readyOk(idObj,left,right){
 	 
 	functionInit();
-	
-	// conf=getConfig("4",randomGroup);
 }
 function functionInit() {
 	
 	getConfigByElement("act4","act",1,functionCallback);
 	getConfig(4);
-	// var distractors=getConfigByElement("distractors","lev_1",2,functionCallback);
 }
 
 
@@ -32,15 +29,12 @@ function functionCallback(conf){
 	var secondWord = values[1];
 	resultWord = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('').replace(',','');
 
-	var wordArrayLeft = [[firstWord],[secondWord]] 
+	var wordArrayLeft = [[firstWord],[secondWord]]; 
 
-	functLeft(wordArrayLeft,syllableToSelect); //paso el array solamente 
+	functLeft(wordArrayLeft,syllableToSelect); //only the Array. 
 
-// 	getConfigByElement("distractors","lev_1",2,functRight);
 	getConfigByElementWithOne("distractors","words",2,functRight,resultWord);
-	// functInit2(right); //paso el array solamente para desordenar
 	
-	//loadDescription(conf.description);
 }
 
 //sin desordenar
@@ -75,6 +69,7 @@ function putImageName(imageNameParts, syllableToSelect) {
 	elements=[];
 	$(imageNameParts).each(function(ind,elem){
 		var d=document.createElement('label');
+		elem = elem.toUpperCase();
 		$(d).html(elem);
 		var a=$(d).addClass('inline');
 		elements.push(a);

@@ -30,10 +30,6 @@ function functionCallback(conf){
 	var syllableToSelect = conf["target"] - 1;
 	var firstWord = conf["values"][0];
 	var secondWord = conf["values"][1];
-	/* 
-	* I had to do this toString() because it is an object and when 
-	* I modify the syllable the value change
-	*/
 	syllableResult = firstWord[syllableToSelect];
 	resultFirstWord = firstWord.join('').replace(',','');
 	resultsecondWord = secondWord.join('').replace(',','');
@@ -43,7 +39,6 @@ function functionCallback(conf){
 }
 
 function functionCallback2(conf) {
-	//conf.unshift()
 	fillTemplateImages(conf);
 	images=syllableContainer.children().find("div#syllableTemp");
 	dragAndDrop(images,target,functionsDD);
@@ -56,7 +51,6 @@ function fillTemplateWord(firstPart,secondPart){
 
 function fillTemplateImages(syllables){
 	var syllablesArray=[];
-	// images.unshift(result);
 	
 	$(syllables).each(function(index,e){
     	t=$(syllableTemp).clone();
@@ -66,8 +60,8 @@ function fillTemplateImages(syllables){
 		t.attr('name',name);
 		content.attr('name',name);
 		content.attr('num',index);
-		//$(t).html(name);
 		/*Change to make effect*/
+		name = name.toUpperCase();
 		content.html(name);
 		content.mouseover(function(){
 			playSound($(this).attr('name'));
@@ -100,7 +94,6 @@ function removeRotEfect(syllableCont){
 }
 
 function functionsDD(context,currElem){
-	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){sessionCounter();}
 }

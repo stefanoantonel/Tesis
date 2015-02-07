@@ -39,7 +39,6 @@ function functionCallback(conf){
 }
 
 function functionCallback2(conf) {
-	//conf.unshift()
 	fillTemplateSyllable(conf);
 	images=syllableContainer.children().find("label");
 	dragAndDrop(images,target,functionsDD);
@@ -52,14 +51,14 @@ function fillTemplateWord(fPart,sPart){
 
 function fillTemplateSyllable(syllables){
 	var syllablesArray=[];
-	// images.unshift(result);
 	$(syllables).each(function(index,e){
     	t=$(syllableTemp).clone();
 		name=e;
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).attr('num',index);
-		$(t).html("<label>"+name+"</label>");
+		nameToShow = name.toUpperCase();
+		$(t).html("<label name="+name+">"+nameToShow+"</label>");
 		$(t).mouseover(function(){
 			playSound($(this).attr('name'));
 		});
@@ -71,7 +70,6 @@ function fillTemplateSyllable(syllables){
 }
 
 function functionsDD(context,currElem){
-	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){
 		window.setTimeout(function() {	sessionCounter(); },1500);
@@ -81,8 +79,6 @@ function functionsDD(context,currElem){
 function checkCorrect(syllable) {
 	var name = $(syllable).html();
 	if(name == syllableResult){
-		//$(syllable).removeClass("sphere");
-		//$(syllable).addClass("backgroundText");
 		window.setTimeout(function(){$(syllable).addClass("animateToFront");},500);
 		return true;
 	}
@@ -90,7 +86,7 @@ function checkCorrect(syllable) {
 		$(syllable).effect('shake');
 		$(syllable).removeClass('normal');
 		$(syllable).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,syllable,$(".sphere[name='"+$(syllable).html()+"']"));
+		window.setTimeout(moveOrigin, 1000,syllable,$(".sphere[name='"+$(syllable).attr("name")+"']"));
 		return false;
 	}
 }

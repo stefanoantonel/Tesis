@@ -61,7 +61,7 @@ function fillTemplate(wordSelected,imagesSelected){
 function checkCorrect(elem) {
 	var name = $(elem).attr('name');
 	if(name == wordSelected) {
-		$(elem).addClass("animateToFront");
+		$(elem).addClass("animateToFrontUpper");
 		setTimeout(function() {sessionCounter();}, 1000);
 		
 	}

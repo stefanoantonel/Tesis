@@ -7,14 +7,14 @@
 		},
 	"act2":
 		{"act":[
-			"PE LO TA",
+			"pe lo ta",
 			"ca be za",
 			"pa ja ro",
 			"bo te lla",
 			"te le fo no",
 			"ven ta na"
 			],
-		"description":"Ordene las silabas para formar una pablara. La imagen es una ayuda! ...",
+		"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA! ...",
 		"repeat":"3",
 		"name":"adivinaPalabra"
 		},
@@ -24,13 +24,13 @@
 			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"},
 			{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"}
 			],
-		"description":"Busque la imagen que sea la union de la primer silaba de cada imagen de la izquierda!!! Por ejemplo: RA-ton, MA-no = RAMA",
+		"description":"BUSQUE LA IMAGEN QUE SEA LA UNION DE LA PRIMER SILABA DE CADA IMAGEN DE LA IZQUIERDA!!! POR EJEMPLO: RA-TON, MA-NO = RAMA",
 		"repeat":"3",
 		"name":"palabraOculta"
 		},
 	"act5":
 		{
-		"description": "Encuentra las imagenes de la derecha que riman con los de la izquierda y unelos para que sean amigos",
+		"description": "ENCUENTRA LAS IMAGENES DE LA DERECHA QUE RIMAN CON LOS DE LA IZQUIERDA Y UNELOS PARA QUE SEAN AMIGOS",
 		"repeat":"2",
 		"name":"amigoDeQuien"
 		},
@@ -40,7 +40,7 @@
 					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"},
 					{"values":[["b","o","t","a"],["g","o","t","a"]], "target":"1"}
 			   ],
-		"description":"Toque la letra coloreada. Luego arrastre la imagen que comience con esa letra!!!",
+		"description":"TOQUE LA LETRA COLOREADA. LUEGO ARRASTRE LA IMAGEN QUE COMIENCE CON ESA LETRA!!!",
 		"repeat":"5",
 		"name":"cambiarPalabra"
 		},
@@ -52,7 +52,7 @@
 					{"values":["c","a","s","a"],"target":"1"},
 					{"values":["c","a","m","a"],"target":"1"}
 				],
-		"description":"Seleccione la imagen que empiece con la letra !!!",
+		"description":"SELECCIONE LA IMAGEN QUE EMPIECE CON LA LETRA",
 		"repeat":"5",
 		"name":"estoyPensando"
 		},
@@ -61,38 +61,38 @@
 					{"values":["ca","sa","do"],"target":"3"},
 					{"values":["au","ti","to"],"target":"2"}
 		       ],
-		"description":"Seleccione la imagen que se forma al eliminar la silaba!!!",
+		"description":"SELECCIONE LA IMAGEN QUE SE FORMA AL ELIMINAR LA SILABA",
 		"repeat":"3",
 		"name":"quitandoSilaba"
 		},
 	"act12":
 		{"act": [
-					{"values":["Mi","perro","tiene","una","casa"]},
-					{"values":["Yo","como","una","torta"]},
-					{"values":["Yo","tengo","un","gato"]},
-					{"values":["Me","voy","al","parque"]},
-					{"values":["Yo","quiero","jugar"]}
+					{"values":["MI","PERRO","TIENE","UNA","CASA"]},
+					{"values":["YO","COMO","UNA","TORTA"]},
+					{"values":["YO","TENGO","UN","GATO"]},
+					{"values":["ME","VOY","AL","PARQUE"]},
+					{"values":["YO","QUIERO","JUGAR"]}
 			],
-		"description":"Seleccione la cantidad de palabras que tenga la oracion!!!",
+		"description":"SELECCIONE LA CANTIDAD DE PALABRAS QUE TENGA LA ORACION",
 		"repeat":"3",
 		"name":"cuentaPalabras"
 		},
 	"act14":
 		{"act": [
-					{"values":[["pa","va"],["za","pa","to"]],"target":"1"},
-					{"values":[["ca","sa"],["ca","ma"]],"target":"1"},
-					{"values":[["pa","to"],["ga","to"]],"target":"2"}
+					{"values":[["PA","VA"],["ZA","PA","TO"]],"target":"1"},
+					{"values":[["CA","SA"],["CA","MA"]],"target":"1"},
+					{"values":[["PA","TO"],["GA","TO"]],"target":"2"}
 			],
-		"description":"Seleccione la sílaba que se repite entre las dos palabras!!!",
+		"description":"SELECCIONE LA SíLABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
 		"repeat":"3",
 		"name":"repitiendoPalabras"
 		},
 	"act16":
 		{"act": [
-					{"values":["pa","ja","ro"],"target":"2"},
-					{"values":["tor","tu","ga"],"target":"2"}
+					{"values":["PA","JA","RO"],"target":"2"},
+					{"values":["TOR","TU","GA"],"target":"2"}
 			],
-		"description":"Seleccione la sílaba que falta para formar la pablara!!!",
+		"description":"SELECCIONE LA S�LABA QUE FALTA PARA FORMAR LA PABLARA",
 		"repeat":"3",
 		"name":"silabaOculta"
 		},

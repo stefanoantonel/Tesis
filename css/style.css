@@ -125,7 +125,7 @@ body {
 	transform: translate(300px, -100px) rotateY(360deg); 
 }
 
-.animateToFront {
+.animateToFrontUpper {
 	z-index: 10;
 	-webkit-transition: 1s ease-in-out;
 	-moz-transition: 1s ease-in-out;
@@ -135,6 +135,18 @@ body {
 	-webkit-transform:translate(0,-80px) scale(2, 2) rotateX(360deg);
 	/* Chrome, Safari, Opera */
 	transform:translate(0,-80px) scale(2, 2) rotateX(360deg);
+}
+
+.animateToFront {
+	z-index: 10;
+	-webkit-transition: 1s ease-in-out;
+	-moz-transition: 1s ease-in-out;
+	-o-transition: 1s ease-in-out;
+	transition: 1s ease-in-out;
+	-ms-transform: scale(2, 2) rotateX(360deg); /* IE 9 */
+	-webkit-transform:scale(2, 2) rotateX(360deg);
+	/* Chrome, Safari, Opera */
+	transform:scale(2, 2) rotateX(360deg);
 }
 
 .animateToFrontRigth {
