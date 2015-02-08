@@ -143,7 +143,7 @@ function congratulations() {
 			"<article id=\"congratulations\" class=\"clipped-box congratulations\">"
 					+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
 					+ "</div>" + "</article>");
-
+	playSound("congratulations");
 	window.setTimeout(function() {
 		explote();
 	}, 500);
@@ -158,9 +158,9 @@ function passActivity() {
 
 	$("#activity-container").append(
 			'<div id="alertOk" class="alert-box success">'
-					+ '<span>Pasaste el nivel!</span>'
+					+ '<span>¡¡GANASTE!!</span>'
 					+ '<div><a id="next">Siguiente</a></div>' + '</div>');
-
+	playSound("win");
 	$("#next").click(function() {
 		var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
 		// actividad.end("incomplete");
@@ -231,10 +231,11 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
+	soundName = soundName.toLowerCase();
 	try {
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
-		console.error('Sonido no encontrado')
+		console.error('Sonido no encontrado');
 	}
 
 }
