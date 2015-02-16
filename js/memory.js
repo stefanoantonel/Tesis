@@ -58,16 +58,19 @@ function stopAudio(){
 		});
 }
 
-function loadActivity(){
+function loadActivity(level){
 	contador=4;
 	$('#alertOk').delay( 100 ).fadeOut( 400 );
 	$("article").show();
-	config=getRhymes("rhymes","lev_1",4,fillTemplate);
+	config = getConfigByElement("rhymes",level,4,fillTemplate);
 }
 
-function functionInit(){
-	
-	loadActivity();
+function functionInit(counter){
+	level = "lev_1";
+	if(counter==1){
+		level="lev_2";
+	}
+	loadActivity(level);
 	getConfig(1);
 }
 
@@ -88,7 +91,7 @@ function checkImg(img1,img2){
 		window.setTimeout(removeImg, 1000,img2);
 		contador=contador-1;
 		if(contador==0){
-			sessionCounter();
+			window.setTimeout(sessionCounter,1000);
 		}
 	}
 	else{

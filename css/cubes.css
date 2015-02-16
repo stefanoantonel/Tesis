@@ -1,6 +1,6 @@
 .cubeContainer {
   width: 150px;
-  height: 150px;
+  height: 120px;
   position: relative;
   perspective: 1000px;
 }

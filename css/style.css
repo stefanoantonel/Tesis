@@ -53,7 +53,6 @@ img {
 }
 
 .error {
-	/* agregar imagen url('images/error.png') no-repeat 10px 50%*/
 	background: #ffecec;
 	border: 1px solid #f5aca6;
 }
@@ -64,7 +63,9 @@ img {
 	margin: auto;
 	width: 30%;
 	min-width: 300px;
-	margin-top: 7%;
+	margin-top: 15%;
+	margin-bottom: 5%;
+	font-size: 30px;
 }
 
 .warning {
@@ -89,7 +90,7 @@ article {
 	min-width: 210px;
 	overflow: auto;
 	margin-bottom: 2%;
-	padding-left: 10px;
+	padding: 0 10px;
 }
 
 body {
@@ -121,11 +122,11 @@ body {
 	-moz-transition: 0.8s ease-in-out;
 	-o-transition: 0.8s ease-in-out;
 	transition: 0.8s ease-in-out;
-	-webkit-transform: translate(300px, -100px) rotateY(360deg);
-	-moz-transform: translate(300px, -100px) rotateY(360deg);
-	-o-transform: translate(300px, -100px) rotateY(360deg);
-	-ms-transform: translate(300px, -100px) rotateY(360deg);
-	transform: translate(300px, -100px) rotateY(360deg); 
+	-webkit-transform: rotateY(660deg);
+	-moz-transform:  rotateY(660deg);
+	-o-transform:  rotateY(660deg);
+	-ms-transform:  rotateY(660deg);
+	transform:  rotateY(660deg); 
 }
 
 .animateToFrontUpper {
@@ -434,6 +435,9 @@ body {
 	#alumno {
 		font-size: 1.5em;
 	}
+	.phrase {
+		font-size: 20px;
+	}
 }
 
 @media screen and (min-width: 850px) {
@@ -452,6 +456,9 @@ body {
 	}
 	#alumno {
 		font-size: 2em;
+	}
+	.phrase {
+		font-size: 30px;
 	}
 }
 
@@ -504,7 +511,7 @@ body {
 
 /*************************Congratulations END************************************/
 
-article, #activity-container {
+article, #activity-container, body {
 
 	overflow: hidden;
 }

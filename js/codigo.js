@@ -156,14 +156,20 @@ function congratulations() {
 function passActivity() {
 	$("article").delay(400).hide();
 
+	if($(window.parent.document.getElementById("nav_next-button")).attr("disabled")==null){
+		$("#activity-container").append(
+				'<div id="alertOk" class="alert-box success">'
+						+ '<span>GANASTE!!</span>'
+				 + '</div>');
+		playSound("win");
+		return;
+	}
 	$("#activity-container").append(
 			'<div id="alertOk" class="alert-box success">'
-					+ '<span>¡¡GANASTE!!</span>'
+					+ '<span>GANASTE!!</span>'
 					+ '<div><a id="next">Siguiente</a></div>' + '</div>');
 	playSound("win");
 	$("#next").click(function() {
-		var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
-		// actividad.end("incomplete");
 		window.parent.document.getElementById("nav_next-button").click();
 	});
 
@@ -224,14 +230,17 @@ function loadTutorialVoice(actNum) {
 				playTutorial(actNum);
 			}, 1000);
 		} catch (e) {
-			console.error("Tutorial sound not found")
+			console.error("Tutorial sound not found");
 		}
+		$("#kittyTeacher").click(function(){
+			playTutorial(actNum);
+		});
 	}
 
 }
 
 function playSound(soundName) {
-	soundName = soundName.toLowerCase();
+	soundName = soundName.toString().toLowerCase();
 	try {
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
@@ -262,9 +271,7 @@ function sessionCounter() {
 			$(".deleted").remove();
 		}, 1000);
 		window.setTimeout(passActivity, 1000);
-
 	}
-
 	else {
 		window.setTimeout(function() {
 			$(".deleted").remove();
@@ -278,7 +285,7 @@ function sessionCounter() {
 			$("#activity-container").removeClass("congratulations");
 			$("#activity-container").append(originTemplateHTML);
 			$('#congratulations').remove();
-			functionInit();
+			functionInit(counter);
 		}, 3000);
 	}
 
@@ -324,10 +331,10 @@ function getAllIndexes(arr, val) {
 
 function addSound(elem) {
 	if (elem.constructor == Array) {
-		soundsArray.push(elem.join(""));
-	} else {
-		soundsArray.push(elem);
+		elem = elem.join("");
 	}
+	elem = elem.toLowerCase();
+	soundsArray.push(elem);
 }
 
 function changeScore(value) {

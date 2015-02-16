@@ -12,7 +12,12 @@
 			"pa ja ro",
 			"bo te lla",
 			"te le fo no",
-			"ven ta na"
+			"ven ta na",
+			"cas ti llo",
+			"cam pa na",
+			"ga lli na",
+			"le chu ga",
+			"man za na"
 			],
 		"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA.",
 		"repeat":"3",
@@ -22,7 +27,14 @@
 		{"act":[
 			{"values":[["ca","sa"],["ma","no"]], "target":"1"},
 			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"},
-			{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"}
+			{"values":[["bo","ta"],["te","le","fo","no"]], "target":"1"},
+			{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"},
+			{"values":[["ga","lli","na"],["to","ro"]], "target":"1"},
+			{"values":[["pa","to"],["la","na"]], "target":"1"},
+			{"values":[["pa","la"],["to","ro"]], "target":"1"},
+			{"values":[["ro","sa"],["ca","sa"]], "target":"1"},
+			{"values":[["ra","ton"],["na","ran","ja"]], "target":"1"},
+			{"values":[["fo","co"],["ca","sa"]], "target":"1"}
 			],
 		"description":"BUSQUE LA IMAGEN QUE SEA LA UNION DE LA PRIMER SILABA DE CADA IMAGEN DE LA IZQUIERDA!!! POR EJEMPLO: RA-TON, MA-NO = RAMA",
 		"repeat":"3",
@@ -38,10 +50,17 @@
 	"act6":
 		{"act":[
 					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"},
-					{"values":[["b","o","t","a"],["g","o","t","a"]], "target":"1"}
+					{"values":[["b","o","t","a"],["g","o","t","a"]], "target":"1"},
+					{"values":[["t","o","r","o"],["l","o","r","o"]], "target":"1"},
+					{"values":[["c","a","s","a"],["c","a","m","a"]], "target":"3"},
+					{"values":[["r","o","c","a"],["f","o","c","a"]], "target":"1"},
+					{"values":[["f","o","c","o"],["f","o","c","a"]], "target":"1"},
+					{"values":[["d","a","d","o"],["d","e","d","o"]], "target":"2"},
+					{"values":[["m","e","s","a"],["p","e","s","a"]], "target":"1"},
+					{"values":[["p","i","l","a"],["p","a","l","a"]], "target":"2"}
 			   ],
-		"description":"TOQUE LA LETRA COLOREADA. LUEGO ARRASTRE LA IMAGEN QUE COMIENCE CON ESA LETRA!!!",
-		"repeat":"5",
+		"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
+		"repeat":"3",
 		"name":"cambiarPalabra"
 		},
 	"act8":
@@ -50,6 +69,10 @@
 					{"values":["g","a","t","o"],"target":"1"},
 					{"values":["p","e","r","r","o"],"target":"1"},
 					{"values":["c","a","s","a"],"target":"1"},
+					{"values":["r","a","n","a"],"target":"1"},
+					{"values":["t","o","r","o"],"target":"1"},
+					{"values":["r","o","c","a"],"target":"1"},
+					{"values":["s","i","ll","a"],"target":"1"},
 					{"values":["c","a","m","a"],"target":"1"}
 				],
 		"description":"SELECCIONE LA IMAGEN QUE EMPIECE CON LA LETRA",
@@ -59,7 +82,11 @@
 	"act10":
 		{"act":[
 					{"values":["ca","sa","do"],"target":"3"},
-					{"values":["au","ti","to"],"target":"2"}
+					{"values":["au","ti","to"],"target":"2"},
+					{"values":["pe","lo","ta"],"target":"3"},
+					{"values":["za","pa","to"],"target":"1"},
+					{"values":["bo","te","lla"],"target":"3"},
+					{"values":["pa","ja","ro"],"target":"3"}
 		       ],
 		"description":"SELECCIONE LA IMAGEN QUE SE FORMA AL ELIMINAR LA SILABA",
 		"repeat":"3",
@@ -71,7 +98,9 @@
 					{"values":["YO","COMO","UNA","TORTA"]},
 					{"values":["YO","TENGO","UN","GATO"]},
 					{"values":["ME","VOY","AL","PARQUE"]},
-					{"values":["YO","QUIERO","JUGAR"]}
+					{"values":["YO","QUIERO","JUGAR"]},
+					{"values":["ME","VOY","A","LA","ESCUELA"]},
+					{"values":["ME","GUSTA","JUGAR"]}
 			],
 		"description":"SELECCIONE LA CANTIDAD DE PALABRAS QUE TENGA LA ORACION",
 		"repeat":"3",
@@ -79,39 +108,58 @@
 		},
 	"act14":
 		{"act": [
-					{"values":[["PA","VA"],["ZA","PA","TO"]],"target":"1"},
-					{"values":[["CA","SA"],["CA","MA"]],"target":"1"},
-					{"values":[["PA","TO"],["GA","TO"]],"target":"2"}
+					{"values":[["pala"],["zapato"]],"target":"pa"},
+					{"values":[["casa"],["cama"]],"target":"ca"},
+					{"values":[["cabeza"],["zapato"]],"target":"za"},
+					{"values":[["toro"],["roca"]],"target":"ro"},
+					{"values":[["lana"],["luna"]],"target":"na"},
+					{"values":[["foco"],["foca"]],"target":"fo"},
+					{"values":[["auto"],["toro"]],"target":"to"},
+					{"values":[["cuna"],["luna"]],"target":"na"},
+					{"values":[["pato"],["gato"]],"target":"to"}
 			],
-		"description":"SELECCIONE LA SÃ­LABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
+		"description":"SELECCIONE LA SÍLABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
 		"repeat":"3",
 		"name":"repitiendoPalabras"
 		},
 	"act16":
 		{"act": [
 					{"values":["PA","JA","RO"],"target":"2"},
-					{"values":["TOR","TU","GA"],"target":"2"}
+					{"values":["TOR","TU","GA"],"target":"2"},
+					{"values":["CA","BE","ZA"],"target":"2"},
+					{"values":["CAM","PA","NA"],"target":"2"},
+					{"values":["AR","DI","LLA"],"target":"2"},
+					{"values":["BA","NA","NA"],"target":"2"},
+					{"values":["GA","LLI","NA"],"target":"2"},
+					{"values":["MAN","ZA","NA"],"target":"2"},
+					{"values":["PE","LO","TA"],"target":"2"},
+					{"values":["CAS","TI","LLO"],"target":"2"},
+					{"values":["SIL","BA","TO"],"target":"2"},
+					{"values":["ZA","PA","TO"],"target":"2"},
+					{"values":["VEN","TA","NA"],"target":"2"},
+					{"values":["O","RE","JA"],"target":"2"},
+					{"values":["BO","TE","LLA"],"target":"2"}
 			],
-		"description":"SELECCIONE LA SÍLABA QUE FALTA PARA FORMAR LA PABLARA",
+		"description":"SELECCIONE LA S&Iacute;LABA QUE FALTA PARA FORMAR LA PALABRA",
 		"repeat":"3",
 		"name":"silabaOculta"
 		},
 	"rhymes": {
 		"lev_1":[
-			["leon","raton"],
+			["leon","raton","camion","boton"],
 			["pato","gato","plato","silbato","zapato"],
 			["rana","manzana","lana","arana"],
 			["luna","cuna"],
-			["castillo","anillo"],
-			["gallina","bailarina"],
-			["ventana","campana"],
-			["sombrilla","silla"],
 			["pelota","ojota","bota"],
 			["toro","loro"],
-			["casa","taza"]
+			["casa","taza"],
+			["oreja","abeja"]
 		],
 		"lev_2":[
-			
+			["sombrilla","silla","ardilla"],
+			["castillo","anillo"],
+			["ventana","campana"],
+			["gallina","bailarina"]
 		]
 	},
 	"skin": [

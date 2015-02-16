@@ -14,7 +14,7 @@ function readyOk(){
 }
 
 function functionInit() {
-	getConfig(10);
+	getConfig(14);
 	getConfigByElement("act14","act",1,functionCallback);
 	readyOk();
 	rotateEfect();
@@ -27,12 +27,9 @@ function rotateEfect(){
 
 function functionCallback(conf){
 	var conf = conf[0];
-	var syllableToSelect = conf["target"] - 1;
-	var firstWord = conf["values"][0];
-	var secondWord = conf["values"][1];
-	syllableResult = firstWord[syllableToSelect];
-	resultFirstWord = firstWord.join('').replace(',','');
-	resultsecondWord = secondWord.join('').replace(',','');
+	syllableResult  = conf["target"];
+	resultFirstWord = conf["values"][0];
+	resultsecondWord = conf["values"][1];
 	fillTemplateWord(resultFirstWord,resultsecondWord);
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
@@ -45,8 +42,16 @@ function functionCallback2(conf) {
 }
 
 function fillTemplateWord(firstPart,secondPart){
-	$(completeWord1).text(firstPart);
-	$(completeWord2).text(secondPart);
+	$(completeWord1).attr('src','images/activities/' + firstPart + '.jpg');
+	addSound(firstPart);
+	$(completeWord1).mouseover(function(){
+		playSound(firstPart);
+	});
+	addSound(secondPart);
+	$(completeWord2).attr('src','images/activities/' + secondPart + '.jpg');
+	$(completeWord2).mouseover(function(){
+		playSound(secondPart);
+	});
 }
 
 function fillTemplateImages(syllables){

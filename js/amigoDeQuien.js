@@ -1,17 +1,17 @@
-/*
- * Falta corregir el tema de los contenedores originales
- */
-
 var leftArray = 0;
 var rightArray = 0;
 var numParts = 0;
 var contOriginal;
 var contSegundo;
 
-function functionInit() {
+function functionInit(counter) {
+	level = "lev_1";
+	if(counter==1){
+		level="lev_2";
+	}
 	contador = 3;
 	target = $('#target');
-	readyOk(target, 'leftbox', 'rightbox');
+	readyOk(target, 'leftbox', 'rightbox',level);
 }
 
 function imgWrong(img1, img2, contOriginal1, contOriginal2) {
@@ -37,7 +37,7 @@ function functionsDD(context, currElem) {
 			}, 1500);
 			contador = contador - 1;
 			if (contador == 0) {
-				window.setTimeout(sessionCounter(), 1500);
+				window.setTimeout(sessionCounter(), 2000);
 			}
 		} else {
 			console.log("imgs: ", img1, img2);
@@ -70,9 +70,9 @@ function imageOk(target) {
 
 }
 
-function readyOk(idObj, left, right) {
+function readyOk(idObj, left, right,level) {
 	getConfig("5");
-	getRhymes("rhymes", "lev_1", 3, fillTemplate);
+	config = getConfigByElement("rhymes",level,3,fillTemplate);
 }
 
 function fillTemplate(conf) {
@@ -104,8 +104,6 @@ function fillElements(conf, place) {
 		addSound(name);
 		$(t).attr('name', name);
 		$(t).prop('num', index);
-		// $(t).css({backgroundImage : 'url(images/imgOculta/' +
-		// $(t).attr("name") + '.jpg)'});
 		$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});
 		$(t).mousedown(function() {
 			playSound(this.name);

@@ -13,7 +13,7 @@ function readyOk(){
 }
 
 function functionInit() {
-	getConfig(10);
+	getConfig(16);
 	getConfigByElement("act16","act",1,functionCallback);
 	readyOk();
 	window.setTimeout(function() {	ballBounce(); },300);
