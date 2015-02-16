@@ -2,20 +2,7 @@ body {
   background: #4cbda7;
 }
 
-ul {
- /* position: absolute;
-	margin: auto;
-	top: 0; left: 0; bottom: 0; right: 0;  
-  width: 150px;
-  height: 150px;
-  padding: 0;
-  list-style: none;*/
-}
-
 label {
- /* position: absolute;*/
-  width: 70px ;
-  height: 70px ;
   border-radius: 5px;
   background: #fad335;
   opacity: 0.8;

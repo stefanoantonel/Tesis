@@ -17,7 +17,6 @@ function changeBackground(target){
 }
 
 function removeImg(img){
-	console.log("img deleted:",img);
 	$("#"+img).removeClass("rotateToLeft");
 	translate("#"+img);
 	$("#"+img).addClass('deleted');
@@ -29,7 +28,6 @@ function fillTemplate(rhymes){
 	var temp = "#template";
 	for (var x=0; x<4; x++){
 		var group = rhymes[x];
-		console.log("group:",group);
 		for (var i=0; i<2; i++){
 	        t=$(temp).clone();
 	        $(t).attr('id',x*10+i);

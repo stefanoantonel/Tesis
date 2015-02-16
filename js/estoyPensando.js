@@ -20,7 +20,7 @@ function functionInit(){
 function functionCallback(conf) {
 	var conf = conf[0];
 	var targetWord = conf["target"] - 1;
-	var values = conf["values"]
+	var values = conf["values"];
 	wordSelected=values.join('').replace(/,/g, "");;
 	var letter = wordSelected.split('')[0];
 	letter = letter.toUpperCase();
@@ -63,13 +63,10 @@ function checkCorrect(elem) {
 	if(name == wordSelected) {
 		$(elem).addClass("animateToFrontUpper");
 		setTimeout(function() {sessionCounter();}, 1000);
-		
 	}
 	else {
 		console.log(elem);
 		$(elem).effect('shake');
 		changeScore(-10);
-		
-
 	}
 }

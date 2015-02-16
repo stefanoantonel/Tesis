@@ -4,14 +4,9 @@ var numParts=0;
 var secondWord = '';
 
 function functionsDD(context,currElem){
-	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true) { sessionCounter(); }
 }
-
-// function readyOk(idObj,left,right){
-// 	functionInit();
-// }
 
 function functionInit() {
 	getConfig('6');

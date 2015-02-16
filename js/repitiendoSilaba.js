@@ -30,7 +30,8 @@ function functionCallback(conf){
 	syllableResult  = conf["target"];
 	resultFirstWord = conf["values"][0];
 	resultsecondWord = conf["values"][1];
-	fillTemplateWord(resultFirstWord,resultsecondWord);
+	fillTemplateWord(completeWord1,resultFirstWord);
+	fillTemplateWord(completeWord2,resultsecondWord);
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
 }
@@ -41,16 +42,18 @@ function functionCallback2(conf) {
 	dragAndDrop(images,target,functionsDD);
 }
 
-function fillTemplateWord(firstPart,secondPart){
-	$(completeWord1).attr('src','images/activities/' + firstPart + '.jpg');
-	addSound(firstPart);
-	$(completeWord1).mouseover(function(){
-		playSound(firstPart);
-	});
-	addSound(secondPart);
-	$(completeWord2).attr('src','images/activities/' + secondPart + '.jpg');
-	$(completeWord2).mouseover(function(){
-		playSound(secondPart);
+function fillTemplateWord(word, part){
+	$(word).attr('name',part);
+	addSound(part);
+	$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
+	$(word).mouseover(function(){
+		playSound(part);
+		$(this).css('background-image', 'none');
+		$(this).html("<b>"+part.toString().toUpperCase()+"</b>");
+		window.setTimeout(function(){
+			$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
+			$(word).html(" ");
+		}, 1500);
 	});
 }
 
@@ -113,7 +116,9 @@ function checkCorrect(syllable) {
 		$(syllable).effect('shake');
 		$(syllable).removeClass('normal');
 		$(syllable).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,syllable,$("#syllableBlock[name='"+$(syllable).attr("name")+"']"));
+		var origin = $("#syllableBlock[name='"+$(syllable).attr("name")+"']");
+		var originLabel = origin.find("label").last();
+		window.setTimeout(moveOrigin, 1000,syllable,originLabel);
 		window.setTimeout(function(){
 			$(syllable).find("label").addClass('rot');
 		}, 1000);

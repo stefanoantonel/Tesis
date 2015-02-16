@@ -25,9 +25,9 @@
 }
 
 .syllable {
-	font-size: 35px;
 	text-align: center;
 	position: relative;
+	margin-top: 10%;
 }
 
 div.phrase b {
@@ -56,15 +56,14 @@ article img.hidden {
 .target {
 	border: 3px;
 	border-style: dashed;
-	/* 
-			display: inline-block; 
-			border-color: black;
-			*/
 	border-width: medium;
-	width: 120px;
-	height: 110px;
 	margin: 5%;
 }
+.imgRep {
+	background-color: #FF5;
+	font-size: 20px;
+}
+
 </style>
 
 <script type="application/javascript">
@@ -83,13 +82,16 @@ article img.hidden {
 	<div id="activity-container">
 		<article>
 			<div id="text" class='phrase textBackground'>
-				Que silaba se repite entre <b id="completeWord1"></b> y <b
-					id="completeWord2"></b>?
+				Que silaba se repite entre
+				<button id="completeWord1" 
+						class="btn primary bg btnImg imgRep"></button>
+				 y
+				 <button id="completeWord2"
+						class="btn primary bg btnImg imgRep"></button>
+				 ?
 			</div>
 
 			<div id="target" class="target textBackground"></div>
-
-			<!-- <label id="syllableTemp" class="hidden normal syllable textBackground"></label> -->
 			<div id="syllableContainer"></div>
 
 			<div id="syllableBlock" class="hidden">

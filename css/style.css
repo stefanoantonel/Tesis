@@ -188,6 +188,16 @@ body {
 	transform: rotateY(180deg);
 }
 
+.rotate360 {
+	-webkit-transition: 0.5s ease-in-out;
+	-moz-transition: 0.5s ease-in-out;
+	-o-transition: 0.5s ease-in-out;
+	transition: 0.5s ease-in-out;
+	-ms-transform: rotateY(360deg); /* IE 9 */
+	-webkit-transform: rotateY(360deg); /* Chrome, Safari, Opera */
+	transform: rotateY(360deg);
+}
+
 .translateLeft {
 	-webkit-transition: 0.2s ease-in-out;
 	-moz-transition: 0.2s ease-in-out;
@@ -438,6 +448,17 @@ body {
 	.phrase {
 		font-size: 20px;
 	}
+	.rot {
+		width: 50px;
+		height: 50px;
+	}
+	.syllable {
+		font-size: 25px;
+	}
+	.target {
+		width: 100px;
+		height: 90px;
+	}
 }
 
 @media screen and (min-width: 850px) {
@@ -459,6 +480,17 @@ body {
 	}
 	.phrase {
 		font-size: 30px;
+	}
+	.rot {
+		width: 70px;
+		height: 70px;
+	}
+	.syllable {
+		font-size: 30px;
+	}
+	.target {
+		width: 120px;
+		height: 110px;
 	}
 }
 

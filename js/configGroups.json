@@ -118,7 +118,7 @@
 					{"values":[["cuna"],["luna"]],"target":"na"},
 					{"values":[["pato"],["gato"]],"target":"to"}
 			],
-		"description":"SELECCIONE LA SÍLABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
+		"description":"SELECCIONE LA S&Iacute;LABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
 		"repeat":"3",
 		"name":"repitiendoPalabras"
 		},
