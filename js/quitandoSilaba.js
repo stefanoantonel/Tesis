@@ -19,7 +19,6 @@ function functionInit() {
 }
 
 function functionCallback(conf){
-	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
 	var values = conf["values"];
@@ -56,7 +55,6 @@ function fillTemplateWord(wordComplete,wordToChange){
 
 function fillTemplateImages(images){
 	imgs=[];
-	// images.unshift(result);
 	$(images).each(function(index,e){
     	t=$(imgTemp).clone();
 		name=e;
@@ -75,7 +73,6 @@ function fillTemplateImages(images){
 }
 
 function functionsDD(context,currElem){
-	//checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){sessionCounter();}
 }

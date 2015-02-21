@@ -45,6 +45,8 @@
 					{"values":[["f","o","c","o"],["f","o","c","a"]], "target":"1"},
 					{"values":[["d","a","d","o"],["d","e","d","o"]], "target":"2"},
 					{"values":[["m","e","s","a"],["p","e","s","a"]], "target":"1"},
+					{"values":[["l","a","n","a"],["r","a","n","a"]], "target":"1"},
+					{"values":[["p","a","l","a"],["p","a","j","a"]], "target":"3"},
 					{"values":[["p","i","l","a"],["p","a","l","a"]], "target":"2"}
 			   ],
 		"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
@@ -54,17 +56,36 @@
 	"act8":
 		{"act":[
 					{"values":["p","a","t","o"],"target":"1"},
+					{"values":["a","b","e","j","a"],"target":"1"},
+					{"values":["a","u","t","o"],"target":"1"},
+					{"values":["b","o","t","e"],"target":"1"},
+					{"values":["b","o","t","a"],"target":"1"},
+					{"values":["b","o","t","o","n"],"target":"1"},
+					{"values":["c","a","m","a"],"target":"1"},
+					{"values":["c","a","m","i","o","n"],"target":"1"},
+					{"values":["c","a","s","a"],"target":"1"},
+					{"values":["c","a","s","t","i","l","l","o"],"target":"1"},
+					{"values":["d","a","d","o"],"target":"1"},
+					{"values":["d","e","d","o"],"target":"1"},
+					{"values":["f","o","c","a"],"target":"1"},
+					{"values":["l","a","n","a"],"target":"1"},
+					{"values":["f","o","c","o"],"target":"1"},
+					{"values":["l","e","o","n"],"target":"1"},
+					{"values":["n","a","r","a","n","j","a"],"target":"1"},
+					{"values":["o","r","e","j","a"],"target":"1"},
+					{"values":["p","a","l","a"],"target":"1"},
+					{"values":["p","e","s","a"],"target":"1"},
+					{"values":["r","o","s","a"],"target":"1"},
+					{"values":["t","a","z","a"],"target":"1"},
 					{"values":["g","a","t","o"],"target":"1"},
 					{"values":["p","e","r","r","o"],"target":"1"},
-					{"values":["c","a","s","a"],"target":"1"},
 					{"values":["r","a","n","a"],"target":"1"},
 					{"values":["t","o","r","o"],"target":"1"},
 					{"values":["r","o","c","a"],"target":"1"},
 					{"values":["s","i","ll","a"],"target":"1"},
-					{"values":["c","a","m","a"],"target":"1"}
 				],
 		"description":"SELECCIONE LA IMAGEN QUE EMPIECE CON LA LETRA",
-		"repeat":"5",
+		"repeat":"3",
 		"name":"estoyPensando"
 		},
 	"act10":
@@ -108,6 +129,15 @@
 					{"values":[["foco"],["foca"]],"target":"fo"},
 					{"values":[["auto"],["toro"]],"target":"to"},
 					{"values":[["cuna"],["luna"]],"target":"na"},
+					{"values":[["leon"],["lechuga"]],"target":"le"},
+					{"values":[["bote"],["boton"]],"target":"bo"},
+					{"values":[["boton"],["botella"]],"target":"bo"},
+					{"values":[["banana"],["lana"]],"target":"na"},
+					{"values":[["cama"],["manzana"]],"target":"ma"},
+					{"values":[["loro"],["toro"]],"target":"ro"},
+					{"values":[["gota"],["bota"]],"target":"ta"},
+					{"values":[["pato"],["pala"]],"target":"pa"},
+					{"values":[["toro"],["rosa"]],"target":"ro"},
 					{"values":[["pato"],["gato"]],"target":"to"}
 			],
 		"description":"SELECCIONE LA S&Iacute;LABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
@@ -130,6 +160,9 @@
 					{"values":["ZA","PA","TO"],"target":"2"},
 					{"values":["VEN","TA","NA"],"target":"2"},
 					{"values":["O","RE","JA"],"target":"2"},
+					{"values":["AR","DI","LLA"],"target":"2"},
+					{"values":["LE","CHU","GA"],"target":"2"},
+					{"values":["NA","RAN","JA"],"target":"2"},
 					{"values":["BO","TE","LLA"],"target":"2"}
 			],
 		"description":"SELECCIONE LA S&Iacute;LABA QUE FALTA PARA FORMAR LA PALABRA",
@@ -139,19 +172,24 @@
 	"rhymes": {
 		"lev_1":[
 			["leon","raton","camion","boton"],
-			["pato","gato","plato","silbato","zapato"],
-			["rana","manzana","lana","arana"],
+			["pato","gato","plato"],
+			["rana","manzana","lana","arana","pala","paja"],
 			["luna","cuna"],
-			["pelota","ojota","bota"],
+			["bota","gota","rosa","roca"],
 			["toro","loro"],
 			["casa","taza"],
+			["pesa","mesa"],
 			["oreja","abeja"]
 		],
 		"lev_2":[
 			["sombrilla","silla","ardilla"],
-			["castillo","anillo"],
-			["ventana","campana"],
-			["gallina","bailarina"]
+			["castillo","anillo","grillo"],
+			["ventana","campana","banana","arana"],
+			["pelota","ojota"],
+			["silbato","zapato"],
+			["bosque",bote],
+			["botella","abeja"],
+			["gallina","bailarina","ardilla"]
 		]
 	},
 	"skin": [

@@ -163,6 +163,9 @@ function passActivity() {
 						+ '<div><a id="next">Siguiente</a></div>' 
 				+ '</div>');
 		playSound("win");
+		$("#next").click(function() {
+			window.parent.document.getElementById("nav_next-button").click();
+		});
 		return;
 	}
 	$("#activity-container").append(
@@ -170,10 +173,6 @@ function passActivity() {
 					+ '<span>GANASTE!!</span>'
 			+ '</div>');
 	playSound("win");
-	$("#next").click(function() {
-		window.parent.document.getElementById("nav_next-button").click();
-	});
-
 }
 
 function setNextAction() {
@@ -265,6 +264,7 @@ function moveOrigin(target, origin) {
 }
 
 function sessionCounter() {
+	playSound("bells");
 	counter = counter - 1;
 	if (counter == 0) {
 		passed();
