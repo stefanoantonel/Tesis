@@ -14,12 +14,10 @@
 <script src="js/quitandoSilaba.js"></script>
 
 <style type="text/css">
-.phrase {
-	font-size: 40px;
-}
 
 div.phrase b {
 	color: red;
+	font-size: 35px;
 }
 
 article {
@@ -33,27 +31,23 @@ article img {
 article img.imgTemp {
 	border: 3px solid;
 	margin-right: 3px;
-	width: 90px;
-	height: 90px;
 }
 
 article img.hidden {
 	display: none;
 }
 
-.target {
+.targetImg {
 	border: 3px;
 	border-style: dashed;
-	/* 
-			display: inline-block; 
-			border-color: black;
-			*/
 	border-width: medium;
-	width: 120px;
-	height: 110px;
-	margin: 5%;
-	margin-left: 30%;
 }
+
+#imgContainer {
+	width: 70%;
+	margin: auto;
+}
+
 </style>
 
 <script type="application/javascript">
@@ -76,9 +70,9 @@ article img.hidden {
 				queda ...
 			</div>
 
-			<div id="target" class="target textBackground"></div>
+			<div id="target" class="targetImg textBackground"></div>
 
-			<img id="imgTemp" class="hidden imgTemp normal"></img>
+			<img id="imgTemp" class="hidden imgTemp normal btnImg"></img>
 			<div id="imgContainer"></div>
 
 

@@ -6,21 +6,9 @@
 		"name":"memory"
 		},
 	"act2":
-		{"act":[
-			"pe lo ta",
-			"ca be za",
-			"pa ja ro",
-			"bo te lla",
-			"te le fo no",
-			"ven ta na",
-			"cas ti llo",
-			"cam pa na",
-			"ga lli na",
-			"le chu ga",
-			"man za na"
-			],
+		{
 		"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA.",
-		"repeat":"3",
+		"repeat":"4",
 		"name":"adivinaPalabra"
 		},
 	"act4":
@@ -99,7 +87,11 @@
 					{"values":["YO","TENGO","UN","GATO"]},
 					{"values":["ME","VOY","AL","PARQUE"]},
 					{"values":["YO","QUIERO","JUGAR"]},
+					{"values":["TENGO","UNA","HERMANA"]},
 					{"values":["ME","VOY","A","LA","ESCUELA"]},
+					{"values":["TENGO","MUCHOS","AMIGOS"]},
+					{"values":["YA","HICE","MI","TAREA"]},
+					{"values":["HOY","VAMOS","A","APRENDER","MUCHO"]},
 					{"values":["ME","GUSTA","JUGAR"]}
 			],
 		"description":"SELECCIONE LA CANTIDAD DE PALABRAS QUE TENGA LA ORACION",
@@ -163,7 +155,6 @@
 		]
 	},
 	"skin": [
-		"fire",
 		"hands",
 		"sea",
 		"flower",
@@ -181,5 +172,52 @@
 		"syllables": [
 			"pe","go","ma","ri","ca","lo","ta"
 		]
-	}
+	},
+	"words":{
+			"lev_1":[
+				"de do",
+				"da do",
+				"bo te",
+				"bo ta",
+				"bo ton",
+				"bos que",
+				"cu na",
+				"la na",
+				"go ta",
+				"ga to",
+				"ma no",
+				"me sa",
+				"pa la",
+				"pa to",
+				"fo ca",
+				"fo co"
+			],
+			"lev_2":[	
+				"ven ta na",
+				"pe lo ta",
+				"ca be za",
+				"a be ja",
+				"o re ja",
+				"a ni llo",
+				"o jo ta",
+				"tor tu ga",
+				"cam pa na",
+				"ga lli na",
+				"le chu ga",
+				"sil ba to",
+				"za pa to",
+				"pa ja ro",
+				"man za na"
+			],
+			"lev_3":[
+				"bo te lla",
+				"ar di lla",
+				"cas ti llo",
+				"som bri lla",
+				"te le fo no",
+				"te le vi sor",
+				"bai la ri na",
+				"ca la ba za"
+			]
+		}
 }

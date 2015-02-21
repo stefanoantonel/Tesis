@@ -17,8 +17,14 @@ function readyOk(){
 	temp=$(temp1);
 	img=imgDemo;
 }
-function functionInit() {
-	getConfigByElement("act2","act",1,functionCallback);
+function functionInit(counter,level) {
+	if(level==null){
+		level="lev_1";
+	}
+	if(counter == 1){
+		level="lev_3";
+	}
+	getConfigByElement("words",level,1,functionCallback);
 	readyOk();
 	getConfig(2);
 	actualPosition = 0;
@@ -32,8 +38,7 @@ function functionCallback(data){
 	imgDemo=$("."+img);
 	fillImg(imgDemo,parts);
 	parts=$("#"+boxes[0]).children('.syllable');
-	box=[$("#"+boxes[0]), $("#"+boxes[1])];
-	dragAndDrop(parts,box,checkSyllable);
+	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable);
 	
 }
 

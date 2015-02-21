@@ -58,7 +58,6 @@ function getConfigByElement(element, level, quantity, callBack) {
 	}).done(function() {
 		console.log("result:", result);
 		callBack(result);
-		// getStyle();
 	});
 }
 
@@ -128,6 +127,7 @@ function getStyle() {
 function loadCounter(count) {
 	if (counter == null) {
 		counter = parseInt(count);
+		counterOriginal = counter; 
 	}
 }
 
@@ -160,14 +160,15 @@ function passActivity() {
 		$("#activity-container").append(
 				'<div id="alertOk" class="alert-box success">'
 						+ '<span>GANASTE!!</span>'
-				 + '</div>');
+						+ '<div><a id="next">Siguiente</a></div>' 
+				+ '</div>');
 		playSound("win");
 		return;
 	}
 	$("#activity-container").append(
 			'<div id="alertOk" class="alert-box success">'
 					+ '<span>GANASTE!!</span>'
-					+ '<div><a id="next">Siguiente</a></div>' + '</div>');
+			+ '</div>');
 	playSound("win");
 	$("#next").click(function() {
 		window.parent.document.getElementById("nav_next-button").click();
@@ -285,7 +286,11 @@ function sessionCounter() {
 			$("#activity-container").removeClass("congratulations");
 			$("#activity-container").append(originTemplateHTML);
 			$('#congratulations').remove();
-			functionInit(counter);
+			level="lev_1";
+			if(counter<= counterOriginal/2){
+				level="lev_2";
+			}
+			functionInit(counter,level);
 		}, 3000);
 	}
 

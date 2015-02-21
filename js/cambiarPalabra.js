@@ -54,7 +54,6 @@ function changeColor(cont,words,wordToChange){
 		$('#firstImage').remove();
 		$('#left1').removeClass('secondWordHidden');
 		playSound( $(this).html() );
-		// playSound(this.text());
 	});
 	return elements;
 }
@@ -141,6 +140,7 @@ function firstImg(conf){
 
 function checkCorrect(part) {
 	var name = $(part).attr("name");
+	$(part).removeClass('img-rigth');
 	if(name.valueOf() == secondWord.valueOf()) {
 		return true;
 	}
@@ -148,7 +148,10 @@ function checkCorrect(part) {
 		$(part).effect('shake');
 		$(part).removeClass('normal');
 		$(part).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,part,"#rightContainer");
+		window.setTimeout(function(){
+			$(part).addClass('img-rigth');
+			moveOrigin(part,"#rightContainer");	
+		}, 1000);
 		return false;
 	}
 }

@@ -1,9 +1,8 @@
 .principalTitle {
-	width: 530px;
 	top: 100px;
 	font-family: 'Ribeye Marrow';
 	font-size: 25px;
-	color:blue;
+	color:#000;
 }
 
 body {

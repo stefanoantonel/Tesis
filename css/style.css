@@ -16,6 +16,10 @@ footer {
 	border-radius: 10%;
 }
 
+.target {
+	margin: 5% auto;
+}
+
 .phrase {
 	background-color: white;
 	font-size: 40px;
@@ -188,15 +192,6 @@ body {
 	transform: rotateY(180deg);
 }
 
-.rotate360 {
-	-webkit-transition: 0.5s ease-in-out;
-	-moz-transition: 0.5s ease-in-out;
-	-o-transition: 0.5s ease-in-out;
-	transition: 0.5s ease-in-out;
-	-ms-transform: rotateY(360deg); /* IE 9 */
-	-webkit-transform: rotateY(360deg); /* Chrome, Safari, Opera */
-	transform: rotateY(360deg);
-}
 
 .translateLeft {
 	-webkit-transition: 0.2s ease-in-out;
@@ -226,23 +221,23 @@ body {
 }
 
 @-webkit-keyframes bounce { 
-	0% {
-		transform: translate(0px, -60px);
+	20% {
+		transform: translate(0px, -150px);
 	}
 	
-	20% {
+	30% {
 		transform: translate(0px, 0px);
 	}
 	
-	40%{
-		transform:translate(0px,-45px);
+	45%{
+		transform:translate(0px,-70px);
 	}
 	60%{
 		transform:translate(0px,0px);
 	}
-	80%
+	75%
 	{
-		transform:translate(0px,-30px);
+		transform:translate(0px,-50px);
 	}
 	90%
 	{
@@ -250,7 +245,7 @@ body {
 	}
 	100%
 	{
-		transform:translate(0px, -10px);
+		transform:translate(0px, -30px);
 	}
 }
 @-moz-keyframes bounce { 
@@ -431,10 +426,10 @@ body {
 		height: 100px;
 	}
 	.actContainer {
-		width: 490px;
+		width: 500px;
 	}
 	#titulo {
-		font-size: 3em;
+		font-size: 2.5em;
 	}
 	article {
 		margin-top: 15%;
@@ -447,6 +442,8 @@ body {
 	}
 	.phrase {
 		font-size: 20px;
+		max-width: 490px;
+		margin: auto;
 	}
 	.rot {
 		width: 50px;
@@ -455,9 +452,17 @@ body {
 	.syllable {
 		font-size: 25px;
 	}
-	.target {
+	.targetText {
 		width: 100px;
 		height: 90px;
+	}
+	.targetImg {
+		height: 120px;
+		width: 110px;
+	}
+	
+	.word {
+		font-size: 50px;
 	}
 }
 
@@ -470,7 +475,7 @@ body {
 		width: 600px;
 	}
 	#titulo {
-		font-size: 3.5em;
+		font-size: 3em;
 	}
 	#kittyTeacher {
 		width: 150px;
@@ -488,9 +493,19 @@ body {
 	.syllable {
 		font-size: 30px;
 	}
-	.target {
+	.targetText {
 		width: 120px;
 		height: 110px;
+	}
+	.targetImg {
+		height: 140px;
+		width: 120px;
+	}
+	.imgRep {
+		font-size: 20px;
+	}
+	.word {
+		font-size: 70px;
 	}
 }
 

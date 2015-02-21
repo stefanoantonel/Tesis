@@ -22,41 +22,40 @@ function imgWrong(img1, img2, contOriginal1, contOriginal2) {
 
 function functionsDD(context, currElem) {
 	if (img1 == null) {
-		img1 = currElem.attr("id");
+		img1 = currElem;
 		contOriginal1 = currElem.attr("column");
 
 	} else {
 		$(".imgButton").css("pointer-events", "none");
-		img2 = currElem.attr("id");
+		img2 = currElem;
 		contOriginal2 = currElem.attr("column");
-
-		if (img1 == img2) {
-			imageOk($("#target").find(".imgButton"));
-			window.setTimeout(function() {
-				$("#target").html("");
-			}, 1500);
-			contador = contador - 1;
-			if (contador == 0) {
-				window.setTimeout(sessionCounter(), 2000);
+		if(img1.attr("name") != img2.attr("name")){
+			if (img1.attr("id") == img2.attr("id")) {
+				imageOk($("#target").find(".imgButton"));
+				window.setTimeout(function() {
+					$("#target").html("");
+				}, 1500);
+				contador = contador - 1;
+				if (contador == 0) {
+					window.setTimeout(sessionCounter(), 2000);
+				}
+			} else {
+				var img_target1 = $("#target").find("#" + img1.attr("id"));
+				var img_target2 = $("#target").find("#" + img2.attr("id"));
+				img_target1.removeClass('normal');
+				img_target2.removeClass('normal');
+				img_target1.addClass('wrong');
+				img_target2.addClass('wrong');
+				window.setTimeout(imgWrong, 1000, img_target1, img_target2, $("#"
+						+ contOriginal1), $("#" + contOriginal2));
+	
 			}
-		} else {
-			console.log("imgs: ", img1, img2);
-			var img_target1 = $("#target").find("#" + img1);
-			var img_target2 = $("#target").find("#" + img2);
-			img_target1.removeClass('normal');
-			img_target2.removeClass('normal');
-			img_target1.addClass('wrong');
-			img_target2.addClass('wrong');
-			window.setTimeout(imgWrong, 1000, img_target1, img_target2, $("#"
-					+ contOriginal1), $("#" + contOriginal2));
-
+			window.setTimeout(function() {
+				$(".imgButton").css("pointer-events", "auto");
+			}, 1500);
+			img1 = null;
+			img2 = null;
 		}
-		window.setTimeout(function() {
-			$(".imgButton").css("pointer-events", "auto");
-		}, 1500);
-		img1 = null;
-		img2 = null;
-
 	}
 }
 
