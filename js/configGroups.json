@@ -82,7 +82,7 @@
 					{"values":["r","a","n","a"],"target":"1"},
 					{"values":["t","o","r","o"],"target":"1"},
 					{"values":["r","o","c","a"],"target":"1"},
-					{"values":["s","i","ll","a"],"target":"1"},
+					{"values":["s","i","ll","a"],"target":"1"}
 				],
 		"description":"SELECCIONE LA IMAGEN QUE EMPIECE CON LA LETRA",
 		"repeat":"3",
@@ -187,7 +187,7 @@
 			["ventana","campana","banana","arana"],
 			["pelota","ojota"],
 			["silbato","zapato"],
-			["bosque",bote],
+			["bosque","bote"],
 			["botella","abeja"],
 			["gallina","bailarina","ardilla"]
 		]
