@@ -107,7 +107,7 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(syllable) {
-	var name = syllable.attr("name");
+	var name = $(syllable).attr("name");
 	if(name == syllableResult){
 		return true;
 	}

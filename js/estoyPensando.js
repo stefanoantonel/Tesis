@@ -46,7 +46,7 @@ function fillTemplate(wordSelected,imagesSelected){
 		$(t).mouseover(function(){
 			playSound(this.name);
 		});
-		$(t).click(function(){
+		$(t).mouseup(function(){
 			checkCorrect(this);
 		});
 		arrayImg.push(t);

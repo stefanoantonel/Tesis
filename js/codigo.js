@@ -7,6 +7,9 @@ function dragAndDrop(idImg, idBoxes, functions) {
 		$(this).draggable({
 			revert : true,
 		});
+		$(this).mouseup(function() {
+			functions(null,this);
+		});
 	});
 
 	$(idBoxes).each(function(ind, box) {
@@ -553,6 +556,9 @@ function rand(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function mouseTouch(images,functionMouseUp) {
+	
+}
 /**
  * ********************************CONGRATULATIONS END
  * ******************************************
