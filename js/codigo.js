@@ -132,8 +132,7 @@ function loadCounter(count) {
 }
 
 function disorder(o) {
-	for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x)
-		;
+	for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	return o;
 };
 
@@ -146,7 +145,7 @@ function congratulations() {
 	playSound("congratulations");
 	window.setTimeout(function() {
 		explote();
-	}, 500);
+	}, 600);
 
 	explosion();
 
