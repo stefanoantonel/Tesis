@@ -81,6 +81,15 @@ function checkCorrect(img) {
 	
 	var name = $(img).attr("name");
 	if(name == resultWord){
+		$(img).animate({
+		    width: "50%",
+			height: "50%",
+		    opacity: 1.4,
+		    // marginLeft: "0.6in",
+		    fontSize: "3em",
+		    borderWidth: "10px",
+			borderColor: "green"
+	  	}, 500 );
 		return true;
 	}
 	else{

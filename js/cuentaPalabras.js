@@ -101,6 +101,7 @@ function functionsDD(context,currElem){
 function checkCorrect(number) {
 	num = $(number).html();
 	if(num.valueOf() == numberToSelect.valueOf()){
+		window.setTimeout(function(){$(number).addClass("animateToFront");},0);
 		return true;
 	}
 	else{

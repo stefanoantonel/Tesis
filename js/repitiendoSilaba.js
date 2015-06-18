@@ -109,7 +109,17 @@ function functionsDD(context,currElem){
 function checkCorrect(syllable) {
 	var name = $(syllable).attr("name");
 	if(name == syllableResult){
-		return true;
+		$(syllable).animate({
+		    // width: "20%",
+			// height: "20%",
+		    // opacity: 1.4,
+		    // marginLeft: "0.6in",
+		    fontSize: "2em",
+		    // borderWidth: "10px",
+			// borderColor: "green"
+			color: "green"
+	  	}, 500 );
+		  return true;
 	}
 	else{
 		$(syllable).find("label").removeClass('rot');

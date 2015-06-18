@@ -80,6 +80,15 @@ function checkCorrect(syllable) {
 	var name = $(syllable).html();
 	if(name == syllableResult){
 		window.setTimeout(function(){$(syllable).addClass("animateToFront");},500);
+		// $(syllable).animate({
+		//     width: "20%",
+		// 	height: "20%",
+		//     // opacity: 1.4,
+		//     // marginLeft: "0.6in",
+		//     fontSize: "2em",
+		//     borderWidth: "10px",
+		// 	borderColor: "green"
+	  	// }, 500 );
 		return true;
 	}
 	else{
