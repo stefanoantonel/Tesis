@@ -48,7 +48,8 @@ img {
 	padding: 20px;
 	overflow: auto;
 	z-index: 1;
-	max-height:
+	/*max-height: 2ex;*/
+	max-height: 13ex;
 }
 
 .alert-box span {

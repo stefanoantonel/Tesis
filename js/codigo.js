@@ -2,13 +2,19 @@ var counter;
 var soundsArray = [];
 var score = 100;
 
-function dragAndDrop(idImg, idBoxes, functions) {
+function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
+			stop: function( event, ui ) {
+				event.stopPropagation();
+				//alert();
+			},
 			revert : true,
 		});
-		$(this).mouseup(function() {
-			functions(null,this);
+
+		//$(this).mouseup(function() {
+		$(this).dblclick(function() {
+			moveToTarget(this);
 		});
 	});
 

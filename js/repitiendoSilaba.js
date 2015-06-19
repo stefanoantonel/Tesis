@@ -35,11 +35,14 @@ function functionCallback(conf){
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
 }
+function moveToTarget() {
+	
+}
 
 function functionCallback2(conf) {
 	fillTemplateImages(conf);
 	images=syllableContainer.children().find("div#syllableTemp");
-	dragAndDrop(images,target,functionsDD);
+	dragAndDrop(images,target,functionsDD,moveToTarget);
 }
 
 function fillTemplateWord(word, part){

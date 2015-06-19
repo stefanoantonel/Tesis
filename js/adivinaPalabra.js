@@ -38,7 +38,7 @@ function functionCallback(data){
 	imgDemo=$("."+img);
 	fillImg(imgDemo,parts);
 	parts=$("#"+boxes[0]).children('.syllable');
-	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable);
+	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable,moveToTarget);
 	
 }
 
@@ -50,6 +50,16 @@ function checkSyllable(context,currElem){
 	}
 }
 
+function moveToTarget(elem) {
+	if($(elem).parent().attr("id") == "leftbox") {
+		$(rightbox).append(elem);
+	}
+	else {
+		$(leftbox).append(elem);
+	}
+	
+	checkSyllable(rightbox,elem);
+}
 
 function divide(data){
     //divido en partes segun los espacios

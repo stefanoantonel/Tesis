@@ -65,8 +65,10 @@ function checkCorrect(elem) {
 		setTimeout(function() {sessionCounter();}, 1000);
 	}
 	else {
-		console.log(elem);
 		$(elem).effect('shake');
 		changeScore(-10);
 	}
+}
+function moveToTarget() {
+	
 }

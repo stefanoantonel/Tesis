@@ -1,3 +1,5 @@
+/* global moveOrigin */
+/// <reference path="../typings/jquery/jquery.d.ts"/>
 var target;
 var imgTemp;
 var imgContainer;
@@ -38,7 +40,7 @@ function functionCallback(conf){
 function functionCallback2(conf) {
 	fillTemplateImages(conf);
 	images=imgContainer.children();
-	dragAndDrop(images,target,functionsDD);
+	dragAndDrop(images,target,functionsDD,moveToTarget);
 }
 
 function fillTemplateWord(wordComplete,wordToChange){
@@ -81,15 +83,7 @@ function checkCorrect(img) {
 	
 	var name = $(img).attr("name");
 	if(name == resultWord){
-		$(img).animate({
-		    width: "50%",
-			height: "50%",
-		    opacity: 1.4,
-		    // marginLeft: "0.6in",
-		    fontSize: "3em",
-		    borderWidth: "10px",
-			borderColor: "green"
-	  	}, 500 );
+		$(img).addClass("animateToFrontUpper");
 		return true;
 	}
 	else{
@@ -109,4 +103,7 @@ function checkReplace(box,newDiv){
 		$(target).append(newDiv);
 
 	}
+}
+function moveToTarget() {
+	
 }

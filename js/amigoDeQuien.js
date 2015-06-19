@@ -23,14 +23,14 @@ function imgWrong(img1, img2, contOriginal1, contOriginal2) {
 function functionsDD(context, currElem) {
 	if (img1 == null) {
 		img1 = currElem;
-		contOriginal1 = currElem.attr("column");
+		contOriginal1 = $(currElem).attr("column");
 
 	} else {
 		$(".imgButton").css("pointer-events", "none");
 		img2 = currElem;
-		contOriginal2 = currElem.attr("column");
-		if(img1.attr("name") != img2.attr("name")){
-			if (img1.attr("id") == img2.attr("id")) {
+		contOriginal2 = $(currElem).attr("column");
+		if($(img1).attr("name") != $(img2).attr("name")){
+			if ($(img1).attr("id") == $(img2).attr("id")) {
 				imageOk($("#target").find(".imgButton"));
 				window.setTimeout(function() {
 					$("#target").html("");
@@ -40,8 +40,8 @@ function functionsDD(context, currElem) {
 					window.setTimeout(sessionCounter(), 2000);
 				}
 			} else {
-				var img_target1 = $("#target").find("#" + img1.attr("id"));
-				var img_target2 = $("#target").find("#" + img2.attr("id"));
+				var img_target1 = $("#target").find("#" + $(img1).attr("id"));
+				var img_target2 = $("#target").find("#" + $(img2).attr("id"));
 				img_target1.removeClass('normal');
 				img_target2.removeClass('normal');
 				img_target1.addClass('wrong');
@@ -69,6 +69,10 @@ function imageOk(target) {
 
 }
 
+function moveToTarget() {
+	
+}
+
 function readyOk(idObj, left, right,level) {
 	getConfig("5");
 	config = getConfigByElement("rhymes",level,3,fillTemplate);
@@ -89,8 +93,8 @@ function fillTemplate(conf) {
 	$( "button" ).draggable({
         cancel: false
     });
-	dragAndDrop(contRight, target, functionsDD);
-	dragAndDrop(contLeft, target, functionsDD);
+	dragAndDrop(contRight, target, functionsDD,moveToTarget);
+	dragAndDrop(contLeft, target, functionsDD,moveToTarget);
 }
 
 function fillElements(conf, place) {

@@ -19,6 +19,10 @@ function functionInit() {
 	window.setTimeout(function() {	ballBounce(); },300);
 }
 
+function moveToTarget() {
+	
+}
+
 function functionCallback(conf){
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
@@ -41,7 +45,7 @@ function functionCallback(conf){
 function functionCallback2(conf) {
 	fillTemplateSyllable(conf);
 	images=syllableContainer.children().find("label");
-	dragAndDrop(images,target,functionsDD);
+	dragAndDrop(images,target,functionsDD,moveToTarget);
 }
 
 function fillTemplateWord(fPart,sPart){

@@ -30,6 +30,10 @@ function functionCallback(conf){
 	
 }
 
+function moveToTarget() {
+	
+}
+
 function changeColor(cont,words,wordToChange){
 	parts=words.split("");
 	elements=[];
@@ -125,7 +129,7 @@ function functInitImages(conf,x){
 
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
 }
 
 function firstImg(conf){

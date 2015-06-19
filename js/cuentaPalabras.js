@@ -17,6 +17,9 @@ function functionInit() {
 	getConfigByElement("act12","act",1,functionCallback);
 	window.setTimeout(function(){$(".cube").addClass("girar");},200);
 }
+function moveToTarget() {
+	
+}
 
 function functionCallback(conf){
 	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
@@ -81,7 +84,7 @@ function fillTemplateNumber(number){
 	//numbersDiv=numbersContainer.children();
 	numbersDiv=$(".numberTemp:not(.hidden)");
 	
-	dragAndDrop(numbersDiv,target,functionsDD);
+	dragAndDrop(numbersDiv,target,functionsDD,moveToTarget);
 	
 }
 

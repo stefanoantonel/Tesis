@@ -19,7 +19,9 @@ function functionInit() {
 	getConfig(4);
 }
 
-
+function moveToTarget() {
+	
+}
 function functionCallback(conf){
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
@@ -102,7 +104,7 @@ function functRight(conf){
 	$("#rightContainer").append(imgs);
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
 }
 
 function checkCorrect(part) {
