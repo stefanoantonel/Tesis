@@ -5,15 +5,22 @@ var score = 100;
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
-			stop: function( event, ui ) {
-				event.stopPropagation();
+			//stop: function( event, ui ) {
+			//	event.stopPropagation();
 				//alert();
-			},
+			//},
+			start: function(event, ui) {
+            	ui.helper.bind("click.prevent",
+	        	function(event) { event.preventDefault(); });
+	        },
+	        stop: function(event, ui) {
+				setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
+	        },
 			revert : true,
 		});
 
 		//$(this).mouseup(function() {
-		$(this).dblclick(function() {
+		$(this).click(function() {
 			moveToTarget(this);
 		});
 	});

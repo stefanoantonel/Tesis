@@ -69,8 +69,9 @@ function imageOk(target) {
 
 }
 
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null, elem);
 }
 
 function readyOk(idObj, left, right,level) {
@@ -116,4 +117,7 @@ function fillElements(conf, place) {
 	disorder(imgs);
 	$("#" + place + "Container").append(imgs);
 
+}
+function checkReplace(elem) {
+	
 }
