@@ -19,8 +19,9 @@ function functionInit() {
 	window.setTimeout(function() {	ballBounce(); },300);
 }
 
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
 }
 
 function functionCallback(conf){

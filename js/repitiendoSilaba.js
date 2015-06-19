@@ -35,8 +35,9 @@ function functionCallback(conf){
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
 }
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
 }
 
 function functionCallback2(conf) {
@@ -117,7 +118,7 @@ function checkCorrect(syllable) {
 			// height: "20%",
 		    // opacity: 1.4,
 		    // marginLeft: "0.6in",
-		    fontSize: "2em",
+		    fontSize: "3em",
 		    // borderWidth: "10px",
 			// borderColor: "green"
 			color: "green"

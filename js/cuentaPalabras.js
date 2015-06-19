@@ -17,8 +17,9 @@ function functionInit() {
 	getConfigByElement("act12","act",1,functionCallback);
 	window.setTimeout(function(){$(".cube").addClass("girar");},200);
 }
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
 }
 
 function functionCallback(conf){

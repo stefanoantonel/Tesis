@@ -19,8 +19,13 @@ function functionInit() {
 	getConfig(4);
 }
 
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	var box = $("#target");
+	box.append(elem);
+	checkReplace(box,elem);
+	///$('#rightContainer').append(prevDiv);
+		//$(box).append(newDiv);
+	functionsDD(null,elem);
 }
 function functionCallback(conf){
 	var conf = conf[0];
