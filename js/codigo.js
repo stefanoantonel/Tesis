@@ -230,7 +230,7 @@ function loadSounds() {
 			$(aud).attr('type', 'audio/mp3');
 			$(aud).appendTo('body');
 		});
-	}, 3000);
+	}, 2000);
 }
 
 function loadTutorialVoice(actNum) {
@@ -255,8 +255,8 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
-	soundName = soundName.toString().toLowerCase();
 	try {
+		soundName = soundName.toString().toLowerCase();
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
 		console.error('Sonido no encontrado');
@@ -569,9 +569,7 @@ function rand(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function mouseTouch(images,functionMouseUp) {
-	
-}
+
 /**
  * ********************************CONGRATULATIONS END
  * ******************************************

@@ -28,6 +28,7 @@ function functionCallback(conf){
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
 	var valueArray = conf["values"];
+	completeWord = valueArray.join("")
 	var valueLength = valueArray.length;
 	var firstWord = valueArray.slice(0, syllableToSelect);
 	var secondWord = valueArray.slice(syllableToSelect+1, valueLength);
@@ -64,12 +65,17 @@ function fillTemplateSyllable(syllables){
 		$(t).attr('num',index);
 		nameToShow = name.toUpperCase();
 		$(t).html("<label name="+name+">"+nameToShow+"</label>");
-		$(t).mouseover(function(){
-			playSound($(this).attr('name'));
-		});
+		$(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		$(t).removeClass('hidden');
 		syllablesArray.push(t);
 	});
+	addSound(completeWord);
 	disorder(syllablesArray);
 	$(syllableContainer).append(syllablesArray);
 }
@@ -77,6 +83,7 @@ function fillTemplateSyllable(syllables){
 function functionsDD(context,currElem){
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true){
+		playSound(completeWord);
 		window.setTimeout(function() {	sessionCounter(); },1500);
 	}
 }

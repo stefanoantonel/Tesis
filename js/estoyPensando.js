@@ -43,9 +43,13 @@ function fillTemplate(wordSelected,imagesSelected){
 		$(t).attr('name',name);
 		$(t).removeClass('temp');
 		$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mouseover(function(){
-			playSound(this.name);
-		});
+		$(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		$(t).mouseup(function(){
 			checkCorrect(this);
 		});

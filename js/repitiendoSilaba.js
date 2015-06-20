@@ -50,15 +50,19 @@ function fillTemplateWord(word, part){
 	$(word).attr('name',part);
 	addSound(part);
 	$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
-	$(word).mouseover(function(){
-		playSound(part);
-		$(this).css('background-image', 'none');
-		$(this).html("<b>"+part.toString().toUpperCase()+"</b>");
-		window.setTimeout(function(){
-			$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
-			$(word).html(" ");
-		}, 1500);
-	});
+	$(word).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+				$(this).css('background-image', 'none');
+				$(this).html("<b>"+part.toString().toUpperCase()+"</b>");
+				window.setTimeout(function(){
+					$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
+					$(word).html(" ");
+				}, 1000);
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 }
 
 function fillTemplateImages(syllables){
@@ -75,9 +79,13 @@ function fillTemplateImages(syllables){
 		/*Change to make effect*/
 		name = name.toUpperCase();
 		content.html(name);
-		content.mouseover(function(){
-			playSound($(this).attr('name'));
-		});
+		content.hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		$(t).removeClass('hidden');
 		$(t).hover(function(){
 					var labels = $(this).find("label");

@@ -64,9 +64,13 @@ function fillTemplateImages(images){
 		$(t).attr('name',name);
 		$(t).attr('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mouseover(function(){
-			playSound($(this).attr('name'));
-		});
+		$(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		$(t).removeClass('hidden');
 		imgs.push(t);
 	});
@@ -83,7 +87,8 @@ function checkCorrect(img) {
 	
 	var name = $(img).attr("name");
 	if(name == resultWord){
-		$(img).addClass("animateToFrontUpper");
+		window.setTimeout(function(){$(img).addClass("animateToFront");},0);
+		//$(img).addClass("animateToFrontUpper");
 		return true;
 	}
 	else{
@@ -104,6 +109,7 @@ function checkReplace(box,newDiv){
 
 	}
 }
-function moveToTarget() {
-	
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
 }

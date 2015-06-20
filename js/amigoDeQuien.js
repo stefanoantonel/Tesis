@@ -109,9 +109,13 @@ function fillElements(conf, place) {
 		$(t).attr('name', name);
 		$(t).prop('num', index);
 		$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});
-		$(t).mousedown(function() {
-			playSound(this.name);
-		});
+		$(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+	        }, this), 500));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		imgs.push(t);
 	});
 	disorder(imgs);

@@ -53,12 +53,10 @@ function checkSyllable(context,currElem){
 function moveToTarget(elem) {
 	if($(elem).parent().attr("id") == "leftbox") {
 		$(rightbox).append(elem);
-	}
-	else {
-		$(leftbox).append(elem);
+		checkSyllable(rightbox,elem);
 	}
 	
-	checkSyllable(rightbox,elem);
+	
 }
 
 function divide(data){
@@ -96,7 +94,7 @@ function fillTemplate(boxes,temp, parts){
 	var a=[];
 	
     $(parts).each(function(index,part){
-        t=$(temp).clone();
+        var t=$(temp).clone();
         $(t).attr('id',index);
         $(t).addClass('deleted');
         part = part.toUpperCase();
@@ -104,11 +102,19 @@ function fillTemplate(boxes,temp, parts){
         addSound(part);
         $(t).prop("hidden",false);
         part1=part;
-        $(t).mousedown(function(){
-        	playSound($(this).html()); 
-        });
+        $(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
         a.push(t);
     });
+	
+	
+
+
     //-------------disorder 
     origin=parts.join('');
     origin = origin.toUpperCase();

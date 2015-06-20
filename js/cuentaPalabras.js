@@ -57,9 +57,14 @@ function getRandomNumber(quantity) {
 function fillTemplateWord(wordComplete){
 	originWord=wordComplete.join(' ');
 	$(completeWord).text(originWord);
-	$(completeWord).hover(function() {
-		playSound(originWord.replace(/ /g,""));
-	});
+	$(completeWord).hover(function(){
+		var elem = this;
+		$.data(this, "timer", setTimeout($.proxy(function() {
+			playSound(originWord.replace(/ /g,"")); 
+        }, this), 300));
+        }, function() { clearTimeout($.data(this, "timer")); }
+	);
+	
 }
 
 function fillTemplateNumber(number){
