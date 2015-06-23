@@ -1,3 +1,4 @@
+/* global idObj,idBox2,idBox,imgDemo,temp1 */
 var boxes;
 var temp;
 var img;

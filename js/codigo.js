@@ -1,3 +1,4 @@
+/// <reference path="../typings/jquery/jquery.d.ts"/>
 var counter;
 var soundsArray = [];
 var score = 100;
