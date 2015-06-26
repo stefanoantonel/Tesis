@@ -1,38 +1,38 @@
 {
 	"act1":
 		{
-		"description": "ENCUENTRA LAS IMAGENES QUE RIMAN",
-		"repeat":"2",
-		"name":"memory"
+			"description": "ENCUENTRA LAS IMAGENES QUE RIMAN",
+			"repeat":"2",
+			"name":"memory"
 		},
 	"act2":
 		{
-		"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA.",
-		"repeat":"4",
-		"name":"adivinaPalabra"
+			"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA.",
+			"repeat":"4",
+			"name":"adivinaPalabra"
 		},
 	"act4":
 		{"act":[
-			{"values":[["ca","sa"],["ma","no"]], "target":"1"},
-			{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"},
-			{"values":[["bo","ta"],["te","le","fo","no"]], "target":"1"},
-			{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"},
-			{"values":[["ga","lli","na"],["to","ro"]], "target":"1"},
-			{"values":[["pa","to"],["la","na"]], "target":"1"},
-			{"values":[["pa","la"],["to","ro"]], "target":"1"},
-			{"values":[["ro","sa"],["ca","sa"]], "target":"1"},
-			{"values":[["ra","ton"],["na","ran","ja"]], "target":"1"},
-			{"values":[["fo","co"],["ca","sa"]], "target":"1"}
+					{"values":[["ca","sa"],["ma","no"]], "target":"1"},
+					{"values":[["bo","te","lla"],["te","le","fo","no"]], "target":"1"},
+					{"values":[["bo","ta"],["te","le","fo","no"]], "target":"1"},
+					{"values":[["pa","ja","ro"],["to","ro"]], "target":"1"},
+					{"values":[["ga","lli","na"],["to","ro"]], "target":"1"},
+					{"values":[["pa","to"],["la","na"]], "target":"1"},
+					{"values":[["pa","la"],["to","ro"]], "target":"1"},
+					{"values":[["ro","sa"],["ca","sa"]], "target":"1"},
+					{"values":[["ra","ton"],["na","ran","ja"]], "target":"1"},
+					{"values":[["fo","co"],["ca","sa"]], "target":"1"}
 			],
-		"description":"BUSQUE LA IMAGEN QUE SEA LA UNION DE LA PRIMER SILABA DE CADA IMAGEN DE LA IZQUIERDA!!! POR EJEMPLO: RA-TON, MA-NO = RAMA",
-		"repeat":"3",
-		"name":"palabraOculta"
+			"description":"BUSQUE LA IMAGEN QUE SEA LA UNION DE LA PRIMER SILABA DE CADA IMAGEN DE LA IZQUIERDA!!! POR EJEMPLO: RA-TON, MA-NO = RAMA",
+			"repeat":"3",
+			"name":"palabraOculta"
 		},
 	"act5":
 		{
-		"description": "ENCUENTRA LAS IMAGENES DE LA DERECHA QUE RIMAN CON LOS DE LA IZQUIERDA Y UNELOS PARA QUE SEAN AMIGOS",
-		"repeat":"2",
-		"name":"amigoDeQuien"
+			"description": "ENCUENTRA LAS IMAGENES DE LA DERECHA QUE RIMAN CON LOS DE LA IZQUIERDA Y UNELOS PARA QUE SEAN AMIGOS",
+			"repeat":"2",
+			"name":"amigoDeQuien"
 		},
 	
 	"act6":
@@ -49,9 +49,9 @@
 					{"values":[["p","a","l","a"],["p","a","j","a"]], "target":"3"},
 					{"values":[["p","i","l","a"],["p","a","l","a"]], "target":"2"}
 			   ],
-		"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
-		"repeat":"3",
-		"name":"cambiarPalabra"
+			"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
+			"repeat":"3",
+			"name":"cambiarPalabra"
 		},
 	"act8":
 		{"act":[
@@ -169,6 +169,12 @@
 		"repeat":"3",
 		"name":"silabaOculta"
 		},
+	"act18":
+		{
+			"description":"ORDENE LAS LETRAS EN ORDEN ALFAB&Eacute;TICO.",
+			"repeat":"4",
+			"name":"ordeneLetras"
+		},
 	"rhymes": {
 		"lev_1":[
 			["leon","raton","camion","boton"],
@@ -209,6 +215,9 @@
 		],
 		"syllables": [
 			"pe","go","ma","ri","ca","lo","ta"
+		],
+		"letters": [
+			"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
 		]
 	},
 	"words":{
