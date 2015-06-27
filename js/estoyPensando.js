@@ -66,6 +66,7 @@ function checkCorrect(elem) {
 	}
 	else {
 		console.log(elem);
+		playSound("wrong");
 		$(elem).effect('shake');
 		changeScore(-10);
 	}

@@ -145,12 +145,9 @@ function checkCorrect(part) {
 		return true;
 	}
 	else {
-		$(part).effect('shake');
-		$(part).removeClass('normal');
-		$(part).addClass('wrong');
+		wrong(part,"#rightContainer");
 		window.setTimeout(function(){
 			$(part).addClass('img-rigth');
-			moveOrigin(part,"#rightContainer");	
 		}, 1000);
 		return false;
 	}

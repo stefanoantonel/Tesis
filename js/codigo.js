@@ -158,9 +158,10 @@ function passActivity() {
 
 	if($(window.parent.document.getElementById("nav_next-button")).attr("disabled")==null){
 		$("#activity-container").append(
-				'<div id="alertOk" class="alert-box success">'
-						+ '<span>GANASTE!!</span>'
+				'<div id="alertOk" class="alert-box success rainbow">'
+						+ '<span>&#161&#161GANASTE!!</span>'
 						+ '<div><a id="next">Siguiente</a></div>' 
+						+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
 				+ '</div>');
 		playSound("win");
 		$("#next").click(function() {
@@ -169,8 +170,9 @@ function passActivity() {
 		return;
 	}
 	$("#activity-container").append(
-			'<div id="alertOk" class="alert-box success">'
-					+ '<span>GANASTE!!</span>'
+			'<div id="alertOk" class="alert-box success rainbow">'
+					+ '<span>&#161&#161GANASTE!!</span>'
+					+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
 			+ '</div>');
 	playSound("win");
 }
@@ -195,7 +197,6 @@ function passed() {
 
 function loadDescription(descrip) {
 	title = $("title").text();
-	// debugger;
 	$.get("popUp.html", function(result) {
 		modal = result;
 	}).done(function() {
@@ -263,8 +264,17 @@ function moveOrigin(target, origin) {
 	changeScore(-10);
 }
 
+function wrong(target,origin){
+	playSound("wrong");
+	$(target).effect('shake');
+	$(target).removeClass('normal');
+	$(target).addClass('wrong');
+	window.setTimeout(moveOrigin, 1000,target,origin);
+}
+
 function sessionCounter() {
 	playSound("bells");
+	$(".target").addClass("targetWin");
 	counter = counter - 1;
 	if (counter == 0) {
 		passed();
@@ -543,13 +553,11 @@ function explote() {
 }
 function stopExplosion() {
 
-	// Start Again
 	$('#alertOk').remove();
 	$("#activity-container").append(originTemplateHTML);
 	functionInit();
 }
 
-// A quick random function for selecting random numbers
 function rand(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }

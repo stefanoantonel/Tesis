@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ECOFON</title>
+<script type="text/javascript" src="comun/jquery.js"></script>
+<script type="application/javascript">
+	
+		$(document).ready(function(){
+			
+			$("#btn").click(function(){
+				$("#hidden").removeClass("hidden");
+				animate(".textCF");
+				animate2(".textCF2");
+				$("#btn").remove();
+					
+			});
+			
+			
+			
+		});
+		
+		function animate(id) {
+			  var $o=$(id);
+			      $o.html($o.text().replace(/([\S])/g,'<span>$1</span>'));
+			      $o.css('position','relative');
+			      $('span',$o).stop().css({position:'relative',
+			                               opacity:0,
+			                               fontSize:350,
+			                               top:function(i){return Math.floor(Math.random()*500)*((i%2)?1:-1);},
+			                               left:function(i){return Math.floor(Math.random()*500)*((i%2)?1:-1);}
+			                               
+		                       }).animate({opacity:1,fontSize:150,top:0,left:0},2000);	
+		}
+		function animate2(id) {
+			  var $o=$(id);
+			      $o.html($o.text().replace(/([\S])/g,'<span>$1</span>'));
+			      $o.css('position','relative');
+			      $('span',$o).stop().css({position:'relative',
+			                               opacity:0,
+			                               fontSize:200,
+			                               top:function(i){return Math.floor(Math.random()*500)*((i%2)?1:-1);},
+			                               left:function(i){return Math.floor(Math.random()*500)*((i%2)?1:-1);}
+			                               
+		                       }).animate({opacity:1,fontSize:50,top:0,left:0},2000);	
+		}
+</script>
+
+<style type="text/css">
+	@font-face {
+	    font-family: cabin;
+	    src: url('comun/fonts/CabinSketch-Bold.otf');
+	}
+	.text{
+		width: 60%;
+		margin: auto;
+		margin-top: 15%;
+		font-family: cabin;
+		color: black;
+		text-align: center;
+	}
+	
+	.hidden{
+		display: none;
+	}
+
+	body {
+		overflow: hidden;
+	}
+	#btn {
+		position: absolute;
+		top: 90%;
+		left: 15%;
+		background: #F9D8AE;
+	}
+	
+</style>
+
+</head>
+
+<body>
+<div class="text" >
+	<div id="hidden" class="hidden">
+		<p class="textCF"> E-Cofon</p>
+		<p class="textCF2"> Conciencia   Fonológica</p>
+	</div>
+	<button id="btn">Click</button>
+</div>
+</body>
+
+</html>

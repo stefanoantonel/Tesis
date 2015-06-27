@@ -15,7 +15,6 @@ function functionInit(counter) {
 }
 
 function imgWrong(img1, img2, contOriginal1, contOriginal2) {
-
 	moveOrigin(img1, contOriginal1);
 	moveOrigin(img2, contOriginal2);
 }
@@ -46,6 +45,7 @@ function functionsDD(context, currElem) {
 				img_target2.removeClass('normal');
 				img_target1.addClass('wrong');
 				img_target2.addClass('wrong');
+				playSound("wrong");
 				window.setTimeout(imgWrong, 1000, img_target1, img_target2, $("#"
 						+ contOriginal1), $("#" + contOriginal2));
 	

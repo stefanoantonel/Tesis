@@ -1,8 +1,4 @@
-body {
-  background: #4cbda7;
-}
-
-label {
+label.star {
   border-radius: 5px;
   background: #fad335;
   opacity: 0.8;

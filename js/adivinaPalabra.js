@@ -67,9 +67,7 @@ function checkCorrect(container,element) {
 		}
 		return false;
 	}
-	$(element).addClass('wrong');
-	$(element).effect('shake');
-	window.setTimeout(moveOrigin, 1000,element,"#"+idBox);
+	wrong(element,"#"+idBox);
 }	
 	
 
