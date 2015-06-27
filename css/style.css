@@ -1,5 +1,5 @@
 header {
-	height: 20%;
+	height: 12%;
 	position: absolute;
 	width: 100%;
 	top: 10px;
@@ -48,7 +48,8 @@ img {
 	padding: 20px;
 	overflow: auto;
 	z-index: 1;
-	max-height:
+	/*max-height: 2ex;*/
+	max-height: 13ex;
 }
 
 .alert-box span {

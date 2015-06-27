@@ -19,7 +19,14 @@ function functionInit() {
 	getConfig(4);
 }
 
-
+function moveToTarget(elem) {
+	var box = $("#target");
+	box.append(elem);
+	checkReplace(box,elem);
+	///$('#rightContainer').append(prevDiv);
+		//$(box).append(newDiv);
+	functionsDD(null,elem);
+}
 function functionCallback(conf){
 	var conf = conf[0];
 	var syllableToSelect = conf["target"] - 1;
@@ -93,16 +100,20 @@ function functRight(conf){
 		$(t).addClass("deleted");
 		$(t).prop('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mousedown(function(){
-			playSound(this.name);
-		});
+		$(t).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+	        }, this), 500));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		imgs.push(t);
 	});
 	disorder(imgs);
 	$("#rightContainer").append(imgs);
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
 }
 
 function checkCorrect(part) {

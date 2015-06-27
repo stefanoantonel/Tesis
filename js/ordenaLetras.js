@@ -19,25 +19,19 @@ function readyOk(){
 	img=imgDemo;
 }
 function functionInit(counter,level) {
-	if(level==null){
-		level="lev_1";
-	}
-	if(counter == 1){
-		level="lev_3";
-	}
-	getConfigByElement("words",level,1,functionCallback);
+	getConfigByElement("distractors","letters",4,functionCallback);
 	readyOk();
-	getConfig(2);
+	getConfig(18);
 	actualPosition = 0;
 }
 
 function functionCallback(data){
-	selectedText=getTextRand(data);
-	var parts=divide(selectedText);
+	//selectedText=getTextRand(data);
+	var parts=divide(data);
 	numParts=$(parts).size();
 	fillTemplate(boxes,temp,parts);
-	imgDemo=$("."+img);
-	fillImg(imgDemo,parts);
+	//imgDemo=$("."+img);
+	//fillImg(imgDemo,parts);
 	parts=$("#"+boxes[0]).children('.syllable');
 	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable,moveToTarget);
 	
@@ -62,21 +56,31 @@ function moveToTarget(elem) {
 
 function divide(data){
     //divido en partes segun los espacios
-    var parts=data.split(" ");
+    var parts=data.splice(",");
     numParts=$(parts).size();
     return parts;
 }
 
 function checkCorrect(container,element) {
-	parts=$(container).children();
-	if($(element).attr("id") == actualPosition){
-		actualPosition = actualPosition + 1;
-		if(numParts == actualPosition){
-			return true;
+	var parts = $(container).children();
+	var stack = [];
+	var numLetter = 0;
+	for (var i = 0; i < parts.length; i++) {
+		if( $(parts[i]).html() != wordCorrect[i].toUpperCase() ) {
+			$(element).addClass('wrong');
+			$(element).effect('shake');
+			window.setTimeout(moveOrigin, 600,element,"#"+idBox);
+			return false;		
 		}
-		return false;
+		numLetter = numLetter + 1;
+    	//stack.push( $(parts[i]).html() );
+    }
+	
+	if(numParts == numLetter){
+		return true;
 	}
-	wrong(element,"#"+idBox);
+
+	
 }	
 	
 
@@ -112,8 +116,6 @@ function fillTemplate(boxes,temp, parts){
     });
 	
 	
-
-
     //-------------disorder 
     origin=parts.join('');
     origin = origin.toUpperCase();
@@ -125,6 +127,9 @@ function fillTemplate(boxes,temp, parts){
     //-------------------end disroder 
 
     $(fromBox).append(a);
+	
+	//Slice to avoid mutate the array. Obtain the word in order.
+	wordCorrect = parts.slice(0).sort();
 }
 
 function fillImg(elem,parts){

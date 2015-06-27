@@ -1,11 +1,28 @@
+/// <reference path="../typings/jquery/jquery.d.ts"/>
 var counter;
 var soundsArray = [];
 var score = 100;
 
-function dragAndDrop(idImg, idBoxes, functions) {
+function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
+			//stop: function( event, ui ) {
+			//	event.stopPropagation();
+				//alert();
+			//},
+			start: function(event, ui) {
+            	ui.helper.bind("click.prevent",
+	        	function(event) { event.preventDefault(); });
+	        },
+	        stop: function(event, ui) {
+				setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
+	        },
 			revert : true,
+		});
+
+		//$(this).mouseup(function() {
+		$(this).click(function() {
+			moveToTarget(this);
 		});
 	});
 
@@ -132,8 +149,7 @@ function loadCounter(count) {
 }
 
 function disorder(o) {
-	for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x)
-		;
+	for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	return o;
 };
 
@@ -146,7 +162,7 @@ function congratulations() {
 	playSound("congratulations");
 	window.setTimeout(function() {
 		explote();
-	}, 500);
+	}, 600);
 
 	explosion();
 
@@ -216,7 +232,7 @@ function loadSounds() {
 			$(aud).attr('type', 'audio/mp3');
 			$(aud).appendTo('body');
 		});
-	}, 3000);
+	}, 2000);
 }
 
 function loadTutorialVoice(actNum) {
@@ -241,8 +257,8 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
-	soundName = soundName.toString().toLowerCase();
 	try {
+		soundName = soundName.toString().toLowerCase();
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
 		console.error('Sonido no encontrado');
@@ -561,6 +577,7 @@ function stopExplosion() {
 function rand(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 
 /**
  * ********************************CONGRATULATIONS END

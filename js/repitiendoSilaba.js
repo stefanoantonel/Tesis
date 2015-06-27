@@ -35,26 +35,34 @@ function functionCallback(conf){
 	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
 	
 }
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
+}
 
 function functionCallback2(conf) {
 	fillTemplateImages(conf);
 	images=syllableContainer.children().find("div#syllableTemp");
-	dragAndDrop(images,target,functionsDD);
+	dragAndDrop(images,target,functionsDD,moveToTarget);
 }
 
 function fillTemplateWord(word, part){
 	$(word).attr('name',part);
 	addSound(part);
 	$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
-	$(word).mouseover(function(){
-		playSound(part);
-		$(this).css('background-image', 'none');
-		$(this).html("<b>"+part.toString().toUpperCase()+"</b>");
-		window.setTimeout(function(){
-			$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
-			$(word).html(" ");
-		}, 1500);
-	});
+	$(word).hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).attr("name")); 
+				$(this).css('background-image', 'none');
+				$(this).html("<b>"+part.toString().toUpperCase()+"</b>");
+				window.setTimeout(function(){
+					$(word).css({backgroundImage : 'url(images/activities/' + part + '.jpg)'});
+					$(word).html(" ");
+				}, 1000);
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 }
 
 function fillTemplateImages(syllables){
@@ -71,9 +79,13 @@ function fillTemplateImages(syllables){
 		/*Change to make effect*/
 		name = name.toUpperCase();
 		content.html(name);
-		content.mouseover(function(){
-			playSound($(this).attr('name'));
-		});
+		content.hover(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		$(t).removeClass('hidden');
 		$(t).hover(function(){
 					var labels = $(this).find("label");
@@ -107,9 +119,19 @@ function functionsDD(context,currElem){
 }
 
 function checkCorrect(syllable) {
-	var name = syllable.attr("name");
+	var name = $(syllable).attr("name");
 	if(name == syllableResult){
-		return true;
+		$(syllable).animate({
+		    // width: "20%",
+			// height: "20%",
+		    // opacity: 1.4,
+		    // marginLeft: "0.6in",
+		    fontSize: "3em",
+		    // borderWidth: "10px",
+			// borderColor: "green"
+			color: "green"
+	  	}, 500 );
+		  return true;
 	}
 	else{
 		$(syllable).find("label").removeClass('rot');

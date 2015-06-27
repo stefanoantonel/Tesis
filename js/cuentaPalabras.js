@@ -19,6 +19,10 @@ function functionInit(counter,level) {
 	getConfigByElement("sentence",level,1,functionCallback);
 	window.setTimeout(function(){$(".cube").addClass("girar");},200);
 }
+function moveToTarget(elem) {
+	$(target).append(elem);
+	functionsDD(null,elem);
+}
 
 function functionCallback(conf){
 	var conf = conf[0];
@@ -41,9 +45,14 @@ function getRandomNumber(quantity) {
 function fillTemplateWord(wordComplete){
 	originWord=wordComplete.join(' ');
 	$(completeWord).text(originWord);
-	$(completeWord).hover(function() {
-		playSound(originWord.replace(/ /g,""));
-	});
+	$(completeWord).hover(function(){
+		var elem = this;
+		$.data(this, "timer", setTimeout($.proxy(function() {
+			playSound(originWord.replace(/ /g,"")); 
+        }, this), 300));
+        }, function() { clearTimeout($.data(this, "timer")); }
+	);
+	
 }
 
 function fillTemplateNumber(number){
@@ -69,7 +78,7 @@ function fillTemplateNumber(number){
 	//numbersDiv=numbersContainer.children();
 	numbersDiv=$(".numberTemp:not(.hidden)");
 	
-	dragAndDrop(numbersDiv,target,functionsDD);
+	dragAndDrop(numbersDiv,target,functionsDD,moveToTarget);
 	
 }
 
@@ -89,6 +98,7 @@ function functionsDD(context,currElem){
 function checkCorrect(number) {
 	num = $(number).html();
 	if(num.valueOf() == numberToSelect.valueOf()){
+		window.setTimeout(function(){$(number).addClass("animateToFront");},0);
 		return true;
 	}
 	else{

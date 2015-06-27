@@ -30,6 +30,12 @@ function functionCallback(conf){
 	
 }
 
+function moveToTarget(elem) {
+	$('#target').append(elem);
+	functionsDD($('#target'),elem);
+	
+}
+
 function changeColor(cont,words,wordToChange){
 	parts=words.split("");
 	elements=[];
@@ -116,8 +122,12 @@ function functInitImages(conf,x){
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
-			playSound(this.name);
-		});
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
 		imgs.push(t);
 	});
 	disorder(imgs);
@@ -125,7 +135,7 @@ function functInitImages(conf,x){
 
 	contRight=$('#rightContainer').children();
 	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD);
+	dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
 }
 
 function firstImg(conf){
@@ -142,6 +152,7 @@ function checkCorrect(part) {
 	var name = $(part).attr("name");
 	$(part).removeClass('img-rigth');
 	if(name.valueOf() == secondWord.valueOf()) {
+		window.setTimeout(function(){$(part).addClass("animateToFront");},0);
 		return true;
 	}
 	else {
