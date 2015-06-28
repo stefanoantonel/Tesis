@@ -52,7 +52,7 @@ function fillTemplateWord(wordComplete,wordToChange){
 	partSelected = partSelected.toUpperCase();
 	$(part).text(partSelected);
 	$(part).attr("name",partSelected);
-	addSound(originWord+partSelected);
+	addSound(originWord);
 }
 
 function fillTemplateImages(images){
@@ -92,10 +92,7 @@ function checkCorrect(img) {
 		return true;
 	}
 	else{
-		$(img).effect('shake');
-		$(img).removeClass('normal');
-		$(img).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,img,imgContainer);
+		wrong(img,imgContainer);
 		return false;
 	}
 }

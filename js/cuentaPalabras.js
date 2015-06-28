@@ -11,10 +11,12 @@ function readyOk(){
 	completeWord=$('#completeWord');
 }
 
-function functionInit() {
+function functionInit(counter,level) {
 	readyOk();
 	getConfig("12");
-	getConfigByElement("act12","act",1,functionCallback);
+	if(level == null)
+		level ="lev_1";
+	getConfigByElement("sentence",level,1,functionCallback);
 	window.setTimeout(function(){$(".cube").addClass("girar");},200);
 }
 function moveToTarget(elem) {
@@ -23,26 +25,12 @@ function moveToTarget(elem) {
 }
 
 function functionCallback(conf){
-	// group=disorder(conf)[0];//elijo el primero porque estan todos desordenados ya
 	var conf = conf[0];
-	
 	var sentenceSelected = conf["values"];
 	addSound(sentenceSelected);
 	numberToSelect = sentenceSelected.length;
-	
-	// var firstWord = sentenceSelected[0];
-	// var secondWord = values[1];
-
-	// sentenceSelected=group["sentence"]; 
-	// numbersSelected=group["quantity"]; //in number
-	//images=group["images"];
 	fillTemplateWord(sentenceSelected);
-
-	// fillTemplateNumber(getRandomNumber(2));
-
 	getConfigByElementWithOne("distractors","numbers",2,fillTemplateNumber,numberToSelect);
-	
-	
 	
 }
 
@@ -114,10 +102,7 @@ function checkCorrect(number) {
 		return true;
 	}
 	else{
-		$(number).effect('shake');
-		$(number).removeClass('normal');
-		$(number).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,$(number),$(".numberContainer[name='"+$(number).attr("name")+"'] .front"));
+		wrong(number,$(".numberContainer[name='"+$(number).attr("name")+"'] .front"));
 		return false;
 	}
 }

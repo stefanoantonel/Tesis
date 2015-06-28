@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ECOFON</title>
+<script type="application/javascript" src="comun/jquery.js"></script>
+<script type="application/javascript" src="js/jquery-ui.min.js"></script>
+<script type="application/javascript" src="js/codigo.js"></script>
+<script type="application/javascript" src="js/adivinaPalabra.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="application/javascript">
+	
+		$(document).ready(function(){
+			
+			$("#kittyTeacher").click(function(){
+				$.get("popUp.html", function(result) {
+					modal = result;
+				}).done(function() {
+					$(".image").append(modal);
+					$(".modal-body").html("Esta actividad hace...");
+					$(".modal-title").html("Titulo de la actividad");
+					playSound("ejemplo");
+				});
+					
+			});
+		});
+		
+		function playSound(soundName) {
+			soundName = soundName.toString().toLowerCase();
+			try {
+				$('#sound' + soundName)[0].play();
+			} catch (e) {
+				console.error('Sonido no encontrado');
+			}
+
+		}
+</script>
+
+<style type="text/css">
+
+
+	.modal{
+		overflow: hidden;
+	}
+ 	.image { 
+ 		width: 90%; 
+ 		margin: auto; 
+ 	}  
+	
+	#kittyTeacher {
+		width: 200px;
+	}
+	
+</style>
+
+</head>
+
+<body>
+<div class="image" >
+	<img id="kittyTeacher" src="comun/img/Kitty Teacher.png" data-toggle="modal" data-target="#myModal">
+</div>
+</body>
+<audio id="soundejemplo" src="audio/ejemplo.mp3" type="audio/mp3"></audio>
+</html>

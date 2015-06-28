@@ -104,13 +104,11 @@ function checkCorrect(syllable) {
 		return true;
 	}
 	else{
-		$(syllable).effect('shake');
-		$(syllable).removeClass('normal');
-		$(syllable).addClass('wrong');
-		window.setTimeout(moveOrigin, 1000,syllable,$(".sphere[name='"+$(syllable).attr("name")+"']"));
+		wrong(syllable,$(".sphere[name='"+$(syllable).attr("name")+"']"));
 		return false;
 	}
 }
+
 
 function ballBounce(){
 	//$($(syllableContainer).find(".syllable")).addClass("bounceAnimate");

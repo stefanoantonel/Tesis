@@ -69,6 +69,7 @@ function checkCorrect(elem) {
 		setTimeout(function() {sessionCounter();}, 1000);
 	}
 	else {
+		playSound("wrong");
 		$(elem).effect('shake');
 		changeScore(-10);
 	}

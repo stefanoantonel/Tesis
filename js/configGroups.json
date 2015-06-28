@@ -1,9 +1,9 @@
 {
 	"act1":
 		{
-			"description": "ENCUENTRA LAS IMAGENES QUE RIMAN",
-			"repeat":"2",
-			"name":"memory"
+		"description": "ENCUENTRA LAS IM&Aacute;GENES QUE RIMAN",
+		"repeat":"2",
+		"name":"memory"
 		},
 	"act2":
 		{
@@ -42,11 +42,16 @@
 					{"values":[["t","o","r","o"],["l","o","r","o"]], "target":"1"},
 					{"values":[["c","a","s","a"],["c","a","m","a"]], "target":"3"},
 					{"values":[["r","o","c","a"],["f","o","c","a"]], "target":"1"},
+					{"values":[["r","o","c","a"],["r","o","s","a"]], "target":"3"},
 					{"values":[["f","o","c","o"],["f","o","c","a"]], "target":"1"},
 					{"values":[["d","a","d","o"],["d","e","d","o"]], "target":"2"},
 					{"values":[["m","e","s","a"],["p","e","s","a"]], "target":"1"},
 					{"values":[["l","a","n","a"],["r","a","n","a"]], "target":"1"},
+					{"values":[["l","a","n","a"],["l","a","t","a"]], "target":"3"},
 					{"values":[["p","a","l","a"],["p","a","j","a"]], "target":"3"},
+					{"values":[["c","a","j","a"],["p","a","j","a"]], "target":"1"},
+					{"values":[["c","a","m","a"],["c","a","j","a"]], "target":"3"},
+					{"values":[["b","o","c","a"],["f","o","c","a"]], "target":"1"},
 					{"values":[["p","i","l","a"],["p","a","l","a"]], "target":"2"}
 			   ],
 			"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
@@ -95,26 +100,15 @@
 					{"values":["pe","lo","ta"],"target":"3"},
 					{"values":["za","pa","to"],"target":"1"},
 					{"values":["bo","te","lla"],"target":"3"},
+					{"values":["to","ma","te"],"target":"1"},
+					{"values":["o","re","ja"],"target":"1"},
 					{"values":["pa","ja","ro"],"target":"3"}
 		       ],
-		"description":"SELECCIONE LA IMAGEN QUE SE FORMA AL ELIMINAR LA SILABA",
+		"description":"SELECCIONE LA IMAGEN QUE SE FORMA AL ELIMINAR LA S&Iacute;LABA",
 		"repeat":"3",
 		"name":"quitandoSilaba"
 		},
-	"act12":
-		{"act": [
-					{"values":["MI","PERRO","TIENE","UNA","CASA"]},
-					{"values":["YO","COMO","UNA","TORTA"]},
-					{"values":["YO","TENGO","UN","GATO"]},
-					{"values":["ME","VOY","AL","PARQUE"]},
-					{"values":["YO","QUIERO","JUGAR"]},
-					{"values":["TENGO","UNA","HERMANA"]},
-					{"values":["ME","VOY","A","LA","ESCUELA"]},
-					{"values":["TENGO","MUCHOS","AMIGOS"]},
-					{"values":["YA","HICE","MI","TAREA"]},
-					{"values":["HOY","VAMOS","A","APRENDER","MUCHO"]},
-					{"values":["ME","GUSTA","JUGAR"]}
-			],
+	"act12":{
 		"description":"SELECCIONE LA CANTIDAD DE PALABRAS QUE TENGA LA ORACION",
 		"repeat":"3",
 		"name":"cuentaPalabras"
@@ -133,11 +127,14 @@
 					{"values":[["bote"],["boton"]],"target":"bo"},
 					{"values":[["boton"],["botella"]],"target":"bo"},
 					{"values":[["banana"],["lana"]],"target":"na"},
-					{"values":[["cama"],["manzana"]],"target":"ma"},
+					{"values":[["cama"],["mano"]],"target":"ma"},
 					{"values":[["loro"],["toro"]],"target":"ro"},
 					{"values":[["gota"],["bota"]],"target":"ta"},
 					{"values":[["pato"],["pala"]],"target":"pa"},
 					{"values":[["toro"],["rosa"]],"target":"ro"},
+					{"values":[["boca"],["roca"]],"target":"ca"},
+					{"values":[["caja"],["cama"]],"target":"ca"},
+					{"values":[["lata"],["lana"]],"target":"la"},
 					{"values":[["pato"],["gato"]],"target":"to"}
 			],
 		"description":"SELECCIONE LA S&Iacute;LABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
@@ -163,6 +160,7 @@
 					{"values":["AR","DI","LLA"],"target":"2"},
 					{"values":["LE","CHU","GA"],"target":"2"},
 					{"values":["NA","RAN","JA"],"target":"2"},
+					{"values":["TO","MA","TE"],"target":"2"},
 					{"values":["BO","TE","LLA"],"target":"2"}
 			],
 		"description":"SELECCIONE LA S&Iacute;LABA QUE FALTA PARA FORMAR LA PALABRA",
@@ -181,7 +179,7 @@
 			["pato","gato","plato"],
 			["rana","manzana","lana","arana","pala","paja"],
 			["luna","cuna"],
-			["bota","gota","rosa","roca"],
+			["bota","gota","rosa","roca","boca","foca"],
 			["toro","loro"],
 			["casa","taza"],
 			["pesa","mesa"],
@@ -208,16 +206,16 @@
 	],
 	"distractors": {
 		"words": [ 
-			"leon","raton", "pato", "campana","manzana"
+			"leon","raton", "pato", "campana","manzana","boca",
+			"bota","auto","gota","cuna","foco","rana","raton","roca",
+			"mano","dedo","toro","perro","taza","rosa","silbato"
 		],
 		"numbers": [ 
-			"5","4", "7", "6", "8", "11","3"
+			"3","4","5","6", "7", "8","9","10","11"
 		],
 		"syllables": [
-			"pe","go","ma","ri","ca","lo","ta"
-		],
-		"letters": [
-			"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"
+			"pe","go","ma","ri","ca","lo","ta","ba","ti","ton",
+			"da","do","ga","fo","cas","ja","la","ma","to","ven"
 		]
 	},
 	"words":{
@@ -266,5 +264,32 @@
 				"bai la ri na",
 				"ca la ba za"
 			]
-		}
+		},
+		"sentence":{
+			"lev_1":[
+				{"values":["DUERMO","SIESTA"]},
+				{"values":["ME","GUSTA","JUGAR"]},
+				{"values":["YO","QUIERO","JUGAR"]},
+				{"values":["TENGO","UNA","HERMANA"]},
+				{"values":["YO","COMO","UNA","TORTA"]},
+				{"values":["YO","TENGO","UN","GATO"]},
+				{"values":["ME","VOY","AL","PARQUE"]},
+				{"values":["YA","HICE","MI","TAREA"]},
+				{"values":["ME","GUSTA","MI","ESCUELA"]},
+				{"values":["YO","JUEGO","AL","FUTBOL"]},
+				{"values":["HAGO","MI","TAREA","SOLITO"]},
+				{"values":["APRENDO","MUCHO","EN","CLASES"]},
+				{"values":["JUEGO","A","LA","PELOTA"]},
+				{"values":["TENGO","MUCHOS","AMIGOS"]}
+			],
+			"lev_2":[
+					{"values":["MI","PERRO","TIENE","UNA","CASA"]},
+					{"values":["ME","VOY","A","LA","ESCUELA"]},
+					{"values":["HOY","VAMOS","A","APRENDER","MUCHO"]},
+					{"values":["MI","AMIGO","SE","LLAMA","JUAN"]},
+					{"values":["TENGO","UNA","MASCOTA","Y","LA","CUIDO"]},
+					{"values":["ME","GUSTA","AYUDAR","A","MI","MAMA"]},
+					{"values":["ME","PORTO","BIEN","EN","CLASES"]}
+			]
+		}	
 }

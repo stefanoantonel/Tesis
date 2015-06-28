@@ -135,12 +135,8 @@ function checkCorrect(syllable) {
 	}
 	else{
 		$(syllable).find("label").removeClass('rot');
-		$(syllable).effect('shake');
-		$(syllable).removeClass('normal');
-		$(syllable).addClass('wrong');
 		var origin = $("#syllableBlock[name='"+$(syllable).attr("name")+"']");
-		var originLabel = origin.find("label").last();
-		window.setTimeout(moveOrigin, 1000,syllable,originLabel);
+		wrong(syllable,origin.find("label").last())
 		window.setTimeout(function(){
 			$(syllable).find("label").addClass('rot');
 		}, 1000);

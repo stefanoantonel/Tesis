@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>ECOFON</title>
+<script type="application/javascript" src="comun/jquery.js"></script>
+<script type="application/javascript" src="js/jquery-ui.min.js"></script>
+<script type="application/javascript" src="js/codigo.js"></script>
+<script type="application/javascript" src="js/adivinaPalabra.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="application/javascript">
+	
+		$(document).ready(function(){
+			
+			$("#kittyTeacher").click(function(){
+				$.get("popUp.html", function(result) {
+					modal = result;
+				}).done(function() {
+					$(".image").append(modal);
+					$(".modal-body").html("Esta actividad hace...");
+					$(".modal-title").html("Titulo de la actividad");
+					playSound("ejemplo");
+				});
+			});
+			
+			$("#down").click(function(){
+				$(".textDiv").removeClass("up");
+				$(".textDiv").addClass("down");
+			});
+			
+			$("#up").click(function(){
+				$(".textDiv").addClass("up");
+				$(".textDiv").removeClass("down");
+			});
+		});
+		
+		function playSound(soundName) {
+			soundName = soundName.toString().toLowerCase();
+			try {
+				$('#sound' + soundName)[0].play();
+			} catch (e) {
+				console.error('Sonido no encontrado');
+			}
+
+		}
+</script>
+
+<style type="text/css">
+	.textDiv { 
+ 		margin: auto;
+ 		font-size: 30px;
+ 		background-color: white; 
+ 	}  
+ 	.tab {
+ 		margin-left:5em;
+ 	}
+	.space {
+ 		margin-left:1em;
+ 	}
+	
+	.down {
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+		-o-transition: 1s ease-in-out;
+		transition: 1s ease-in-out;
+		-ms-transform: translate(0,-400px);
+		-webkit-transform:translate(0,-400px);
+	}
+	.up {
+		-webkit-transition: 1s ease-in-out;
+		-moz-transition: 1s ease-in-out;
+		-o-transition: 1s ease-in-out;
+		transition: 1s ease-in-out;
+		-ms-transform: translate(0,0px);
+		-webkit-transform:translate(0,0px);
+	}
+	button {
+		background-color: white;
+		height: 1.5em;
+	}
+	
+</style>
+
+</head>
+
+<body>
+<div class="textDiv up" >
+	<p>
+	{
+	<div class="space"> "act1":{</div>
+		<div class="tab">
+			"description": "¿CUÁLES IMÁGENES RIMAN?", <br/>
+			"repeat":"2", <br/>
+			"name":"memory" <br/>
+		</div>
+	},  "act2":{ <br/>
+		 <div class="tab">
+			 	"description": "¿QUÉ SILABA FALTA?", <br/>
+				"repeat":"2", <br/>
+				"name":"amigoDeQuien" <br/>
+		</div>
+	<div class="space"> }</div>
+}
+<button id="down">></button>
+<br/>
+<br/>
+{
+	<div class="space"> "distractors": {</div>
+		<div class="tab">
+			"words": [	 
+			<div class="space">
+				"leon","raton", "pato", "campana","manzana"
+				</div>
+			],<br/>
+			"syllables": [ 
+			<div class="space">
+				"pe","go","ma","ri","ca","lo","ta"
+				</div>
+			] 
+		</div>
+}</p>
+<button id="up"><</button>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+
+</div>
+</body>
+<audio id="soundejemplo" src="audio/ejemplo.mp3" type="audio/mp3"></audio>
+</html>
