@@ -11,18 +11,24 @@ var numParts;
 
 function readyOk(){
 	idObj = "template";
-	idTopBox = "toptbox";
+	idTopBox = "topbox";
 	idMiddleBox = "middlebox";
 	idBottomBox = "buttombox";
 	imgDemo="demo";
 	
 	temp1=document.getElementById(idObj);
-	boxes=[idBox,idBox2];
+	boxes=[idTopBox,idMiddleBox,idBottomBox];
 	temp=$(temp1);
 	img=imgDemo;
 }
 function functionInit(counter,level) {
-	getConfigByElement("distractors","letters",4,functionCallback);
+	if(level==null){
+		level="lev_1";
+	}
+	if(counter == 1){
+		level="lev_3";
+	}
+	getConfigByElement("words",level,1,functionCallback);
 	readyOk();
 	getConfig(19);
 	actualPosition = 0;
@@ -94,13 +100,13 @@ function getTextRand(data){
     return data[numberRand];
 }
 
-function fillTemplate(boxes,temp, parts){
+function fillTemplate(boxes,template, parts){
 	//relleno el template
-	fromBox=$('#'+boxes[0]); //el de origen 
+	fromBox=$('#'+idTopBox); //el de origen 
 	var a=[];
 	
     $(parts).each(function(index,part){
-        var t=$(temp).clone();
+        var t=$(template).clone();
         $(t).attr('id',index);
         $(t).addClass('deleted');
         part = part.toUpperCase();
@@ -132,10 +138,10 @@ function fillTemplate(boxes,temp, parts){
     $(fromBox).append(a);
 	
 	//Slice to avoid mutate the array. Obtain the word in order.
-	wordCorrect = parts.slice(0).sort();
+	wordCorrect = parts.join();
 }
 
 function fillImg(elem,parts){
-	word=parts.join("");
-	$(elem).attr('src','images/activities/' + word + '.jpg');
+	//word=parts.join("");
+	$(elem).attr('src','images/activities/' + wordCorrect + '.jpg');
 }
