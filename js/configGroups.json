@@ -173,6 +173,12 @@
 			"repeat":"4",
 			"name":"ordeneLetras"
 		},
+	"act19":
+		{
+			"description":"ORDENE LAS LETRAS PARA FORMAR SILABAS Y LUEGO ORDENE LAS SILABAS PARA FORMAR LA PALABRA.",
+			"repeat":"4",
+			"name":"uniendoLetras"
+		},
 	"rhymes": {
 		"lev_1":[
 			["leon","raton","camion","boton"],
