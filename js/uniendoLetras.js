@@ -8,18 +8,25 @@ var selectedText = '';
 var origin = '';
 var actualPosition;
 var numParts;
+var enableTop = false;
+var enableMiddle = true;
+var enableBottom = false;
+var stageCorrect = 0;
+var syllables;
+
 
 function readyOk(){
 	idObj = "template";
 	idTopBox = "topbox";
 	idMiddleBox = "middlebox";
-	idBottomBox = "buttombox";
+	idBottomBox = "bottombox";
 	imgDemo="demo";
 	
 	temp1=document.getElementById(idObj);
 	boxes=[idTopBox,idMiddleBox,idBottomBox];
 	temp=$(temp1);
 	img=imgDemo;
+	originChangable = $("#"+idTopBox);
 }
 function functionInit(counter,level) {
 	if(level==null){
@@ -35,23 +42,63 @@ function functionInit(counter,level) {
 }
 
 function functionCallback(data){
-	//selectedText=getTextRand(data);
-	var parts=divide(data);
-	numParts=$(parts).size();
-	fillTemplate(boxes,temp,parts);
-	//imgDemo=$("."+img);
-	//fillImg(imgDemo,parts);
-	parts=$("#"+boxes[0]).children('.syllable');
-	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable,moveToTarget);
-	
+	if(stageCorrect == 0) {
+		syllables = data;
+		var parts=divideLetters(data);
+		numParts=$(parts).size();
+		fillTemplate(idTopBox,temp,parts);
+		imgDemo=$(".demo");
+		fillImg(imgDemo,parts);
+		boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
+		parts=$("#"+idTopBox).children('.syllable');
+		dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
+		$("#"+idMiddleBox).addClass("loadEnable");	
+	}
+	if(stageCorrect == 1) {
+		var parts=divideSyllables(data);
+		numParts=$(parts).size();
+		fillTemplate(idMiddleBox,temp,parts);
+		boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
+		parts=$("#"+idMiddleBox).children('.syllable');
+		dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
+		$("#"+idBottomBox).addClass("loadEnable");	
+	}	
 }
 
 function checkSyllable(context,currElem){
-	isCorrect=checkCorrect(context,currElem);
-	if (isCorrect==true){
+	var isCorrect=checkCorrect(context,currElem);
+	if (isCorrect==true && stageCorrect == 1){
+		var parts = $("#"+idMiddleBox).children(".syllable").clone();
+		disorder(parts);
+		window.setTimeout(disorderTheBox,1000,idMiddleBox,parts);
+		
+	}
+	if (isCorrect==true && stageCorrect == 2){
 		playSound(origin);
 		sessionCounter(counter);
+		stageCorrect = 0;
 	}
+}
+
+function disorderTheBox(box,parts) {
+	
+	//document.getElementById(box).innerHTML = parts
+	$("#"+box).children().slideUp(10).delay( 200 );
+	$("#"+box).html("");
+	changeStage(box,parts);
+	$("#"+box).children().slideUp(200).fadeIn( 600 );
+	
+	
+}
+function changeStage(box,parts) {
+	$("#"+idTopBox).addClass("disable");
+	$("#"+idMiddleBox).removeClass("enable");
+	$("#"+idBottomBox).removeClass("disable");
+	$("#"+idBottomBox).addClass("enable");
+	$("#"+idBottomBox).addClass("loadEnable");
+	//dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
+	functionCallback(syllables);
+	originChangable = $("#"+idMiddleBox);
 }
 
 function moveToTarget(elem) {
@@ -59,13 +106,16 @@ function moveToTarget(elem) {
 		$(rightbox).append(elem);
 		checkSyllable(rightbox,elem);
 	}
-	
-	
 }
 
-function divide(data){
-    //divido en partes segun los espacios
-    var parts=data.splice(",");
+function divideLetters(data){
+    //divide the parts in letters for the first box.
+    var parts = data.toString().replace(/\s/g, '').split("");
+    numParts=$(parts).size();
+    return parts;
+}
+function divideSyllables(data){
+    var parts=data.toString().split(" ");
     numParts=$(parts).size();
     return parts;
 }
@@ -78,7 +128,7 @@ function checkCorrect(container,element) {
 		if( $(parts[i]).html() != wordCorrect[i].toUpperCase() ) {
 			$(element).addClass('wrong');
 			$(element).effect('shake');
-			window.setTimeout(moveOrigin, 600,element,"#"+idBox);
+			window.setTimeout(moveOrigin, 600,element,originChangable);
 			return false;		
 		}
 		numLetter = numLetter + 1;
@@ -86,12 +136,10 @@ function checkCorrect(container,element) {
     }
 	
 	if(numParts == numLetter){
+		stageCorrect = stageCorrect + 1;
 		return true;
 	}
-
-	
 }	
-	
 
 function getTextRand(data){
 	var quantLines=$(data).size();
@@ -100,9 +148,9 @@ function getTextRand(data){
     return data[numberRand];
 }
 
-function fillTemplate(boxes,template, parts){
+function fillTemplate(box,template, parts){
 	//relleno el template
-	fromBox=$('#'+idTopBox); //el de origen 
+	fromBox=$('#'+box); //el de origen 
 	var a=[];
 	
     $(parts).each(function(index,part){
@@ -138,10 +186,10 @@ function fillTemplate(boxes,template, parts){
     $(fromBox).append(a);
 	
 	//Slice to avoid mutate the array. Obtain the word in order.
-	wordCorrect = parts.join();
+	wordCorrect = parts;
 }
 
 function fillImg(elem,parts){
-	//word=parts.join("");
-	$(elem).attr('src','images/activities/' + wordCorrect + '.jpg');
+	var word=parts.join("");
+	$(elem).attr('src','images/activities/' + word + '.jpg');
 }

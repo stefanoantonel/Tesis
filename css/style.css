@@ -368,8 +368,23 @@ body {
 	
 }
  */
+ 
+.toBeEnable {
+    opacity: 0;
+    margin-top: 25px;
+    font-size: 21px;
+    text-align: center;
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+.loadEnable {
+    opacity: 1;
+}
 
-/********** ANIMATIONS **************/
+/********** END ANIMATIONS **************/
 
 /********** TITLE FORMAT **************/
 .congrat_title {

@@ -73,10 +73,29 @@
 .demo {
 	height: 100px;
 	width: 100px;
+	margin-top: 10%;
+	margin-left: 5%;
+	position: fixed;
 }
 
 article {
 	max-width: 490px;
+}
+.box {
+	min-height: 66px;
+  	min-width: 300px;
+	border-style: solid;
+  	margin-bottom: 17px;
+  	float: left;
+}
+.disable {
+	pointer-events: none;
+	opacity: 0.0;
+	background: #CCC;
+}
+.enable {
+	background-color: darkseagreen;
+	border-style: dashed;
 }
 </style>
 </head>
@@ -89,8 +108,9 @@ article {
 			<div id="topbox" class="box">
 				<div id="template"  hidden="hidden" class="syllable"></div>
 			</div>
-			<div id="middlebox" class="box"></div>
-			<div id="bottombox" class="box"></div>
+			<img class="demo">
+			<div id="middlebox" class="box enable toBeEnable"></div>
+			<div id="bottombox" class="box disable toBeEnable"></div>
 		</article>
 	</div>
 	<footer></footer>
