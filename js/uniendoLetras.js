@@ -105,7 +105,7 @@ function changeStage(box,parts) {
 }
 
 function moveToTarget(elem) {
-	if($(elem).parent().attr("id") == originChangable) {
+	if($(elem).parent().attr("id") == $(originChangable).attr("id")) {
 		$(nextOrigin).append(elem);
 		checkSyllable(nextOrigin,elem);
 	}
