@@ -13,7 +13,8 @@ var enableMiddle = true;
 var enableBottom = false;
 var stageCorrect = 0;
 var syllables;
-
+var originChangable;
+var nextOrigin;
 
 function readyOk(){
 	idObj = "template";
@@ -27,6 +28,7 @@ function readyOk(){
 	temp=$(temp1);
 	img=imgDemo;
 	originChangable = $("#"+idTopBox);
+	nextOrigin = $("#"+idMiddleBox);
 }
 function functionInit(counter,level) {
 	if(level==null){
@@ -99,12 +101,13 @@ function changeStage(box,parts) {
 	//dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
 	functionCallback(syllables);
 	originChangable = $("#"+idMiddleBox);
+	nextOrigin = $("#"+idBottomBox);
 }
 
 function moveToTarget(elem) {
-	if($(elem).parent().attr("id") == "leftbox") {
-		$(rightbox).append(elem);
-		checkSyllable(rightbox,elem);
+	if($(elem).parent().attr("id") == originChangable) {
+		$(nextOrigin).append(elem);
+		checkSyllable(nextOrigin,elem);
 	}
 }
 
