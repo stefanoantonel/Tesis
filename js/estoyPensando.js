@@ -2,6 +2,7 @@ var conf;
 var wordContainer;
 var imgTemp;
 var imgContainer;
+var letterOnly;
 function readyOk(){
 
 	wordContainer=$('#word');
@@ -13,9 +14,7 @@ function functionInit(){
 	readyOk();
 	getConfig("8");
 	getConfigByElement("act8","act",1,functionCallback);
-	
 }
-
 
 function functionCallback(conf) {
 	var conf = conf[0];
@@ -23,6 +22,7 @@ function functionCallback(conf) {
 	var values = conf["values"];
 	wordSelected=values.join('').replace(/,/g, "");;
 	var letter = wordSelected.split('')[0];
+	letterOnly = letter;
 	letter = letter.toUpperCase();
 	$(wordContainer).text(letter);
 	getConfigByElementWithOne("distractors","words",2,functRight,wordSelected,wordSelected.slice(0,1));
@@ -57,8 +57,9 @@ function fillTemplate(wordSelected,imagesSelected){
 	});
 	disorder(arrayImg);
 	$(imgContainer).append(arrayImg);
+	addSound(letterOnly);
 	$(wordContainer).mouseover(function(){
-		playSound(word);
+		playSound(letterOnly);
 	});
 }
 
@@ -73,7 +74,4 @@ function checkCorrect(elem) {
 		$(elem).effect('shake');
 		changeScore(-10);
 	}
-}
-function moveToTarget() {
-	
 }

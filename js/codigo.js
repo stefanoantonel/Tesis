@@ -149,12 +149,16 @@ function loadCounter(count) {
 }
 
 function disorder(o) {
-	var original = o.slice(0);
-	do {
+	try {
+		var original = o.slice(0);
+		do {
+			for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);	
+		}
+		while(o[0] == original[0]);	
+	}
+	catch(e) {
 		for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);	
 	}
-	while(o[0] == original[0]);
-	
 	return o;
 };
 
