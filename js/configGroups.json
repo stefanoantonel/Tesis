@@ -135,7 +135,8 @@
 					{"values":[["boca"],["roca"]],"target":"ca"},
 					{"values":[["caja"],["cama"]],"target":"ca"},
 					{"values":[["lata"],["lana"]],"target":"la"},
-					{"values":[["pato"],["gato"]],"target":"to"}
+					{"values":[["pato"],["gato"]],"target":"to"},
+					{"values":[["piso"],["pizza"]],"target":"pi"}
 			],
 		"description":"SELECCIONE LA S&Iacute;LABA QUE SE REPITE ENTRE LAS DOS PALABRAS",
 		"repeat":"3",
