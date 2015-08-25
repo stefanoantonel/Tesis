@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>FORMANDO SILABA</title>
+<!-- Parte del tempale -->
+<script type="text/javascript" src="comun/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="comun/comun.js"></script>
+<link rel="stylesheet" type="text/css" href="comun/comun.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+<!-- Fin parte del tempale -->
+
+<script src="js/jquery-ui.min.js"></script>
+<!-- <script type="application/javascript" src="js/jquery.ui.touch-punch.min.js"></script> -->
+<script src="js/formandoSilaba.js"></script>
+<script src="js/codigo.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		img1 = null;
+		img2 = null;
+
+		ejercicio = function() {
+			functionInit();
+		}
+
+	});
+</script>
+
+<style>
+.btn {
+	margin-bottom: 10px;
+}
+
+#target {
+	border: 3px;
+	border-style: dashed;
+	display: inline-block;
+	border-width: medium;
+	width: 193px;
+  	height: 88px;
+	float: left;
+	margin: 5%;
+	border-color: orange;
+}
+
+.act {
+	margin-top: 70px;
+	margin-left: 80px;
+}
+
+label {
+	margin-bottom: 20px;
+	display: block;
+	font-size: 40px;
+}
+
+#leftContainer {
+	z-index: 1;
+	max-width: 120px;
+	min-width: 100px;
+	min-height: 200px;
+	float: left;
+	display: inline-block;
+}
+
+#rightContainer {
+	z-index: 1;
+	max-width: 120px;
+	float: left;
+	min-width: 100px;
+	min-height: 200px;
+	float: left;
+	display: inline-block;
+	
+}
+
+section {
+	/*overflow: auto;*/
+	margin-left: 3%;
+}
+
+article {
+	max-width: 600px;
+	margin-bottom: 1%;
+}
+
+.imgButton{
+	width: 80px;
+    height: 60px;
+    font-size: xx-large;
+}
+#wordWithSyllable{
+	margin-top: 5%;
+}
+
+</style>
+</head>
+<body>
+	<header></header>
+	<div id="body">
+		<div id="activity-container">
+			<article class="container-body">
+				<div id="leftContainer"></div>
+				<button column="leftContainer" id="leftboxTemp"
+					class="hidden btn imgButton normal" hidden="hidden"></button>
+				<section id="middle">
+					<div id="target" class="target textBackground"></div>
+					<!-- <label id="wordWithSyllable">
+					<div >
+						<div hidden>John Resig</div>
+						<div hidden>George Martin</div>
+						<div hidden>Malcom John Sinclair</div>
+						<div hidden>J. Ohn</div>
+					</div>						
+						
+						 
+						<script>
+						$( "section div:contains('John')" ).removeAttr("hidden");
+						</script>
+					</label>	 -->
+				</section>
+				
+
+				<div id="rightContainer" class="rightContainer"></div>
+				<button column="rightContainer" id="rightboxTemp"
+					class="hidden btn imgButton normal"></button>
+
+			</article>
+		</div>
+	</div>
+	<footer></footer>
+</body>
+</html>
+
