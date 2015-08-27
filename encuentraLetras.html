@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CAMBIAR LA PALABRA</title>
+
+<script src="comun/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/encuentraLetras.js"></script>
+<!-- <script src="js/jquery.ui.touch-punch.min.js"></script> -->
+<script src="js/codigo.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/style.css" />
+<!-- NO SACAR -->
+<script src="comun/comun.js"></script>
+<link rel="stylesheet" href="comun/comun.css">
+<!-- FIN DE NO SACAR :P -->
+
+
+
+<style>
+.img {
+	border: 3px solid;
+	margin-right: 3px;
+}
+
+.img-rigth {
+	float: left;
+	margin: 10%;
+}
+
+#target {
+	float: left;
+	border: 3px;
+	border-style: dashed;
+	border-color: black;
+	border-width: medium;
+	margin: 5%;
+}
+
+article {
+	max-width: 550px;
+}
+
+#leftContainer {
+	max-width: 300px;
+	float: left;
+	margin-top: 6%;
+}
+
+#rightContainer {
+	float: left;
+	max-width: 100px;
+}
+
+div.inline {
+	display: inline-block;
+}
+
+.firstWordHidden {
+	display: none;
+}
+
+.wordSelected {
+	color: #f00;
+	font-size: 50px;
+}
+
+.secondWordHidden {
+	display: none;
+}
+</style>
+</head>
+<body>
+	<!-- label>Palabra Oculta</label> -->
+	<header></header>
+	<div id="activity-container">
+		<article>
+			<div id="leftboxTemp" class='phrase' hidden="hidden"></div>
+			<div id="leftContainer"></div>
+
+			<img id="rightboxTemp" class="img img-rigth normal btnImg"
+				hidden="hidden"></img>
+			<div id="rightContainer"></div>
+
+
+		</article>
+	</div>
+	<footer></footer>
+</body>
+</html>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		ejercicio = function() {
+			// target=['target'];
+			// readyOk(target,'leftboxTemp','rightContainer');
+			functionInit();
+		}
+
+	});
+</script>
