@@ -180,6 +180,12 @@
 			"repeat":"4",
 			"name":"uniendoLetras"
 		},
+	"act20":
+		{
+			"description":"SELECCIONE UNA CONSONANTE DE LA IZQUIERDA Y UNA VOCAL DE LA DERECHA PARA DESCUBRIR LA SILABA QUE SE FORMA.",
+			"repeat":"3",
+			"name":"formandoSilaba"
+		},
 	"rhymes": {
 		"lev_1":[
 			["leon","raton","camion","boton"],
@@ -210,7 +216,14 @@
 		"flower",
 		"mosaic",
 		"bubble",
-		"water"
+		"water",
+		"bubbleDark",
+		"rainbow",
+		"green",
+		"lines",
+		"sky",
+		"tennis",
+		"stars"
 	],
 	"distractors": {
 		"words": [ 
@@ -228,6 +241,17 @@
 		"letters": [
 			"a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 			"o","p","q","r","s","t","u","v","w","x","y","z"
+		],
+		"vocals": [
+			"a","e","i","o","u"
+		]
+	},
+	"consonants": {
+		"lev_1":[
+			"b","c","d","f","g","l","m","n","p","r","s","t"
+		],
+		"lev_2":[
+			"h","j","k","v","w","x","y","z"
 		]
 	},
 	"words":{

@@ -1,0 +1,19 @@
+.principalTitle {
+	color: #F7BE81; 
+	font-family: freight-sans-pro, sans-serif;
+	font-weight: 900; 
+	text-shadow: 3px 3px #FE642E;
+}
+
+body {
+	background-image :url('../../images/background/lines.jpg');
+}
+
+
+.btnMemory {
+	background-color:#00dd2f;
+}
+
+.sphere {
+	background-color: #ACFA58;
+}

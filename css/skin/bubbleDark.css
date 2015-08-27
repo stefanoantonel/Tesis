@@ -1,0 +1,19 @@
+.principalTitle {
+	color:  rgb(255, 247, 6);
+	font-family: freight-sans-pro, sans-serif;
+	font-weight: 900; 
+	text-shadow: 3px 3px #479439;
+}
+
+body {
+	background-image :url('../../images/background/bubbleDark.jpg');
+}
+
+
+.btnMemory {
+	background-color:#00dd2f;
+}
+
+.sphere {
+	background-color: #01DFA5;
+}

@@ -113,7 +113,7 @@ function fillElements(conf, place) {
 		t = $('#' + place + 'boxTemp').clone();
 		$(t).attr('id', index);
 		$(t).removeClass('hidden');
-		name = conf[index];
+		name = conf[index].toUpperCase();
 		addSound(name);
 		$(t).attr('name', name);
 		$(t).prop('num', index);
