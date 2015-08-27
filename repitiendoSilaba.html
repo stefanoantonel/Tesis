@@ -65,7 +65,13 @@ article img.hidden {
 .imgRep {
 	background-color: #FF5;
 }
+#textContainer {
+	max-width: 75%;
+}
 
+#imagesWithText {
+	margin-left: 20%;
+}
 </style>
 
 <script type="application/javascript">
@@ -83,14 +89,20 @@ article img.hidden {
 	<header></header>
 	<div id="activity-container">
 		<article>
-			<div id="text" class='phrase textBackground'>
-				Que silaba se repite entre
-				<button id="completeWord1" 
-						class="btn primary bg btnImg imgRep"></button>
-				 y
-				 <button id="completeWord2"
-						class="btn primary bg btnImg imgRep"></button>
-				 ?
+			<div id="textContainer" class='phrase textBackground'>
+				<div id="text">
+					QUE SILABA SE REPITE ENTRE ...	
+				</div>
+				
+				<div id="imagesWithText">
+					<button id="completeWord1" 
+							class="btn primary bg btnImg imgRep"></button>
+					Y
+					 <button id="completeWord2"
+							class="btn primary bg btnImg imgRep"></button>
+					?	
+				</div>
+				
 			</div>
 
 			<div id="target" class="target targetText textBackground"></div>
