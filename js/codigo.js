@@ -355,6 +355,31 @@ function removeFirstLetter(element_config, firstLetter) {
 	return arrayWithoutLetter;
 }
 
+function getConfigByElementWithFirstLetter(type, level, quantity, callBack, firstLetter) {
+	$.getJSON("js/configGroups.json", function(config, callBack) {
+		element_config = config[type][level];
+		element_config = getFirstLetter(element_config, firstLetter);
+		element_config = disorder(element_config);
+		result_disorder = element_config.slice(0, quantity);
+		result = disorder(result_disorder);
+
+	}).done(function() {
+		callBack(result);
+	});
+}
+
+function getFirstLetter(element_config, firstLetter) {
+	var arrayWithLetter = [];
+	var arrayLength = element_config.length;
+	for ( var i = 0; i < arrayLength; i++) {
+		var eachFirstLetter = element_config[i].substring(0, 1);
+		if (eachFirstLetter == firstLetter) {
+			arrayWithLetter.push(element_config[i]);
+		};
+	}
+	return arrayWithLetter;
+}
+
 function getAllIndexes(arr, val) {
 	var indexes = [], i = -1;
 	while ((i = arr.indexOf(val, i + 1)) != -1) {

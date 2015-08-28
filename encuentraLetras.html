@@ -45,9 +45,8 @@ article {
 }
 
 #leftContainer {
-	max-width: 300px;
+	width: 100%;
 	float: left;
-	margin-top: 6%;
 }
 
 #rightContainer {
@@ -71,6 +70,15 @@ div.inline {
 .secondWordHidden {
 	display: none;
 }
+.divInline {
+    display: inline;
+    margin-right: 10%;
+    background-color: transparent;
+    margin-left: 2%;
+}
+.textBackground {
+	padding: 1%;
+}
 </style>
 </head>
 <body>
@@ -78,8 +86,8 @@ div.inline {
 	<header></header>
 	<div id="activity-container">
 		<article>
-			<div id="leftboxTemp" class='phrase' hidden="hidden"></div>
-			<div id="leftContainer"></div>
+			<div id="leftboxTemp" class='phrase divInline' hidden="hidden"></div>
+			<div id="leftContainer" class="textBackground"></div>
 
 			<img id="rightboxTemp" class="img img-rigth normal btnImg"
 				hidden="hidden"></img>

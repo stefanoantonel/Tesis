@@ -7,21 +7,23 @@ var letter = "";
 function functionInit() {
 	getConfig('21');
 	getConfigByElement("consonants","lev_1",1,functionCallback);
+	leftBoxTemp = $('#leftboxTemp');
+	leftContainer = $('#leftContainer');
 }
 
 function functionCallback(conf){
-	var letter = conf.toUpperCase();
-	var wordToChange = conf["target"] - 1;
-	var values = conf["values"];
+	letter = conf[0];
+	
+	/*var values = conf["values"];
 
 	// Choose firstone, they are disordered.
 	left=values[0].join('').replace(/,/g, ""); //no se van a mover
 	right=values[1].join('').replace(/,/g, "");
 	// wordToChange=group["wordToChange"];
 	functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
-	secondWord = right;
+	secondWord = right;*/
 	
-	getConfigByElementWithOne("distractors","words",2,functInitImages,right);
+	getConfigByElementWithFirstLetter("distractors","words",3,functInitWords,letter);
 
 	
 }
@@ -66,10 +68,38 @@ function changeColor(cont,words,wordToChange){
 }
 
 //sin desordenar
-function functInitWords(first,second,wordToChange){
+function functInitWords(words){
 	
-	//palabra inicial con letra llamativa------------------------
-	t=$('#leftboxTemp').clone();
+	//agregar palabras que empiezan con la letra seleccionada------------------------
+	var imgs = [];
+	$(words).each(function(index,e){
+    	//t=$('#'+rightArray[index]);
+    	t=$(leftBoxTemp).clone();
+		$(t).attr('id','left'+index);
+		$(t).removeAttr('hidden');
+		name=words[index];
+		addSound(name);
+		$(t).attr('name',name);
+		$(t).prop('num',index);
+		$(t).html(e.toUpperCase());
+		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
+		//$(t).attr('src','images/activities/' + name + '.jpg');
+		$(t).mousedown(function(){
+			var elem = this;
+			$.data(this, "timer", setTimeout($.proxy(function() {
+				playSound($(elem).html()); 
+	        }, this), 300));
+	        }, function() { clearTimeout($.data(this, "timer")); }
+		);
+		imgs.push(t);
+	});
+	disorder(imgs);
+	$(leftContainer).append(imgs);
+
+
+/*
+
+	t=leftBoxTemp;
 	$(t).attr('id','left0');
 	name=first;
 	addSound(name);
@@ -104,7 +134,7 @@ function functInitWords(first,second,wordToChange){
 	$('#leftContainer').append(t);
 	//-------------------------------------------------------
 	//---------------initial Image
-	firstImg(left);
+	firstImg(left);*/
 }
 
 function functInitImages(conf,x){
