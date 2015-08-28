@@ -2,19 +2,15 @@ var leftArray=0
 var rightArray=0
 var numParts=0;
 var secondWord = '';
+var letter = "";
 
 function functionInit() {
 	getConfig('21');
-	getConfigByElement("act21","act",1,functionCallback);
-}
-
-function functionsDD(context,currElem){
-	isCorrect=checkCorrect(currElem);
-	if (isCorrect==true) { sessionCounter(); }
+	getConfigByElement("consonants","lev_1",1,functionCallback);
 }
 
 function functionCallback(conf){
-	var conf = conf[0];
+	var letter = conf.toUpperCase();
 	var wordToChange = conf["target"] - 1;
 	var values = conf["values"];
 
@@ -28,6 +24,11 @@ function functionCallback(conf){
 	getConfigByElementWithOne("distractors","words",2,functInitImages,right);
 
 	
+}
+
+function functionsDD(context,currElem){
+	isCorrect=checkCorrect(currElem);
+	if (isCorrect==true) { sessionCounter(); }
 }
 
 function moveToTarget(elem) {

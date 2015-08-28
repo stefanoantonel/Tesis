@@ -344,21 +344,15 @@ function removeOneElement(array, element) {
 }
 
 function removeFirstLetter(element_config, firstLetter) {
-	"abc".substring(2, 3);
-	var firstLetterArray = [];
+	var arrayWithoutLetter = [];
 	var arrayLength = element_config.length;
 	for ( var i = 0; i < arrayLength; i++) {
-		firstLetterArray.push(element_config[i].substring(0, 1));
+		var eachFirstLetter = element_config[i].substring(0, 1);
+		if (eachFirstLetter != firstLetter) {
+			arrayWithoutLetter.push(element_config[i]);
+		};
 	}
-
-	for ( var i = 0; i < firstLetterArray.length; i++) {
-		if (firstLetterArray[i] == firstLetter) {
-			element_config.splice(
-					firstLetterArray.indexOf(firstLetterArray[i]), 1);
-		}
-	}
-
-	return element_config;
+	return arrayWithoutLetter;
 }
 
 function getAllIndexes(arr, val) {
