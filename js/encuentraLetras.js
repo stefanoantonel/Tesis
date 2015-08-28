@@ -81,7 +81,7 @@ function functInitWords(words){
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).prop('num',index);
-		$(t).html(e.toUpperCase());
+		
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		//$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
@@ -91,12 +91,13 @@ function functInitWords(words){
 	        }, this), 300));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
+		$(t).html(e.toUpperCase());
 		wordSelected.push(t);
 	});
 	disorder(wordSelected);
 	$(leftContainer).append(wordSelected);
 
-	getConfigByElement("distractors","words",26,functInitImages,letter);
+	getConfigByElement("distractors","words",26,functInitImages);
 /*
 
 	t=leftBoxTemp;
@@ -137,8 +138,10 @@ function functInitWords(words){
 	firstImg(left);*/
 }
 
-function functInitImages(conf,letter){
+function functInitImages(conf){
 	
+	conf.push(letter);
+	conf.push(letter);
 	//-------------"letters soup"
 	imgs=[];
 	$(conf).each(function(index,e){
@@ -146,28 +149,31 @@ function functInitImages(conf,letter){
     	t=$('#rightboxTemp').clone();
 		$(t).attr('id','right'+index);
 		$(t).removeAttr('hidden');
-		name=conf[index];
+		name=conf[index].substring(0,1);
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).prop('num',index);
-		$(t).html(name.substring(0, 1).toUpperCase());
+		$(t).html(name.toUpperCase());
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		//$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mousedown(function(){
+		$(t).hover(function(){
 			var elem = this;
 			$.data(this, "timer", setTimeout($.proxy(function() {
-				playSound($(elem).html()); 
-	        }, this), 300));
+				playSound($(elem).attr("name")); 
+	        }, this), 500));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
+		$(t).mousedown(function() {
+			checkCorrect(this);
+		});
 		imgs.push(t);
 	});
 	disorder(imgs);
 	$("#rightContainer").append(imgs);
 
 	contRight=$('#rightContainer').children();
-	idObj=$('#target');
-	dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
+	//idObj=$('#target');
+	//dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
 }
 
 function firstImg(conf){
@@ -182,16 +188,19 @@ function firstImg(conf){
 
 function checkCorrect(part) {
 	var name = $(part).attr("name");
+
 	$(part).removeClass('img-rigth');
-	if(name.valueOf() == secondWord.valueOf()) {
+	if(name == letter) {
 		window.setTimeout(function(){$(part).addClass("animateToFront");},0);
 		return true;
 	}
 	else {
-		wrong(part,"#rightContainer");
-		window.setTimeout(function(){
+		//wrong(part,"#rightContainer");
+		playSound("wrong");
+		$(part).effect('shake');
+		/*window.setTimeout(function(){
 			$(part).addClass('img-rigth');
-		}, 1000);
+		}, 1000);*/
 		return false;
 	}
 }

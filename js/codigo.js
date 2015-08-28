@@ -49,6 +49,7 @@ function getConfig(numAct, callBack) {
 		getStyle();
 		loadTutorialVoice(numAct);
 		loadCounter(c.repeat);
+		addSound("wrong");
 		loadSounds();
 	});
 }
@@ -62,6 +63,7 @@ function getConfig(numAct) {
 		getStyle();
 		loadTutorialVoice(numAct);
 		loadCounter(c.repeat);
+		addSound("wrong");
 		loadSounds();
 
 	});
@@ -93,8 +95,7 @@ function getRhymes(element, level, quantity, callBack) {
 	});
 }
 
-function getConfigByElementWithOne(type, level, quantity, callBack,
-		elementExcept) {
+function getConfigByElementWithOne (type, level, quantity, callBack,elementExcept) {
 	$.getJSON("js/configGroups.json", function(config, callBack) {
 		element_config = config[type][level];
 		element_config = removeOneElement(element_config, elementExcept);

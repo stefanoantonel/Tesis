@@ -578,7 +578,7 @@ body {
 
 article, #activity-container, body {
 
-	overflow: hidden;
+	overflow: visible;
 }
 
 .congratulations {
