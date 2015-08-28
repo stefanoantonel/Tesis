@@ -39,7 +39,7 @@ function moveToTarget(elem) {
 	
 }
 
-function changeColor(cont,words,wordToChange){
+/*function changeColor(cont,words,wordToChange){
 	parts=words.split("");
 	elements=[];
 	$(parts).each(function(ind,elem){
@@ -65,13 +65,13 @@ function changeColor(cont,words,wordToChange){
 		playSound( $(this).html() );
 	});
 	return elements;
-}
+}*/
 
 //sin desordenar
 function functInitWords(words){
 	
 	//agregar palabras que empiezan con la letra seleccionada------------------------
-	var imgs = [];
+	var wordSelected = [];
 	$(words).each(function(index,e){
     	//t=$('#'+rightArray[index]);
     	t=$(leftBoxTemp).clone();
@@ -91,12 +91,12 @@ function functInitWords(words){
 	        }, this), 300));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
-		imgs.push(t);
+		wordSelected.push(t);
 	});
-	disorder(imgs);
-	$(leftContainer).append(imgs);
+	disorder(wordSelected);
+	$(leftContainer).append(wordSelected);
 
-
+	getConfigByElement("distractors","words",26,functInitImages,letter);
 /*
 
 	t=leftBoxTemp;
@@ -137,9 +137,9 @@ function functInitWords(words){
 	firstImg(left);*/
 }
 
-function functInitImages(conf,x){
+function functInitImages(conf,letter){
 	
-	//-------------second stage images
+	//-------------"letters soup"
 	imgs=[];
 	$(conf).each(function(index,e){
     	//t=$('#'+rightArray[index]);
@@ -150,8 +150,9 @@ function functInitImages(conf,x){
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).prop('num',index);
+		$(t).html(name.substring(0, 1).toUpperCase());
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
-		$(t).attr('src','images/activities/' + name + '.jpg');
+		//$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).mousedown(function(){
 			var elem = this;
 			$.data(this, "timer", setTimeout($.proxy(function() {
