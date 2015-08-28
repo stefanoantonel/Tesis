@@ -3,6 +3,7 @@ var rightArray=0
 var numParts=0;
 var secondWord = '';
 var letter = "";
+var countSameLetters;
 
 function functionInit() {
 	getConfig('21');
@@ -170,10 +171,8 @@ function functInitImages(conf){
 	});
 	disorder(imgs);
 	$("#rightContainer").append(imgs);
-
-	contRight=$('#rightContainer').children();
-	//idObj=$('#target');
-	//dragAndDrop(contRight,idObj,functionsDD,moveToTarget);
+	//Count the amount of times that the letter appears
+	countSameLetters = $("[name='"+letter+"']").size();
 }
 
 function firstImg(conf){
@@ -188,30 +187,35 @@ function firstImg(conf){
 
 function checkCorrect(part) {
 	var name = $(part).attr("name");
-
-	$(part).removeClass('img-rigth');
 	if(name == letter) {
 		window.setTimeout(function(){$(part).addClass("animateToFront");},0);
+		window.setTimeout(function(){$(part).addClass("deleted");},700);
+		countSameLetters = countSameLetters - 1;
+		if (countSameLetters == 0) {
+			window.setTimeout(sessionCounter(), 2000);
+		}
 		return true;
 	}
 	else {
 		//wrong(part,"#rightContainer");
+
+		$(".img").css("pointer-events", "none");
 		playSound("wrong");
-		$(part).effect('shake');
+		$(part).removeClass('normal');
+		$(part).addClass('wrong');
+		window.setTimeout(function() {
+			$(part).removeClass('wrong');
+			$(part).addClass('normal');
+			changeScore(-10);
+			$(".img").css("pointer-events", "auto");
+		}, 500);
+
+		
+
+		
 		/*window.setTimeout(function(){
 			$(part).addClass('img-rigth');
 		}, 1000);*/
 		return false;
-	}
-}
-
-function checkReplace(box,newDiv){
-	if( $(box).has('img') ){
-		prevDiv=$(box).children();
-		$(prevDiv).removeClass('wrong');
-		$(prevDiv).addClass('normal');
-		$('#rightContainer').append(prevDiv);
-		$(box).append(newDiv);
-
 	}
 }
