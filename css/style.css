@@ -5,7 +5,6 @@ header {
 	top: 10px;
 	min-width: 700px;
 }
-
 footer {
 	bottom: 10%;
 	left: 10%;
@@ -102,6 +101,7 @@ article {
 
 body {
 	min-width: 600px;
+	overflow: hidden;
 }
 
 .iframeMenu {
@@ -576,7 +576,7 @@ body {
 
 /*************************Congratulations END************************************/
 
-article, #activity-container, body {
+article, #activity-container {
 
 	overflow: visible;
 }
