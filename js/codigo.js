@@ -2,6 +2,7 @@
 var counter;
 var soundsArray = [];
 var score = 100;
+var actNum;
 
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
@@ -41,6 +42,7 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 }
 
 function getConfig(numAct, callBack) {
+	actNum = numAct;
 	$.getJSON("js/configGroups.json", function(result, callBack) {
 		c = result["act" + numAct];
 	}).done(function() {
@@ -55,6 +57,7 @@ function getConfig(numAct, callBack) {
 }
 
 function getConfig(numAct) {
+	actNum = numAct;
 	saveArticle();
 	$.getJSON("js/configGroups.json", function(result) {
 		c = result["act" + numAct];
@@ -253,9 +256,7 @@ function loadTutorialVoice(actNum) {
 			$(aud).attr('src', 'audio/tutorial/' + actNum + '.mp3');
 			$(aud).attr('type', 'audio/mp3');
 			$(aud).appendTo('body');
-			window.setTimeout(function() {
-				playTutorial(actNum);
-			}, 1000);
+			
 		} catch (e) {
 			console.error("Tutorial sound not found");
 		}

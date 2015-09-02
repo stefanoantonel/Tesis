@@ -5,6 +5,9 @@ window.addEventListener('DOMContentLoaded', function() {
         percentage: true,
         barHeight: 20,
         minimumTime: 100,
-        fadeOutTime: 500
+        fadeOutTime: 500,
+        onComplete : function() {
+        	playTutorial(actNum);
+        }
     });
 });
