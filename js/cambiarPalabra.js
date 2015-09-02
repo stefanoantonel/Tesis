@@ -76,7 +76,7 @@ function functInitWords(first,second,wordToChange){
 	$(t).addClass('firstWord');
 	$(t).addClass('textBackground');
 	$(t).removeAttr('hidden');
-	$(t).mousedown(function() {
+	$(t).hover(function() {
 		playSound(this.name);
 	});
 	changed=changeColor($(t),name,wordToChange);
@@ -121,10 +121,10 @@ function functInitImages(conf,x){
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		$(t).attr('src','images/activities/' + name + '.jpg');
-		$(t).mousedown(function(){
+		$(t).hover(function(){
 			var elem = this;
 			$.data(this, "timer", setTimeout($.proxy(function() {
-				playSound($(elem).html()); 
+				playSound($(elem).attr("name")); 
 	        }, this), 300));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);

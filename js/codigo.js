@@ -237,6 +237,7 @@ function loadDescription(descrip) {
 
 function loadSounds() {
 	setTimeout(function() {
+		soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
 		/* In order to make an asyncronous task */
 		$(soundsArray).each(function(index, value) {
 			var aud = document.createElement('audio');
