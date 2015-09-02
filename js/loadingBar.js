@@ -3,8 +3,8 @@ window.addEventListener('DOMContentLoaded', function() {
         barColor: "#efefef",
         backgroundColor: "#111",
         percentage: true,
-        barHeight: 1,
-        minimumTime: 200,
+        barHeight: 20,
+        minimumTime: 100,
         fadeOutTime: 500
     });
 });
