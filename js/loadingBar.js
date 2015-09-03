@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', function() {
         minimumTime: 100,
         fadeOutTime: 500,
         onComplete : function() {
+        	$("article").fadeIn(400).show();
         	playTutorial(actNum);
+        },
+        onProgress : function () {
+        	$("article").hide();
         }
     });
 });
