@@ -169,13 +169,15 @@ function disorder(o) {
 function congratulations() {
 
 	$("#activity-container").append(
-			"<article id=\"congratulations\" class=\"clipped-box congratulations\">"
-					+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
-					+ "</div>" + "</article>");
-	playSound("congratulations");
-	waitInterval(600).then(function() {
-		explote();
+		"<article id=\"congratulations\" class=\"clipped-box congratulations\">"
+				+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
+				+ "</div>" + "</article>");
+	playSound("congratulations").then(function () {
+		waitInterval(2200).then(function() {
+			explote();
+		});	
 	});
+	
 
 	explosion();
 
@@ -275,7 +277,9 @@ function playSound(soundName) {
 	} catch (e) {
 		console.error('Sonido no encontrado');
 	}
-
+	return new Promise(function(done) {
+		done();
+	});
 }
 
 function playTutorial(actNumb) {
@@ -318,22 +322,24 @@ function sessionCounter() {
 				$( this ).remove();
 				$(".deleted").remove();
 			});
-		})
-		waitInterval(2200).then(function() {
+		}).then(function() {
 			congratulations();
-		});
-		waitInterval(5000).then(function() {
-			$("#activity-container").removeClass("congratulations");
-			$("#activity-container").append(originTemplateHTML);
-			$('#congratulations').remove();
-			level="lev_1";
-			if(counter<= counterOriginal/2){
-				level="lev_2";
-			}
-			functionInit(counter,level);
+		}).then(function() {
+			waitInterval(3000).then(function() {
+				$("#activity-container").hide();
+				$("#activity-container").removeClass("congratulations");
+				$("#activity-container").append(originTemplateHTML);
+				$('#congratulations').remove();
+				$("#activity-container").fadeIn(400).show();
+				level="lev_1";
+				if(counter<= counterOriginal/2){
+					level="lev_2";
+				}
+				excecuteProgressBar();
+				functionInit(counter,level);
+			});	
 		});
 	}
-
 }
 
 function waitInterval(time) {
