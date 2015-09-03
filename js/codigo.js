@@ -173,9 +173,9 @@ function congratulations() {
 					+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
 					+ "</div>" + "</article>");
 	playSound("congratulations");
-	window.setTimeout(function() {
+	waitInterval(600).then(function() {
 		explote();
-	}, 600);
+	});
 
 	explosion();
 
@@ -236,7 +236,7 @@ function loadDescription(descrip) {
 }
 
 function loadSounds() {
-	setTimeout(function() {
+	waitInterval(2000).then(function() {
 		soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
 		/* In order to make an asyncronous task */
 		$(soundsArray).each(function(index, value) {
@@ -246,7 +246,7 @@ function loadSounds() {
 			$(aud).attr('type', 'audio/mp3');
 			$(aud).appendTo('body');
 		});
-	}, 2000);
+	});
 }
 
 function loadTutorialVoice(actNum) {
@@ -306,21 +306,23 @@ function sessionCounter() {
 	counter = counter - 1;
 	if (counter == 0) {
 		passed();
-		window.setTimeout(function() {
+		waitInterval(1000).then(function() {
 			$(".deleted").remove();
-		}, 1000);
-		window.setTimeout(passActivity, 1000);
+		});
+		waitInterval(1000).then(passActivity);
 	}
 	else {
-		window.setTimeout(function() {
-			$(".deleted").remove();
-			$("article").remove();
-
-		}, 1000);
-		window.setTimeout(function() {
+		
+		waitInterval(2000).then(function() {
+			$( "article" ).hide( 200, function() {
+				$( this ).remove();
+				$(".deleted").remove();
+			});
+		})
+		waitInterval(2200).then(function() {
 			congratulations();
-		}, 1000);
-		window.setTimeout(function() {
+		});
+		waitInterval(5000).then(function() {
 			$("#activity-container").removeClass("congratulations");
 			$("#activity-container").append(originTemplateHTML);
 			$('#congratulations').remove();
@@ -329,10 +331,17 @@ function sessionCounter() {
 				level="lev_2";
 			}
 			functionInit(counter,level);
-		}, 3000);
+		});
 	}
 
 }
+
+function waitInterval(time) {
+	return new Promise (function(done) {
+		setTimeout(done,time);	
+	});
+}
+
 
 function translate(target) {
 	$(target).addClass("animateUpperCorner");

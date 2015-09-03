@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', function() {
         backgroundColor: "#111",
         percentage: true,
         barHeight: 20,
-        minimumTime: 100,
+        minimumTime: 50,
         fadeOutTime: 500,
         onComplete : function() {
         	$("article").fadeIn(400).show();
