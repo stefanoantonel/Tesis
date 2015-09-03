@@ -6,6 +6,7 @@ var selectedText = '';
 var origin = '';
 var actualPosition;
 var numParts;
+var completeWord = "";
 
 function readyOk(){
 	idObj="template";
@@ -33,6 +34,8 @@ function functionInit(counter,level) {
 
 function functionCallback(data){
 	selectedText=getTextRand(data);
+	completeWord = selectedText.replace(/ /g,"");
+	addSound(completeWord);
 	var parts=divide(selectedText);
 	numParts=$(parts).size();
 	fillTemplate(boxes,temp,parts);
@@ -72,6 +75,9 @@ function checkCorrect(container,element) {
 	if($(element).attr("id") == actualPosition){
 		actualPosition = actualPosition + 1;
 		if(numParts == actualPosition){
+			waitInterval(200).then(function() {
+				playSound(completeWord);
+			}); 
 			return true;
 		}
 		return false;

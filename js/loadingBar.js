@@ -10,7 +10,7 @@ function loadProgressBar () {
 	        fadeOutTime: 500,
 	        onComplete : function() {
 	        	$("article").fadeIn(400).show();
-	        	playTutorial(actNum);
+	        	playTutorial(actNum);	
 	        },
 	        onProgress : function () {
 	        	$("article").hide();
@@ -31,7 +31,6 @@ function excecuteProgressBar() {
         fadeOutTime: 500,
         onComplete : function() {
         	$("article").fadeIn(400).show();
-        	playTutorial(actNum);
         },
         onProgress : function () {
         	$("article").hide();
