@@ -450,7 +450,8 @@ body {
 		font-size: 2.5em;
 	}
 	article {
-		margin-top: 15%;
+	    margin-top: 20%;
+    	margin-left: 17%
 	}
 	#kittyTeacher {
 		width: 105px;
