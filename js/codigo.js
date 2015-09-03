@@ -78,7 +78,7 @@ function getConfigByElement(element, level, quantity, callBack) {
 		var result_disorder = disorder(element_config);
 		result = result_disorder.slice(0, quantity);
 	}).done(function() {
-		console.log("result:", result);
+		//console.log("result:", result);
 		callBack(result);
 	});
 }
@@ -93,7 +93,7 @@ function getRhymes(element, level, quantity, callBack) {
 			result[ind] = val.slice(0, 2);
 		});
 	}).done(function() {
-		console.log("result:", result);
+		//console.log("result:", result);
 		callBack(result);
 	});
 }
@@ -138,7 +138,7 @@ function getStyle() {
 	}).done(
 			function() {
 				skin = disorder(c);
-				console.log("skinks", skin);
+				//console.log("skinks", skin);
 				$('head').append(
 						'<link rel="stylesheet" href="css/skin/' + skin[0]
 								+ '.css" type="text/css" />');
