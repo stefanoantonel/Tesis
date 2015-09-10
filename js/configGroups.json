@@ -192,6 +192,12 @@
 			"repeat":"3",
 			"name":"encuentraLetras"
 		},
+	"act22":
+		{
+			"description":"SEPARAR LAS PALABRAS CON LOS ESPACIOS PARA FORMAR UNA ORACI&Oacute;N.",
+			"repeat":"3",
+			"name":"dividePalabras"
+		},
 	"rhymes": {
 		"lev_1":[
 			["leon","raton","camion","boton"],
