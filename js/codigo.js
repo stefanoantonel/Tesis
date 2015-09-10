@@ -148,7 +148,7 @@ function getStyle() {
 function loadCounter(count) {
 	if (counter == null) {
 		counter = parseInt(count);
-		counterOriginal = counter; 
+		counterOriginal = counter;
 	}
 }
 
@@ -156,12 +156,12 @@ function disorder(o) {
 	try {
 		var original = o.slice(0);
 		do {
-			for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);	
+			for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 		}
-		while(o[0] == original[0]);	
+		while(o[0] == original[0]);
 	}
 	catch(e) {
-		for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);	
+		for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 	}
 	return o;
 };
@@ -175,9 +175,9 @@ function congratulations() {
 	playSound("congratulations").then(function () {
 		waitInterval(2200).then(function() {
 			explote();
-		});	
+		});
 	});
-	
+
 
 	explosion();
 
@@ -191,7 +191,7 @@ function passActivity() {
 		$("#activity-container").append(
 				'<div id="alertOk" class="alert-box success rainbow">'
 						+ '<span>&#161&#161GANASTE!!</span>'
-						+ '<div><a id="next">Siguiente</a></div>' 
+						+ '<div><a id="next">Siguiente</a></div>'
 						+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
 				+ '</div>');
 		playSound("win");
@@ -259,7 +259,7 @@ function loadTutorialVoice(actNum) {
 			$(aud).attr('src', 'audio/tutorial/' + actNum + '.mp3');
 			$(aud).attr('type', 'audio/mp3');
 			$(aud).appendTo('body');
-			
+
 		} catch (e) {
 			console.error("Tutorial sound not found");
 		}
@@ -316,7 +316,7 @@ function sessionCounter() {
 		waitInterval(1000).then(passActivity);
 	}
 	else {
-		
+
 		waitInterval(2000).then(function() {
 			$( "article" ).hide( 200, function() {
 				$( this ).remove();
@@ -337,14 +337,14 @@ function sessionCounter() {
 				}
 				excecuteProgressBar();
 				functionInit(counter,level);
-			});	
+			});
 		});
 	}
 }
 
 function waitInterval(time) {
 	return new Promise (function(done) {
-		setTimeout(done,time);	
+		setTimeout(done,time);
 	});
 }
 

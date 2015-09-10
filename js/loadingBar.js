@@ -7,9 +7,9 @@ function loadProgressBar () {
 	        percentage: true,
 	        barHeight: 20,
 	        minimumTime: 50,
-	        fadeOutTime: 500,
+	        fadeOutTime: 200,
 	        onComplete : function() {
-	        	$("article").fadeIn(400).show();
+	        	$("article").fadeIn(200).show();
 	        	playTutorial(actNum);	
 	        },
 	        onProgress : function () {
