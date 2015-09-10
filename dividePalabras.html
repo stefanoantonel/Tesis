@@ -92,6 +92,36 @@ div.inline {
 	float: left;
     margin: 4%;
 }
+#rightContainer li {
+    margin: 10px 10px 10px 0;
+    padding: 0px;
+    width: 50px;
+    height: 49px;
+    font-size: 30px;
+    text-align: center;
+    color: #FFA500;
+    float: left;
+	border-bottom-color: brown;
+	border-left-color: transparent;
+	border-right-color: transparent;
+	border-top-color: transparent;
+	border-style: dotted;
+	
+}
+ul {
+	list-style-type: none;
+}
+.syllable {
+	border-bottom-color: brown;
+	border-left-color: white;
+	border-right-color: white;
+	border-top-color: brown;
+	border-style: dotted;
+	border-radius: 30px;
+}
+#finish {
+	margin-left: 40%;
+}
 </style>
 </head>
 <body>
@@ -99,13 +129,11 @@ div.inline {
 	<header></header>
 	<div id="activity-container">
 		<article>
-			<div id="leftboxTemp" class='phrase divInline' hidden="hidden"></div>
-			<div id="leftContainer" class="textBackground"></div>
-
-			<li id="rightboxTemp" class="img normal ui-state-default"
+			
+			<li id="rightboxTemp" class="normal ui-state-default"
 				hidden="hidden"></li>
-			<ul id="rightContainer"></ul>
-
+			<ul id="rightContainer" class="box"></ul>
+			<button id = "finish" type="button" class="btn btn-primary">OK - REVISAR</button>
 			<!-- <label class="labelLeft textBackground">
 				FALTAN 
 				<label id="counterLeft">
@@ -122,13 +150,9 @@ div.inline {
 </html>
 
 <script type="text/javascript">
-	  
 	$(document).ready(function() {
 		ejercicio = function() {
-			// target=['target'];
-			// readyOk(target,'leftboxTemp','rightContainer');
 			functionInit();
 		}
-		
 	});
 </script>
