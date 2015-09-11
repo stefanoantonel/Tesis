@@ -84,18 +84,24 @@ function areEqual(im1,im2){
 
 
 function checkImg(img1,img2){
+	$(".imgMemory").css("pointer-events", "none");
 	if(areEqual(img1,img2)){
-		window.setTimeout(removeImg, 1000,img1);
-		window.setTimeout(removeImg, 1000,img2);
+		waitInterval(1000).then(function() {
+			removeImg(img1);
+			removeImg(img2);
+			$(".imgMemory").css("pointer-events", "auto");
+		});
 		contador=contador-1;
 		if(contador==0){
 			window.setTimeout(sessionCounter,1000);
 		}
 	}
 	else{
-	
-		window.setTimeout(removeBackground, 1500,img1);
-		window.setTimeout(removeBackground, 1500,img2);
+		waitInterval(1500).then(function() {
+			removeBackground(img1);
+			removeBackground(img2);
+			$(".imgMemory").css("pointer-events", "auto");
+		});
 	}
 }
 
