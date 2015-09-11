@@ -43,6 +43,7 @@ function functionCallback(conf){
 	        }, this), 500));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
+
 		/*$(t).click(function() {
 			moveLeft(rightContainer,this);
 		});
@@ -84,5 +85,5 @@ function moveLeft(container, element) {
 	
 }
 function moveRight(container, element) {
-	
+	console.log("dble")
 }
