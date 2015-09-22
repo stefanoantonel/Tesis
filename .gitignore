@@ -1,4 +1,6 @@
 *.xsd
+*.html~
+*.js~
 .c9/
 .settings/
 imsmanifest.xml

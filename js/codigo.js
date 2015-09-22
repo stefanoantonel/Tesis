@@ -11,13 +11,13 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 			//	event.stopPropagation();
 				//alert();
 			//},
-			start: function(event, ui) {
+			/*start: function(event, ui) {
             	ui.helper.bind("click.prevent",
 	        	function(event) { event.preventDefault(); });
 	        },
 	        stop: function(event, ui) {
 				setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
-	        },
+	        },*/
 			revert : true,
 		});
 
@@ -39,6 +39,7 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 			}
 		});
 	});
+
 }
 
 function getConfig(numAct, callBack) {
@@ -238,17 +239,20 @@ function loadDescription(descrip) {
 }
 
 function loadSounds() {
-	waitInterval(2000).then(function() {
-		soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
-		/* In order to make an asyncronous task */
-		$(soundsArray).each(function(index, value) {
-			var aud = document.createElement('audio');
-			$(aud).attr('id', 'sound' + value);
-			$(aud).attr('src', 'audio/' + value + '.mp3');
-			$(aud).attr('type', 'audio/mp3');
-			$(aud).appendTo('body');
+	return new Promise (function() {
+		waitInterval(1000).then(function() {
+			soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
+			/* In order to make an asyncronous task */
+			$(soundsArray).each(function(index, value) {
+				var aud = document.createElement('audio');
+				$(aud).attr('id', 'sound' + value);
+				$(aud).attr('src', 'audio/' + value + '.mp3');
+				$(aud).attr('type', 'audio/mp3');
+				$(aud).appendTo('body');
+			});
 		});
 	});
+	
 }
 
 function loadTutorialVoice(actNum) {
@@ -629,3 +633,12 @@ function rand(min, max) {
  * ********************************CONGRATULATIONS END
  * ******************************************
  */
+
+function deactivateMoves(obj) {
+	$(obj).css("pointer-events", "none");
+	$(obj).css("touch-events", "none");
+} 
+function activateMoves(obj) {
+	$(obj).css("pointer-events", "auto");
+	$(obj).css("touch-events", "auto");
+}

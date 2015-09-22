@@ -110,6 +110,7 @@ function checkCorrect(part) {
 		return true;
 	}
 	else {
+		deactivateMoves(".img");
 		$(".img").css("pointer-events", "none");
 		playSound("wrong");
 		$(part).removeClass('normal');
@@ -118,7 +119,7 @@ function checkCorrect(part) {
 			$(part).removeClass('wrong');
 			$(part).addClass('normal');
 			changeScore(-10);
-			$(".img").css("pointer-events", "auto");
+			activateMoves(".img");
 		}, 500);
 		return false;
 	}

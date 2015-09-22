@@ -25,7 +25,7 @@ function functionsDD(context, currElem) {
 		contOriginal1 = $(currElem).attr("column");
 
 	} else {
-		$(".imgButton").css("pointer-events", "none");
+		deactivateMoves(".imgButton");
 		img2 = currElem;
 		contOriginal2 = $(currElem).attr("column");
 		if($(img1).attr("name") != $(img2).attr("name")){
@@ -51,10 +51,11 @@ function functionsDD(context, currElem) {
 	
 			}
 			window.setTimeout(function() {
-				$(".imgButton").css("pointer-events", "auto");
+				activateMoves(".imgButton");
+				img1 = null;
+				img2 = null;
 			}, 1500);
-			img1 = null;
-			img2 = null;
+			
 		}
 	}
 }

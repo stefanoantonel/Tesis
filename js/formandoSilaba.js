@@ -25,7 +25,7 @@ function functionsDD(context, currElem) {
 		contOriginal1 = $(currElem).attr("column");
 	}
 	else {
-		$(".imgButton").css("pointer-events", "none");
+		deactivateMoves(".imgButton");
 		img2 = currElem;
 		contOriginal2 = $(currElem).attr("column");
 		var img1Name = $(img1).attr("name");
@@ -37,17 +37,22 @@ function functionsDD(context, currElem) {
 				soundsArray = [];
 				addSound(img1Name+img2Name);
 				loadSounds();
-				window.setTimeout(function() {
+				waitInterval(2000).then(function() {
 					playSound(img1Name+img2Name);
-				}, 2000);
+				});
 				//END reproduce sound
-				window.setTimeout(function() {
+				waitInterval(4000).then(function() {
 					$("#target").html("");
-				}, 4000);
+				})
 				contador = contador - 1;
 				if (contador == 0) {
 					window.setTimeout(sessionCounter(), 2000);
 				}
+				waitInterval(4500).then(function() {
+					activateMoves(".imgButton");
+					img1 = null;
+					img2 = null;
+				});
 			} else {
 				var img_target1 = $("#target").find("#" + $(img1).attr("id"));
 				var img_target2 = $("#target").find("#" + $(img2).attr("id"));
@@ -58,13 +63,14 @@ function functionsDD(context, currElem) {
 				playSound("wrong");
 				window.setTimeout(imgWrong, 1000, img_target1, img_target2, $("#"
 						+ contOriginal1), $("#" + contOriginal2));
+				waitInterval(1500).then(function() {
+					activateMoves(".imgButton");
+					img1 = null;
+					img2 = null;
+				});
 	
 			}
-			window.setTimeout(function() {
-				$(".imgButton").css("pointer-events", "auto");
-			}, 1500);
-			img1 = null;
-			img2 = null;
+			
 		//}	
 	}
 }
@@ -111,7 +117,7 @@ function fillElements(conf, place) {
 	imgs = [];
 	$(conf).each(function(index, e) {
 		t = $('#' + place + 'boxTemp').clone();
-		$(t).attr('id', index);
+		$(t).attr('id', place + index );
 		$(t).removeClass('hidden');
 		name = conf[index].toUpperCase();
 		addSound(name);
