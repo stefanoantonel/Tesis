@@ -257,7 +257,8 @@ function loadSounds() {
 
 function loadTutorialVoice(actNum) {
 	if (counter == null) {
-		try {
+		
+		/*try {
 			var aud = document.createElement('audio');
 			$(aud).attr('id', 'tutorial' + actNum);
 			$(aud).attr('src', 'audio/tutorial/' + actNum + '.mp3');
@@ -266,7 +267,7 @@ function loadTutorialVoice(actNum) {
 
 		} catch (e) {
 			console.error("Tutorial sound not found");
-		}
+		}*/
 		$("#kittyTeacher").click(function(){
 			playTutorial(actNum);
 		});
@@ -275,7 +276,12 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
-	try {
+
+	new Howl({
+		urls: ['audio/' + soundName + '.mp3']
+	}).play();
+
+	/*try {
 		soundName = soundName.toString().toLowerCase();
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
@@ -283,15 +289,19 @@ function playSound(soundName) {
 	}
 	return new Promise(function(done) {
 		done();
-	});
+	});*/
 }
 
 function playTutorial(actNumb) {
+	new Howl({
+		urls: ['audio/tutorial/' + actNum + '.mp3']
+	}).play();
+	/*
 	try {
 		$('#tutorial' + actNumb)[0].play();
 	} catch (e) {
 		console.error('Tutorial no encontrado');
-	}
+	}*/
 }
 function moveOrigin(target, origin) {
 	$(target).removeClass('wrong');
