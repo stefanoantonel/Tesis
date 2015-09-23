@@ -112,8 +112,9 @@ function fillElements(conf, place) {
 		$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});
 		$(t).hover(function(){
 			var elem = this;
+			var elemName = $(elem).attr("name")
 			$.data(this, "timer", setTimeout($.proxy(function() {
-				playSound($(elem).attr("name")); 
+				playSound(elemName); 
 	        }, this), 500));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
@@ -122,7 +123,4 @@ function fillElements(conf, place) {
 	disorder(imgs);
 	$("#" + place + "Container").append(imgs);
 
-}
-function checkReplace(elem) {
-	
 }

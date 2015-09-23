@@ -5,7 +5,7 @@ function loadProgressBar () {
 	        barColor: "#efefef",
 	        backgroundColor: "#111",
 	        percentage: true,
-	        barHeight: 20,
+	        barHeight: 30,
 	        minimumTime: 50,
 	        fadeOutTime: 200,
 	        onComplete : function() {

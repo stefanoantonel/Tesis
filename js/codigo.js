@@ -25,6 +25,13 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 		$(this).click(function() {
 			moveToTarget(this);
 		});
+		/*var arrayImgs = document.getElementsByClassName("imgButton");
+		for (var i = 0; i < arrayImgs.length; i++ ) {
+			arrayImgs[i].addEventListener( 'touchmove', function( ev ) {
+				alert("touchmove");
+			});
+		}*/
+		
 	});
 
 	$(idBoxes).each(function(ind, box) {
@@ -53,7 +60,7 @@ function getConfig(numAct, callBack) {
 		loadTutorialVoice(numAct);
 		loadCounter(c.repeat);
 		addSound("wrong");
-		loadSounds();
+		//loadSounds();
 	});
 }
 
@@ -68,7 +75,7 @@ function getConfig(numAct) {
 		loadTutorialVoice(numAct);
 		loadCounter(c.repeat);
 		addSound("wrong");
-		loadSounds();
+		//loadSounds();
 
 	});
 }
@@ -168,21 +175,21 @@ function disorder(o) {
 };
 
 function congratulations() {
-
-	$("#activity-container").append(
-		"<article id=\"congratulations\" class=\"clipped-box congratulations\">"
-				+ "<div class=\"content\">" + "<h1>FELICITACIONES</h1>"
-				+ "</div>" + "</article>");
-	playSound("congratulations").then(function () {
-		waitInterval(2200).then(function() {
+	return new Promise(function(done) {
+		$("#activity-container").append(
+			"<article id='congratulations' class='clipped-box congratulations'>"
+				+ "<div class='content'>" 
+				+ "<h1>FELICITACIONES</h1>"
+				+ "</div>" 
+			+ "</article>");
+		playSound("congratulations").then(function () {
+			explosion();
 			explote();
+			done();
 		});
+
+		$("#alertOk").delay(100).fadeIn(200);
 	});
-
-
-	explosion();
-
-	$("#alertOk").delay(100).fadeIn(200);
 }
 
 function passActivity() {
@@ -238,11 +245,11 @@ function loadDescription(descrip) {
 	});
 }
 
-function loadSounds() {
+/*function loadSounds() {
 	return new Promise (function() {
 		waitInterval(1000).then(function() {
 			soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
-			/* In order to make an asyncronous task */
+			// In order to make an asyncronous task 
 			$(soundsArray).each(function(index, value) {
 				var aud = document.createElement('audio');
 				$(aud).attr('id', 'sound' + value);
@@ -252,8 +259,7 @@ function loadSounds() {
 			});
 		});
 	});
-	
-}
+}*/
 
 function loadTutorialVoice(actNum) {
 	if (counter == null) {
@@ -276,26 +282,37 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
-
-	new Howl({
-		urls: ['audio/' + soundName + '.mp3']
-	}).play();
+	return new Promise(function(done) {
+		new Howl({
+			urls: ['audio/' + soundName + '.mp3'],
+			autoplay: true,
+			onend: function() {
+				done();		
+			}
+		});
+	});
+	
 
 	/*try {
 		soundName = soundName.toString().toLowerCase();
 		$('#sound' + soundName)[0].play();
 	} catch (e) {
 		console.error('Sonido no encontrado');
-	}
-	return new Promise(function(done) {
-		done();
-	});*/
+	}*/
+	
 }
 
-function playTutorial(actNumb) {
-	new Howl({
-		urls: ['audio/tutorial/' + actNum + '.mp3']
-	}).play();
+function playTutorial(actNumb,callback) {
+	return new Promise(function(callback) {
+		new Howl({
+			urls: ['audio/tutorial/' + actNum + '.mp3'],
+			autoplay: true,
+			onend: function() {
+				callback();		
+			}
+		});
+	});
+
 	/*
 	try {
 		$('#tutorial' + actNumb)[0].play();
@@ -319,41 +336,38 @@ function wrong(target,origin){
 }
 
 function sessionCounter() {
-	playSound("bells");
-	$(".target").addClass("targetWin");
+	$(".target").addClass("targetWin");	
 	counter = counter - 1;
-	if (counter == 0) {
-		passed();
-		waitInterval(1000).then(function() {
-			$(".deleted").remove();
-		});
-		waitInterval(1000).then(passActivity);
-	}
-	else {
-
-		waitInterval(2000).then(function() {
+	playSound("bells").then(function() {		
+		if (counter == 0) {
+			passed();
+			waitInterval(1000).then(function() {
+				$(".deleted").remove();
+			});
+			waitInterval(1000).then(passActivity);
+		}
+		else {
 			$( "article" ).hide( 200, function() {
 				$( this ).remove();
 				$(".deleted").remove();
 			});
-		}).then(function() {
-			congratulations();
-		}).then(function() {
-			waitInterval(3000).then(function() {
-				$("#activity-container").hide();
-				$("#activity-container").removeClass("congratulations");
-				$("#activity-container").append(originTemplateHTML);
-				$('#congratulations').remove();
-				$("#activity-container").fadeIn(400).show();
-				level="lev_1";
-				if(counter<= counterOriginal/2){
-					level="lev_2";
-				}
-				excecuteProgressBar();
-				functionInit(counter,level);
+			congratulations().then(function() {
+				waitInterval(2000).then(function() {
+					$("#activity-container").hide();
+					$("#activity-container").removeClass("congratulations");
+					$("#activity-container").append(originTemplateHTML);
+					$('#congratulations').remove();
+					$("#activity-container").fadeIn(400).show();
+					level="lev_1";
+					if(counter<= counterOriginal/2){
+						level="lev_2";
+					}
+					excecuteProgressBar();
+					functionInit(counter,level);
+				});
 			});
-		});
-	}
+		}
+	});	
 }
 
 function waitInterval(time) {
@@ -361,7 +375,6 @@ function waitInterval(time) {
 		setTimeout(done,time);
 	});
 }
-
 
 function translate(target) {
 	$(target).addClass("animateUpperCorner");
