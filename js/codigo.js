@@ -82,12 +82,14 @@ function getConfig(numAct) {
 
 function getConfigByElement(element, level, quantity, callback) {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json", function(config, callBack) {
+		$.getJSON("js/configGroups.json")
+		.done(function(config) {
 			var element_config = config[element][level];
 			var result_disorder = disorder(element_config);
-			result = result_disorder.slice(0, quantity)
-		}).done(function() {
-			resolve(result);
+			var result = result_disorder.slice(0, quantity);
+			var result2 = result;
+
+			resolve(result2);
 			//console.log("result:", result);
 			if(callback) {
 				callback(result);
@@ -289,12 +291,12 @@ function loadTutorialVoice(actNum) {
 
 function playSound(soundName) {
 	var soundName = soundName.toLowerCase();
-	return new Promise(function(done) {
+	return new Promise(function(resolve) {
 		new Howl({
 			urls: ['audio/' + soundName + '.mp3'],
 			autoplay: true,
 			onend: function() {
-				done();		
+				resolve();		
 			}
 		});
 	});
@@ -376,7 +378,9 @@ function sessionCounter() {
 						$("#activity-container").fadeIn(400).show();
 						
 						functionInit(counter,level).then(function() {
-							$( "html" ).removeClass( "loading" );	
+							waitInterval(200).then(function() {
+								removeLoading();	
+							});
 						});
 						
 					});					
@@ -680,4 +684,8 @@ function deactivateMoves(obj) {
 function activateMoves(obj) {
 	$(obj).css("pointer-events", "auto");
 	$(obj).css("touch-events", "auto");
+}
+
+function removeLoading() {
+	$( "html" ).removeClass( "loading" );
 }

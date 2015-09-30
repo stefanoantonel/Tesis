@@ -17,6 +17,9 @@ function functionInit() {
 	
 	getConfigByElement("act4","act",1,functionCallback);
 	getConfig(4);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function moveToTarget(elem) {

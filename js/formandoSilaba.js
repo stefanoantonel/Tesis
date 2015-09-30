@@ -12,6 +12,9 @@ function functionInit(counter) {
 	contador = 5;
 	target = $('#target');
 	readyOk(target, 'leftbox', 'rightbox',level);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function imgWrong(img1, img2, contOriginal1, contOriginal2) {

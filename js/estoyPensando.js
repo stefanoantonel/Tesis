@@ -14,6 +14,9 @@ function functionInit(){
 	readyOk();
 	getConfig("8");
 	getConfigByElement("act8","act",1,functionCallback);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(conf) {

@@ -29,20 +29,30 @@ function readyOk(){
 	img=imgDemo;
 	originChangable = $("#"+idTopBox);
 	nextOrigin = $("#"+idMiddleBox);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 function functionInit(counter,level) {
-	if(level==null){
-		level="lev_1";
-	}
-	if(counter == 1){
-		level="lev_3";
-	}
-	getConfigByElement("words",level,1,functionCallback);
-	readyOk();
-	getConfig(19);
-	actualPosition = 0;
-	return new Promise(function(done) {
-		done();
+	return new Promise(function(resolve, reject) {
+		if(level==null){
+			level="lev_1";
+		}
+		if(counter == 1){
+			level="lev_3";
+		}
+		
+		readyOk()
+		.then(function() {
+			return getConfigByElement("words",level,1,null);
+		})
+		.then(function(data) {
+			return functionCallback(data);
+		});
+		getConfig(19);
+		actualPosition = 0;
+		
+		resolve();
 	});
 }
 

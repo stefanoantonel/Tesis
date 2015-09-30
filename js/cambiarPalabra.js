@@ -11,6 +11,9 @@ function functionsDD(context,currElem){
 function functionInit() {
 	getConfig('6');
 	getConfigByElement("act6","act",1,functionCallback);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(conf){

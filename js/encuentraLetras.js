@@ -10,6 +10,9 @@ function functionInit() {
 	getConfigByElement("consonants","lev_1",1,functionCallback);
 	leftBoxTemp = $('#leftboxTemp');
 	leftContainer = $('#leftContainer');
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(conf){
