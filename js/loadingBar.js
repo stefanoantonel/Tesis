@@ -1,7 +1,7 @@
 //This function is used the first time the document is loading.
 function loadProgressBar () {
 	window.addEventListener('DOMContentLoaded', function() {
-	    new QueryLoader2(document.querySelector("body"), {
+	    new QueryLoader2(document.querySelector("head"), {
 	        barColor: "#efefef",
 	        backgroundColor: "#111",
 	        percentage: true,
