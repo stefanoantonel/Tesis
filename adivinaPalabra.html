@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html>
-<meta charset="utf-8"/>
 <head>
-
+<meta charset="utf-8">
 <title>ADIVINA LA PALABRA</title>
 
-<script type="application/javascript" src="comun/jquery.js"></script>
-<div id="header"></div>
 
-<script type="application/javascript">
-	
-	$(document).ready(function() {
-		$("#header").load("mainHead.html", function() {
-			ejercicio = function() {
-				functionInit();
-			}	
-		}); 
-		
-	});
+<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+<script src="comun/queryloader2.min.js"></script>
+<script src="js/loadingBar.js"></script>
 
-</script>
 <style type="text/css">
 .syllable {
 	color: #FFA500;
@@ -67,7 +56,6 @@ article {
 </style>
 </head>
 
-
 <body>
 	<header></header>
 	<div id="activity-container">
@@ -83,5 +71,15 @@ article {
 </body>
 
 
+<script type="application/javascript">
+
+	head.ready(function () {
+    	// some callback stuff
+    	ejercicio = function() {
+			functionInit();
+		}
+	});
+	
+</script>
 
 </html>
