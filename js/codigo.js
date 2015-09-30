@@ -80,15 +80,21 @@ function getConfig(numAct) {
 	});
 }
 
-function getConfigByElement(element, level, quantity, callBack) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
-		var element_config = config[element][level];
-		var result_disorder = disorder(element_config);
-		result = result_disorder.slice(0, quantity);
-	}).done(function() {
-		//console.log("result:", result);
-		callBack(result);
+function getConfigByElement(element, level, quantity, callback) {
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json", function(config, callBack) {
+			var element_config = config[element][level];
+			var result_disorder = disorder(element_config);
+			result = result_disorder.slice(0, quantity)
+		}).done(function() {
+			resolve(result);
+			//console.log("result:", result);
+			if(callback) {
+				callback(result);
+			}
+		});
 	});
+	
 }
 
 function getRhymes(element, level, quantity, callBack) {
@@ -282,6 +288,7 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
+	var soundName = soundName.toLowerCase();
 	return new Promise(function(done) {
 		new Howl({
 			urls: ['audio/' + soundName + '.mp3'],
@@ -351,19 +358,28 @@ function sessionCounter() {
 				$( this ).remove();
 				$(".deleted").remove();
 			});
+
 			congratulations().then(function() {
 				waitInterval(2000).then(function() {
-					$("#activity-container").hide();
-					$("#activity-container").removeClass("congratulations");
-					$("#activity-container").append(originTemplateHTML);
-					$('#congratulations').remove();
-					$("#activity-container").fadeIn(400).show();
+					$( "html" ).addClass( "loading" );
+									
 					level="lev_1";
 					if(counter<= counterOriginal/2){
 						level="lev_2";
 					}
-					excecuteProgressBar();
-					functionInit(counter,level);
+					
+					waitInterval(500).then(function() {
+						$("#activity-container").hide();
+						$("#activity-container").removeClass("congratulations");
+						$("#activity-container").append(originTemplateHTML);
+						$('#congratulations').remove();
+						$("#activity-container").fadeIn(400).show();
+						
+						functionInit(counter,level).then(function() {
+							$( "html" ).removeClass( "loading" );	
+						});
+						
+					});					
 				});
 			});
 		}

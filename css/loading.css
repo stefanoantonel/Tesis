@@ -25,6 +25,6 @@ html.loading body {
     opacity: 0;
 
     /* Ensures that the transition only runs in one direction */
-    -webkit-transition: opacity 1s;
+    -webkit-transition: opacity 0s;
     transition: opacity 0;
 }

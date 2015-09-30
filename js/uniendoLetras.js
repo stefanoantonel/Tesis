@@ -41,6 +41,9 @@ function functionInit(counter,level) {
 	readyOk();
 	getConfig(19);
 	actualPosition = 0;
+	return new Promise(function(done) {
+		done();
+	});
 }
 
 function functionCallback(data){
