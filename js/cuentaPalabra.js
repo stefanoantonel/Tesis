@@ -17,7 +17,7 @@ function functionInit(counter,level) {
 	if(level == null)
 		level ="lev_1";
 	getConfigByElement("sentence",level,1,functionCallback);
-	window.setTimeout(function(){$(".cube").addClass("girar");},200);
+	window.setTimeout(function(){$(".cube").addClass("girar");},800);
 	return new Promise(function(resolve, reject) {
 		resolve();
 	});

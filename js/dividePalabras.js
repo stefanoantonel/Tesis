@@ -61,7 +61,8 @@ function functionCallback(conf){
 	$( "li:contains(' ')").removeClass("ui-state-disabled");
 	/* This makes the letters not to be moved*/
 	$(rightContainer).sortable({
-		cancel: ".ui-state-disabled"
+		cancel: ".ui-state-disabled",
+		cursorAt: { bottom: -5 },
 	});
 	$( rightContainer ).disableSelection();
 }
