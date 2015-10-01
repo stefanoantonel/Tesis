@@ -123,6 +123,7 @@ function checkCorrect(part) {
 	name = $(part).attr("name");
 	
 	if(name.valueOf() == resultWord.valueOf()){
+		playSound(resultWord);
 		return true;
 	}
 	else{

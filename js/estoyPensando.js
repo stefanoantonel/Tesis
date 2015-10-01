@@ -74,7 +74,11 @@ function checkCorrect(elem) {
 	}
 	else {
 		playSound("wrong");
+		$(elem).addClass("wrong");
 		$(elem).effect('shake');
 		changeScore(-10);
+		waitInterval(800).then(function(){
+			$(elem).removeClass("wrong");
+		});
 	}
 }

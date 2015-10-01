@@ -142,6 +142,7 @@ function checkCorrect(container,element) {
 	var numLetter = 0;
 	for (var i = 0; i < parts.length; i++) {
 		if( $(parts[i]).html() != wordCorrect[i].toUpperCase() ) {
+			$(element).removeClass('normal');
 			$(element).addClass('wrong');
 			$(element).effect('shake');
 			window.setTimeout(moveOrigin, 600,element,originChangable);

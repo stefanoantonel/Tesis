@@ -36,9 +36,9 @@ function fillTemplate(rhymes){
 	        addSound(name);
 	        $(t).prop("hidden",false);
 	        $(t).css('display', 'inline');
-	        $(t).mousedown(function(){
+	       /* $(t).mousedown(function(){
 				playSound(this.name);
-			});
+			});*/
 	        allElements.push(t);
 		}
 		disorder(allElements);
@@ -53,7 +53,7 @@ function stopAudio(){
 	$.each($('audio'), function () {
 		this.pause();
 		this.currentTime = 0;
-		});
+	});			
 }
 
 function loadActivity(level){

@@ -35,27 +35,24 @@ function functionsDD(context, currElem) {
 		var img2Name = $(img2).attr("name");
 		//if(img1Name != $(img2).attr("name")){
 			if ($(img1).attr("column") < $(img2).attr("column")) {
-				imageOk($("#target").find(".imgButton"));
-				// reproduce the sound of the syllable
-				soundsArray = [];
-				addSound(img1Name+img2Name);
-				loadSounds();
-				waitInterval(2000).then(function() {
-					playSound(img1Name+img2Name);
-				});
-				//END reproduce sound
-				waitInterval(4000).then(function() {
-					$("#target").html("");
+				imageOk($("#target").find(".imgButton"))
+				.then(function() {
+					// reproduce the sound of the syllable
+					return playSound(img1Name+img2Name);	
+					//END reproduce sound	
 				})
+				.then(function() {
+					waitInterval(1500).then(function() {
+						$("#target").html("");
+						activateMoves(".imgButton");
+						img1 = null;
+						img2 = null;
+					});
+				});
 				contador = contador - 1;
 				if (contador == 0) {
 					window.setTimeout(sessionCounter(), 2000);
 				}
-				waitInterval(4500).then(function() {
-					activateMoves(".imgButton");
-					img1 = null;
-					img2 = null;
-				});
 			} else {
 				var img_target1 = $("#target").find("#" + $(img1).attr("id"));
 				var img_target2 = $("#target").find("#" + $(img2).attr("id"));
@@ -79,12 +76,22 @@ function functionsDD(context, currElem) {
 }
 
 function imageOk(target) {
-	window.setTimeout(function() {
-		$(target[0]).addClass("animateToFrontSmaller");
-	}, 500);
-	window.setTimeout(function() {
-		$(target[1]).addClass("animateToFrontRigth");
-	}, 500);
+	return new Promise(function(resolve,reject) {
+		/*window.setTimeout(function() {
+			$(target[0]).addClass("animateToFrontSmaller");
+		}, 500);
+		window.setTimeout(function() {
+			$(target[1]).addClass("animateToFrontRigth");
+		}, 500);*/
+
+		waitInterval(500).then(function() {
+			$(target[0]).addClass("animateToFrontSmaller");
+			$(target[1]).addClass("animateToFrontRigth");
+		}).then(function() {
+			resolve();
+		});
+	});
+	
 }
 
 function moveToTarget(elem) {

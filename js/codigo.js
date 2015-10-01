@@ -18,7 +18,9 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	        stop: function(event, ui) {
 				setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
 	        },*/
-			revert : true,
+	        cursorAt: { bottom: -5 },
+	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
+			revert : true
 		});
 
 		//$(this).mouseup(function() {
