@@ -6,7 +6,11 @@
 }
 
 body {
-	background-image :url('../../images/background/bubbleDark.jpg');
+	background :url('../../images/background/bubbleDark.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 

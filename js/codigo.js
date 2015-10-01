@@ -7,33 +7,14 @@ var actNum;
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
-			//stop: function( event, ui ) {
-			//	event.stopPropagation();
-				//alert();
-			//},
-			/*start: function(event, ui) {
-            	ui.helper.bind("click.prevent",
-	        	function(event) { event.preventDefault(); });
-	        },
-	        stop: function(event, ui) {
-				setTimeout(function(){ui.helper.unbind("click.prevent");}, 300);
-	        },*/
 	        cursorAt: { bottom: -5 },
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
 			revert : true
 		});
 
-		//$(this).mouseup(function() {
 		$(this).click(function() {
 			moveToTarget(this);
-		});
-		/*var arrayImgs = document.getElementsByClassName("imgButton");
-		for (var i = 0; i < arrayImgs.length; i++ ) {
-			arrayImgs[i].addEventListener( 'touchmove', function( ev ) {
-				alert("touchmove");
-			});
-		}*/
-		
+		});		
 	});
 
 	$(idBoxes).each(function(ind, box) {
@@ -48,7 +29,6 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 			}
 		});
 	});
-
 }
 
 function getConfig(numAct, callBack) {
@@ -61,25 +41,24 @@ function getConfig(numAct, callBack) {
 		getStyle();
 		loadTutorialVoice(numAct);
 		loadCounter(c.repeat);
-		addSound("wrong");
-		//loadSounds();
 	});
 }
 
 function getConfig(numAct) {
-	actNum = numAct;
-	saveArticle();
-	$.getJSON("js/configGroups.json", function(result) {
-		c = result["act" + numAct];
-	}).done(function() {
-		loadDescription(c.description);
-		getStyle();
-		loadTutorialVoice(numAct);
-		loadCounter(c.repeat);
-		addSound("wrong");
-		//loadSounds();
-
-	});
+	return new Promise(function(resolve, reject) {
+		actNum = numAct;
+		saveArticle();
+		$.getJSON("js/configGroups.json")
+		.done(function(result) {
+			var c = result["act" + numAct];
+			loadDescription(c.description);
+			getStyle().then(function() {
+				resolve();
+			});
+			loadTutorialVoice(numAct);
+			loadCounter(c.repeat);
+		});
+	});	
 }
 
 function getConfigByElement(element, level, quantity, callback) {
@@ -92,26 +71,23 @@ function getConfigByElement(element, level, quantity, callback) {
 			var result2 = result;
 
 			resolve(result2);
-			//console.log("result:", result);
 			if(callback) {
 				callback(result);
 			}
 		});
 	});
-	
 }
 
 function getRhymes(element, level, quantity, callBack) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
+	$.getJSON("js/configGroups.json")
+	.done(function(config) {
 		var element_config = config[element][level];
 		var result_disorder = disorder(element_config);
-		result = result_disorder.slice(0, quantity);
+		var result = result_disorder.slice(0, quantity);
 		$(result).each(function(ind, value) {
 			val = disorder(value);
 			result[ind] = val.slice(0, 2);
 		});
-	}).done(function() {
-		//console.log("result:", result);
 		callBack(result);
 	});
 }
@@ -151,16 +127,19 @@ function saveArticle() {
 }
 
 function getStyle() {
-	$.getJSON("js/configGroups.json", function(result) {
-		c = result["skin"];
-	}).done(
-			function() {
-				skin = disorder(c);
-				//console.log("skinks", skin);
-				$('head').append(
-						'<link rel="stylesheet" href="css/skin/' + skin[0]
-								+ '.css" type="text/css" />');
-			});
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json")
+		.done(function(result) {
+			var c = result["skin"];
+			skin = disorder(c);
+			$('head').append(
+				'<link rel="stylesheet" type="text/css" '
+				+ 'href="css/skin/' 
+				+ skin[0] + '.css" />');
+			resolve();
+		});	
+	});
+	
 }
 
 function loadCounter(count) {

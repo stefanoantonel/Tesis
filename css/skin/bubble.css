@@ -9,7 +9,10 @@
 }
 
 body {
-	background-image :url('../../images/background/bubble-background.jpg');
+	background :url('../../images/background/bubble-background.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
 	background-size:cover;	
 }
 

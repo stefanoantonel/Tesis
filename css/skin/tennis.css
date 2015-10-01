@@ -6,7 +6,11 @@
 }
 
 body {
-	background-image :url('../../images/background/tennis.jpg');
+	background: url('../../images/background/tennis.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 
