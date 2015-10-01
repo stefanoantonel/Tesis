@@ -70,6 +70,9 @@ function functionInit(counter){
 	}
 	loadActivity(level);
 	getConfig(1);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 

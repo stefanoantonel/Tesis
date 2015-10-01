@@ -18,6 +18,9 @@ function functionInit() {
 	getConfigByElement("act14","act",1,functionCallback);
 	readyOk();
 	rotateEfect();
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function rotateEfect(){

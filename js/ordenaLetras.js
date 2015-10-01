@@ -23,6 +23,9 @@ function functionInit(counter,level) {
 	readyOk();
 	getConfig(18);
 	actualPosition = 0;
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(data){

@@ -80,15 +80,23 @@ function getConfig(numAct) {
 	});
 }
 
-function getConfigByElement(element, level, quantity, callBack) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
-		var element_config = config[element][level];
-		var result_disorder = disorder(element_config);
-		result = result_disorder.slice(0, quantity);
-	}).done(function() {
-		//console.log("result:", result);
-		callBack(result);
+function getConfigByElement(element, level, quantity, callback) {
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json")
+		.done(function(config) {
+			var element_config = config[element][level];
+			var result_disorder = disorder(element_config);
+			var result = result_disorder.slice(0, quantity);
+			var result2 = result;
+
+			resolve(result2);
+			//console.log("result:", result);
+			if(callback) {
+				callback(result);
+			}
+		});
 	});
+	
 }
 
 function getRhymes(element, level, quantity, callBack) {
@@ -282,12 +290,13 @@ function loadTutorialVoice(actNum) {
 }
 
 function playSound(soundName) {
-	return new Promise(function(done) {
+	var soundName = soundName.toLowerCase();
+	return new Promise(function(resolve) {
 		new Howl({
 			urls: ['audio/' + soundName + '.mp3'],
 			autoplay: true,
 			onend: function() {
-				done();		
+				resolve();		
 			}
 		});
 	});
@@ -351,19 +360,30 @@ function sessionCounter() {
 				$( this ).remove();
 				$(".deleted").remove();
 			});
+
 			congratulations().then(function() {
 				waitInterval(2000).then(function() {
-					$("#activity-container").hide();
-					$("#activity-container").removeClass("congratulations");
-					$("#activity-container").append(originTemplateHTML);
-					$('#congratulations').remove();
-					$("#activity-container").fadeIn(400).show();
+					$( "html" ).addClass( "loading" );
+									
 					level="lev_1";
 					if(counter<= counterOriginal/2){
 						level="lev_2";
 					}
-					excecuteProgressBar();
-					functionInit(counter,level);
+					
+					waitInterval(500).then(function() {
+						$("#activity-container").hide();
+						$("#activity-container").removeClass("congratulations");
+						$("#activity-container").append(originTemplateHTML);
+						$('#congratulations').remove();
+						$("#activity-container").fadeIn(400).show();
+						
+						functionInit(counter,level).then(function() {
+							waitInterval(200).then(function() {
+								removeLoading();	
+							});
+						});
+						
+					});					
 				});
 			});
 		}
@@ -664,4 +684,8 @@ function deactivateMoves(obj) {
 function activateMoves(obj) {
 	$(obj).css("pointer-events", "auto");
 	$(obj).css("touch-events", "auto");
+}
+
+function removeLoading() {
+	$( "html" ).removeClass( "loading" );
 }

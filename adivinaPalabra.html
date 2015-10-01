@@ -1,38 +1,12 @@
 <!DOCTYPE html>
-<html>
-<meta charset="utf-8"/>
+<html class="loading">
 <head>
-
+<meta charset="utf-8">
 <title>ADIVINA LA PALABRA</title>
 
-<script src="comun/queryloader2.min.js"></script>
-<script src="js/loadingBar.js"></script>
-<script type="application/javascript" src="comun/jquery.js"></script>
-<script type="application/javascript" src="js/jquery-ui.min.js"></script>
-<script type="application/javascript" src="js/codigo.js"></script>
-<script type="application/javascript" src="js/adivinaPalabra.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/loading.css">
+<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
 
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!-- NO SACAR -->
-<script type="text/javascript" src="comun/comun.js"></script>
-<link rel="stylesheet" type="text/css" href="comun/comun.css">
-<!-- FIN DE NO SACAR :P -->
-<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="js/howler.min.js"></script>
-
-<script type="application/javascript">
-	
-	
-	$(document).ready(function() {
-		ejercicio = function() {
-			functionInit();
-		}
-	});
-
-
-</script>
 <style type="text/css">
 .syllable {
 	color: #FFA500;
@@ -80,7 +54,6 @@ article {
 </style>
 </head>
 
-
 <body>
 	<header></header>
 	<div id="activity-container">
@@ -95,6 +68,15 @@ article {
 	<footer></footer>
 </body>
 
+<script type="application/javascript">
 
+	head.ready(function () {
+    	// some callback stuff
+    	ejercicio = function() {
+			functionInit();
+		}
+	});
+	
+</script>
 
 </html>

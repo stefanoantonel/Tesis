@@ -9,7 +9,10 @@ function functionInit() {
 	getConfigByElement("sentence",level,1,functionCallback);
 	rightBoxTemp = $('#rightboxTemp');
 	rightContainer = $('#rightContainer');
-	$("#finish").click(checkCorrect)
+	$("#finish").click(checkCorrect);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(conf){

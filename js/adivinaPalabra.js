@@ -30,6 +30,9 @@ function functionInit(counter,level) {
 	readyOk();
 	getConfig(2);
 	actualPosition = 0;
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(data){
@@ -49,7 +52,7 @@ function functionCallback(data){
 function checkSyllable(context,currElem){
 	isCorrect=checkCorrect(context,currElem);
 	if (isCorrect==true){
-		playSound(origin);
+		//playSound(origin);
 		sessionCounter(counter);
 	}
 }

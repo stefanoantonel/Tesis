@@ -1,37 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
 <meta charset="utf-8"/>
 <head>
 <title>PALABRA OCULTA</title>
-<script src="comun/queryloader2.min.js"></script>
-<script src="js/loadingBar.js"></script>
-<script src="comun/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<script src="js/jquery-ui.min.js"></script>
-<script src="js/palabraOculta.js"></script>
-<script src="js/codigo.js"></script>
-
-<link rel="stylesheet" href="css/style.css" />
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<!-- NO SACAR -->
-<script src="comun/comun.js"></script>
-<link rel="stylesheet" href="comun/comun.css">
-<!-- FIN DE NO SACAR :P -->
-<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
-<script type="text/javascript" src="js/howler.min.js"></script>
-
-<script type="text/javascript">
-	$(document).ready(function() {
-		ejercicio = function() {
-			target = [ 'target' ];
-
-			readyOk(target, 'leftbox', 'rightbox');
-
-		}
-
-	});
-</script>
+<link rel="stylesheet" type="text/css" href="css/loading.css">
+<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
 
 <style>
 .img {
@@ -126,5 +100,15 @@ article {
 	</div>
 	<footer></footer>
 </body>
+
+<script type="text/javascript">
+	head.ready(function() {
+		ejercicio = function() {
+			target = [ 'target' ];
+			readyOk(target, 'leftbox', 'rightbox');
+		}
+	});
+</script>
+
 </html>
 

@@ -17,6 +17,9 @@ function functionInit() {
 	getConfigByElement("act16","act",1,functionCallback);
 	readyOk();
 	window.setTimeout(function() {	ballBounce(); },300);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function moveToTarget(elem) {

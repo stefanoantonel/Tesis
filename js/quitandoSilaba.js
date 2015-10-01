@@ -18,6 +18,9 @@ function functionInit() {
 	getConfig(10);
 	getConfigByElement("act10","act",1,functionCallback);
 	readyOk();
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function functionCallback(conf){
