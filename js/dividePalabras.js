@@ -3,15 +3,21 @@ var finalSentence = "";
 var actNum = 22;
 
 function functionInit() {
-	getConfig('22');
-	if(level == null)
-		level = "lev_1";
-	getConfigByElement("sentence",level,1,functionCallback);
-	rightBoxTemp = $('#rightboxTemp');
-	rightContainer = $('#rightContainer');
-	$("#finish").click(checkCorrect);
 	return new Promise(function(resolve, reject) {
-		resolve();
+		getConfig('22').then(function() {
+			return getConfigByElement("sentence",level,1,null);
+		}).then(function(conf) {
+			functionCallback(conf);
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+
+		if(level == null)
+			level = "lev_1";
+		rightBoxTemp = $('#rightboxTemp');
+		rightContainer = $('#rightContainer');
+		$("#finish").click(checkCorrect);
 	});
 }
 

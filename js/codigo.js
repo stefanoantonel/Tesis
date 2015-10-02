@@ -92,34 +92,36 @@ function getRhymes(element, level, quantity, callBack) {
 	});
 }
 
-function getConfigByElementWithOne (type, level, quantity, callBack,elementExcept) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
-		element_config = config[type][level];
-		element_config = removeOneElement(element_config, elementExcept);
-		element_config = disorder(element_config);
-		result_disorder = element_config.slice(0, quantity);
-		result_disorder.push(elementExcept);
-		result = disorder(result_disorder);
-
-	}).done(function() {
-		callBack(result);
-	});
+function getConfigByElementWithOne (type, level, quantity, callBack, elementExcept) {
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json").done(function(config) {
+			var element_config = config[type][level];
+			element_config = removeOneElement(element_config, elementExcept);
+			element_config = disorder(element_config);
+			var result_disorder = element_config.slice(0, quantity);
+			result_disorder.push(elementExcept);
+			var result = disorder(result_disorder);
+			callBack(result);
+			resolve(result);
+		});
+	})
 }
 
-function getConfigByElementWithOne(type, level, quantity, callBack,
-		elementExcept, firstLetter) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
-		element_config = config[type][level];
-		element_config = removeOneElement(element_config, elementExcept);
-		element_config = removeFirstLetter(element_config, firstLetter);
-		element_config = disorder(element_config);
-		result_disorder = element_config.slice(0, quantity);
-		result_disorder.push(elementExcept);
-		result = disorder(result_disorder);
-
-	}).done(function() {
-		callBack(result);
-	});
+function getConfigByElementWithOne(type, level, quantity, callBack, 
+	elementExcept, firstLetter) {
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json").done(function(config) {
+			var element_config = config[type][level];
+			element_config = removeOneElement(element_config, elementExcept);
+			element_config = removeFirstLetter(element_config, firstLetter);
+			element_config = disorder(element_config);
+			var result_disorder = element_config.slice(0, quantity);
+			result_disorder.push(elementExcept);
+			var result = disorder(result_disorder);
+			callBack(result);
+			resolve(result);
+		});	
+	});	
 }
 
 function saveArticle() {

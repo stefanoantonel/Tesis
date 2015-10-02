@@ -5,15 +5,33 @@ var contOriginal;
 var contSegundo;
 
 function functionInit(counter) {
-	level = "lev_1";
-	if(counter==1){
-		level="lev_2";
-	}
-	contador = 3;
-	target = $('#target');
-	readyOk(target, 'leftbox', 'rightbox',level);
 	return new Promise(function(resolve, reject) {
-		resolve();
+		level = "lev_1";
+		if(counter==1){
+			level="lev_2";
+		}
+		contador = 3;
+		target = $('#target');
+		readyOk(target, 'leftbox', 'rightbox',level)
+		.then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+	});
+}
+function readyOk(idObj, left, right,level) {
+	return new Promise(function(resolve, reject) {
+		getConfig("5")
+		.then(function() {
+			return getConfigByElement("rhymes",level,3,null);
+		})
+		.then(function(conf) {
+			return fillTemplate(conf);
+		})
+		.then(function() {
+			resolve();
+		});
 	});
 }
 
@@ -78,10 +96,7 @@ function moveToTarget(elem) {
 	functionsDD(null, elem);
 }
 
-function readyOk(idObj, left, right,level) {
-	getConfig("5");
-	config = getConfigByElement("rhymes",level,3,fillTemplate);
-}
+
 
 function fillTemplate(conf) {
 	var left = [];
@@ -100,6 +115,9 @@ function fillTemplate(conf) {
     });
 	dragAndDrop(contRight, target, functionsDD,moveToTarget);
 	dragAndDrop(contLeft, target, functionsDD,moveToTarget);
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function fillElements(conf, place) {
