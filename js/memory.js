@@ -5,6 +5,20 @@ var activityNum=0;
 var activityQuantity=0;
 var configuration;
 
+function functionInit(counter){
+	return new Promise(function(resolve, reject) {
+		getConfig(1).then(function() {
+			return loadActivity(level);
+		}).then(function() {
+			resolve();
+		})
+		level = "lev_1";
+		if(counter==1){
+			level="lev_2";
+		}			
+	});
+}
+
 function removeBackground(img){
 	
 	$("#"+img).css('background-image', 'none');
@@ -57,23 +71,21 @@ function stopAudio(){
 }
 
 function loadActivity(level){
-	contador=4;
-	$('#alertOk').delay( 100 ).fadeOut( 400 );
-	$("article").show();
-	config = getConfigByElement("rhymes",level,4,fillTemplate);
+	return new Promise(function(resolve, reject) {
+		contador=4;
+		$('#alertOk').delay( 100 ).fadeOut( 400 );
+		$("article").show();
+		getConfigByElement("rhymes",level,4,null)
+		.then(function(conf) {
+			fillTemplate(conf);
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+	});	
 }
 
-function functionInit(counter){
-	level = "lev_1";
-	if(counter==1){
-		level="lev_2";
-	}
-	loadActivity(level);
-	getConfig(1);
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
-}
+
 
 
 function areEqual(im1,im2){

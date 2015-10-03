@@ -404,15 +404,17 @@ function removeFirstLetter(element_config, firstLetter) {
 }
 
 function getConfigByElementWithFirstLetter(type, level, quantity, callBack, firstLetter) {
-	$.getJSON("js/configGroups.json", function(config, callBack) {
-		element_config = config[type][level];
-		element_config = getFirstLetter(element_config, firstLetter);
-		element_config = disorder(element_config);
-		result_disorder = element_config.slice(0, quantity);
-		result = disorder(result_disorder);
-
-	}).done(function() {
-		callBack(result);
+	return new Promise(function(resolve, reject) {
+		$.getJSON("js/configGroups.json").done(function(config) {
+			var element_config = config[type][level];
+			element_config = getFirstLetter(element_config, firstLetter);
+			element_config = disorder(element_config);
+			var result_disorder = element_config.slice(0, quantity);
+			var result = disorder(result_disorder);
+			resolve(result);
+			if(callBack)
+				callBack(result);					
+		});		
 	});
 }
 

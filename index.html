@@ -51,18 +51,7 @@
 }
 </style>
  
-<script type="application/javascript">
 
-$(document).ready(function() {
-	ejercicio=function(){
-		var conf;
-		conf=getConfig(1,functInit);
-	}
-	$(".btn_link").click(function(){
-		window.top.location.href = $(this).attr("id")+".html";
-	}); 
-});
-</script>
 </head>
 <body>
 
@@ -105,4 +94,16 @@ $(document).ready(function() {
 	<!-- Fin parte del tempale -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
+	<script type="application/javascript">
+
+	$(document).ready(function() {
+		ejercicio=function(){
+			var conf;
+			conf=getConfig(1,functInit);
+		}
+		$(".btn_link").click(function(){
+			window.top.location.href = $(this).attr("id")+".html";
+		}); 
+	});
+	</script>
 </html>
