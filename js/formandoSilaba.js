@@ -5,16 +5,37 @@ var contOriginal;
 var contSegundo;
 
 function functionInit(counter) {
-	level = "lev_1";
-	if(counter==1){
-		level="lev_2";
-	}
-	contador = 5;
-	target = $('#target');
-	readyOk(target, 'leftbox', 'rightbox',level);
 	return new Promise(function(resolve, reject) {
-		resolve();
+		level = "lev_1";
+		if(counter==1){
+			level="lev_2";
+		}
+		contador = 5;
+		target = $('#target');
+		readyOk(target, 'leftbox', 'rightbox',level)
+		.then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});		
 	});
+}
+
+function readyOk(idObj, left, right,level) {
+	return new Promise(function(resolve, reject) {
+		getConfig("20")
+		.then(function() {
+			return getConfigByElement("consonants",level,5,null);
+		})
+		.then(function(conf) {
+			return fillTemplate(conf);
+		})
+		.then(function() {
+			resolve();
+		});
+		place = "left";
+	});
+	
 }
 
 function imgWrong(img1, img2, contOriginal1, contOriginal2) {
@@ -99,12 +120,6 @@ function moveToTarget(elem) {
 	functionsDD(null, elem);
 }
 
-function readyOk(idObj, left, right,level) {
-	getConfig("20");
-	place = "left";
-	config = getConfigByElement("consonants",level,5,fillTemplate);
-}
-
 function fillTemplate(conf) {
 	var array = [];
 	$(conf).each(function(index, element) {
@@ -121,6 +136,9 @@ function fillTemplate(conf) {
 		place = "right";
 		config = getConfigByElement("distractors","vocals",5,fillTemplate);	
 	}	
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function fillElements(conf, place) {

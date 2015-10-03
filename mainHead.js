@@ -15,11 +15,11 @@ head.load(
 	
 	);
 
-head.ready(function () {
+/*head.ready(function () {
 	waitInterval(200).then(function() {
 		$( "html" ).removeClass( "loading" );	
 		playTutorial(actNum);
 	});
 
-});
+});*/
 

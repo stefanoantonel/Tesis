@@ -3,34 +3,43 @@ var rightArray=0
 var numParts=0;
 var secondWord = '';
 
+function functionInit() {
+	getConfig('6').then(function() {
+		return getConfigByElement("act6","act",1,null);
+	}).then(function(c){
+		return functionCallback(c);
+	}).then(function() {
+		return new Promise(function(resolve, reject) {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});	
+	});	
+}
+
 function functionsDD(context,currElem){
 	isCorrect=checkCorrect(currElem);
 	if (isCorrect==true) { sessionCounter(); }
 }
 
-function functionInit() {
-	getConfig('6');
-	getConfigByElement("act6","act",1,functionCallback);
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
-}
-
 function functionCallback(conf){
-	var conf = conf[0];
-	var wordToChange = conf["target"] - 1;
-	var values = conf["values"];
+	return new Promise(function(resolve, reject) {
+		conf = conf[0];
+		var wordToChange = conf["target"] - 1;
+		var values = conf["values"];
 
-	// Choose firstone, they are disordered.
-	left=values[0].join('').replace(/,/g, ""); //no se van a mover
-	right=values[1].join('').replace(/,/g, "");
-	// wordToChange=group["wordToChange"];
-	functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
-	secondWord = right;
-	
-	getConfigByElementWithOne("distractors","words",2,functInitImages,right);
-
-	
+		// Choose firstone, they are disordered.
+		left=values[0].join('').replace(/,/g, ""); //no se van a mover
+		right=values[1].join('').replace(/,/g, "");
+		// wordToChange=group["wordToChange"];
+		functInitWords(left,right,wordToChange); //muestra una palabra y oculta la otra
+		secondWord = right;
+		
+		getConfigByElementWithOne("distractors","words",2,functInitImages,right)
+		.then(function() {
+			resolve();
+		});
+	});	
 }
 
 function moveToTarget(elem) {
@@ -46,15 +55,15 @@ function changeColor(cont,words,wordToChange){
 		d=document.createElement('div');
 		elem = elem.toUpperCase();
 		$(d).html(elem);
-		a=$(d).mouseover(function(){
-			playSound(words);
-		});
 		a=$(d).addClass('inline');
 		elements.push(a);
 	});
-	wordToChange=$(elements[wordToChange]);
 
+	wordToChange = $(elements[wordToChange]);
 	$(wordToChange).addClass('wordSelected');
+	$(wordToChange).mouseover(function(){
+		playSound(words);
+	});
 	$(wordToChange).click(function(){	
 		$('.firstWord').fadeOut();
 		$('.secondWord').removeAttr('hidden');

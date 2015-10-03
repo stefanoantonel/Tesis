@@ -8,6 +8,29 @@ var actualPosition;
 var numParts;
 var completeWord = "";
 
+function functionInit(counter,level) {
+	return new Promise(function(resolve, reject) {
+		if(level==null){
+			level="lev_1";
+		}
+		if(counter == 1){
+			level="lev_3";
+		}
+		getConfig(2)
+		.then(function() {
+			return readyOk();	
+		}).then(function() {
+			return getConfigByElement("words",level,1,null);
+		}).then(function(conf) {
+			return functionCallback(conf);
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		})
+		actualPosition = 0;
+	});
+}
 function readyOk(){
 	idObj="template";
 	idBox="leftbox";
@@ -18,23 +41,10 @@ function readyOk(){
 	boxes=[idBox,idBox2];
 	temp=$(temp1);
 	img=imgDemo;
-}
-function functionInit(counter,level) {
-	if(level==null){
-		level="lev_1";
-	}
-	if(counter == 1){
-		level="lev_3";
-	}
-	getConfigByElement("words",level,1,functionCallback);
-	readyOk();
-	getConfig(2);
-	actualPosition = 0;
 	return new Promise(function(resolve, reject) {
 		resolve();
 	});
 }
-
 function functionCallback(data){
 	selectedText=getTextRand(data);
 	completeWord = selectedText.replace(/ /g,"");
@@ -46,7 +56,9 @@ function functionCallback(data){
 	fillImg(imgDemo,parts);
 	parts=$("#"+boxes[0]).children('.syllable');
 	dragAndDrop(parts,$("#"+boxes[1]),checkSyllable,moveToTarget);
-	
+	return new Promise(function(resolve, reject) {
+		resolve();
+	});
 }
 
 function checkSyllable(context,currElem){

@@ -6,18 +6,31 @@ var letter = "";
 var countSameLetters;
 
 function functionInit() {
-	getConfig('21');
-	getConfigByElement("consonants","lev_1",1,functionCallback);
 	leftBoxTemp = $('#leftboxTemp');
 	leftContainer = $('#leftContainer');
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
+	return new Promise(function(resolve, reject) { 
+		getConfig('21').then(function() {
+			return getConfigByElement("consonants","lev_1",1,null);
+		}).then(function(conf) {
+			return functionCallback(conf);
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();	
+		});
+	});		
 }
 
 function functionCallback(conf){
-	letter = conf[0];
-	getConfigByElementWithFirstLetter("distractors","words",3,functInitWords,letter);
+	return new Promise(function(resolve, reject) {
+		letter = conf[0];
+		getConfigByElementWithFirstLetter("distractors","words",
+			3,functInitWords,letter).then(function() {
+			//functInitWords(conf);
+			resolve();
+		});
+	});
+	
 }
 
 function functionsDD(context,currElem){

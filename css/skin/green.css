@@ -6,9 +6,12 @@
 }
 
 body {
-	background-image :url('../../images/background/green.jpg');
+	background :url('../../images/background/green.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-
 
 .btnMemory {
 	background-color:#00dd2f;

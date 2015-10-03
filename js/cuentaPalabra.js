@@ -4,6 +4,25 @@ var numbersContainer;
 var completeWord;
 var numberToSelect;
 
+function functionInit(counter,level) {
+	return new Promise(function(resolve, reject) {
+		getConfig("12").then(function() {
+			readyOk();
+			return getConfigByElement("sentence",level,1,null)
+		}).then(function(conf) {
+			return functionCallback(conf);
+		}).then(function() {
+			window.setTimeout(function(){$(".cube").addClass("girar");},800);
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+		
+		if(level == null)
+			level ="lev_1";	
+	});	
+}
+
 function readyOk(){
 	target=$('#target');
 	numberTemp=$('#numberTemp');
@@ -11,17 +30,6 @@ function readyOk(){
 	completeWord=$('#completeWord');
 }
 
-function functionInit(counter,level) {
-	readyOk();
-	getConfig("12");
-	if(level == null)
-		level ="lev_1";
-	getConfigByElement("sentence",level,1,functionCallback);
-	window.setTimeout(function(){$(".cube").addClass("girar");},800);
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
-}
 function moveToTarget(elem) {
 	$(target).append(elem);
 	functionsDD(null,elem);
@@ -30,11 +38,16 @@ function moveToTarget(elem) {
 function functionCallback(conf){
 	var conf = conf[0];
 	var sentenceSelected = conf["values"];
-	addSound(sentenceSelected);
+	//addSound(sentenceSelected);
 	numberToSelect = sentenceSelected.length;
 	fillTemplateWord(sentenceSelected);
-	getConfigByElementWithOne("distractors","numbers",2,fillTemplateNumber,numberToSelect);
-	
+	getConfigByElementWithOne("distractors","numbers",2,
+		fillTemplateNumber,numberToSelect)
+	.then(function() {
+		return new Promise(function(resolve,reject) {
+			resolve();
+		});
+	});	
 }
 
 function getRandomNumber(quantity) {
@@ -54,8 +67,7 @@ function fillTemplateWord(wordComplete){
 			playSound(originWord.replace(/ /g,"")); 
         }, this), 300));
         }, function() { clearTimeout($.data(this, "timer")); }
-	);
-	
+	);	
 }
 
 function fillTemplateNumber(number){

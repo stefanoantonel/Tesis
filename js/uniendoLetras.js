@@ -15,24 +15,24 @@ var stageCorrect = 0;
 var syllables;
 var originChangable;
 var nextOrigin;
+var imgElement;
 
 function readyOk(){
 	idObj = "template";
 	idTopBox = "topbox";
 	idMiddleBox = "middlebox";
 	idBottomBox = "bottombox";
-	imgDemo="demo";
+	imgDemo= "demo";
 	
 	temp1=document.getElementById(idObj);
 	boxes=[idTopBox,idMiddleBox,idBottomBox];
 	temp=$(temp1);
 	img=imgDemo;
+	imgElement = $("#imgTarget");
 	originChangable = $("#"+idTopBox);
 	nextOrigin = $("#"+idMiddleBox);
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
 }
+
 function functionInit(counter,level) {
 	return new Promise(function(resolve, reject) {
 		if(level==null){
@@ -42,42 +42,47 @@ function functionInit(counter,level) {
 			level="lev_3";
 		}
 		
-		readyOk()
+		readyOk();
+		actualPosition = 0;
+		getConfig(19)
 		.then(function() {
 			return getConfigByElement("words",level,1,null);
 		})
 		.then(function(data) {
 			return functionCallback(data);
-		});
-		getConfig(19);
-		actualPosition = 0;
-		
-		resolve();
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});		
 	});
 }
 
 function functionCallback(data){
-	if(stageCorrect == 0) {
-		syllables = data;
-		var parts=divideLetters(data);
-		numParts=$(parts).size();
-		fillTemplate(idTopBox,temp,parts);
-		imgDemo=$(".demo");
-		fillImg(imgDemo,parts);
-		boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
-		parts=$("#"+idTopBox).children('.syllable');
-		dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
-		$("#"+idMiddleBox).addClass("loadEnable");	
-	}
-	if(stageCorrect == 1) {
-		var parts=divideSyllables(data);
-		numParts=$(parts).size();
-		fillTemplate(idMiddleBox,temp,parts);
-		boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
-		parts=$("#"+idMiddleBox).children('.syllable');
-		dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
-		$("#"+idBottomBox).addClass("loadEnable");	
-	}	
+	return new Promise(function(resolve, reject) {
+		if(stageCorrect == 0) {
+			syllables = data;
+			var parts=divideLetters(data);
+			numParts=$(parts).size();
+			fillTemplate(idTopBox,temp,parts);
+			imgDemo=$(".demo");
+			fillImg(imgDemo,parts);
+			boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
+			parts=$("#"+idTopBox).children('.syllable');
+			dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
+			$("#"+idMiddleBox).addClass("loadEnable");	
+		}
+		if(stageCorrect == 1) {
+			var parts=divideSyllables(data);
+			numParts=$(parts).size();
+			fillTemplate(idMiddleBox,temp,parts);
+			boxesAll = [$("#"+idTopBox),$("#"+idMiddleBox),$("#"+idBottomBox)];
+			parts=$("#"+idMiddleBox).children('.syllable');
+			dragAndDrop(parts,boxesAll,checkSyllable,moveToTarget);
+			$("#"+idBottomBox).addClass("loadEnable");	
+		}	
+		resolve();
+	});
 }
 
 function checkSyllable(context,currElem){
@@ -90,6 +95,7 @@ function checkSyllable(context,currElem){
 	}
 	if (isCorrect==true && stageCorrect == 2){
 		playSound(origin);
+		imgElement.addClass('animateToFrontSmaller');
 		sessionCounter(counter);
 		stageCorrect = 0;
 	}

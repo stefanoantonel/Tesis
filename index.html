@@ -3,13 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <!-- Parte del tempale --> 
-	<script type="text/javascript" src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script src="js/memory.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<!-- Fin parte del tempale -->
-	 <script type="application/javascript" src="js/codigo.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
 <style>
 .btn_link {
 	-moz-box-shadow:inset 0px 1px 0px 0px #c0f6fa;
@@ -57,48 +51,59 @@
 }
 </style>
  
-<script type="application/javascript">
 
-$(document).ready(function() {
-	ejercicio=function(){
-		var conf;
-		conf=getConfig(1,functInit);
-	}
-	$(".btn_link").click(function(){
-		window.top.location.href = $(this).attr("id")+".html";
-	}); 
-});
-</script>
 </head>
 <body>
-<button class="btn_link" id="memory">Memory</button>
-</br>
-<button class="btn_link" id="adivinaPalabra">Adivina Palabra</button>
-</br>
-<button class="btn_link" id="palabraOculta">Palabra Oculta</button>
-</br>
-<button class="btn_link" id="estoyPensando">Pensando en Algo</button>
-</br>
-<button class="btn_link" id="cambiarPalabra">Cambiar Palabra</button>
-</br>
-<button class="btn_link" id="amigoDeQuien">Amigo de Quien</button>
-</br>
-<button class="btn_link" id="cuentaPalabra">Cuenta Palabras</button>
-</br>
-<button class="btn_link" id="quitandoSilaba">Quitar Silabas</button>
-</br>
-<button class="btn_link" id="silabaOculta">Silaba Oculta</button>
-</br>
-<button class="btn_link" id="repitiendoSilaba">Silaba Repetidas</button>
-</br>
-<button class="btn_link" id="dividePalabras">Divide Palabras</button>
-</br>
-<button class="btn_link" id="encuentraLetras">Encuentra Letras</button>
-</br>
-<button class="btn_link" id="formandoSilaba">Formando Silaba</button>
-</br>
-<button class="btn_link" id="ordenaLetras">Ordena Letras</button>
-</br>
-<button class="btn_link" id="uniendoLetras">Uniendo Letras</button>
+
+	<button class="btn_link" id="adivinaPalabra">Adivina Palabra</button>
+	</br>
+	<button class="btn_link" id="amigoDeQuien">Amigo de Quien</button>
+	</br>
+	<button class="btn_link" id="cambiarPalabra">Cambiar Palabra</button>
+	</br>
+	<button class="btn_link" id="cuentaPalabra">Cuenta Palabras</button>
+	</br>
+	<button class="btn_link" id="dividePalabras">Divide Palabras</button>
+	</br>
+	<button class="btn_link" id="encuentraLetras">Encuentra Letras</button>
+	</br>
+	<button class="btn_link" id="estoyPensando">Pensando en Algo</button>
+	</br>
+	<button class="btn_link" id="formandoSilaba">Formando Silaba</button>
+	</br>
+	<button class="btn_link" id="memory">Memory</button>
+	</br>
+	<button class="btn_link" id="ordenaLetras">Ordena Letras</button>
+	</br>
+	<button class="btn_link" id="palabraOculta">Palabra Oculta</button>
+	</br>
+	<button class="btn_link" id="quitandoSilaba">Quitar Silabas</button>
+	</br>
+	<button class="btn_link" id="repitiendoSilaba">Silaba Repetidas</button>
+	</br>
+	<button class="btn_link" id="silabaOculta">Silaba Oculta</button>
+	</br>
+	<button class="btn_link" id="uniendoLetras">Uniendo Letras</button>
+	</br>
+
 </body>
+
+	<script type="text/javascript" src="comun/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<!-- Fin parte del tempale -->
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<script type="application/javascript">
+
+	$(document).ready(function() {
+		ejercicio=function(){
+			var conf;
+			conf=getConfig(1,functInit);
+		}
+		$(".btn_link").click(function(){
+			window.top.location.href = $(this).attr("id")+".html";
+		}); 
+	});
+	</script>
 </html>

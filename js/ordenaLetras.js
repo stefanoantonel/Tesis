@@ -19,12 +19,17 @@ function readyOk(){
 	img=imgDemo;
 }
 function functionInit(counter,level) {
-	getConfigByElement("distractors","letters",4,functionCallback);
-	readyOk();
-	getConfig(18);
-	actualPosition = 0;
 	return new Promise(function(resolve, reject) {
-		resolve();
+		readyOk();
+		actualPosition = 0;
+		getConfig(18).then(function() {
+			return getConfigByElement("distractors","letters",4,null);
+		}).then(function(conf) {
+			functionCallback(conf);
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
 	});
 }
 

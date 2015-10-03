@@ -13,12 +13,19 @@ function readyOk(){
 }
 
 function functionInit() {
-	getConfig(16);
-	getConfigByElement("act16","act",1,functionCallback);
-	readyOk();
-	window.setTimeout(function() {	ballBounce(); },300);
 	return new Promise(function(resolve, reject) {
-		resolve();
+		getConfig(16).then(function() {
+			return getConfigByElement("act16","act",1,null);	
+		}).then(function(c) {
+			return functionCallback(c);
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+		
+		readyOk();
+		window.setTimeout(function() {	ballBounce(); },300);
 	});
 }
 
@@ -28,23 +35,27 @@ function moveToTarget(elem) {
 }
 
 function functionCallback(conf){
-	var conf = conf[0];
-	var syllableToSelect = conf["target"] - 1;
-	var valueArray = conf["values"];
-	completeWord = valueArray.join("")
-	var valueLength = valueArray.length;
-	var firstWord = valueArray.slice(0, syllableToSelect);
-	var secondWord = valueArray.slice(syllableToSelect+1, valueLength);
-	/* 
-	* I had to do this toString() because it is an object and when 
-	* I modify the syllable the value change
-	*/
-	syllableResult = valueArray[syllableToSelect];
-	resultFirstWord = firstWord.join('').replace(',','');
-	resultsecondWord = secondWord.join('').replace(',','');
-	fillTemplateWord(resultFirstWord,resultsecondWord);
-	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
-	
+	return new Promise(function(resolve, reject) {
+		conf = conf[0];
+		var syllableToSelect = conf["target"] - 1;
+		var valueArray = conf["values"];
+		completeWord = valueArray.join("")
+		var valueLength = valueArray.length;
+		var firstWord = valueArray.slice(0, syllableToSelect);
+		var secondWord = valueArray.slice(syllableToSelect+1, valueLength);
+		/* 
+		* I had to do this toString() because it is an object and when 
+		* I modify the syllable the value change
+		*/
+		syllableResult = valueArray[syllableToSelect];
+		resultFirstWord = firstWord.join('').replace(',','');
+		resultsecondWord = secondWord.join('').replace(',','');
+		fillTemplateWord(resultFirstWord,resultsecondWord);
+		getConfigByElementWithOne("distractors","syllables",
+			2,functionCallback2,syllableResult).then(function() {
+				resolve();
+			});
+	});		
 }
 
 function functionCallback2(conf) {
