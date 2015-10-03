@@ -68,7 +68,7 @@ function functionCallback(conf){
 	/* This makes the letters not to be moved*/
 	$(rightContainer).sortable({
 		cancel: ".ui-state-disabled",
-		cursorAt: { bottom: -5 },
+		cursorAt: { bottom: -8 },
 	});
 	$( rightContainer ).disableSelection();
 }

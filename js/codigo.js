@@ -7,7 +7,7 @@ var actNum;
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
-	        cursorAt: { bottom: -5 },
+	        //cursorAt: { bottom: -5 },
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
 			revert : true
 		});
