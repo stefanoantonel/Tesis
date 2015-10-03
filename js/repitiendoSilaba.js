@@ -14,12 +14,18 @@ function readyOk(){
 }
 
 function functionInit() {
-	getConfig(14);
-	getConfigByElement("act14","act",1,functionCallback);
-	readyOk();
-	rotateEfect();
 	return new Promise(function(resolve, reject) {
-		resolve();
+		getConfig(14).then(function() {
+			return getConfigByElement("act14","act",1,null);	
+		}).then(function(c) {
+			return functionCallback(c);
+		}).then(function() {
+			rotateEfect();
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		})
+		readyOk();			
 	});
 }
 
@@ -29,15 +35,20 @@ function rotateEfect(){
 } 
 
 function functionCallback(conf){
-	var conf = conf[0];
-	syllableResult  = conf["target"];
-	resultFirstWord = conf["values"][0];
-	resultsecondWord = conf["values"][1];
-	fillTemplateWord(completeWord1,resultFirstWord);
-	fillTemplateWord(completeWord2,resultsecondWord);
-	getConfigByElementWithOne("distractors","syllables",2,functionCallback2,syllableResult);
-	
+	return new Promise(function(resolve, reject) {
+		conf = conf[0];
+		syllableResult  = conf["target"];
+		resultFirstWord = conf["values"][0];
+		resultsecondWord = conf["values"][1];
+		fillTemplateWord(completeWord1,resultFirstWord);
+		fillTemplateWord(completeWord2,resultsecondWord);
+		getConfigByElementWithOne("distractors","syllables",
+			2,functionCallback2,syllableResult).then(function() {
+				resolve();
+			})
+	});	
 }
+
 function moveToTarget(elem) {
 	$(target).append(elem);
 	functionsDD(null,elem);

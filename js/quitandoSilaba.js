@@ -6,6 +6,21 @@ var imgContainer;
 var completeWord;
 var part;
 
+function functionInit() {
+	return new Promise(function(resolve, reject) {
+		getConfig(10).then(function() {
+			return getConfigByElement("act10","act",1,null);
+		}).then(function(conf) {
+			return functionCallback(conf);
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();
+		});
+		readyOk();		
+	});
+}
+
 function readyOk(){
 	target=$('#target');
 	imgTemp=$('#imgTemp');
@@ -14,30 +29,25 @@ function readyOk(){
 	part=$('#part');
 }
 
-function functionInit() {
-	getConfig(10);
-	getConfigByElement("act10","act",1,functionCallback);
-	readyOk();
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
-}
-
 function functionCallback(conf){
-	var conf = conf[0];
-	var syllableToSelect = conf["target"] - 1;
-	var values = conf["values"];
-	/* 
-	* I have to do this toString() because it is an object and when 
-	* I modify the syllable the value change
-	*/
-	var res = conf["values"].toString();
-	res = res.split(",");
-	res[syllableToSelect] = "";
-	resultWord = res.join('').replace(',','');
-	fillTemplateWord(values,syllableToSelect);
-	getConfigByElementWithOne("distractors","words",2,functionCallback2,resultWord);
-	
+	return new Promise(function(resolve, reject) {
+		conf = conf[0];
+		var syllableToSelect = conf["target"] - 1;
+		var values = conf["values"];
+		/* 
+		* I have to do this toString() because it is an object and when 
+		* I modify the syllable the value change
+		*/
+		var res = conf["values"].toString();
+		res = res.split(",");
+		res[syllableToSelect] = "";
+		resultWord = res.join('').replace(',','');
+		fillTemplateWord(values,syllableToSelect);
+		getConfigByElementWithOne("distractors","words",2,
+			functionCallback2,resultWord).then(function() {
+				resolve();
+			});
+	});	
 }
 
 function functionCallback2(conf) {

@@ -10,6 +10,8 @@ function functionInit(counter){
 		getConfig(1).then(function() {
 			return loadActivity(level);
 		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
 			resolve();
 		})
 		level = "lev_1";
@@ -78,8 +80,6 @@ function loadActivity(level){
 		getConfigByElement("rhymes",level,4,null)
 		.then(function(conf) {
 			fillTemplate(conf);
-			removeLoading();
-			playTutorial(actNum);
 			resolve();
 		});
 	});	

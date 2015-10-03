@@ -3,6 +3,20 @@ var rightArray=0
 var numParts=0;
 var resultWord = '';
 
+function functionInit() {
+	return new Promise(function(resolve, reject) {
+		getConfig(4).then(function() {
+			return getConfigByElement("act4","act",1,null);	
+		}).then(function(conf) {
+			return functionCallback(conf);
+		}).then(function() {
+			removeLoading();
+			playTutorial(actNum);
+			resolve();	
+		});		
+	});
+}
+
 function functionsDD(context,currElem){
 	checkReplace(context,currElem);
 	isCorrect=checkCorrect(currElem);
@@ -12,14 +26,6 @@ function functionsDD(context,currElem){
 function readyOk(idObj,left,right){
 	 
 	functionInit();
-}
-function functionInit() {
-	
-	getConfigByElement("act4","act",1,functionCallback);
-	getConfig(4);
-	return new Promise(function(resolve, reject) {
-		resolve();
-	});
 }
 
 function moveToTarget(elem) {
@@ -31,19 +37,25 @@ function moveToTarget(elem) {
 	functionsDD(null,elem);
 }
 function functionCallback(conf){
-	var conf = conf[0];
-	var syllableToSelect = conf["target"] - 1;
-	var values = conf["values"];
+	return new Promise(function(resolve, reject) {
+		conf = conf[0];
+		var syllableToSelect = conf["target"] - 1;
+		var values = conf["values"];
 
-	var firstWord = values[0];
-	var secondWord = values[1];
-	resultWord = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('').replace(',','');
+		var firstWord = values[0];
+		var secondWord = values[1];
+		resultWord = ([ firstWord[syllableToSelect], secondWord[syllableToSelect] ]).join('').replace(',','');
 
-	var wordArrayLeft = [[firstWord],[secondWord]]; 
+		var wordArrayLeft = [[firstWord],[secondWord]]; 
 
-	functLeft(wordArrayLeft,syllableToSelect); //only the Array. 
+		functLeft(wordArrayLeft,syllableToSelect); //only the Array. 
 
-	getConfigByElementWithOne("distractors","words",2,functRight,resultWord);
+		getConfigByElementWithOne("distractors","words",2,
+			functRight,resultWord).then(function() {
+				resolve();
+		});
+	});
+
 	
 }
 
