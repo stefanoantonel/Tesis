@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<!-- Parte del tempale --> 
-	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+
+<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+
 <style>
 .btn_link {
 	-moz-box-shadow:inset 0px 1px 0px 0px #c0f6fa;
@@ -27,73 +29,85 @@
 	border-bottom-left-radius:20px;
 	text-indent:0px;
 	border:1px solid #a8d1db;
-	display:inline-block;
+	
 	color:#ffffff;
 	font-family:Verdana;
-	font-size:14px;
-	font-weight:bold;
-	font-style:normal;
-	height:32px;
-	line-height:32px;
-	width:200px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #5480cc;
+
+	font-size:1em;
+	width: 40%;
+	margin: 1% 1%;
 }
 .btn_link:hover {
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8ee6f2), color-stop(1, #78aaff) );
 	background:-moz-linear-gradient( center top, #8ee6f2 5%, #78aaff 100% );
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8ee6f2', endColorstr='#78aaff');
 	background-color:#8ee6f2;
-}.btn_link:active {
+}
+.btn_link:active {
 	position:relative;
 	top:1px;
+}
+body {
+	text-align: center;
+}
+section {
+	font-size:30px;
+}
+@media screen and (max-width: 700px) {
+	section {
+		font-size: 30px;
+	}
+	.btn_link {
+		width: 60%;
+		display: inline-block;
+		float: none;
+	}
 }
 </style>
  
 
 </head>
 <body>
+<section>
 
 	<button class="btn_link" id="adivinaPalabra">Adivina Palabra</button>
-	</br>
+	
 	<button class="btn_link" id="amigoDeQuien">Amigo de Quien</button>
-	</br>
+	
 	<button class="btn_link" id="cambiarPalabra">Cambiar Palabra</button>
-	</br>
+	
 	<button class="btn_link" id="cuentaPalabra">Cuenta Palabras</button>
-	</br>
+	
 	<button class="btn_link" id="dividePalabras">Divide Palabras</button>
-	</br>
+	
 	<button class="btn_link" id="encuentraLetras">Encuentra Letras</button>
-	</br>
+	
 	<button class="btn_link" id="estoyPensando">Pensando en Algo</button>
-	</br>
+	
 	<button class="btn_link" id="formandoSilaba">Formando Silaba</button>
-	</br>
+	
 	<button class="btn_link" id="memory">Memory</button>
-	</br>
+	
 	<button class="btn_link" id="ordenaLetras">Ordena Letras</button>
-	</br>
+	
 	<button class="btn_link" id="palabraOculta">Palabra Oculta</button>
-	</br>
+	
 	<button class="btn_link" id="quitandoSilaba">Quitar Silabas</button>
-	</br>
+	
 	<button class="btn_link" id="repitiendoSilaba">Silaba Repetidas</button>
-	</br>
+	
 	<button class="btn_link" id="silabaOculta">Silaba Oculta</button>
-	</br>
+	
 	<button class="btn_link" id="uniendoLetras">Uniendo Letras</button>
-	</br>
-
+	
+</section>
 </body>
 
 	<script type="text/javascript" src="comun/jquery.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<!-- Fin parte del tempale -->
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
-
+	
 	<script type="application/javascript">
 
 	$(document).ready(function() {

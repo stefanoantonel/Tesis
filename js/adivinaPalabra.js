@@ -132,9 +132,6 @@ function fillTemplate(boxes,temp, parts){
         a.push(t);
     });
 	
-	
-
-
     //-------------disorder 
     origin=parts.join('');
     origin = origin.toUpperCase();

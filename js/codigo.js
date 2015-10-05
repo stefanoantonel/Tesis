@@ -166,17 +166,24 @@ function disorder(o) {
 };
 
 function congratulations() {
-	return new Promise(function(done) {
+	return new Promise(function(resolve) {
 		$("#activity-container").append(
-			"<article id='congratulations' class='clipped-box congratulations'>"
-				+ "<div class='content'>" 
+			"<article id='congratulations' class='clipped-box congratulations animated flipInX'>"
+				+ "<div class='content '>" 
 				+ "<h1>FELICITACIONES</h1>"
 				+ "</div>" 
 			+ "</article>");
 		playSound("congratulations").then(function () {
-			explosion();
-			explote();
-			done();
+			/*explosion();
+			explote();*/
+			$("article#congratulations")
+			.removeClass("flipInX")
+			.addClass("fadeOutDown");
+			
+			waitInterval(200).then(function() {
+				resolve();		
+			});
+			
 		});
 
 		$("#alertOk").delay(100).fadeIn(200);
@@ -236,40 +243,12 @@ function loadDescription(descrip) {
 	});
 }
 
-/*function loadSounds() {
-	return new Promise (function() {
-		waitInterval(1000).then(function() {
-			soundsArray = soundsArray.filter (function (v, i, a) { return a.indexOf (v) == i });
-			// In order to make an asyncronous task 
-			$(soundsArray).each(function(index, value) {
-				var aud = document.createElement('audio');
-				$(aud).attr('id', 'sound' + value);
-				$(aud).attr('src', 'audio/' + value + '.mp3');
-				$(aud).attr('type', 'audio/mp3');
-				$(aud).appendTo('body');
-			});
-		});
-	});
-}*/
-
 function loadTutorialVoice(actNum) {
 	if (counter == null) {
-		
-		/*try {
-			var aud = document.createElement('audio');
-			$(aud).attr('id', 'tutorial' + actNum);
-			$(aud).attr('src', 'audio/tutorial/' + actNum + '.mp3');
-			$(aud).attr('type', 'audio/mp3');
-			$(aud).appendTo('body');
-
-		} catch (e) {
-			console.error("Tutorial sound not found");
-		}*/
 		$("#kittyTeacher").click(function(){
 			playTutorial(actNum);
 		});
 	}
-
 }
 
 function playSound(soundName) {
@@ -282,16 +261,7 @@ function playSound(soundName) {
 				resolve();		
 			}
 		});
-	});
-	
-
-	/*try {
-		soundName = soundName.toString().toLowerCase();
-		$('#sound' + soundName)[0].play();
-	} catch (e) {
-		console.error('Sonido no encontrado');
-	}*/
-	
+	});	
 }
 
 function playTutorial(actNumb,callback) {
@@ -304,16 +274,10 @@ function playTutorial(actNumb,callback) {
 			}
 		});
 	});
-
-	/*
-	try {
-		$('#tutorial' + actNumb)[0].play();
-	} catch (e) {
-		console.error('Tutorial no encontrado');
-	}*/
 }
+
 function moveOrigin(target, origin) {
-	$(target).removeClass('wrong');
+	$(target).removeClass('wrong animated shake');
 	$(target).addClass('normal');
 	$(target).appendTo(origin);
 	changeScore(-10);
@@ -321,7 +285,8 @@ function moveOrigin(target, origin) {
 
 function wrong(target,origin){
 	playSound("wrong");
-	$(target).effect('shake');
+	//$(target).effect('shake');
+	$(target).addClass('animated shake');
 	$(target).removeClass('normal');
 	$(target).addClass('wrong');
 	window.setTimeout(moveOrigin, 1000,target,origin);
@@ -339,34 +304,36 @@ function sessionCounter() {
 			waitInterval(1000).then(passActivity);
 		}
 		else {
-			$( "article" ).hide( 200, function() {
-				$( this ).remove();
+			$( "article" ).addClass("animated bounceOut")
+			waitInterval(600).then(function() {
+				$( "article" ).remove();
 				$(".deleted").remove();
-			});
+			
 
-			congratulations().then(function() {
-				waitInterval(2000).then(function() {
-					$( "html" ).addClass( "loading" );
-									
-					level="lev_1";
-					if(counter<= counterOriginal/2){
-						level="lev_2";
-					}
-					
-					waitInterval(500).then(function() {
-						$("#activity-container").hide();
-						$("#activity-container").removeClass("congratulations");
-						$("#activity-container").append(originTemplateHTML);
-						$('#congratulations').remove();
-						$("#activity-container").fadeIn(400).show();
+				congratulations().then(function() {
+					waitInterval(1000).then(function() {
+						$( "html" ).addClass( "loading" );
+										
+						level="lev_1";
+						if(counter<= counterOriginal/2){
+							level="lev_2";
+						}
 						
-						functionInit(counter,level).then(function() {
-							waitInterval(200).then(function() {
-								removeLoading();	
+						waitInterval(500).then(function() {
+							$("#activity-container").hide();
+							$("#activity-container").removeClass("congratulations");
+							$("#activity-container").append(originTemplateHTML);
+							$('#congratulations').remove();
+							$("#activity-container").fadeIn(400).show();
+							
+							functionInit(counter,level).then(function() {
+								waitInterval(200).then(function() {
+									removeLoading();	
+								});
 							});
-						});
-						
-					});					
+							
+						});					
+					});
 				});
 			});
 		}
@@ -673,4 +640,5 @@ function activateMoves(obj) {
 
 function removeLoading() {
 	$( "html" ).removeClass( "loading" );
+	$("article").addClass("animated bounceInUp");
 }
