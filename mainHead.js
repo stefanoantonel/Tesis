@@ -11,8 +11,8 @@ head.load(
 	"comun/comun.js",
 	"js/jquery-ui.min.js",
 	"js/jquery.ui.touch-punch.min.js",
-	"js/howler.min.js"
-	
+	"js/howler.min.js",
+	"js/animate.min.css"
 	);
 
 /*head.ready(function () {

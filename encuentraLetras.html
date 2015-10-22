@@ -40,6 +40,8 @@ article {
 #leftContainer {
 	width: 100%;
 	float: left;
+	display: flex;
+    justify-content: space-around;
 }
 
 #rightContainer {
@@ -63,12 +65,6 @@ div.inline {
 .secondWordHidden {
 	display: none;
 }
-.divInline {
-    display: inline;
-    margin-right: 10%;
-    background-color: transparent;
-    margin-left: 2%;
-}
 .textBackground {
 	padding: 1%;
 }
@@ -86,7 +82,7 @@ div.inline {
 	<header></header>
 	<div id="activity-container">
 		<article>
-			<div id="leftboxTemp" class='syllable divInline' hidden="hidden"></div>
+			<div id="leftboxTemp" class='syllable' hidden="hidden"></div>
 			<div id="leftContainer" class="textBackground"></div>
 
 			<button id="rightboxTemp" class="img normal"

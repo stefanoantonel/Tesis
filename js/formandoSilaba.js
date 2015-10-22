@@ -150,6 +150,7 @@ function fillElements(conf, place) {
 		name = conf[index].toUpperCase();
 		addSound(name);
 		$(t).attr('name', name);
+		$(t).attr('alt', name);
 		$(t).prop('num', index);
 		$(t).html(name);
 		//$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});

@@ -76,6 +76,7 @@ function fillTemplateImages(images){
 		addSound(name);
 		$(t).attr('name',name);
 		$(t).attr('num',index);
+		$(t).attr('alt', name);
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).hover(function(){
 			var elem = this;

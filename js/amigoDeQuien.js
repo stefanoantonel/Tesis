@@ -130,6 +130,7 @@ function fillElements(conf, place) {
 		addSound(name);
 		$(t).attr('name', name);
 		$(t).prop('num', index);
+		$(t).attr('alt', name);
 		$(t).css({backgroundImage : 'url(images/activities/' + name + '.jpg)'});
 		$(t).hover(function(){
 			var elem = this;

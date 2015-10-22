@@ -80,7 +80,9 @@ function checkCorrect() {
 		return true;
 	}
 	else {
-		playSound("wrong");
+		playSound("wrong").then(function() {
+			playSound("coloque_los_espacios_en_el_lugar_correcto");
+		});
 		changeScore(-10);
 		return false;		
 	}

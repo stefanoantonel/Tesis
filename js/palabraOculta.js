@@ -70,6 +70,7 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 		name = elem.join('').replace(/,/g, "");
 		addSound(name);
 		$(t).attr('name',name);
+		$(t).attr('alt', name);
 		$(t).addClass("deleted");
 		$(t).removeAttr('hidden');
 		$(t).attr('src','images/activities/' + name + '.jpg');
@@ -112,6 +113,7 @@ function functRight(conf){
 		name=conf[index];
 		addSound(name);
 		$(t).attr('name',name);
+		$(t).attr('alt', name);
 		$(t).addClass("deleted");
 		$(t).prop('num',index);
 		$(t).attr('src','images/activities/' + name + '.jpg');
