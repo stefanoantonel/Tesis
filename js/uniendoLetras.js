@@ -215,4 +215,5 @@ function fillTemplate(box,template, parts){
 function fillImg(elem,parts){
 	var word=parts.join("");
 	$(elem).attr('src','images/activities/' + word + '.jpg');
+	$(elem).attr('alt', word);
 }

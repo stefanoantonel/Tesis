@@ -85,6 +85,7 @@ function functInitWords(first,second,wordToChange){
 	name=first;
 	addSound(name);
 	$(t).attr('name',name);
+	$(t).attr('alt', name);
 	$(t).addClass('firstWord');
 	$(t).addClass('textBackground');
 	$(t).removeAttr('hidden');
@@ -103,6 +104,7 @@ function functInitWords(first,second,wordToChange){
 	name=second;
 	addSound(name);
 	$(t).attr('name',name);
+	$(t).attr('alt', name);
 	$(t).removeAttr('hidden');
 	$(t).addClass('secondWordHidden');
 	$(t).addClass('textBackground');
@@ -130,6 +132,7 @@ function functInitImages(conf,x){
 		name=conf[index];
 		addSound(name);
 		$(t).attr('name',name);
+		$(t).attr('alt', name);
 		$(t).prop('num',index);
 		//$(t).css({backgroundImage : 'url(images/imgOculta/' + $(t).attr("name") + '.jpg)'});
 		$(t).attr('src','images/activities/' + name + '.jpg');

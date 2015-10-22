@@ -87,7 +87,8 @@ function fillTemplateImages(syllables){
     	var content= $(t).find("#syllableTemp");
 		name=e;
 		addSound(name);
-		t.attr('name',name);
+		$(t).attr('name',name);
+		$(t).attr('alt', name);
 		content.attr('name',name);
 		content.attr('num',index);
 		/*Change to make effect*/

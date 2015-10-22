@@ -55,6 +55,7 @@ function fillTemplate(wordSelected,imagesSelected){
 		name=e;
 		addSound(name);
 		$(t).attr('name',name);
+		$(t).attr('alt', name);
 		$(t).removeClass('temp');
 		$(t).attr('src','images/activities/' + name + '.jpg');
 		$(t).hover(function(){

@@ -49,6 +49,7 @@ function fillTemplate(rhymes){
 	        $(t).attr('id',x*10+i);
 	        var name = group[i];
 	        $(t).attr('name',name);
+	        $(t).attr('alt', name);
 	        addSound(name);
 	        $(t).prop("hidden",false);
 	        $(t).css('display', 'inline');

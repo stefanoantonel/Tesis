@@ -78,6 +78,7 @@ function fillTemplateNumber(number){
     	name=e;
     	addSound(name);
     	$(t).attr('name',name);
+    	$(t).attr('alt', name);
 		$(t).find(".numberTemp").attr('name',name);
 		$(t).find(".numberTemp").attr('num',index);
 		//$(t).attr('src','images/activities/' + name + '.jpg');
