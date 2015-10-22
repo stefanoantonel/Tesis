@@ -3,6 +3,7 @@ var counter;
 var soundsArray = [];
 var score = 100;
 var actNum;
+var configLoaded = null;
 
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
@@ -33,9 +34,8 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 
 function getConfig(numAct, callBack) {
 	actNum = numAct;
-	$.getJSON("js/configGroups.json", function(result, callBack) {
-		c = result["act" + numAct];
-	}).done(function() {
+	getJsonConfig().then(function(result) {
+		var c = result["act" + numAct];
 		callBack(c.act);
 		loadDescription(c.description);
 		getStyle();
@@ -48,23 +48,44 @@ function getConfig(numAct) {
 	return new Promise(function(resolve, reject) {
 		actNum = numAct;
 		saveArticle();
-		$.getJSON("js/configGroups.json")
-		.done(function(result) {
-			var c = result["act" + numAct];
+		getJsonConfig().then(function(result) {
+			var c = result["act" + actNum];
 			loadDescription(c.description);
 			getStyle().then(function() {
 				resolve();
 			});
-			loadTutorialVoice(numAct);
+			loadTutorialVoice(actNum);
 			loadCounter(c.repeat);
 		});
 	});	
 }
 
+function getJsonConfig() {
+	return new Promise(function(resolve, reject) {
+		if (!configLoaded) {
+			$.getJSON("http://raw.githubusercontent.com/stefanoantonel/Tesis/master/js/configGroups.json")
+			.done(function(result) {
+				configLoaded = result;
+				resolve(configLoaded);
+			})
+			.fail(function(err) {
+				$.getJSON("js/configGroups.json")
+				.done(function(result) {
+					configLoaded = result;
+					resolve(configLoaded);
+				});
+			});
+			
+		}
+		else {
+			resolve(configLoaded);
+		}
+	});	
+}
+
 function getConfigByElement(element, level, quantity, callback) {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json")
-		.done(function(config) {
+		getJsonConfig().then(function(config) {
 			var element_config = config[element][level];
 			var result_disorder = disorder(element_config);
 			var result = result_disorder.slice(0, quantity);
@@ -79,8 +100,7 @@ function getConfigByElement(element, level, quantity, callback) {
 }
 
 function getRhymes(element, level, quantity, callBack) {
-	$.getJSON("js/configGroups.json")
-	.done(function(config) {
+	getJsonConfig().then(function(config) {
 		var element_config = config[element][level];
 		var result_disorder = disorder(element_config);
 		var result = result_disorder.slice(0, quantity);
@@ -94,7 +114,7 @@ function getRhymes(element, level, quantity, callBack) {
 
 function getConfigByElementWithOne (type, level, quantity, callBack, elementExcept) {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json").done(function(config) {
+		getJsonConfig().then(function(config) {
 			var element_config = config[type][level];
 			element_config = removeOneElement(element_config, elementExcept);
 			element_config = disorder(element_config);
@@ -110,7 +130,7 @@ function getConfigByElementWithOne (type, level, quantity, callBack, elementExce
 function getConfigByElementWithOne(type, level, quantity, callBack, 
 	elementExcept, firstLetter) {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json").done(function(config) {
+		getJsonConfig().then(function(config) {
 			var element_config = config[type][level];
 			element_config = removeOneElement(element_config, elementExcept);
 			element_config = removeFirstLetter(element_config, firstLetter);
@@ -130,8 +150,7 @@ function saveArticle() {
 
 function getStyle() {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json")
-		.done(function(result) {
+		getJsonConfig().then(function(result) {
 			var c = result["skin"];
 			skin = disorder(c);
 			$('head').append(
@@ -372,7 +391,7 @@ function removeFirstLetter(element_config, firstLetter) {
 
 function getConfigByElementWithFirstLetter(type, level, quantity, callBack, firstLetter) {
 	return new Promise(function(resolve, reject) {
-		$.getJSON("js/configGroups.json").done(function(config) {
+		getJsonConfig().then(function(config) {
 			var element_config = config[type][level];
 			element_config = getFirstLetter(element_config, firstLetter);
 			element_config = disorder(element_config);
