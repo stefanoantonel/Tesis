@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading">
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
 <title>AMIGO DE QUIEN</title>
@@ -50,8 +51,6 @@ label {
 #leftContainer {
 	z-index: 1;
 	max-width: 120px;
-	min-width: 100px;
-	min-height: 200px;
 	float: left;
 	display: inline-block;
 }
@@ -76,6 +75,32 @@ article {
 	background-size: 100% 100%;
 	width: 100px;
 	height: 120px;
+}
+
+@media screen and (max-width: 450px) {
+	#leftContainer {
+		z-index: 1;
+		float: left;
+		display: inline-block;
+		max-width: 30%;
+	}
+
+	#rightContainer {
+		z-index: 1;
+		max-width: 30%;
+		display: inline-block;
+		float: right;
+	}
+	.imgButton{
+		background-size: 100% 100%;
+    	width: 60px;
+    	height: 60px;
+	}
+	#target {
+    	width: 30%;
+    	margin: 0;
+	}
+
 }
 </style>
 </head>

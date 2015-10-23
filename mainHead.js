@@ -3,8 +3,8 @@ document.getElementsByTagName( "html" )[0].className = "loading" ;
 head.load(
 	"js/" + location.pathname.substring(location.pathname.lastIndexOf("/") + 1).replace(".html",".js"),
 	"css/bootstrap.min.css",
-	"css/style.css",
 	"comun/comun.css",
+	"css/style.css",
 	"comun/jquery.js",
 	"js/codigo.js",
 	"js/bootstrap.min.js",
