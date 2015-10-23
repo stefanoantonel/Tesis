@@ -9,7 +9,7 @@ var tutorialWasPlayed = false;
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
-	        //cursorAt: { bottom: -5 },
+	       /* cursorAt: { cursor: "move", top: 56, left: 56 },*/
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
 			revert : true
 		});

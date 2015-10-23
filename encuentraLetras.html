@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading">
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
 <title>ENCUENTRE LETRAS</title>
@@ -75,6 +76,26 @@ div.inline {
 	float: left;
     margin: 4%;
 }
+
+@media screen and (max-width: 450px) {
+	#leftContainer .syllable {
+	    font-size: 20px; 
+	}
+	.img {
+	    border: 3px solid;
+	    margin: 5px;
+	    width: 36px;
+	    height: 36px;
+	    font-size: 20px;
+	    padding: 0;
+	}
+	#rightContainer {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}
+
+
 </style>
 </head>
 <body>

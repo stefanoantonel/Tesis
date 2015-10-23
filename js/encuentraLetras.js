@@ -128,7 +128,9 @@ function checkCorrect(part) {
 	else {
 		deactivateMoves(".img");
 		$(".img").css("pointer-events", "none");
-		playSound("wrong");
+		playSound("wrong").then(function() {
+			playSound(name);
+		});
 		$(part).removeClass('normal');
 		$(part).addClass('wrong');
 		window.setTimeout(function() {

@@ -711,7 +711,7 @@ article, #activity-container {
     	width: 100%;
 	}
 	#alumno {
-		font-size: 1.5em;
+		font-size: 1em;
 		left: 10px;
 	}
 	.phrase {
@@ -785,9 +785,7 @@ article, #activity-container {
 
 /* Cellphones */
 @media screen and (max-width: 450px) {
-	html {
-		overflow: hidden;
-	}
+	
 	#activity-container {
 		margin-left: 0%;
 		margin-top: 29%;
@@ -816,7 +814,7 @@ article, #activity-container {
     	display: inline-block;
 	}
 	.kittyTeacher {
-	    width: 30%;
+	    width: 20%;
 	    height: 100%;
 	    display: inline-block;
 	}

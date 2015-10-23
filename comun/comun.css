@@ -18,10 +18,9 @@
 }
 
 #alumno {
-	position: absolute;
 	left: 120px;
 	font-family: 'Bentham', serif;
-	position: absolute;
+	position: fixed;
 	top: 90%;
 }
 
