@@ -14,23 +14,19 @@ html.loading {
     /* Replace loading.gif with the loading image of your choice */
     background: #333 url('../images/loader.gif') no-repeat 50% 50%;
 
-     /*-webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;*/
     /* Ensures that the transition only runs in one direction */
-    -webkit-transition: background-color 3.3s;
-    transition: background-color 3.3s;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s;
 }
 body {
-   /* -webkit-transition: opacity .3s ease-in;
-    transition: opacity .3s ease-in;*/
+    -webkit-transition: opacity .3s ease-in;
+    transition: opacity .3s ease-in;
 }
 html.loading body {
     /* Make the contents of the body opaque during loading */
     opacity: 0;
 
     /* Ensures that the transition only runs in one direction */
-  /*  -webkit-transition: opacity .3s;
-    transition: opacity .3;*/
+    -webkit-transition: opacity .3s;
+    transition: opacity .3;
 }

@@ -59,12 +59,12 @@ actividad.init = function() {
 
 	$('#titulo').text($('title').text());
 
-	$("#titulo").fadeIn(1500).animate({
+	/*$("#titulo").fadeIn(1500).animate({
 		top : "10px"
 	}, {
 		duration : 1500,
 		queue : false
-	});
+	});*/
 	actividad.ej = new ejercicio();
 };
 

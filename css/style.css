@@ -785,18 +785,20 @@ article, #activity-container {
 
 /* Cellphones */
 @media screen and (max-width: 450px) {
+	html {
+		overflow: hidden;
+	}
 	#activity-container {
 		margin-left: 0%;
 		margin-top: 29%;
 	}
 	article {
 		margin-left: 0%;
-		margin-top: 40%;
+		margin-top: 30%;
 	}
 	#titulo {
 		font-size: 20px;
 		width: 40%;
-		margin-left: 2%;
 	}
 	article.congratulations {
 		width: 100%;
@@ -811,6 +813,7 @@ article, #activity-container {
     	float: right;
     	margin-right: 2%;
     	height: 60%;
+    	display: inline-block;
 	}
 	.kittyTeacher {
 	    width: 30%;

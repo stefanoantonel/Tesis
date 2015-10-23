@@ -103,7 +103,7 @@ function functionsDD(context,currElem){
 	isCorrect=checkCorrect(currElem);
 	if(isCorrect == true){
 		origin=$(currElem).attr('name');
-		playSound(origin);
+		//playSound(origin);
 		/*$(document).delay(400);
 		cartelFelicitaciones();*/
 		sessionCounter();

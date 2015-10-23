@@ -663,6 +663,9 @@ function activateMoves(obj) {
 }
 
 function removeLoading() {
-	$( "html" ).removeClass( "loading" );
+	
+	$("html").removeClass("loading");
 	$("article").addClass("animated bounceInUp");
+	$("#titulo").addClass("animated bounceInDown");
+
 }
