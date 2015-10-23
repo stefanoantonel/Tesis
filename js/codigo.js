@@ -4,6 +4,7 @@ var soundsArray = [];
 var score = 100;
 var actNum;
 var configLoaded = null;
+var tutorialWasPlayed = false;
 
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
@@ -285,13 +286,17 @@ function playSound(soundName) {
 
 function playTutorial(actNumb,callback) {
 	return new Promise(function(callback) {
-		new Howl({
-			urls: ['audio/tutorial/' + actNum + '.mp3'],
-			autoplay: true,
-			onend: function() {
-				callback();		
-			}
-		});
+		if(!tutorialWasPlayed) {
+			tutorialWasPlayed = true;
+			new Howl({
+				urls: ['audio/tutorial/' + actNum + '.mp3'],
+				autoplay: true,
+				onend: function() {
+					callback();		
+				}
+			});	
+		}
+		
 	});
 }
 

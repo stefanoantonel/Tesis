@@ -4,12 +4,12 @@ var numParts=0;
 var secondWord = '';
 
 function functionInit() {
-	getConfig('6').then(function() {
-		return getConfigByElement("act6","act",1,null);
-	}).then(function(c){
-		return functionCallback(c);
-	}).then(function() {
-		return new Promise(function(resolve, reject) {
+	return new Promise(function(resolve, reject) {
+		getConfig('6').then(function() {
+			return getConfigByElement("act6","act",1,null);
+		}).then(function(c){
+			return functionCallback(c);
+		}).then(function() {
 			removeLoading();
 			playTutorial(actNum);
 			resolve();
