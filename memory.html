@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html class="loading">
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>MEMORY</title>
@@ -9,9 +11,27 @@
 <script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
 
 <style type="text/css">
-.deleted {
-	visibility: hidden;
-}
+	.deleted {
+		visibility: hidden;
+	}
+
+	@media screen and (max-width: 450px) {
+		body {
+			overflow: visible;
+		}
+		#contenedor {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		button.btnImg {
+			width: 80px;
+    		height: 80px;
+		}
+		button.btnMemory {
+			margin: 2%;
+		}
+	}
 </style>
 
 
@@ -21,7 +41,7 @@
 
 	<div class="container-body">
 		<div id="activity-container">
-			<article class="actContainer">
+			<article class="">
 				<div id="contenedor">
 					<button id="template" style="display: none"
 						class="btn primary bg btnMemory btnImg imgMemory"></button>

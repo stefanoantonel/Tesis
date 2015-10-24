@@ -52,9 +52,7 @@ function functionsDD(context, currElem) {
 		if($(img1).attr("name") != $(img2).attr("name")){
 			if ($(img1).attr("id") == $(img2).attr("id")) {
 				imageOk($("#target").find(".imgButton"));
-				window.setTimeout(function() {
-					$("#target").html("");
-				}, 1500);
+				
 				contador = contador - 1;
 				if (contador == 0) {
 					window.setTimeout(sessionCounter(), 2000);
@@ -82,13 +80,14 @@ function functionsDD(context, currElem) {
 }
 
 function imageOk(target) {
-	window.setTimeout(function() {
-		$(target[0]).addClass("animateToFrontSmaller");
-	}, 500);
-	window.setTimeout(function() {
-		$(target[1]).addClass("animateToFrontRigth");
-	}, 500);
-
+	waitInterval(500).then(function() {
+		$(target[0]).addClass("animated flipOutX");
+		$(target[1]).addClass("animated flipOutX");
+	}).then(function() {
+		waitInterval(800).then(function() {
+			$("#target").html("");
+		});
+	});
 }
 
 function moveToTarget(elem) {

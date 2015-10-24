@@ -56,19 +56,14 @@ function functionsDD(context, currElem) {
 		var img2Name = $(img2).attr("name");
 		//if(img1Name != $(img2).attr("name")){
 			if ($(img1).attr("column") < $(img2).attr("column")) {
+				// reproduce the sound of the syllable
+				playSound(img1Name+img2Name);						
 				imageOk($("#target").find(".imgButton"))
 				.then(function() {
-					// reproduce the sound of the syllable
-					return playSound(img1Name+img2Name);	
-					//END reproduce sound	
-				})
-				.then(function() {
-					waitInterval(1500).then(function() {
-						$("#target").html("");
-						activateMoves(".imgButton");
-						img1 = null;
-						img2 = null;
-					});
+					$("#target").html("");	
+					activateMoves(".imgButton");
+					img1 = null;
+					img2 = null;
 				});
 				contador = contador - 1;
 				if (contador == 0) {
@@ -106,10 +101,17 @@ function imageOk(target) {
 		}, 500);*/
 
 		waitInterval(500).then(function() {
-			$(target[0]).addClass("animateToFrontSmaller");
-			$(target[1]).addClass("animateToFrontRigth");
+			$(target[0]).addClass("animated flip");
+			$(target[1]).addClass("animated flip");
 		}).then(function() {
-			resolve();
+			waitInterval(1000).then(function() {
+				$(target[0]).removeClass("flip").addClass("fadeOut");
+				$(target[1]).removeClass("flip").addClass("fadeOut");
+			}).then(function() {
+				waitInterval(500).then(function() {
+					resolve();		
+				});
+			});
 		});
 	});
 	

@@ -138,6 +138,7 @@ function checkCorrect(part) {
 	
 	if(name.valueOf() == resultWord.valueOf()){
 		playSound(resultWord);
+		$(part).addClass("animated flipY");
 		return true;
 	}
 	else{

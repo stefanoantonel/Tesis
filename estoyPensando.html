@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html class="loading">
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>EMPIEZA CON...</title>
 
 <link rel="stylesheet" type="text/css" href="css/loading.css">
@@ -27,6 +28,20 @@
 
 .imgContainerClass {
     margin-left: 24%;
+}
+@media screen and (max-width: 450px) {
+	.word {
+		color: red;
+		margin: 10% 40%;
+	}
+	.imgContainerClass {
+	    display: flex;
+	    margin: 0;
+	    justify-content: space-between;	
+	}
+	.images {
+		margin-right: 0%;
+	}
 }
 </style>
 

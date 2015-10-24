@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html class="loading">
 <meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
 <title>FORMANDO SILABA</title>
@@ -39,8 +40,6 @@ label {
 #leftContainer {
 	z-index: 1;
 	max-width: 120px;
-	min-width: 100px;
-	min-height: 200px;
 	float: left;
 	display: inline-block;
 }
@@ -49,8 +48,6 @@ label {
 	z-index: 1;
 	max-width: 120px;
 	float: left;
-	min-width: 100px;
-	min-height: 200px;
 	float: left;
 	display: inline-block;
 	
@@ -73,6 +70,26 @@ article {
 }
 #wordWithSyllable{
 	margin-top: 5%;
+}
+@media screen and (max-width: 450px) {
+	#leftContainer {
+		width: 25%;
+	}
+	#rightContainer {
+		width: 25%;
+	}
+	#target {
+		width: 40%;
+	}
+	.imgButton{
+		width: 100%;
+	    font-size: xx-large;
+	}
+	#target .imgButton{
+		width: 50%;
+	    font-size: xx-large;
+	    padding: 0;
+	}
 }
 
 </style>
