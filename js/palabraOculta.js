@@ -138,7 +138,9 @@ function checkCorrect(part) {
 	
 	if(name.valueOf() == resultWord.valueOf()){
 		playSound(resultWord);
-		$(part).addClass("animated flipY");
+		waitInterval(1000).then(function() {
+			$(part).addClass("animated flipOutY");	
+		})
 		return true;
 	}
 	else{

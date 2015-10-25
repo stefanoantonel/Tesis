@@ -30,8 +30,11 @@ function functionInit() {
 }
 
 function rotateEfect(){
-	var labels = syllableTemp.find("label");
-	$(labels).addClass("rot");
+	// var labels = syllableTemp.find("label");
+	waitInterval(1000).then( function () {
+		$("label.star:last-child").addClass("animated flipInY");
+	});
+	
 } 
 
 function functionCallback(conf){

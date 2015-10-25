@@ -83,16 +83,16 @@ article {
 @media screen and (max-width: 450px) {
 	#leftContainer {
 	    display: flex;
-	    justify-content: space-between;
+		justify-content: space-around;
 	    flex-wrap: wrap;
 	    width: 70%;
-		margin-left: 10%;
+		margin-left: 5%;
 	}
 	.wordsImages {
 		margin-left: 10%;
 	}
 	.labelInline {
-
+		margin: 0;
 	}
 	label.syllableBig {
 		margin-top: 0;
@@ -116,6 +116,9 @@ article {
 		width: 100px;
 		height: 100px;
 	}
+	.img-left {
+		margin: 5%;
+	}
 
 }
 
@@ -126,7 +129,7 @@ article {
 	<header></header>
 	<div id="activity-container">
 		<article>
-			<img id="leftboxTemp" class="img" hidden="hidden" src="">
+			<img id="leftboxTemp" class="img img-left" hidden="hidden" src="">
 			<div class="wordsImages">
 				<div id="leftContainer"></div>
 				<div id="leftLabelContainerTemp"
