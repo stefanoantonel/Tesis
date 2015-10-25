@@ -698,12 +698,18 @@ article, #activity-container {
 	.actContainer {
 		width: 500px;
 	}
+	div.header-title {
+		width: 50%;
+	}
 	#titulo {
 		font-size: 2.5em;
 	}
 	article {
 	    margin-top: 20%;
     	margin-left: 17%
+	}
+	div.kittyTeacher {
+		width: 18%;
 	}
 	#kittyTeacher {
 		/*width: 105px;
@@ -737,6 +743,13 @@ article, #activity-container {
 	
 	.word {
 		font-size: 50px;
+	}
+	.btnContainer {
+		width: 17%;
+    	float: right;
+    	margin-right: 2%;
+    	height: 60%;
+    	display: inline-block;
 	}
 }
 
