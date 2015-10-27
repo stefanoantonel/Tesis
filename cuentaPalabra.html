@@ -56,6 +56,7 @@ article img.hidden {
 	border-style: dashed;
 	border-width: medium;
 	margin: 5% 35%;
+	min-height: 80px;
 }
 
 article {
@@ -91,6 +92,9 @@ article {
 		height: 80px;
 		position: relative;
 	}
+	div.numberTemp {
+		font-size: 3em;
+	}
 }
 </style>
 
@@ -110,8 +114,8 @@ article {
 	<div id="activity-container">
 		<article class="container-body">
 			<div id="text" class='phrase textBackground  containerTextOriginal'>
-				<b id="textOrigin" class='textSize1 textOriginal'>CUANTAS PALABRAS TIENE:</b> <br>
-				<b id="completeWord" class='textSize2 textFilled'></b>
+				<p id="textOrigin" class='textSize1 textOriginal'>CUANTAS PALABRAS TIENE:</p>
+				<p id="completeWord" class='textSize2 textFilled'></p>
 			</div>
 
 			<div id="target" class="target targetText textBackground"></div>
