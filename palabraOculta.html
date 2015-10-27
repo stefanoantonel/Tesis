@@ -82,14 +82,14 @@ article {
 
 @media screen and (max-width: 450px) {
 	#leftContainer {
+	    width: 100%;
 	    display: flex;
-		justify-content: space-around;
-	    flex-wrap: wrap;
-	    width: 70%;
-		margin-left: 5%;
+	    flex-direction: column;
+	    justify-content: center;
 	}
 	.wordsImages {
-		margin-left: 10%;
+		margin-left: 0%;
+		padding: 0% 20%;
 	}
 	.labelInline {
 		margin: 0;
@@ -119,7 +119,14 @@ article {
 	.img-left {
 		margin: 5%;
 	}
-
+	#images {
+		display: flex;
+    	justify-content: space-around;
+	}
+	#text {
+		display: flex;
+    	justify-content: space-around;
+	}
 }
 
 </style>
@@ -131,7 +138,10 @@ article {
 		<article>
 			<img id="leftboxTemp" class="img img-left" hidden="hidden" src="">
 			<div class="wordsImages">
-				<div id="leftContainer"></div>
+				<div id="leftContainer">
+					<div id="images"></div>
+					<div id="text"></div>
+				</div>
 				<div id="leftLabelContainerTemp"
 					class="hidden textBackground labelInline"></div>
 			</div>
