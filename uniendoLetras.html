@@ -47,7 +47,7 @@ div.normal {
 	border: 3px solid;
 	padding: 9px;
 	
-	min-width: 300px;
+	min-width: 100px;
 	min-height: 82px;
 	
 	
@@ -60,7 +60,7 @@ div.normal {
 	border: 3px solid;
 	border-style: dashed;
 	padding: 9px;
-	min-width: 300px;
+	min-width: 100px;
 }
 
 .demo {
@@ -76,10 +76,11 @@ article {
 }
 .box {
 	min-height: 66px;
-  	min-width: 300px;
+  	min-width: 55%;
 	border-style: solid;
   	margin-bottom: 17px;
   	float: left;
+  	max-width: 66%;
 }
 .disable {
 	pointer-events: none;
@@ -92,15 +93,19 @@ article {
 }
 
 @media screen and (max-width: 450px) {
-	.box {
-	    min-width: 68%;
-	    min-height: 66px;
-	}
+	
 	.demo {
 		height: 80px;
 		width: 80px;
 		margin-top: 30%;
 	}
+	.box {
+		font-size: 21px;	
+	}
+	div.syllable {
+		font-size: 1.5em;
+	}
+	
 }
 
 </style>

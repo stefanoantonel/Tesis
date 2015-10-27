@@ -77,12 +77,12 @@ function functLeft(wordArrayLeft,syllableToSelect) {
 		$(t).mousedown(function(){
 			playSound($(this).attr('name'));
 		});
-		$('#leftContainer').append(t);
+		$('#leftContainer #images').append(t);
 		//elementsWithName.push(t);
 		elementsWithName.push(label);
 	});
 	//$('#leftContainer').append("<div display='block'></div>");
-	$('#leftContainer').append(elementsWithName);
+	$('#leftContainer #text').append(elementsWithName);
 }
 
 function putImageName(imageNameParts, syllableToSelect) {
