@@ -742,6 +742,9 @@ article, #activity-container {
 	.word {
 		font-size: 50px;
 	}
+	.kittyTeacher {
+		width: 22%;
+	}
 }
 
 @media screen and (min-width: 850px) {
