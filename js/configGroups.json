@@ -54,7 +54,7 @@
 					{"values":[["b","o","c","a"],["f","o","c","a"]], "target":"1"},
 					{"values":[["p","i","l","a"],["p","a","l","a"]], "target":"2"}
 			   ],
-			"description":"TOQUE LA LETRA COLOREADA, Y ELIJA LA IMAGEN DE LA PALABRA QUE SE FORM&Oacute;",
+			"description":"PRIMERO TOQUE LA LETRA COLOREADA Y LUEGO ELIJA LA IMAGEN DE LA PALABRA QUE SE FORMÓ",
 			"repeat":"3",
 			"name":"cambiarPalabra"
 		},

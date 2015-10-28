@@ -65,12 +65,17 @@ function changeColor(cont,words,wordToChange){
 		playSound(words);
 	});
 	$(wordToChange).click(function(){	
-		$('.firstWord').fadeOut();
-		$('.secondWord').removeAttr('hidden');
+		
+		// $('.firstWord').fadeOut();
+		// $('.secondWord').removeAttr('hidden');
+		var left1 = $("#left1 .wordSelected").removeAttr('hidden');
+		$("#left0 .wordSelected").replaceWith(left1);
+		$(left1).addClass("animated flash");
+		// $(left1).appendTo($(elements[wordToChange]));
 		$('#target').removeAttr('hidden');
 		$('#rightContainer').removeAttr('hidden');
 		$('#firstImage').remove();
-		$('#left1').removeClass('secondWordHidden');
+		// $('#left1').removeClass('secondWordHidden');
 		playSound( $(this).html() );
 	});
 	return elements;

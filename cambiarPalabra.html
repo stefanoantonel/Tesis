@@ -74,7 +74,11 @@ div.inline {
 	    height: 70px;
 	}
 	#rightContainer {
-		width: 30%;
+		/*width: 100%;*/
+		/*display: flex;*/
+		/*align-self: flex-start;
+		justify-content: space-between;*/
+		max-width: 100%;
 	}
 	div.phrase {
 		font-size: 2em;
@@ -87,6 +91,15 @@ div.inline {
 	}
 	div.wordSelected {
 		font-size: 1.5em;
+	}
+	article.animated {
+		display: flex;
+		flex-direction: column;
+		/* text-align: center; */
+		align-items: center;
+	}
+	.img-rigth {
+		margin: 10px;
 	}
 }
 </style>
