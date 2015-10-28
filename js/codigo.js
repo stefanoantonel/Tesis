@@ -266,6 +266,7 @@ function loadDescription(descrip) {
 function loadTutorialVoice(actNum) {
 	if (counter == null) {
 		$("#kittyTeacher").click(function(){
+			tutorialWasPlayed = false;
 			playTutorial(actNum);
 		});
 	}

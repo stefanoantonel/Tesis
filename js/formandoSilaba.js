@@ -105,13 +105,17 @@ function imageOk(target) {
 			$(target[1]).addClass("animated flip");
 		}).then(function() {
 			waitInterval(1000).then(function() {
-				$(target[0]).removeClass("flip").addClass("fadeOut");
-				$(target[1]).removeClass("flip").addClass("fadeOut");
-			}).then(function() {
-				waitInterval(500).then(function() {
-					resolve();		
-				});
-			});
+				$(target[0]).remove();
+				$(target[1]).remove();
+				resolve();
+			 })
+			//.then(function() {
+			// 	waitInterval(500).then(function() {
+			// 		$(target[0]).remove();
+			// 		$(target[1]).remove();
+			// 		resolve();		
+			// 	});
+			// });
 		});
 	});
 	

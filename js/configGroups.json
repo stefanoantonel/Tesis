@@ -7,7 +7,7 @@
 		},
 	"act2":
 		{
-			"description":"ORDENE LAS SILABAS PARA FORMAR UNA PABLARA. LA IMAGEN ES UNA AYUDA.",
+			"description":"ORDENE LAS SILABAS DEL PRIMER BLOQUE AL SEGUNDO BLOQUE PARA FORMAR UNA PALABRA.",
 			"repeat":"4",
 			"name":"adivinaPalabra"
 		},
@@ -24,7 +24,7 @@
 					{"values":[["ra","ton"],["na","ran","ja"]], "target":"1"},
 					{"values":[["fo","co"],["ca","sa"]], "target":"1"}
 			],
-			"description":"BUSQUE LA IMAGEN QUE SEA LA UNION DE LA PRIMER SILABA DE CADA IMAGEN DE LA IZQUIERDA!!! POR EJEMPLO: RA-TON, MA-NO = RAMA",
+			"description":"BUSQUE LA IMAGEN QUE SEA LA UNIÓN DE LA PRIMER SILABA DE CADA IMAGEN. EL TEXTO ES UNA AYUDA.",
 			"repeat":"3",
 			"name":"palabraOculta"
 		},
@@ -170,7 +170,7 @@
 		},
 	"act18":
 		{
-			"description":"ORDENE LAS LETRAS EN ORDEN ALFAB&Eacute;TICO.",
+			"description":"ORDENE LAS LETRAS HACIA EL SEGUNDO RECUADRO EN ORDEN ALFABÉTICO",
 			"repeat":"4",
 			"name":"ordeneLetras"
 		},
@@ -188,13 +188,13 @@
 		},
 	"act21":
 		{
-			"description":"SELECCIONE LAS LETRAS CON LAS QUE EMPIEZAN LAS PALABRAS DE ARRIBA.",
+			"description":"ENCUENTRE TODAS LAS LETRAS CON LAS QUE EMPIEZAN LAS PALABRAS DE ARRIBA.",
 			"repeat":"3",
 			"name":"encuentraLetras"
 		},
 	"act22":
 		{
-			"description":"SEPARAR LAS PALABRAS CON LOS ESPACIOS PARA FORMAR UNA ORACI&Oacute;N.",
+			"description":"ARRASTRE LOS ESPACIOS DE ABAJO PARA FORMAR UNA ORACIÓN.",
 			"repeat":"3",
 			"name":"dividePalabras"
 		},

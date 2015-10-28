@@ -113,16 +113,16 @@ function firstImg(conf){
 function checkCorrect(part) {
 	var name = $(part).attr("name");
 	if(name == letter) {
-		window.setTimeout(function(){$(part).addClass("animateToFront");},0);
-		window.setTimeout(function(){
+		$(part).addClass("animateToFront");
+		waitInterval(1000).then(function(){
 			$(part).addClass("deleted");
 			$("#counterLeft").html(countSameLetters);
-		},700);
+			$(part).addClass("animated fadeOut");
+		});
 		countSameLetters = countSameLetters - 1;
 		if (countSameLetters == 0) {
 			window.setTimeout(sessionCounter(), 2000);
 		}
-
 		return true;
 	}
 	else {
