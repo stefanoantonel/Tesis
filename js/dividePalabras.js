@@ -65,11 +65,12 @@ function functionCallback(conf){
 	$(rightContainer).append(letters);
 	/* Remove the class in order that allow the spaces to be moved*/
 	$( "li:contains(' ')").removeClass("ui-state-disabled");
+
 	/* This makes the letters not to be moved*/
 	$(rightContainer).sortable({
-		cancel: ".ui-state-disabled",
-		cursorAt: { bottom: -80 }
+		cancel: ".ui-state-disabled"
 	});
+
 	$( rightContainer ).disableSelection();
 }
 
