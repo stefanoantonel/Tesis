@@ -4,108 +4,97 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
-<title>AMIGO DE QUIEN</title>
+	<title>AMIGO DE QUIEN</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
-<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
-<script type="text/javascript">
-	head.ready(function() {
-		img1 = null;
-		img2 = null;
 
-		ejercicio = function() {
-			functionInit();
-		}		
-	});
-</script>
+	<style>
+		.btn {
+			margin-bottom: 10px;
+		}
 
-<style>
-.btn {
-	margin-bottom: 10px;
-}
+		#target {
+			border: 3px;
+			border-style: dashed;
+			display: inline-block;
+			border-width: medium;
+			width: 228px;
+			height: 147px;
+			float: left;
+			margin: 5%;
+			border-color: orange;
+		}
 
-#target {
-	border: 3px;
-	border-style: dashed;
-	display: inline-block;
-	border-width: medium;
-	width: 228px;
-  	height: 147px;
-	float: left;
-	margin: 5%;
-	border-color: orange;
-}
+		.act {
+			margin-top: 70px;
+			margin-left: 80px;
+		}
 
-.act {
-	margin-top: 70px;
-	margin-left: 80px;
-}
+		label {
+			margin-bottom: 20px;
+			display: block;
+			font-size: 40px;
+		}
 
-label {
-	margin-bottom: 20px;
-	display: block;
-	font-size: 40px;
-}
+		#leftContainer {
+			z-index: 1;
+			width: 120px;
+			height: 520px;
+			float: left;
+			display: inline-block;
+		}
 
-#leftContainer {
-	z-index: 1;
-	width: 120px;
-	height: 520px;
-	float: left;
-	display: inline-block;
-}
+		#rightContainer {
+			z-index: 1;
+			width: 120px;
+			height: 520px;
+			float: left;
+		}
 
-#rightContainer {
-	z-index: 1;
-	width: 120px;
-	height: 520px;
-	float: left;
-}
+		section {
+			overflow: auto;
+			margin-left: 3%;
+		}
 
-section {
-	overflow: auto;
-	margin-left: 3%;
-}
+		article {
+			max-width: 600px;
+			margin-bottom: 1%;
+		}
 
-article {
-	max-width: 600px;
-	margin-bottom: 1%;
-}
+		.imgButton{
+			background-size: 100% 100%;
+			width: 100px;
+			height: 120px;
+		}
 
-.imgButton{
-	background-size: 100% 100%;
-	width: 100px;
-	height: 120px;
-}
+		@media screen and (max-width: 450px) {
+			#leftContainer {
+				z-index: 1;
+				float: left;
+				display: inline-block;
+				width: 30%;
+			}
 
-@media screen and (max-width: 450px) {
-	#leftContainer {
-		z-index: 1;
-		float: left;
-		display: inline-block;
-		width: 30%;
-	}
+			#rightContainer {
+				z-index: 1;
+				width: 30%;
+				display: inline-block;
+				float: right;
+			}
+			.imgButton{
+				background-size: 100% 100%;
+				width: 90%;
+				height: 80px;
+			}
+			#target {
+				width: 30%;
+				margin: 4%;
+				height: 185px;;
+			}
 
-	#rightContainer {
-		z-index: 1;
-		width: 30%;
-		display: inline-block;
-		float: right;
-	}
-	.imgButton{
-		background-size: 100% 100%;
-		width: 90%;
-		height: 80px;
-	}
-	#target {
-    	width: 30%;
-    	margin: 4%;
-    	height: 185px;;
-	}
-
-}
-</style>
+		}
+	</style>
 </head>
 <body>
 	<header></header>
@@ -114,18 +103,30 @@ article {
 			<article class="container-body">
 				<div id="leftContainer"></div>
 				<button column="leftContainer" id="leftboxTemp"
-					class="hidden btn imgButton normal" hidden="hidden"></button>
+				class="hidden btn imgButton normal" hidden="hidden"></button>
 
 				<div id="target" class="target textBackground"></div>
 
 				<div id="rightContainer"></div>
 				<button column="rightContainer" id="rightboxTemp"
-					class="hidden btn imgButton normal"></button>
+				class="hidden btn imgButton normal"></button>
 
 			</article>
 		</div>
 	</div>
 	<footer></footer>
+
+	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<script type="text/javascript">
+		head.ready(function() {
+			img1 = null;
+			img2 = null;
+
+			ejercicio = function() {
+				functionInit();
+			}		
+		});
+	</script>
 </body>
 </html>
 

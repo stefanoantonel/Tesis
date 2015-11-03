@@ -9,10 +9,10 @@ var tutorialWasPlayed = false;
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
 		$(this).draggable({
-	       /* cursorAt: { cursor: "move", top: 56, left: 56 },*/
+			/* cursorAt: { cursor: "move", top: 56, left: 56 },*/
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
-			revert : true
-		});
+	        revert : true
+	    });
 
 		$(this).click(function() {
 			moveToTarget(this);
@@ -177,21 +177,21 @@ function disorder(o) {
 		do {
 			for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
 		}
-		while(o[0] == original[0]);
-	}
-	catch(e) {
-		for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-	}
-	return o;
+	while(o[0] == original[0]);
+}
+catch(e) {
+	for ( var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+}
+return o;
 };
 
 function congratulations() {
 	return new Promise(function(resolve) {
 		$("#activity-container").append(
 			"<article id='congratulations' class='clipped-box congratulations animated flipInX'>"
-				+ "<div class='content '>" 
-				+ "<h1>FELICITACIONES</h1>"
-				+ "</div>" 
+			+ "<div class='content '>" 
+			+ "<h1>FELICITACIONES</h1>"
+			+ "</div>" 
 			+ "</article>");
 		playSound("congratulations").then(function () {
 			/*explosion();
@@ -215,11 +215,11 @@ function passActivity() {
 
 	if($(window.parent.document.getElementById("nav_next-button")).attr("disabled")==null){
 		$("#activity-container").append(
-				'<div id="alertOk" class="alert-box success rainbow">'
-						+ '<span>&#161&#161GANASTE!!</span>'
-						+ '<div><a id="next">Siguiente</a></div>'
-						+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
-				+ '</div>');
+			'<div id="alertOk" class="alert-box success rainbow">'
+			+ '<span>&#161&#161GANASTE!!</span>'
+			+ '<div><a id="next">Siguiente</a></div>'
+			+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
+			+ '</div>');
 		playSound("win");
 		$("#next").click(function() {
 			window.parent.document.getElementById("nav_next-button").click();
@@ -227,24 +227,47 @@ function passActivity() {
 		return;
 	}
 	$("#activity-container").append(
-			'<div id="alertOk" class="alert-box success rainbow">'
-					+ '<span>&#161&#161GANASTE!!</span>'
-					+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
-			+ '</div>');
+		'<div id="alertOk" class="alert-box success rainbow">'
+		+ '<span>&#161&#161GANASTE!!</span>'
+		+ '<div class="bubble x1"></div><div class="bubble x2"></div><div class="bubble x3"></div><div class="bubble x4"></div><div class="bubble x5"></div>'
+		+ '</div>');
 	playSound("win");
+}
+
+initActClick = function (elem) {
+	elem.getElementsByTagName("span")[0].click();
 }
 
 function setNextAction() {
 	$("#next-activity").click(function() {
-		var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
-		window.parent.document.getElementById("nav_next-button").click();
+		/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
+		window.parent.document.getElementById("nav_next-button").click();*/
+		
+		var parentTable = window.parent.document.querySelector(".ygtvchildren");
+		var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
+		var nextLeaf = currentLeaf.parentNode.nextSibling;
+		if(nextLeaf == null) { 
+			//It does not have more activities
+			activityFirst = window.parent.document.querySelector(".ygtvchildren").firstChild;
+			nextLeaf = activityFirst;	
+		}
+		initActClick(nextLeaf);
 	});
 }
 
 function setPrevAction() {
 	$("#prev-activity").click(function() {
-		var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
-		window.parent.document.getElementById("nav_prev-button").click();
+		/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
+		window.parent.document.getElementById("nav_prev-button").click();*/
+		
+		var parentTable = window.parent.document.querySelector(".ygtvchildren");
+		var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
+		var prevLeaf = currentLeaf.parentNode.previousSibling;		
+		if(prevLeaf == null) { 
+			//It does not have more activities
+			prevLeaf = window.parent.document.querySelector(".ygtvchildren").lastChild;	
+		}
+		initActClick(prevLeaf);
 	});
 }
 
@@ -257,7 +280,7 @@ function loadDescription(descrip) {
 	$.get("popUp.html", function(result) {
 		modal = result;
 	}).done(function() {
-		$("article").append(modal);
+		$("body").append(modal);
 		$(".modal-body").html(descrip);
 		$(".modal-title").html(title);
 	});
@@ -281,6 +304,13 @@ function playSound(soundName) {
 			onend: function() {
 				resolve();		
 			}
+			/*,
+			onloaderror: function(err) {
+				console.error(err);
+				var x = document.createElement("AUDIO");
+				x.src = "audio/"+soundName+".mp3";
+				document.body.appendChild(x).play();
+			}*/
 		});
 	});	
 }
@@ -333,12 +363,12 @@ function sessionCounter() {
 			waitInterval(600).then(function() {
 				$( "article" ).remove();
 				$(".deleted").remove();
-			
+
 
 				congratulations().then(function() {
 					waitInterval(1000).then(function() {
 						$( "html" ).addClass( "loading" );
-										
+
 						level="lev_1";
 						if(counter<= counterOriginal/2){
 							level="lev_2";
@@ -468,9 +498,9 @@ function explosion() {
 		for ( var z = 0; z <= (amount * width); z = z + width) {
 
 			$(
-					'<div class="clipped" style="clip: rect(' + y + 'px, '
-							+ (z + width) + 'px, ' + (y + height) + 'px, ' + z
-							+ 'px)">' + html + '</div>').appendTo($t);
+				'<div class="clipped" style="clip: rect(' + y + 'px, '
+					+ (z + width) + 'px, ' + (y + height) + 'px, ' + z
+					+ 'px)">' + html + '</div>').appendTo($t);
 
 			if (z === (amount * width) - width) {
 
@@ -500,18 +530,18 @@ function explosion() {
 	// On click
 	// $('.clipped-box div').on('click', function() {
 
-}
+	}
 
-function explote() {
+	function explote() {
 
-	$('.clipped-box .content').css({
-		'display' : 'none'
-	});
+		$('.clipped-box .content').css({
+			'display' : 'none'
+		});
 
 	// Apply to each clipped-box div.
 	$('.clipped-box div:not(.content)')
-			.each(
-					function() {
+	.each(
+		function() {
 
 						// So the speed is a random speed between 90m/s and
 						// 120m/s. I know that seems like a lot
@@ -548,11 +578,11 @@ function explote() {
 						// The direction can either be left (1), right (-1) or
 						// center (0). This is the horizontal direction.
 						var negate = [ 1, -1, 0 ], direction = negate[Math
-								.floor(Math.random() * negate.length)];
+						.floor(Math.random() * negate.length)];
 
 						// Some random numbers for altering the shapes position
 						var randDeg = rand(-5, 10), randScale = rand(0.9, 1.1), randDeg2 = rand(
-								30, 5);
+							30, 5);
 
 						// Because box shadows are a bit laggy (by a bit I mean
 						// 'box shadows will not work on individual clipped divs
@@ -564,32 +594,32 @@ function explote() {
 						// var color =
 						// $(this).css('backgroundColor').split('rgb(')[1].split(')')[0].split(',
 						// '),
-						var color = [ 120, 188, 215 ];
+var color = [ 120, 188, 215 ];
 						colorR = rand(-20, 20), // You might want to alter these
 						// manually if you change the
 						// color
 						colorGB = rand(-20, 20), // To get the right
 						// consistency.
 						newColor = 'rgb(' + (parseFloat(color[0]) + colorR)
-								+ ', ' + (parseFloat(color[1]) + colorGB)
-								+ ', ' + (parseFloat(color[2]) + colorGB) + ')';
+							+ ', ' + (parseFloat(color[1]) + colorGB)
+							+ ', ' + (parseFloat(color[2]) + colorGB) + ')';
 
 						// And apply those
 						$(this).css(
-								{
-									'transform' : 'scale(' + randScale
-											+ ') skew(' + randDeg
-											+ 'deg) rotateZ(' + randDeg2
-											+ 'deg)',
-									'background' : newColor
-								});
+						{
+							'transform' : 'scale(' + randScale
+								+ ') skew(' + randDeg
+								+ 'deg) rotateZ(' + randDeg2
+								+ 'deg)',
+						'background' : newColor
+					});
 
 						// Set an interval
 						z = setInterval(function() {
 
 							// Horizontal speed is constant (no wind resistance
 							// on the internet)
-							var ux = (Math.cos(theta) * v) * direction;
+						var ux = (Math.cos(theta) * v) * direction;
 
 							// Vertical speed decreases as time increases before
 							// reaching 0 at its peak
@@ -654,19 +684,19 @@ function rand(min, max) {
  * ******************************************
  */
 
-function deactivateMoves(obj) {
-	$(obj).css("pointer-events", "none");
-	$(obj).css("touch-events", "none");
-} 
-function activateMoves(obj) {
-	$(obj).css("pointer-events", "auto");
-	$(obj).css("touch-events", "auto");
-}
+ function deactivateMoves(obj) {
+ 	$(obj).css("pointer-events", "none");
+ 	$(obj).css("touch-events", "none");
+ } 
+ function activateMoves(obj) {
+ 	$(obj).css("pointer-events", "auto");
+ 	$(obj).css("touch-events", "auto");
+ }
 
-function removeLoading() {
-	
-	$("html").removeClass("loading");
-	$("article").addClass("animated bounceInUp");
-	$("#titulo").addClass("animated bounceInDown");
+ function removeLoading() {
 
-}
+ 	$("html").removeClass("loading");
+ 	$("article").addClass("animated bounceInUp");
+ 	$("#titulo").addClass("animated bounceInDown");
+
+ }

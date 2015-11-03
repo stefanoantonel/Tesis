@@ -37,7 +37,7 @@ function functionCallback(conf){
 	//Words
 	var letters=[];
 	for (var i=0; i<stringLetters.length; i++) {
-    	t=$(rightBoxTemp).clone();
+		t=$(rightBoxTemp).clone();
 		$(t).attr('id','right'+i);
 		$(t).removeAttr('hidden');
 		name=stringLetters[i];
@@ -49,8 +49,8 @@ function functionCallback(conf){
 			var elem = this;
 			$.data(this, "timer", setTimeout($.proxy(function() {
 				playSound($(elem).attr("name")); 
-	        }, this), 500));
-	        }, function() { clearTimeout($.data(this, "timer")); }
+			}, this), 500));
+		}, function() { clearTimeout($.data(this, "timer")); }
 		);
 
 		/*$(t).click(function() {
@@ -59,19 +59,19 @@ function functionCallback(conf){
 		$(t).dblclick(function() {
 			moveRight(rightContainer,this);
 		});*/
-		letters.push(t);
-	};
-	
-	$(rightContainer).append(letters);
-	/* Remove the class in order that allow the spaces to be moved*/
-	$( "li:contains(' ')").removeClass("ui-state-disabled");
+letters.push(t);
+};
 
-	/* This makes the letters not to be moved*/
-	$(rightContainer).sortable({
-		cancel: ".ui-state-disabled"
-	});
+$(rightContainer).append(letters);
+/* Remove the class in order that allow the spaces to be moved*/
+$( "li:contains(' ')").removeClass("ui-state-disabled");
 
-	$( rightContainer ).disableSelection();
+/* This makes the letters not to be moved*/
+$(rightContainer).sortable({
+	cancel: ".ui-state-disabled"
+});
+
+$( rightContainer ).disableSelection();
 }
 
 function checkCorrect() {

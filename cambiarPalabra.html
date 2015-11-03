@@ -4,78 +4,78 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
-<title>CAMBIAR LA PALABRA</title>
+	<title>CAMBIAR LA PALABRA</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
-<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
-<style>
-.img {
-	border: 3px solid;
-	margin-right: 3px;
-}
 
-.img-rigth {
-	float: left;
-	margin: 10%;
-}
+	<style>
+		.img {
+			border: 3px solid;
+			margin-right: 3px;
+		}
 
-#target {
-	float: left;
-	border: 3px;
-	border-style: dashed;
-	border-color: black;
-	border-width: medium;
-	margin: 5%;
-}
+		.img-rigth {
+			float: left;
+			margin: 10%;
+		}
 
-article {
-	max-width: 550px;
-}
+		#target {
+			float: left;
+			border: 3px;
+			border-style: dashed;
+			border-color: black;
+			border-width: medium;
+			margin: 5%;
+		}
 
-#leftContainer {
-	max-width: 300px;
-	float: left;
-	margin-top: 6%;
-}
+		article {
+			max-width: 550px;
+		}
 
-#rightContainer {
-	float: left;
-	max-width: 100px;
-}
+		#leftContainer {
+			max-width: 300px;
+			float: left;
+			margin-top: 6%;
+		}
 
-div.inline {
-	display: inline-block;
-}
+		#rightContainer {
+			float: left;
+			max-width: 100px;
+		}
 
-.firstWordHidden {
-	display: none;
-}
+		div.inline {
+			display: inline-block;
+		}
 
-.wordSelected {
-	color: #f00;
-	font-size: 50px;
-}
+		.firstWordHidden {
+			display: none;
+		}
 
-.secondWordHidden {
-	display: none;
-}
-@media screen and (max-width: 450px) {
-	#target {
-		margin: 5%;
-		width: 90px;
-		height: 90px;
-	    padding: 8px;
-	}
-	#leftContainer {
-	}
-	.btnImg {
-	    width: 70px;
-	    height: 70px;
-	}
-	#rightContainer {
-		/*width: 100%;*/
-		/*display: flex;*/
+		.wordSelected {
+			color: #f00;
+			font-size: 50px;
+		}
+
+		.secondWordHidden {
+			display: none;
+		}
+		@media screen and (max-width: 450px) {
+			#target {
+				margin: 5%;
+				width: 90px;
+				height: 90px;
+				padding: 8px;
+			}
+			#leftContainer {
+			}
+			.btnImg {
+				width: 70px;
+				height: 70px;
+			}
+			#rightContainer {
+				/*width: 100%;*/
+				/*display: flex;*/
 		/*align-self: flex-start;
 		justify-content: space-between;*/
 		max-width: 100%;
@@ -115,20 +115,22 @@ div.inline {
 			<div id="target" class="textBackground targetImg phrase target" hidden="hidden"></div>
 
 			<img id="rightboxTemp" class="img img-rigth normal btnImg"
-				hidden="hidden" src=""></img>
+			hidden="hidden" src=""></img>
 			<div id="rightContainer" hidden="hidden"></div>
 
 
 		</article>
 	</div>
 	<footer></footer>
+	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<script type="text/javascript">
+		head.ready(function() {
+			ejercicio = function() {
+				functionInit();
+			}
+		});
+	</script>
+
 </body>
 </html>
 
-<script type="text/javascript">
-	head.ready(function() {
-		ejercicio = function() {
-			functionInit();
-		}
-	});
-</script>

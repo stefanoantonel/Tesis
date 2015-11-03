@@ -4,99 +4,99 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
-<title>ENCUENTRE LETRAS</title>
+	<title>ENCUENTRE LETRAS</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
-<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
-
-<style>
-.img {
-    border: 3px solid;
-    margin-right: 2%;
-    margin-top: 12px;
-    width: 40px;
-    height: 40px;
-    margin-left: 4%;
-    font-size: 25px;
-}
-
-.img-rigth {
-	float: left;
-	margin: 10%;
-}
-
-#target {
-	float: left;
-	border: 3px;
-	border-style: dashed;
-	border-color: black;
-	border-width: medium;
-	margin: 5%;
-}
-
-article {
-	max-width: 550px;
-}
-
-#leftContainer {
-	width: 100%;
-	float: left;
-	display: flex;
-    justify-content: space-around;
-}
-
-#rightContainer {
-	float: left;
-	max-width: 100%;
-}
-
-div.inline {
-	display: inline-block;
-}
-
-.firstWordHidden {
-	display: none;
-}
-
-.wordSelected {
-	color: #f00;
-	font-size: 50px;
-}
-
-.secondWordHidden {
-	display: none;
-}
-.textBackground {
-	padding: 1%;
-}
-.deleted {
-    visibility: hidden;
-}
-.labelLeft {
-	float: left;
-    margin: 4%;
-}
-
-@media screen and (max-width: 450px) {
-	#leftContainer .syllable {
-	    font-size: 20px; 
-	}
-	.img {
-	    border: 3px solid;
-	    margin: 5px;
-	    width: 36px;
-	    height: 36px;
-	    font-size: 20px;
-	    padding: 0;
-	}
-	#rightContainer {
-		display: flex;
-		flex-wrap: wrap;
-	}
-}
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
 
-</style>
+	<style>
+		.img {
+			border: 3px solid;
+			margin-right: 2%;
+			margin-top: 12px;
+			width: 40px;
+			height: 40px;
+			margin-left: 4%;
+			font-size: 25px;
+		}
+
+		.img-rigth {
+			float: left;
+			margin: 10%;
+		}
+
+		#target {
+			float: left;
+			border: 3px;
+			border-style: dashed;
+			border-color: black;
+			border-width: medium;
+			margin: 5%;
+		}
+
+		article {
+			max-width: 550px;
+		}
+
+		#leftContainer {
+			width: 100%;
+			float: left;
+			display: flex;
+			justify-content: space-around;
+		}
+
+		#rightContainer {
+			float: left;
+			max-width: 100%;
+		}
+
+		div.inline {
+			display: inline-block;
+		}
+
+		.firstWordHidden {
+			display: none;
+		}
+
+		.wordSelected {
+			color: #f00;
+			font-size: 50px;
+		}
+
+		.secondWordHidden {
+			display: none;
+		}
+		.textBackground {
+			padding: 1%;
+		}
+		.deleted {
+			visibility: hidden;
+		}
+		.labelLeft {
+			float: left;
+			margin: 4%;
+		}
+
+		@media screen and (max-width: 450px) {
+			#leftContainer .syllable {
+				font-size: 20px; 
+			}
+			.img {
+				border: 3px solid;
+				margin: 5px;
+				width: 36px;
+				height: 36px;
+				font-size: 20px;
+				padding: 0;
+			}
+			#rightContainer {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+
+
+	</style>
 </head>
 <body>
 	<!-- label>Palabra Oculta</label> -->
@@ -107,7 +107,7 @@ div.inline {
 			<div id="leftContainer" class="textBackground"></div>
 
 			<button id="rightboxTemp" class="img normal"
-				hidden="hidden"></button>
+			hidden="hidden"></button>
 			<div id="rightContainer"></div>
 			<label class="labelLeft textBackground">
 				FALTAN 
@@ -121,18 +121,21 @@ div.inline {
 		</article>
 	</div>
 	<footer></footer>
-</body>
-</html>
 
-<script type="text/javascript">
-	  
-	head.ready(function() {
-		ejercicio = function() {
+	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<script type="text/javascript">
+		
+		head.ready(function() {
+			ejercicio = function() {
 			// target=['target'];
 			// readyOk(target,'leftboxTemp','rightContainer');
 			functionInit();
-		}
-		
-	});
+			}
+			
+		});
 
-</script>
+	</script>
+
+</body>
+</html>
+
