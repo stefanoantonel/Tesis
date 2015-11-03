@@ -3,111 +3,102 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-<title>CUENTA LAS PALABRAS</title>
+	<title>CUENTA LAS PALABRAS</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
-<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
--<link rel="stylesheet" href="css/cubes.css" />
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
-<style type="text/css">
-.numberContainer {
-	float: left;
-}
+	<link rel="stylesheet" href="css/cubes.css" />
 
-.numberTemp {
-	margin: auto;
-	width: 40%;
-	display: block;
-}
+	<style type="text/css">
+		.numberContainer {
+			float: left;
+		}
 
-.textSize1 {
-	font-size: 20px;
-}
+		.numberTemp {
+			margin: auto;
+			width: 40%;
+			display: block;
+		}
 
-.textSize2 {
-	font-size: 30px;
-}
+		.textSize1 {
+			font-size: 20px;
+		}
 
-div.phrase .textSize2 {
-	color: darkorange;
-}
+		.textSize2 {
+			font-size: 30px;
+		}
 
-article img.wrong {
-	border-color: red;
-}
+		div.phrase .textSize2 {
+			color: darkorange;
+		}
 
-article {
-	margin-bottom: 0%;
-}
+		article img.wrong {
+			border-color: red;
+		}
 
-article img.imgTemp {
-	border: 3px solid;
-	margin-right: 3px;
-	width: 90px;
-	height: 90px;
-}
+		article {
+			margin-bottom: 0%;
+		}
 
-article img.hidden {
-	display: none;
-}
+		article img.imgTemp {
+			border: 3px solid;
+			margin-right: 3px;
+			width: 90px;
+			height: 90px;
+		}
 
-.target {
-	border: 3px;
-	border-style: dashed;
-	border-width: medium;
-	margin: 5% 35%;
-	min-height: 80px;
-}
+		article img.hidden {
+			display: none;
+		}
 
-article {
-	max-width: 490px;
-}
-.containerTextOriginal {
-	width: 72%;
-}
-.textOriginal {
-    
-}
-.textFilled {
+		.target {
+			border: 3px;
+			border-style: dashed;
+			border-width: medium;
+			margin: 5% 35%;
+			min-height: 80px;
+		}
 
-}
-@media screen and (max-width: 450px) {
-	.numbersContainer {
-		display: flex;
-		justify-content: space-between;
-	}
-	.containerTextOriginal {
-	    width: 90%;
-	    margin: auto;
-	}
-	.textSize1 {
-		font-size: 15px;
-	}
+		article {
+			max-width: 490px;
+		}
+		.containerTextOriginal {
+			width: 72%;
+		}
+		.textOriginal {
+			
+		}
+		.textFilled {
 
-	.textSize2 {
-		font-size: 20px;
-	}
-	.cubeContainer {
-		width: 80px;
-		height: 80px;
-		position: relative;
-	}
-	div.numberTemp {
-		font-size: 3em;
-	}
-}
-</style>
+		}
+		@media screen and (max-width: 450px) {
+			.numbersContainer {
+				display: flex;
+				justify-content: space-between;
+			}
+			.containerTextOriginal {
+				width: 90%;
+				margin: auto;
+			}
+			.textSize1 {
+				font-size: 15px;
+			}
 
-<script type="application/javascript">
-	
-	head.ready(function() {
-		ejercicio = function (){
-			functionInit();
-		}		
-		
-	});
-	
-</script>
+			.textSize2 {
+				font-size: 20px;
+			}
+			.cubeContainer {
+				width: 80px;
+				height: 80px;
+				position: relative;
+			}
+			div.numberTemp {
+				font-size: 3em;
+			}
+		}
+	</style>
+
+
 </head>
 <body>
 	<header></header>
@@ -138,5 +129,16 @@ article {
 		</article>
 	</div>
 	<footer></footer>
+	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<script type="application/javascript">
+		
+		head.ready(function() {
+			ejercicio = function (){
+				functionInit();
+			}		
+			
+		});
+		
+	</script>
 </body>
 </html>

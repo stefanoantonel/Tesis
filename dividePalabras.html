@@ -4,136 +4,136 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
 
-<title>DIVIDE LAS PALABRAS</title>
+	<title>DIVIDE LAS PALABRAS</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
-<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
-<style>
-.img {
-    border: 3px solid;
-    margin-right: 2%;
-    margin-top: 12px;
-    width: 40px;
-    height: 40px;
-    margin-left: 4%;
-    font-size: 25px;
-}
 
-.img-rigth {
-	float: left;
-	margin: 10%;
-}
+	<style>
+		.img {
+			border: 3px solid;
+			margin-right: 2%;
+			margin-top: 12px;
+			width: 40px;
+			height: 40px;
+			margin-left: 4%;
+			font-size: 25px;
+		}
 
-#target {
-	float: left;
-	border: 3px;
-	border-style: dashed;
-	border-color: black;
-	border-width: medium;
-	margin: 5%;
-}
+		.img-rigth {
+			float: left;
+			margin: 10%;
+		}
 
-article {
-	max-width: 550px;
-}
+		#target {
+			float: left;
+			border: 3px;
+			border-style: dashed;
+			border-color: black;
+			border-width: medium;
+			margin: 5%;
+		}
 
-#leftContainer {
-	width: 100%;
-	float: left;
-}
+		article {
+			max-width: 550px;
+		}
 
-#rightContainer {
-	float: left;
-	max-width: 100%;
-}
+		#leftContainer {
+			width: 100%;
+			float: left;
+		}
 
-div.inline {
-	display: inline-block;
-}
+		#rightContainer {
+			float: left;
+			max-width: 100%;
+		}
 
-.firstWordHidden {
-	display: none;
-}
+		div.inline {
+			display: inline-block;
+		}
 
-.wordSelected {
-	color: #f00;
-	font-size: 50px;
-}
+		.firstWordHidden {
+			display: none;
+		}
 
-.secondWordHidden {
-	display: none;
-}
-.divInline {
-    display: inline;
-    margin-right: 10%;
-    background-color: transparent;
-    margin-left: 2%;
-}
-.textBackground {
-	padding: 1%;
-}
-.deleted {
-    visibility: hidden;
-}
-.labelLeft {
-	float: left;
-    margin: 4%;
-}
-#rightContainer li {
-    margin: 10px 10px 10px 0;
-    padding: 0px;
-    width: 50px;
-    height: 49px;
-    font-size: 30px;
-    text-align: center;
-    color: #FFA500;
-    float: left;
-	border-bottom-color: brown;
-	border-left-color: transparent;
-	border-right-color: transparent;
-	border-top-color: transparent;
-	border-style: dotted;
-	font-weight: bold;
-	
-}
-ul {
-	list-style-type: none;
-}
-.syllable {
-	border-bottom-color: brown;
-	border-left-color: white;
-	border-right-color: white;
-	border-top-color: brown;
-	border-style: dotted;
-	border-radius: 30px;
-}
-#finish {
-	margin-left: 40%;
-}
+		.wordSelected {
+			color: #f00;
+			font-size: 50px;
+		}
 
-@media screen and (max-width: 450px) {
-	#rightContainer {
-	    display: flex;
-	    flex-wrap: wrap;
-	    justify-content: center;
-	    padding: 0;
-	}
-	#rightContainer li {
-	    padding: 0px;
-	    width: 17%;
-	    font-size: 25px;
-	    text-align: center;
-	    list-style-type: none;
-	}
-	body {
-		overflow: scroll !important;
-	}
-	.ui-sortable-helper {
-		
-	}
-}
-</style>
+		.secondWordHidden {
+			display: none;
+		}
+		.divInline {
+			display: inline;
+			margin-right: 10%;
+			background-color: transparent;
+			margin-left: 2%;
+		}
+		.textBackground {
+			padding: 1%;
+		}
+		.deleted {
+			visibility: hidden;
+		}
+		.labelLeft {
+			float: left;
+			margin: 4%;
+		}
+		#rightContainer li {
+			margin: 10px 10px 10px 0;
+			padding: 0px;
+			width: 50px;
+			height: 49px;
+			font-size: 30px;
+			text-align: center;
+			color: #FFA500;
+			float: left;
+			border-bottom-color: brown;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top-color: transparent;
+			border-style: dotted;
+			font-weight: bold;
+			
+		}
+		ul {
+			list-style-type: none;
+		}
+		.syllable {
+			border-bottom-color: brown;
+			border-left-color: white;
+			border-right-color: white;
+			border-top-color: brown;
+			border-style: dotted;
+			border-radius: 30px;
+		}
+		#finish {
+			margin-left: 40%;
+		}
+
+		@media screen and (max-width: 450px) {
+			#rightContainer {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				padding: 0;
+			}
+			#rightContainer li {
+				padding: 0px;
+				width: 17%;
+				font-size: 25px;
+				text-align: center;
+				list-style-type: none;
+			}
+			body {
+				overflow: scroll !important;
+			}
+			.ui-sortable-helper {
+
+			}
+		}
+	</style>
 </head>
 <body>
 	<!-- label>Palabra Oculta</label> -->
@@ -142,7 +142,7 @@ ul {
 		<article>
 			
 			<li id="rightboxTemp" class="normal ui-state-default ui-state-disabled"
-				hidden="hidden"></li>
+			hidden="hidden"></li>
 			<ul id="rightContainer" class="box"></ul>
 			<button id = "finish" type="button" class="btn btn-primary">OK - REVISAR</button>
 			<!-- <label class="labelLeft textBackground">
@@ -157,13 +157,16 @@ ul {
 		</article>
 	</div>
 	<footer></footer>
+
+	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
+	
+	<script type="text/javascript">
+		head.ready(function() {
+			ejercicio = function() {
+				functionInit();
+			}
+		});
+	</script>
+
 </body>
 </html>
-
-<script type="text/javascript">
-	head.ready(function() {
-		ejercicio = function() {
-			functionInit();
-		}
-	});
-</script>

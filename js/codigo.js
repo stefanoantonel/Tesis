@@ -242,7 +242,7 @@ function setNextAction() {
 	$("#next-activity").click(function() {
 		/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
 		window.parent.document.getElementById("nav_next-button").click();*/
-	
+		
 		var parentTable = window.parent.document.querySelector(".ygtvchildren");
 		var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
 		var nextLeaf = currentLeaf.parentNode.nextSibling;
