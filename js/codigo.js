@@ -5,8 +5,6 @@ var score = 100;
 var actNum;
 var configLoaded = null;
 var tutorialWasPlayed = false;
-var activityFirst = null;
-var currentLeaf = null;
 
 function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 	$(idImg).each(function(ind, part) {
@@ -282,7 +280,7 @@ function loadDescription(descrip) {
 	$.get("popUp.html", function(result) {
 		modal = result;
 	}).done(function() {
-		$("article").append(modal);
+		$("body").append(modal);
 		$(".modal-body").html(descrip);
 		$(".modal-title").html(title);
 	});
