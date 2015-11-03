@@ -4,45 +4,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-<title>MEMORY</title>
+	<title>MEMORY</title>
 
-<link rel="stylesheet" type="text/css" href="css/loading.css">
+	<link rel="stylesheet" type="text/css" href="css/loading.css">
 
 
-<style type="text/css">
-	.deleted {
-		visibility: hidden;
-	}
-
-	@media screen and (min-width: 850px) {
-		#contenedor {
-			width: 68%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			margin: 15%;
+	<style type="text/css">
+		.deleted {
+			visibility: hidden;
 		}
-	}
+
+		@media screen and (min-width: 850px) {
+			#contenedor {
+				width: 68%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				margin: 15%;
+				max-width: 650px;
+
+			}
+		}
 
 
-	@media screen and (max-width: 450px) {
-		body {
-			overflow: visible;
+		@media screen and (max-width: 450px) {
+			body {
+				overflow: visible;
+			}
+			#contenedor {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+			button.btnImg {
+				width: 80px;
+				height: 80px;
+			}
+			button.btnMemory {
+				margin: 2%;
+			}
 		}
-		#contenedor {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
-		button.btnImg {
-			width: 80px;
-    		height: 80px;
-		}
-		button.btnMemory {
-			margin: 2%;
-		}
-	}
-</style>
+	</style>
 
 
 </head>
@@ -54,7 +56,7 @@
 			<article class="">
 				<div id="contenedor">
 					<button id="template" style="display: none"
-						class="btn primary bg btnMemory btnImg imgMemory"></button>
+					class="btn primary bg btnMemory btnImg imgMemory"></button>
 				</div>
 			</article>
 		</div>
@@ -64,14 +66,14 @@
 
 	<script src="js/head.min.js" data-headjs-load="mainHead.js"></script>
 	<script type="application/javascript">
-head.ready(function() {
+		head.ready(function() {
 	//PARA MOODLE
 	//window.parent.document.getElementById("scorm_navpanel").style.display = 'none';
 	ejercicio=function(){
 		functionInit();
 	}
 });
-</script>
+	</script>
 </body>
 
 
