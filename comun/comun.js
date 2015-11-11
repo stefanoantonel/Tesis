@@ -36,6 +36,8 @@ actividad.init = function() {
 
 		// Tomo el nombre del alumno y lo pongo en el tag designado
 		var txt = actividad.sco.get('cmi.core.student_name');
+		if(txt == "null") txt = "Juan Azor";
+
 		$("#alumno").html("<b>Alumno:</b> " + txt);
 		actividad.sco.set("cmi.core.lesson_status","incomplete");
 		actividad.sco.set("cmi.core.session_time","00:01:00");
