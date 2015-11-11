@@ -90,11 +90,10 @@ function loadActivity(level){
 
 
 function areEqual(im1,im2){
-	console.log("compare: "+im1+" con:"+ im2);
-	if(im1==im2){return false;}
-	x=Math.floor(parseInt(im1)/10);
-	y=Math.floor(parseInt(im2)/10);
-	if(x==y){return true;}
+	if(im1 == im2) { return false; }
+	x = Math.floor(parseInt(im1)/10);
+	y = Math.floor(parseInt(im2)/10);
+	if(x == y) { return true; }
 	return false;
 }
 

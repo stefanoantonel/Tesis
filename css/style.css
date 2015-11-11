@@ -838,6 +838,9 @@ article, #activity-container {
     	margin-right: 2%;
     	height: 60%;
     	display: inline-block;
+		position: absolute;
+		right: 0%;
+		top: 0;
 	}
 	.kittyTeacher {
 	    width: 25%;
