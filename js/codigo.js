@@ -222,7 +222,7 @@ function passActivity() {
 			+ '</div>');
 		playSound("win");
 		$("#next").click(function() {
-			window.parent.document.getElementById("nav_next-button").click();
+			setNextAction();
 		});
 		return;
 	}
