@@ -81,8 +81,9 @@ function fillTemplateSyllable(syllables){
 		$(t).html("<label name="+name+">"+nameToShow+"</label>");
 		$(t).hover(function(){
 			var elem = this;
+			var name = elem.getAttribute("name");
 			$.data(this, "timer", setTimeout($.proxy(function() {
-				playSound($(elem).html()); 
+				playSound(name); 
 	        }, this), 300));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
