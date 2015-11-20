@@ -203,7 +203,6 @@ function congratulations() {
 			waitInterval(200).then(function() {
 				resolve();
 			});
-
 		});
 
 		$("#alertOk").delay(100).fadeIn(200);
