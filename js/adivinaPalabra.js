@@ -18,7 +18,7 @@ function functionInit(counter,level) {
 		}
 		getConfig(2)
 		.then(function() {
-			return readyOk();	
+			return readyOk();
 		}).then(function() {
 			return getConfigByElement("words",level,1,null);
 		}).then(function(conf) {
@@ -36,7 +36,7 @@ function readyOk(){
 	idBox="leftbox";
 	idBox2="rightbox";
 	imgDemo="demo";
-	
+
 	temp1=document.getElementById(idObj);
 	boxes=[idBox,idBox2];
 	temp=$(temp1);
@@ -74,8 +74,8 @@ function moveToTarget(elem) {
 		$(rightbox).append(elem);
 		checkSyllable(rightbox,elem);
 	}
-	
-	
+
+
 }
 
 function divide(data){
@@ -92,14 +92,14 @@ function checkCorrect(container,element) {
 		if(numParts == actualPosition){
 			waitInterval(200).then(function() {
 				playSound(completeWord);
-			}); 
+			});
 			return true;
 		}
 		return false;
 	}
 	wrong(element,"#"+idBox);
-}	
-	
+}
+
 
 function getTextRand(data){
 	var quantLines=$(data).size();
@@ -110,9 +110,9 @@ function getTextRand(data){
 
 function fillTemplate(boxes,temp, parts){
 	//relleno el template
-	fromBox=$('#'+boxes[0]); //el de origen 
+	fromBox=$('#'+boxes[0]); //el de origen
 	var a=[];
-	
+
     $(parts).each(function(index,part){
         var t=$(temp).clone();
         $(t).attr('id',index);
@@ -125,22 +125,22 @@ function fillTemplate(boxes,temp, parts){
         $(t).hover(function(){
 			var elem = this;
 			$.data(this, "timer", setTimeout($.proxy(function() {
-				playSound($(elem).html()); 
+				playSound($(elem).html());
 	        }, this), 300));
 	        }, function() { clearTimeout($.data(this, "timer")); }
 		);
         a.push(t);
     });
-	
-    //-------------disorder 
+
+    //-------------disorder
     origin=parts.join('');
     origin = origin.toUpperCase();
     do{
     	disorder(a);
         disordered=$(a).text();
     }while(origin==disordered);
-    
-    //-------------------end disroder 
+
+    //-------------------end disroder
 
     $(fromBox).append(a);
 }

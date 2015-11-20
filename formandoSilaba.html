@@ -20,7 +20,7 @@
 	display: inline-block;
 	border-width: medium;
 	width: 193px;
-  	height: 88px;
+  height: 88px;
 	float: left;
 	margin: 5%;
 	border-color: orange;
@@ -43,6 +43,7 @@ label {
 	float: left;
 	display: inline-block;
 	min-height: 20px;
+	min-width: 90px;
 }
 
 #rightContainer {
@@ -51,11 +52,10 @@ label {
 	float: left;
 	float: left;
 	display: inline-block;
-	
+	min-width: 90px;
 }
 
 section {
-	/*overflow: auto;*/
 	margin-left: 3%;
 }
 
@@ -66,8 +66,8 @@ article {
 
 .imgButton{
 	width: 80px;
-    height: 60px;
-    font-size: xx-large;
+  height: 60px;
+  font-size: xx-large;
 }
 #wordWithSyllable{
 	margin-top: 5%;
@@ -88,8 +88,8 @@ article {
 	}
 	#target .imgButton{
 		width: 50%;
-	    font-size: xx-large;
-	    padding: 0;
+    font-size: xx-large;
+    padding: 0;
 	}
 }
 
@@ -100,15 +100,15 @@ article {
 	<div id="body">
 		<div id="activity-container">
 			<article class="container-body">
-				
+
 				<div id="leftContainer"></div>
 				<button column="leftContainer" id="leftboxTemp"
 					class="hidden btn imgButton normal syllable" hidden="hidden"></button>
-				
+
 				<section id="middle">
 					<div id="target" class="target textBackground"></div>
 				</section>
-				
+
 				<div id="rightContainer" class="rightContainer"></div>
 				<button column="rightContainer" id="rightboxTemp"
 					class="hidden btn imgButton normal syllable"></button>
@@ -131,4 +131,3 @@ article {
 
 
 </html>
-

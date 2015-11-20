@@ -34,7 +34,7 @@
 			"repeat":"2",
 			"name":"amigoDeQuien"
 		},
-	
+
 	"act6":
 		{"act":[
 					{"values":[["p","a","t","o"],["g","a","t","o"]], "target":"1"},
@@ -188,7 +188,7 @@
 		},
 	"act21":
 		{
-			"description":"ENCUENTRE TODAS LAS LETRAS CON LAS QUE EMPIEZAN LAS PALABRAS DE ARRIBA.",
+			"description":"IDENTIFIQUE LA LETRA CON LA QUE COMIENZAN LAS PALABRAS DE ARRIBA Y LUEGO ENCUENTRE TODAS LAS VECES QUE LA LETRA SE REPITE.",
 			"repeat":"3",
 			"name":"encuentraLetras"
 		},
@@ -238,7 +238,7 @@
 		"stars"
 	],
 	"distractors": {
-		"words": [ 
+		"words": [
 			"leon","raton", "pato", "campana","manzana","boca","botella",
 			"bosque","caja","cama","dado","dinosaurio","foca","fuego",
 			"gorro","gato","luna","lata","lana","mesa","naranja","nido","nieve",
@@ -246,7 +246,7 @@
 			"bota","auto","gota","cuna","foco","rana","raton","roca",
 			"mano","dedo","toro","perro","taza","rosa","silbato"
 		],
-		"numbers": [ 
+		"numbers": [
 			"3","4","5","6", "7", "8","9","2","1"
 		],
 		"syllables": [
@@ -288,7 +288,7 @@
 				"fo ca",
 				"fo co"
 			],
-			"lev_2":[	
+			"lev_2":[
 				"ven ta na",
 				"pe lo ta",
 				"ca be za",
@@ -342,5 +342,5 @@
 					{"values":["ME","GUSTA","AYUDAR","A","MI","MAMA"]},
 					{"values":["ME","PORTO","BIEN","EN","CLASES"]}
 			]
-		}	
+		}
 }

@@ -11,12 +11,12 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 		$(this).draggable({
 			/* cursorAt: { cursor: "move", top: 56, left: 56 },*/
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
-	        revert : true
+	      revert : true
 	    });
 
 		$(this).click(function() {
 			moveToTarget(this);
-		});		
+		});
 	});
 
 	$(idBoxes).each(function(ind, box) {
@@ -58,7 +58,7 @@ function getConfig(numAct) {
 			loadTutorialVoice(actNum);
 			loadCounter(c.repeat);
 		});
-	});	
+	});
 }
 
 function getJsonConfig() {
@@ -76,12 +76,12 @@ function getJsonConfig() {
 					resolve(configLoaded);
 				});
 			});
-			
+
 		}
 		else {
 			resolve(configLoaded);
 		}
-	});	
+	});
 }
 
 function getConfigByElement(element, level, quantity, callback) {
@@ -128,7 +128,7 @@ function getConfigByElementWithOne (type, level, quantity, callBack, elementExce
 	})
 }
 
-function getConfigByElementWithOne(type, level, quantity, callBack, 
+function getConfigByElementWithOne(type, level, quantity, callBack,
 	elementExcept, firstLetter) {
 	return new Promise(function(resolve, reject) {
 		getJsonConfig().then(function(config) {
@@ -141,8 +141,8 @@ function getConfigByElementWithOne(type, level, quantity, callBack,
 			var result = disorder(result_disorder);
 			callBack(result);
 			resolve(result);
-		});	
-	});	
+		});
+	});
 }
 
 function saveArticle() {
@@ -156,12 +156,12 @@ function getStyle() {
 			skin = disorder(c);
 			$('head').append(
 				'<link rel="stylesheet" type="text/css" '
-				+ 'href="css/skin/' 
+				+ 'href="css/skin/'
 				+ skin[0] + '.css" />');
 			resolve();
-		});	
+		});
 	});
-	
+
 }
 
 function loadCounter(count) {
@@ -189,9 +189,9 @@ function congratulations() {
 	return new Promise(function(resolve) {
 		$("#activity-container").append(
 			"<article id='congratulations' class='clipped-box congratulations animated flipInX'>"
-			+ "<div class='content '>" 
+			+ "<div class='content '>"
 			+ "<h1>FELICITACIONES</h1>"
-			+ "</div>" 
+			+ "</div>"
 			+ "</article>");
 		playSound("congratulations").then(function () {
 			/*explosion();
@@ -199,11 +199,10 @@ function congratulations() {
 			$("article#congratulations")
 			.removeClass("flipInX")
 			.addClass("fadeOutDown");
-			
+
 			waitInterval(200).then(function() {
-				resolve();		
+				resolve();
 			});
-			
 		});
 
 		$("#alertOk").delay(100).fadeIn(200);
@@ -239,36 +238,32 @@ initActClick = function (elem) {
 }
 
 function setNextAction() {
-	$("#next-activity").click(function() {
-		/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
-		window.parent.document.getElementById("nav_next-button").click();*/
-		
-		var parentTable = window.parent.document.querySelector(".ygtvchildren");
-		var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
-		var nextLeaf = currentLeaf.parentNode.nextSibling;
-		if(nextLeaf == null) { 
-			//It does not have more activities
-			activityFirst = window.parent.document.querySelector(".ygtvchildren").firstChild;
-			nextLeaf = activityFirst;	
-		}
-		initActClick(nextLeaf);
-	});
+	/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
+	window.parent.document.getElementById("nav_next-button").click();*/
+
+	var parentTable = window.parent.document.querySelector(".ygtvchildren");
+	var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
+	var nextLeaf = currentLeaf.parentNode.nextSibling;
+	if(nextLeaf == null) {
+		//It does not have more activities
+		activityFirst = window.parent.document.querySelector(".ygtvchildren").firstChild;
+		nextLeaf = activityFirst;
+	}
+	initActClick(nextLeaf);
 }
 
 function setPrevAction() {
-	$("#prev-activity").click(function() {
-		/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
-		window.parent.document.getElementById("nav_prev-button").click();*/
-		
-		var parentTable = window.parent.document.querySelector(".ygtvchildren");
-		var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
-		var prevLeaf = currentLeaf.parentNode.previousSibling;		
-		if(prevLeaf == null) { 
-			//It does not have more activities
-			prevLeaf = window.parent.document.querySelector(".ygtvchildren").lastChild;	
-		}
-		initActClick(prevLeaf);
-	});
+	/*var base_url = document.URL.slice(0, document.URL.lastIndexOf("/"));
+	window.parent.document.getElementById("nav_prev-button").click();*/
+
+	var parentTable = window.parent.document.querySelector(".ygtvchildren");
+	var currentLeaf = parentTable.querySelector('table.ygtv-highlight1');
+	var prevLeaf = currentLeaf.parentNode.previousSibling;
+	if(prevLeaf == null) {
+		//It does not have more activities
+		prevLeaf = window.parent.document.querySelector(".ygtvchildren").lastChild;
+	}
+	initActClick(prevLeaf);
 }
 
 function passed() {
@@ -302,7 +297,7 @@ function playSound(soundName) {
 			urls: ['audio/' + soundName + '.mp3'],
 			autoplay: true,
 			onend: function() {
-				resolve();		
+				resolve();
 			}
 			/*,
 			onloaderror: function(err) {
@@ -312,7 +307,7 @@ function playSound(soundName) {
 				document.body.appendChild(x).play();
 			}*/
 		});
-	});	
+	});
 }
 
 function playTutorial(actNumb,callback) {
@@ -323,11 +318,11 @@ function playTutorial(actNumb,callback) {
 				urls: ['audio/tutorial/' + actNum + '.mp3'],
 				autoplay: true,
 				onend: function() {
-					callback();		
+					callback();
 				}
-			});	
+			});
 		}
-		
+
 	});
 }
 
@@ -348,9 +343,9 @@ function wrong(target,origin){
 }
 
 function sessionCounter() {
-	$(".target").addClass("targetWin");	
+	$(".target").addClass("targetWin");
 	counter = counter - 1;
-	playSound("bells").then(function() {		
+	playSound("bells").then(function() {
 		if (counter == 0) {
 			passed();
 			waitInterval(1000).then(function() {
@@ -373,26 +368,26 @@ function sessionCounter() {
 						if(counter<= counterOriginal/2){
 							level="lev_2";
 						}
-						
+
 						waitInterval(500).then(function() {
 							$("#activity-container").hide();
 							$("#activity-container").removeClass("congratulations");
 							$("#activity-container").append(originTemplateHTML);
 							$('#congratulations').remove();
 							$("#activity-container").fadeIn(400).show();
-							
+
 							functionInit(counter,level).then(function() {
 								waitInterval(200).then(function() {
-									removeLoading();	
+									removeLoading();
 								});
 							});
-							
-						});					
+
+						});
 					});
 				});
 			});
 		}
-	});	
+	});
 }
 
 function waitInterval(time) {
@@ -435,8 +430,8 @@ function getConfigByElementWithFirstLetter(type, level, quantity, callBack, firs
 			var result = disorder(result_disorder);
 			resolve(result);
 			if(callBack)
-				callBack(result);					
-		});		
+				callBack(result);
+		});
 	});
 }
 
@@ -687,7 +682,7 @@ function rand(min, max) {
  function deactivateMoves(obj) {
  	$(obj).css("pointer-events", "none");
  	$(obj).css("touch-events", "none");
- } 
+ }
  function activateMoves(obj) {
  	$(obj).css("pointer-events", "auto");
  	$(obj).css("touch-events", "auto");
