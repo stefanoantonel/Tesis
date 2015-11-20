@@ -11,7 +11,7 @@ function dragAndDrop(idImg, idBoxes, functions,moveToTarget) {
 		$(this).draggable({
 			/* cursorAt: { cursor: "move", top: 56, left: 56 },*/
 	        //cursorAt: { cursor: "crosshair", top: -5, left: -5 },
-	        revert : true
+	      revert : true
 	    });
 
 		$(this).click(function() {
