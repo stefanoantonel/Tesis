@@ -78,6 +78,8 @@ function checkCorrect() {
 	var textInContainer = $(rightContainer).text();
 	if(textInContainer == finalSentence) {
 		window.setTimeout(sessionCounter(), 2000);
+		$(rightContainer).removeClass("animated shake");
+		$(rightContainer).addClass("animated rubberBand");
 		return true;
 	}
 	else {
@@ -85,6 +87,8 @@ function checkCorrect() {
 			playSound("coloque_los_espacios_en_el_lugar_correcto");
 		});
 		changeScore(-10);
+		$(rightContainer).removeClass("animated rubberBand");
+		$(rightContainer).addClass("animated shake");
 		return false;		
 	}
 }

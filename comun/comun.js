@@ -42,12 +42,12 @@ actividad.init = function() {
 		actividad.sco.set("cmi.core.lesson_status","incomplete");
 		actividad.sco.set("cmi.core.session_time","00:01:00");
 		ac=actividad.sco.get("cmi.core.total_time");
-		
+
 		//punctuation
 		actividad.sco.set("cmi.core.score.min", 0);
 		actividad.sco.set("cmi.core.score.max", 100);
 		actividad.sco.set("cmi.core.score.raw", 100);
-		
+
 	});
 
 	//Comienzo la secuencia animación de inicio
@@ -60,6 +60,10 @@ actividad.init = function() {
 	*/
 
 	$('#titulo').text($('title').text());
+
+	//Setting the arrows to move between activities
+	$("#next-activity").click(setNextAction);
+	$("#prev-activity").click(setPrevAction);
 
 	/*$("#titulo").fadeIn(1500).animate({
 		top : "10px"
@@ -116,8 +120,7 @@ $(document).ready(function() {
 			setNextAction();
 			setPrevAction();
 		});
-	});	
-	
-	
-});
+	});
 
+
+});
