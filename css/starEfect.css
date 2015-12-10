@@ -2,11 +2,12 @@ label.star {
   border-radius: 5px;
   background: #fad335;
   opacity: 0.8;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: transform 1s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s;
+  width: 70px;
+  height: auto;
 }
 
 /*label:nth-child(2) {*/
