@@ -144,13 +144,14 @@ function checkCorrect(part) {
 		return true;
 	}
 	else{
-		$(part).effect('shake');
+		/*$(part).effect('shake');
 
 		$(part).removeClass('normal');
 		$(part).addClass('wrong');
 		// console.log($(part));
-		window.setTimeout(moveOrigin, 1000, part, "#rightContainer");
-		return false;
+		window.setTimeout(moveOrigin, 1000, part, "#rightContainer");*/
+		wrong(part,"#rightContainer")
+		return false
 	}
 }
 

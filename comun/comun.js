@@ -62,6 +62,15 @@ actividad.init = function() {
 	$('#titulo').text($('title').text());
 
 	//Setting the arrows to move between activities
+	/*
+	document.getElementById("next-activity")
+	.addEventListener('click', function() { 
+		setNextAction();
+	});
+	document.getElementById("prev-activity")
+	.addEventListener('click', function() { 
+		setPrevAction();
+	});*/
 	$("#next-activity").click(setNextAction);
 	$("#prev-activity").click(setPrevAction);
 
@@ -117,8 +126,6 @@ $(document).ready(function() {
 		$("footer").load("comun/footer.html", function() {
 			// Una vez que termino todo, inicio la actividad
 			actividad.init();
-			setNextAction();
-			setPrevAction();
 		});
 	});
 
