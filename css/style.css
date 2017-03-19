@@ -692,6 +692,7 @@ article, #activity-container {
 
 .modal {
 	overflow: visible;
+	min-height: 200px;
 }
 
 /******************** MEDIA QUERIES **********************/
@@ -779,6 +780,11 @@ article, #activity-container {
 	}
 	.phrase {
 		font-size: 30px;
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		width: 200px;
+		align-items: center;
 	}
 	.rot {
 		width: 70px;
@@ -786,6 +792,7 @@ article, #activity-container {
 	}
 	.syllable {
 		font-size: 30px;
+		padding: 20px 10px;
 	}
 	.targetText {
 		width: 120px;
@@ -808,11 +815,11 @@ article, #activity-container {
 	
 	#activity-container {
 		margin-left: 0%;
-		margin-top: 30%;
+		margin-top: 35%;
 	}
 	article {
-		margin-left: 0%;
-		margin-top: 30%;
+		/* margin-left: 0%; */
+		/* margin-top: 30%; */
 		/*padding-left: 10%;*/
 	}
 	#titulo {
@@ -859,7 +866,7 @@ article, #activity-container {
 	    font-size: 2em;
 	}
 	#alumno {
-	    left: 10px; 
+	    left: 10px;
 	}
 
 

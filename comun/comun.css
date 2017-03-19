@@ -11,6 +11,11 @@
 	margin-left: 5%;
 }
 
+article.game-centered {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 
 #kittyTeacher {
 	display: inline-block;
@@ -21,7 +26,7 @@
 	left: 120px;
 	font-family: 'Bentham', serif;
 	position: fixed;
-	top: 90%;
+	top: 85%;
 }
 
 @font-face {

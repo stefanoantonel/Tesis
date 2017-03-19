@@ -16,10 +16,12 @@
 	min-width: 80px;
 	text-align: center;
 }
+.syllable.sphere {
+	padding: 20px 10px;
+}
 
 div.phrase b {
 	color: blue;
-	margin: 8% 5% 0% 0%;
 	font-size: 40px;
 }
 
@@ -58,13 +60,7 @@ article img.hidden {
 	font-size: 45px;
 }
 
-.leftSide {
-	margin: 5%;
-	min-width: 50px;
-}
-
-.rightSide {
-	margin: 5%;
+.leftSide, .rightSide {
 	min-width: 50px;
 }
 
@@ -74,8 +70,13 @@ article img.hidden {
 }
 
 .syllableContainer {
-	margin-left: 5%;
-	margin-top: 8%;
+	font-size: 30px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 300px;
+    align-items: center;
+	 	 
 }
 
 @media screen and (max-width: 450px) {
@@ -83,10 +84,10 @@ article img.hidden {
 	    display: flex;
 	    justify-content: space-around;
 	    align-items: center;
+		 margin: 0;
 	}
 	div.phrase b {
 		margin: 0;
-
 	}
 	div.target {
 		margin: 0;
@@ -98,6 +99,20 @@ article img.hidden {
 	label.sphere {
 		padding-top: 5%;
 	}
+	.silaba-oculta {
+		display: flex;
+		flex-direction: column;
+		padding: 0;
+	}
+	.syllableContainer {
+		display: flex;
+		justify-content: space-around;
+		margin-left: 0;
+	}
+	.syllable.sphere {
+	padding: 15px 10px;
+	font-size: 30px;
+	}
 }
 
 </style>
@@ -107,7 +122,7 @@ article img.hidden {
 <body>
 	<header></header>
 	<div id="activity-container">
-		<article>
+		<article class="silaba-oculta">
 			<div id="text" class='phrase textBackground inline'>
 				<b id="firstPart" class="leftSide"></b>
 				<div id="target" class="target textBackground"></div>

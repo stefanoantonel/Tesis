@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no">
-
-<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+<link rel="manifest" href="manifest.json">
 
 <style>
 .btn_link {
@@ -29,7 +28,7 @@
 	border-bottom-left-radius:20px;
 	text-indent:0px;
 	border:1px solid #a8d1db;
-	
+
 	color:#ffffff;
 	font-family:Verdana;
 	text-decoration:none;
@@ -52,73 +51,66 @@
 }
 body {
 	text-align: center;
+  margin: 0;
 }
 section {
-	font-size:30px;
+	font-size: 30px;
 }
 @media screen and (max-width: 700px) {
 	section {
 		font-size: 30px;
 	}
 	.btn_link {
-		width: 60%;
+		width: 75%;
 		display: inline-block;
 		float: none;
 	}
+  .title-head {
+    background-color: rgba(172,96,103,.95);
+    font-size: 20px;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
 }
 @media screen and (max-width: 400px) {
-	section {
+	.index-container {
 		font-size: 30px;
+		margin-bottom: 40px;
 	}
 	.btn_link {
 		width: 80%;
 	    display: inline-block;
 	    /* float: none; */
-	    font-size: 30px;
+	    font-size: 25px;
 	}
 }
 </style>
- 
+
 
 </head>
 <body>
-<section>
-
+<div class="index-container">
+	<div class="title-head">Seleccione una actividad</div>
 	<button class="btn_link" id="adivinaPalabra">Adivina Palabra</button>
-	
 	<button class="btn_link" id="amigoDeQuien">Amigo de Quien</button>
-	
 	<button class="btn_link" id="cambiarPalabra">Cambiar Palabra</button>
-	
 	<button class="btn_link" id="cuentaPalabra">Cuenta Palabras</button>
-	
 	<button class="btn_link" id="dividePalabras">Divide Palabras</button>
-	
 	<button class="btn_link" id="encuentraLetras">Encuentra Letras</button>
-	
 	<button class="btn_link" id="estoyPensando">Pensando en Algo</button>
-	
 	<button class="btn_link" id="formandoSilaba">Formando Silaba</button>
-	
 	<button class="btn_link" id="memory">Memory</button>
-	
 	<button class="btn_link" id="ordenaLetras">Ordena Letras</button>
-	
 	<button class="btn_link" id="palabraOculta">Palabra Oculta</button>
-	
 	<button class="btn_link" id="quitandoSilaba">Quitar Silabas</button>
-	
 	<button class="btn_link" id="repitiendoSilaba">Silaba Repetidas</button>
-	
 	<button class="btn_link" id="silabaOculta">Silaba Oculta</button>
-	
 	<button class="btn_link" id="uniendoLetras">Uniendo Letras</button>
-	
-</section>
+</div>
 </body>
 
-	<script type="text/javascript" src="comun/jquery.js"></script>
-	
+	<script type="text/javascript" src="comun/jquery-3.2.0.min.js"></script>
+
 	<script type="application/javascript">
 
 	$(document).ready(function() {
@@ -128,7 +120,7 @@ section {
 		}
 		$(".btn_link").click(function(){
 			window.top.location.href = $(this).attr("id")+".html";
-		}); 
+		});
 	});
 	</script>
 </html>
